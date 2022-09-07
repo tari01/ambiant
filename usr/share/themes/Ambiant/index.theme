@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Ambiant
+Comment=Ambiant theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Ambiant
+MetacityTheme=Ambiant
+IconTheme=Ambiant
+CursorTheme=mate
+CursorSize=24
+ButtonLayout=menu:minimize,maximize,close
