@@ -348,6 +348,12 @@ na-tray-applet {
     background-color: transparent;
 }
 
+#fast-user-switch-menubar > menuitem > box > label
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+
 /* Classic icon style */
 .mate-panel-menu-bar {
     -PanelMenuBar-icon-visible: true;
