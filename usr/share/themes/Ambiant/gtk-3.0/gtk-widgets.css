@@ -3179,11 +3179,11 @@ headerbar .subtitle {
 .titlebar button.titlebutton.close {
     color: #323112;
     -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.25);
-    background-image: linear-gradient(to top, #de4c19, #e55e30 50%, #f58d6e);
+    background-image: linear-gradient(to top, #81BA4A, #B5D793 50%, #DEEAD2);
 }
 
 .titlebar button.titlebutton.close:hover {
-    background-image: linear-gradient(to top, #e24f1b, #f17750 50%, #fba992);
+    background-image: linear-gradient(to top, #8EC956, #C0E1A1 50%, #EEF0EA);
 }
 
 .titlebar button.titlebutton:hover,
@@ -3197,13 +3197,13 @@ headerbar .subtitle {
 }
 
 .titlebar button.titlebutton.close:active {
-    background-image: linear-gradient(to top, #ec6e44, #e76b41);
+    background-image: linear-gradient(to top, #6A9542, #90B66A);
 }
 
 .titlebar button.titlebutton:backdrop {
     color: #3d3c37;
     -gtk-icon-shadow: none;
-    background-image: linear-gradient(to top, #605f59, #5b5a54);
+    background-image: linear-gradient(to top, #605f59, #93BB6C);
 }
 
 /* don't use regular close button from icon themes */
