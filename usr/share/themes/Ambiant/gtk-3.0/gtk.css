@@ -1,1 +1,16 @@
 @import url("gtk-main.css");
+
+#org\.ayatana\.indicator\.slider
+{
+    padding-right: 10px;
+}
+
+#org\.ayatana\.indicator\.calendar
+{
+    padding-right: 10px;
+}
+
+#org\.ayatana\.indicator\.switch
+{
+    padding-right: 10px;
+}
