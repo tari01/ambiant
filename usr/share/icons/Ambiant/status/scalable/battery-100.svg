@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" width="24" height="24" id="svg3014" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs id="defs3016"/>
+  <metadata id="metadata3019">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g id="g5842" transform="matrix(1,0,0,0.94117648,-0.05194802,0.70588219)">
+    <path style="display:inline;overflow:visible;visibility:visible;fill:#dfdbd2;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:0.5;marker:none;enable-background:accumulate" id="rect2401" d="m 2.051948,3.5000001 c -1.10799991,0 -1.99999995,1.2636675 -1.99999995,2.8333333 V 17.666668 c 0,1.569666 0.89200004,2.833332 1.99999995,2.833332 h 17.999999 c 1.108001,0 2.000002,-1.263666 2.000002,-2.833332 V 16.25 h 0.384326 c 1.108001,0 1.615673,-1.263667 1.615673,-2.833332 v -2.833335 c 0,-1.5696655 -0.425583,-2.8333325 -1.533581,-2.8333325 H 22.051949 V 6.3333334 c 0,-1.5696657 -0.892001,-2.8333333 -2.000002,-2.8333333 z m 0,1.4166674 h 17.999999 c 0.554001,0 1.000001,0.6318328 1.000001,1.4166657 V 17.666668 c 0,0.784832 -0.446,1.416666 -1.000001,1.416666 H 2.051948 c -0.554,0 -0.9999999,-0.631834 -0.9999999,-1.416666 V 6.3333332 c 0,-0.7848329 0.4459999,-1.4166657 0.9999999,-1.4166657 z m 20.000001,4.2500006 c 0.597414,0 0.999998,0.072243 0.999998,1.4166649 v 2.833335 c 0,1.404482 -0.406447,1.416665 -0.999998,1.416665 z"/>
+    <rect style="display:inline;overflow:visible;visibility:visible;fill:#dfdbd2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-dasharray:none;stroke-opacity:0.5;marker:none;enable-background:accumulate" id="rect3190" transform="rotate(90)" y="-20.022049" x="6.333333" ry="0.5" rx="0.70833337" height="17.999998" width="11.333334"/>
+  </g>
+</svg>

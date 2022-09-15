@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg3213"
+   width="24"
+   height="24"
+   version="1.0"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs12" />
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g2812"
+     style="opacity:0.4">
+    <path
+       id="path3367"
+       d="m 11.683146,22.941375 5.25825,-5.61045 -9.8827503,-9.94665 m -2e-7,9.09915 9.8827505,-9.94665 -5.3274,-5.47815"
+       style="fill:none;stroke:#dfdbd2;stroke-width:2.11725;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       id="path3590"
+       d="m 11.260146,1.312725 0.13236,21.234"
+       style="fill:#dfdbd2;stroke:#dfdbd2;stroke-width:1.5px;stroke-linecap:round;stroke-opacity:1;fill-opacity:1" />
+  </g>
+</svg>

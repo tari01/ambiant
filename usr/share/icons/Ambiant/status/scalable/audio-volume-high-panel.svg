@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="24" height="24" id="svg3814" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs id="defs3816"/>
+  <metadata id="metadata3819">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g id="layer1" transform="translate(0,8)">
+    <g id="g1333">
+      <path style="display:inline;overflow:visible;visibility:visible;fill:none;stroke:#dfdbd2;stroke-width:2.11177;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" id="path3209" d="m 19.697542,-5.5029447 c 0,0 3.246575,3.0095291 3.246575,9.4842059 0,6.4428478 -3.252084,9.5216838 -3.252084,9.5216838 M 16.002206,-2.7135808 c 0,0 2.292323,2.16741797 2.210765,6.7135808 -0.08223,4.5838715 -2.247583,6.713581 -2.247583,6.713581 M 12.238743,-0.07215592 c 0,0 1.221686,0.98754229 1.252825,4.01315812 0.03076,2.9878961 -1.252825,4.1311537 -1.252825,4.1311537"/>
+      <path style="display:inline;overflow:visible;visibility:visible;fill:#dfdbd2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.11177;marker:none;enable-background:accumulate" id="rect3180" d="m 7.4562146,-2.8321825 c -0.3791532,0 -0.7037487,0.1589532 -0.9316612,0.4270114 L 3.7295696,0.8944625 c 0,0 -2.48443,0 -2.48443,0 -0.68570264,0 -1.24221496,0.5565123 -1.24221496,1.242215 -0.00778869,1.2373343 0.00275771,2.502503 0,3.726645 0,0.6857027 0.55651244,1.242215 1.24221496,1.242215 h 2.48443 l 2.6785261,3.0667185 c 0.212864,0.378775 0.582977,0.659927 1.0481189,0.659927 0.6857027,0 1.2422155,-0.556513 1.242215,-1.2422155 v -11.179935 c 0,-0.6857027 -0.5565127,-1.242215 -1.242215,-1.242215 z"/>
+    </g>
+  </g>
+</svg>
