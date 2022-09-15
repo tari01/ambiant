@@ -98,11 +98,11 @@
       <stop
          id="stop4024"
          offset="0"
-         style="stop-color:#f0c077;stop-opacity:1" />
+         style="stop-color:#87A752;stop-opacity:1" />
       <stop
          id="stop4026"
          offset="1"
-         style="stop-color:#df841e;stop-opacity:1" />
+         style="stop-color:#688933;stop-opacity:1" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -122,15 +122,15 @@
        r="23.097">
       <stop
          id="stop3618"
-         style="stop-color:#f0c178"
+         style="stop-color:#ADC980"
          offset="0" />
       <stop
          id="stop3270"
-         style="stop-color:#e18941"
+         style="stop-color:#87A752"
          offset=".5" />
       <stop
          id="stop3620"
-         style="stop-color:#ec4f18"
+         style="stop-color:#688933"
          offset="1" />
     </radialGradient>
     <filter
@@ -465,7 +465,7 @@
          y="974.36218"
          ry="0.99999738" />
       <rect
-         style="fill:#4e1c04;fill-opacity:1;stroke:none"
+         style="fill:#2E4705;fill-opacity:1;stroke:none"
          id="rect3920"
          width="28"
          height="3.8666382"
@@ -484,9 +484,9 @@
          height="4"
          width="30"
          id="rect3924"
-         style="fill:#8c3308;fill-opacity:1;stroke:none" />
+         style="fill:#4A6A17;fill-opacity:1;stroke:none" />
       <path
-         style="fill:#c44d22;fill-opacity:1;stroke:none"
+         style="fill:#688933;fill-opacity:1;stroke:none"
          d="m 88.999997,977.3622 21.000003,0 1.08334,-1 7.91666,0 c 0.554,0 1,0.446 1,1 l 0,3 c 0,0.554 -0.446,1 -1,1 l -30.000003,0 c -0.553998,0 -0.999997,-0.446 -0.999997,-1 l 0,-2 c 0,-0.554 0.445999,-1 0.999997,-1 z"
          id="path3926"
          inkscape:connector-curvature="0"
@@ -510,7 +510,7 @@
            id="rect3932"
            style="fill:url(#linearGradient3468);fill-opacity:1;stroke:none" />
         <path
-           style="fill:#c75a28;fill-opacity:1;stroke:none"
+           style="fill:#ADC980;fill-opacity:1;stroke:none"
            d="m 88,464 c -0.553999,0 -1,0.446 -1,1 l 0,1 c 0,-0.554 0.446001,-1 1,-1 l 32,0 c 0.554,0 1,0.446 1,1 l 0,-1 c 0,-0.554 -0.446,-1 -1,-1 l -32,0 z"
            id="path3934"
            transform="translate(0,541.36218)"

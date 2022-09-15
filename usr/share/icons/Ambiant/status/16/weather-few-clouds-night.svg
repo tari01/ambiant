@@ -2,64 +2,35 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   version="1.1"
+   version="1.0"
    width="16"
    height="16"
-   id="svg2896">
+   id="svg3186">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <defs
-     id="defs2898" />
-  <g
-     transform="translate(0.99999989,7.7e-6)"
-     id="layer1">
-    <g
-       transform="translate(-2,-5.0000002)"
-       id="layer1-3">
-      <g
-         transform="translate(-1496.001,-178.00003)"
-         id="g15559-4">
-        <g
-           transform="translate(-2.8136519e-5,-3.5706504e-6)"
-           id="g15559-0">
-          <path
-             d="m 1506.4506,198.27837 a 1.1956093,1.1956445 0 0 0 -1.5192,-1.67255"
-             id="path2805-4-1"
-             style="fill:none;stroke:#969696;stroke-width:0.99998689;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
-          <path
-             d="m 1498.9181,195.65254 a 3.0947381,3.0948291 0 0 1 6.0509,0.94249"
-             id="path2818-0-7"
-             style="fill:none;stroke:#969696;stroke-width:0.99998689;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
-          <path
-             d="m 1499.7689,198.48003 a 1.9882444,1.9883029 0 1 1 -0.1189,-3.95034"
-             id="path2822-7-7"
-             style="fill:none;stroke:#969696;stroke-width:0.99998695;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
-          <path
-             d="m 1506.26,198.50003 -7.3124,0"
-             id="path16154-1"
-             style="color:#000000;fill:none;stroke:#969696;stroke-width:0.99998695;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
-          <g
-             transform="translate(1495.001,186.00003)"
-             id="layer1-5">
-            <g
-               transform="translate(-2,-5.0000002)"
-               id="layer1-3-9">
-              <g
-                 transform="translate(-1496.001,-178.00003)"
-                 id="g15559-4-8">
-                <g
-                   transform="translate(-2.8136519e-5,-3.5706504e-6)"
-                   id="g15559-0-4">
-                  <path
-                     d="m 1510.9868,192.92059 c 1.5494,-0.25874 2.9826,-1.15369 3.8952,-2.43219 0.9127,-1.27851 -4.2953,0.0362 -4.554,-1.51317 0.071,-1.95231 -1.1469,-2.49957 -1.4805,-2.79431 -1.177,-1.04017 1.7121,-5.35517 0.1627,-5.09643 -1.5493,0.25874 -2.9826,1.15369 -3.8952,2.43219 -0.9125,1.2785 -1.2933,2.92485 -1.0345,4.47418 0.032,0.19369 0.075,0.38552 0.1265,0.57477"
-                     id="path2876-6-6-4-8"
-                     style="fill:none;stroke:#969696;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
+     id="defs3188" />
+  <path
+     d="M 8,2.9999997 C 6.449025,3.2603299 5.0385869,4.1823924 4.125,5.46875 3.2417569,6.712518 2.8529615,8.299488 3.0625,9.8125 3.2033131,9.786662 3.3537654,9.78125 3.5,9.78125 c 0.2115101,0 0.3204114,0.105916 0.5,0.15625 0.5975807,-0.573754 1.346862,-1 2.25,-1 1.615109,0 2.924891,1.187134 3.1875,2.71875 0.891321,0.510019 1.625,1.305903 1.625,2.40625 0,0.195054 -0.02459,0.380361 -0.0625,0.5625 1.149381,-0.414251 2.196317,-1.156643 2.90625,-2.15625 C 14.819937,11.182383 9.60273,12.49639 9.34375,10.9375 9.41483,8.973192 8.177711,8.421551 7.84375,8.125 6.665478,7.078437 9.551076,2.7396696 8,2.9999997 z M 6.25,10 C 5.4052722,10 4.6972229,10.468759 4.3125,11.125 4.0958651,10.970541 3.8035999,10.84375 3.5,10.84375 c -0.69,0 -1.2499999,0.502322 -1.25,1.09375 0,0.132826 0.04213,0.257591 0.09375,0.375 C 1.5589962,12.613049 1,13.275656 1,14.0625 1,15.130929 2.0035,16 3.25,16 l 4.5,0 C 8.9965,16 10,15.130929 10,14.0625 10,13.216212 9.350011,12.510986 8.46875,12.25 8.470708,12.213389 8.5,12.193323 8.5,12.15625 8.5,10.973393 7.492,10 6.25,10 z"
+     id="rect3193-4"
+     style="opacity:0.3;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  <path
+     d="M 8,2 C 6.449025,2.2603302 5.0385869,3.1823927 4.125,4.46875 3.2417569,5.712519 2.8529615,7.299488 3.0625,8.8125 3.2033131,8.786662 3.3537654,8.78125 3.5,8.78125 c 0.2115101,0 0.3204114,0.105916 0.5,0.15625 0.5975807,-0.573754 1.346862,-1 2.25,-1 1.615109,0 2.924891,1.187134 3.1875,2.71875 0.891321,0.510019 1.625,1.305903 1.625,2.40625 0,0.195054 -0.02459,0.380361 -0.0625,0.5625 1.149381,-0.414251 2.196317,-1.156643 2.90625,-2.15625 C 14.819937,10.182383 9.60273,11.49639 9.34375,9.9375 9.41483,7.973192 8.177711,7.421551 7.84375,7.125 6.665478,6.078437 9.551076,1.7396699 8,2 z M 6.25,9 C 5.4052722,9 4.6972229,9.468759 4.3125,10.125 4.0958651,9.970541 3.8035999,9.84375 3.5,9.84375 c -0.69,0 -1.2499999,0.502322 -1.25,1.09375 0,0.132826 0.04213,0.257591 0.09375,0.375 C 1.5589962,11.613049 1,12.275656 1,13.0625 1,14.130929 2.0035,15 3.25,15 l 4.5,0 C 8.9965,15 10,14.130929 10,13.0625 10,12.216212 9.350011,11.510986 8.46875,11.25 8.470708,11.213389 8.5,11.193323 8.5,11.15625 8.5,9.973393 7.492,9 6.25,9 z"
+     id="rect3193"
+     style="fill:#dfdbd2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
 </svg>

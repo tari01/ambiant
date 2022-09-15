@@ -73,11 +73,11 @@
        id="linearGradient2490-113-765">
       <stop
          id="stop3686"
-         style="stop-color:#861318;stop-opacity:1"
+         style="stop-color:#4A6A17;stop-opacity:1"
          offset="0" />
       <stop
          id="stop3688"
-         style="stop-color:#f67e2a;stop-opacity:1"
+         style="stop-color:#688933;stop-opacity:1"
          offset="1" />
     </linearGradient>
     <linearGradient
@@ -93,19 +93,19 @@
        id="linearGradient3839">
       <stop
          id="stop3841"
-         style="stop-color:#ffed8c;stop-opacity:1"
+         style="stop-color:#D9EDB9;stop-opacity:1"
          offset="0" />
       <stop
          id="stop3843"
-         style="stop-color:#fb9858;stop-opacity:1"
+         style="stop-color:#ADC980;stop-opacity:1"
          offset="0.26238" />
       <stop
          id="stop3845"
-         style="stop-color:#dc572a;stop-opacity:1"
+         style="stop-color:#87A752;stop-opacity:1"
          offset="0.66093999" />
       <stop
          id="stop3847"
-         style="stop-color:#9f3110;stop-opacity:1"
+         style="stop-color:#688933;stop-opacity:1"
          offset="1" />
     </linearGradient>
     <radialGradient

@@ -99,11 +99,11 @@
       <stop
          id="stop4024"
          offset="0"
-         style="stop-color:#f0c077;stop-opacity:1" />
+         style="stop-color:#87A752;stop-opacity:1" />
       <stop
          id="stop4026"
          offset="1"
-         style="stop-color:#df841e;stop-opacity:1" />
+         style="stop-color:#688933;stop-opacity:1" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -123,15 +123,15 @@
        r="23.097">
       <stop
          id="stop3618"
-         style="stop-color:#f0c178"
+         style="stop-color:#ADC980"
          offset="0" />
       <stop
          id="stop3270"
-         style="stop-color:#e18941"
+         style="stop-color:#87A752"
          offset=".5" />
       <stop
          id="stop3620"
-         style="stop-color:#ec4f18"
+         style="stop-color:#688933"
          offset="1" />
     </radialGradient>
     <filter
@@ -464,9 +464,9 @@
          height="3.8666382"
          width="27.000004"
          id="rect3656"
-         style="fill:#4e1c04;fill-opacity:1;stroke:none" />
+         style="fill:#2E4705;fill-opacity:1;stroke:none" />
       <rect
-         style="fill:#8c3308;fill-opacity:1;stroke:none"
+         style="fill:#4A6A17;fill-opacity:1;stroke:none"
          id="rect3660"
          width="30"
          height="4"
@@ -478,7 +478,7 @@
          inkscape:connector-curvature="0"
          id="path3662"
          d="m 88.999997,976.46169 19.500003,0 1.08334,-1.6 8.51616,0 c 0.554,0 1,0.446 1,1 l 0,3.6 c 0,0.554 -0.446,1 -1,1 l -29.099503,0 c -0.553998,0 -0.999997,-0.446 -0.999997,-1 l 0,-2 c 0,-0.554 0.445999,-1 0.999997,-1 z"
-         style="fill:#c44d22;fill-opacity:1;stroke:none" />
+         style="fill:#688933;fill-opacity:1;stroke:none" />
       <g
          transform="translate(0,-25)"
          id="g3664">
@@ -501,7 +501,7 @@
            inkscape:connector-curvature="0"
            id="path3670"
            d="m 88.51,1005.8872 c -0.553993,0 -1,0.446 -1,1 l 0,1.4502 c 0,-0.554 0.446007,-0.9973 1,-1 l 30.98,-0.1495 c 0.55399,0 1,0.446 1,1 l 0,-1.4502 c 0,-0.554 -0.446,-1.0027 -1,-1 z"
-           style="fill:#c75a28;fill-opacity:1;stroke:none"
+           style="fill:#ADC980;fill-opacity:1;stroke:none"
            sodipodi:nodetypes="sscsscsss" />
         <rect
            y="1004.3622"

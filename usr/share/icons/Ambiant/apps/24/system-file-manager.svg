@@ -125,11 +125,11 @@
       <stop
          id="stop4024-2"
          offset="0"
-         style="stop-color:#f0c077;stop-opacity:1" />
+         style="stop-color:#87A752;stop-opacity:1" />
       <stop
          id="stop4026-6"
          offset="1"
-         style="stop-color:#df841e;stop-opacity:1" />
+         style="stop-color:#688933;stop-opacity:1" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -149,15 +149,15 @@
        r="23.097">
       <stop
          id="stop3618-7"
-         style="stop-color:#f0c178"
+         style="stop-color:#ADC980"
          offset="0" />
       <stop
          id="stop3270-6"
-         style="stop-color:#e18941"
+         style="stop-color:#87A752"
          offset=".5" />
       <stop
          id="stop3620-9"
-         style="stop-color:#ec4f18"
+         style="stop-color:#688933"
          offset="1" />
     </radialGradient>
     <linearGradient
@@ -450,9 +450,9 @@
          height="5.1000228"
          width="23.999998"
          id="rect3656-3"
-         style="fill:#4e1c04;fill-opacity:1;stroke:none;display:inline" />
+         style="fill:#2E4705;fill-opacity:1;stroke:none;display:inline" />
       <rect
-         style="fill:#8c3308;fill-opacity:1;stroke:none;display:inline"
+         style="fill:#4A6A17;fill-opacity:1;stroke:none;display:inline"
          id="rect3660-8"
          width="27.999998"
          height="5.333313"
@@ -477,7 +477,7 @@
          inkscape:connector-curvature="0"
          id="path3662-3"
          d="m 90.000008,976.49484 20.000012,0 1.44445,-2.13333 5.35488,0 c 0.73867,0 1.33333,0.59466 1.33333,1.33333 l 0,4.8 c 0,0.73867 -0.59466,1.33333 -1.33333,1.33333 l -26.799342,0 c -0.73866,0 -1.33333,-0.59466 -1.33333,-1.33333 l 0,-2.66667 c 0,-0.73866 0.59467,-1.33333 1.33333,-1.33333 z"
-         style="fill:#c44d22;fill-opacity:1;stroke:none;display:inline" />
+         style="fill:#688933;fill-opacity:1;stroke:none;display:inline" />
       <g
          style="display:inline"
          transform="matrix(1.3333334,0,0,1.3333334,-28.666662,-358.78752)"
@@ -501,7 +501,7 @@
            inkscape:connector-curvature="0"
            id="path3670-8"
            d="m 88.51,1005.8872 c -0.55398,0 -1,0.446 -1,1 l 0,1.4502 c 0,-0.554 0.446013,-0.9962 1,-1 l 21.98,-0.1495 c 0.55398,0 1,0.446 1,1 l 0,-1.4502 c 0,-0.554 -0.44601,-1.0038 -1,-1 z"
-           style="fill:#c75a28;fill-opacity:1;stroke:none"
+           style="fill:#ADC980;fill-opacity:1;stroke:none"
            sodipodi:nodetypes="sscsscsss" />
         <rect
            y="1004.3622"
