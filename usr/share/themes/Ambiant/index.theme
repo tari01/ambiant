@@ -8,6 +8,6 @@ Encoding=UTF-8
 GtkTheme=Ambiant
 MetacityTheme=Ambiant
 IconTheme=Ambiant
-CursorTheme=mate
+CursorTheme=Ambiant
 CursorSize=24
 ButtonLayout=menu:minimize,maximize,close
