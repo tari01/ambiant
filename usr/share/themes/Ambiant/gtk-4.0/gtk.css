@@ -353,6 +353,15 @@ button:active:disabled
     border-image-source: -gtk-scaled(url("assets/button-active-disabled.png"), url("assets/button-active-disabled@2.png"));
 }
 
+button.needs-attention > label
+{
+    background-image: radial-gradient(farthest-side, @warning_bg_color 80%, transparent);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 16px;
+}
+
 button.destructive-action
 {
     background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @error_bg_color, 0.5), 1.08), mix(@button_bg_color, @error_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @error_bg_color, 0.5), 0.94));
