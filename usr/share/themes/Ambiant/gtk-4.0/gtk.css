@@ -149,6 +149,81 @@
     /*outline-width: 1px;*/
 }
 
+*:disabled
+{
+    color: shade(@bg_color, 0.6);
+    -gtk-icon-filter: opacity(0.5);
+}
+
+.large-title
+{
+    font-weight: 300;
+    font-size: 24pt;
+}
+
+.title-1
+{
+    font-weight: 800;
+    font-size: 20pt;
+}
+
+.title-2
+{
+    font-weight: 800;
+    font-size: 15pt;
+}
+
+.title-3
+{
+    font-weight: 700;
+    font-size: 15pt;
+}
+
+.title-4
+{
+    font-weight: 700;
+    font-size: 13pt;
+}
+
+.heading
+{
+    font-weight: 700;
+    font-size: 11pt;
+}
+
+.body
+{
+    font-weight: 400;
+    font-size: 11pt;
+}
+
+.caption-heading
+{
+    font-weight: 700;
+    font-size: 9pt;
+}
+
+.caption
+{
+    font-weight: 400;
+    font-size: 9pt;
+}
+
+.normal-icons
+{
+    -gtk-icon-size: 16px;
+}
+
+.large-icons
+{
+    -gtk-icon-size: 32px;
+}
+
+.monospace
+{
+    font-family: monospace;
+}
+
 /* GtkSeparator */
 
 separator
@@ -252,8 +327,7 @@ button:active
 
 button:disabled
 {
-    background-image: none;
-    background-color: mix(#ebebeb, @bg_color, 0.5);
+    background-image: image(mix(#ebebeb, @bg_color, 0.5));
     text-shadow: 0 1px alpha(shade(@button_bg_color, 1.25), 0.4);
     border-image-source: -gtk-scaled(url("assets/button-disabled.png"), url("assets/button-disabled@2.png"));
 }
@@ -277,6 +351,56 @@ button:active:disabled
 {
     background-image: linear-gradient(to bottom, #e3e3e3, #f3f3f3);
     border-image-source: -gtk-scaled(url("assets/button-active-disabled.png"), url("assets/button-active-disabled@2.png"));
+}
+
+button.destructive-action
+{
+    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @error_bg_color, 0.5), 1.08), mix(@button_bg_color, @error_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @error_bg_color, 0.5), 0.94));
+}
+
+button.destructive-action:hover
+{
+    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @error_bg_color, 0.5), 1.12), mix(@button_bg_color, @error_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @error_bg_color, 0.5), 0.96));
+}
+
+button.destructive-action:checked
+{
+    background-image: linear-gradient(to bottom, mix(#cecece, @error_bg_color, 0.5), mix(#e8e8e8, @error_bg_color, 0.5));
+}
+
+button.destructive-action:active
+{
+    background-image: linear-gradient(to bottom, mix(#dcdcdc, @error_bg_color, 0.5), mix(#f3f3f3, @error_bg_color, 0.5));
+}
+
+button.destructive-action:disabled
+{
+    background-image: image(mix(mix(#ebebeb, @error_bg_color, 0.5), mix(@bg_color, @error_bg_color, 0.5), 0.5));
+}
+
+button.suggested-action
+{
+    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 1.08), mix(@button_bg_color, @selected_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 0.94));
+}
+
+button.suggested-action:hover
+{
+    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 1.12), mix(@button_bg_color, @selected_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 0.96));
+}
+
+button.suggested-action:checked
+{
+    background-image: linear-gradient(to bottom, mix(#cecece, @selected_bg_color, 0.5), mix(#e8e8e8, @selected_bg_color, 0.5));
+}
+
+button.suggested-action:active
+{
+    background-image: linear-gradient(to bottom, mix(#dcdcdc, @selected_bg_color, 0.5), mix(#f3f3f3, @selected_bg_color, 0.5));
+}
+
+button.suggested-action:disabled
+{
+    background-image: image(mix(mix(#ebebeb, @selected_bg_color, 0.5), mix(@bg_color, @selected_bg_color, 0.5), 0.5));
 }
 
 button > separator
@@ -843,6 +967,11 @@ windowhandle button:backdrop
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
+windowhandle button.suggested-action
+{
+    background: alpha(green, 0.3);
+}
+
 windowhandle button:focus:hover
 {
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
@@ -886,6 +1015,26 @@ windowhandle button:disabled:backdrop
     background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     background-color: transparent;
+}
+
+windowhandle button.suggested-action:hover
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
+}
+
+windowhandle button.suggested-action:checked
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
+}
+
+windowhandle button.suggested-action:active
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 0.95), shade(mix(@dark_bg_color, green, 0.3), 1.0));
+}
+
+windowhandle button.suggested-action:disabled
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.01), shade(mix(@dark_bg_color, green, 0.3), 0.99));
 }
 
 windowhandle button.flat
@@ -3463,6 +3612,30 @@ popover button:disabled
     text-shadow: none;
 }
 
+popover button.suggested-action
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 2.03), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.17));
+    background-color: shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.2);
+    color: @fg_color;
+}
+
+popover button.suggested-action:hover:not(:checked)
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 2.03), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.17));
+    color: @fg_color;
+}
+
+popover button.suggested-action:checked
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 2.03), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.17));
+}
+
+popover button.suggested-action:disabled
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.0), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.0));
+    color: @fg_color;
+}
+
 popover button.flat
 {
     box-shadow: none;
@@ -5790,83 +5963,6 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-style: solid;
     border-color: shade(@button_border, 1.1);
     background-image: linear-gradient(to bottom, shade(@button_gradient_color_b, 0.7), @dark_bg_color 50%, shade(@button_gradient_color_a, 1.0));
-}
-
-/* Misc */
-
-.large-title
-{
-    font-weight: 300;
-    font-size: 24pt;
-}
-
-.title-1
-{
-    font-weight: 800;
-    font-size: 20pt;
-}
-
-.title-2
-{
-    font-weight: 800;
-    font-size: 15pt;
-}
-
-.title-3
-{
-    font-weight: 700;
-    font-size: 15pt;
-}
-
-.title-4
-{
-    font-weight: 700;
-    font-size: 13pt;
-}
-
-.heading
-{
-    font-weight: 700;
-    font-size: 11pt;
-}
-
-.body
-{
-    font-weight: 400;
-    font-size: 11pt;
-}
-
-.caption-heading
-{
-    font-weight: 700;
-    font-size: 9pt;
-}
-
-.caption
-{
-    font-weight: 400;
-    font-size: 9pt;
-}
-
-.normal-icons
-{
-    -gtk-icon-size: 16px;
-}
-
-.large-icons
-{
-    -gtk-icon-size: 32px;
-}
-
-.monospace
-{
-    font-family: monospace;
-}
-
-*:disabled
-{
-    color: shade(@bg_color, 0.6);
-    -gtk-icon-filter: opacity(0.5);
 }
 
 /*
