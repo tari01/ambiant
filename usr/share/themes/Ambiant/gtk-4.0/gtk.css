@@ -3489,7 +3489,57 @@ searchbar entry:focus
 
 infobar > revealer > box
 {
-    padding: 5px 5px 5px 7px;
+    padding: 9px 8px 8px 8px;
+}
+
+infobar.action > revealer > box
+{
+    padding: 6px 6px 6px 8px;
+    border-spacing: 12px;
+}
+
+infobar.info > revealer > box
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@info_bg_color, 1.04), shade(@info_bg_color, 0.96));
+    color: @info_fg_color;
+    border-color: shade(@info_bg_color, 0.8);
+    border-bottom-color: shade(@info_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@info_bg_color, 1.08), inset -1px 0 shade(@info_bg_color, 1.08), inset 0 1px shade(@info_bg_color, 1.1), inset 0 -1px shade(@info_bg_color, 1.04);
+}
+
+infobar.warning > revealer > box
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@warning_bg_color, 1.04), shade(@warning_bg_color, 0.96));
+    color: @warning_fg_color;
+    border-color: shade(@warning_bg_color, 0.8);
+    border-bottom-color: shade(@warning_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@warning_bg_color, 1.08), inset -1px 0 shade(@warning_bg_color, 1.08), inset 0 1px shade(@warning_bg_color, 1.1), inset 0 -1px shade(@warning_bg_color, 1.04);
+}
+
+infobar.question > revealer > box
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@question_bg_color, 1.04), shade(@question_bg_color, 0.96));
+    color: @question_fg_color;
+    border-color: shade(@question_bg_color, 0.8);
+    border-bottom-color: shade(@question_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@question_bg_color, 1.08), inset -1px 0 shade(@question_bg_color, 1.08), inset 0 1px shade(@question_bg_color, 1.1), inset 0 -1px shade(@question_bg_color, 1.04);
+}
+
+infobar.error > revealer > box
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@error_bg_color, 1.04), shade(@error_bg_color, 0.96));
+    color: @error_fg_color;
+    border-color: shade(@error_bg_color, 0.8);
+    border-bottom-color: shade(@error_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@error_bg_color, 1.08), inset -1px 0 shade(@error_bg_color, 1.08), inset 0 1px shade(@error_bg_color, 1.1), inset 0 -1px shade(@error_bg_color, 1.04);
 }
 
 /* GtkDropDown */
@@ -5550,58 +5600,6 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 8px;
 }
 
-/* Info */
-
-.info
-{
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@info_bg_color, 1.04), shade(@info_bg_color, 0.96));
-    color: @info_fg_color;
-    border-color: shade(@info_bg_color, 0.8);
-    border-bottom-color: shade(@info_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@info_bg_color, 1.08), inset -1px 0 shade(@info_bg_color, 1.08), inset 0 1px shade(@info_bg_color, 1.1), inset 0 -1px shade(@info_bg_color, 1.04);
-}
-
-/* Warning */
-
-.warning
-{
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@warning_bg_color, 1.04), shade(@warning_bg_color, 0.96));
-    color: @warning_fg_color;
-    border-color: shade(@warning_bg_color, 0.8);
-    border-bottom-color: shade(@warning_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@warning_bg_color, 1.08), inset -1px 0 shade(@warning_bg_color, 1.08), inset 0 1px shade(@warning_bg_color, 1.1), inset 0 -1px shade(@warning_bg_color, 1.04);
-}
-
-/* Question */
-
-.question
-{
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@question_bg_color, 1.04), shade(@question_bg_color, 0.96));
-    color: @question_fg_color;
-    border-color: shade(@question_bg_color, 0.8);
-    border-bottom-color: shade(@question_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@question_bg_color, 1.08), inset -1px 0 shade(@question_bg_color, 1.08), inset 0 1px shade(@question_bg_color, 1.1), inset 0 -1px shade(@question_bg_color, 1.04);
-}
-
-/* Error */
-
-.error
-{
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@error_bg_color, 1.04), shade(@error_bg_color, 0.96));
-    color: @error_fg_color;
-    border-color: shade(@error_bg_color, 0.8);
-    border-bottom-color: shade(@error_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@error_bg_color, 1.08), inset -1px 0 shade(@error_bg_color, 1.08), inset 0 1px shade(@error_bg_color, 1.1), inset 0 -1px shade(@error_bg_color, 1.04);
-}
-
 /* OSD */
 
 .osd
@@ -5864,6 +5862,8 @@ row:selected:focus:backdrop progressbar > trough > progress
     background-color: transparent;
 }
 
+/* App notification */
+
 .app-notification
 {
     color: @theme_dark_fg_color;
@@ -5989,6 +5989,58 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-style: solid;
     border-color: shade(@button_border, 1.1);
     background-image: linear-gradient(to bottom, shade(@button_gradient_color_b, 0.7), @dark_bg_color 50%, shade(@button_gradient_color_a, 1.0));
+}
+
+/* Info */
+
+info:not(infobar)
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@info_bg_color, 1.04), shade(@info_bg_color, 0.96));
+    color: @info_fg_color;
+    border-color: shade(@info_bg_color, 0.8);
+    border-bottom-color: shade(@info_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@info_bg_color, 1.08), inset -1px 0 shade(@info_bg_color, 1.08), inset 0 1px shade(@info_bg_color, 1.1), inset 0 -1px shade(@info_bg_color, 1.04);
+}
+
+/* Warning */
+
+.warning:not(infobar)
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@warning_bg_color, 1.04), shade(@warning_bg_color, 0.96));
+    color: @warning_fg_color;
+    border-color: shade(@warning_bg_color, 0.8);
+    border-bottom-color: shade(@warning_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@warning_bg_color, 1.08), inset -1px 0 shade(@warning_bg_color, 1.08), inset 0 1px shade(@warning_bg_color, 1.1), inset 0 -1px shade(@warning_bg_color, 1.04);
+}
+
+/* Question */
+
+.question:not(infobar)
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@question_bg_color, 1.04), shade(@question_bg_color, 0.96));
+    color: @question_fg_color;
+    border-color: shade(@question_bg_color, 0.8);
+    border-bottom-color: shade(@question_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@question_bg_color, 1.08), inset -1px 0 shade(@question_bg_color, 1.08), inset 0 1px shade(@question_bg_color, 1.1), inset 0 -1px shade(@question_bg_color, 1.04);
+}
+
+/* Error */
+
+.error:not(infobar)
+{
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@error_bg_color, 1.04), shade(@error_bg_color, 0.96));
+    color: @error_fg_color;
+    border-color: shade(@error_bg_color, 0.8);
+    border-bottom-color: shade(@error_bg_color, 0.75);
+    box-shadow: inset 1px 0 shade(@error_bg_color, 1.08), inset -1px 0 shade(@error_bg_color, 1.08), inset 0 1px shade(@error_bg_color, 1.1), inset 0 -1px shade(@error_bg_color, 1.04);
 }
 
 /*
