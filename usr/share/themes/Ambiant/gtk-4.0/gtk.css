@@ -273,7 +273,7 @@ editablelabel > stack > text
     border-image: -gtk-scaled(url("assets/entry-focused.png"),url("assets/entry-focused@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
     color: @text_color;
     background-color: @base_color;
-    padding: 5px;
+    padding: 2px;
 }
 
 editablelabel > stack > text > selection
@@ -637,12 +637,12 @@ entry:disabled:backdrop
 
 entry.flat
 {
-    padding: 2px;
+    padding: 3px 2px 2px 2px;
 }
 
 entry.flat:focus
 {
-    padding: 2px;
+    padding: 3px 2px 2px 2px;
 }
 
 entry > text.readonly
@@ -2574,12 +2574,17 @@ iconview:disabled
     background-color: #fcfcfc;
 }
 
-gridview > child,
-iconview .cell
+gridview > child
 {
     background-color: transparent;
     border-radius: 5px;
     margin: 4px;
+}
+
+iconview .cell
+{
+    background-color: transparent;
+    border-radius: 5px;
 }
 
 gridview > child:hover,
