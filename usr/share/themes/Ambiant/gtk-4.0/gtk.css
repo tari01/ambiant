@@ -4310,11 +4310,6 @@ row progressbar > trough > progress
     text-shadow: none;
 }
 
-row entry
-{
-    background-image: none;
-}
-
 row radio
 {
     -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.png"), url("assets/radio-unselected@2.png"));
