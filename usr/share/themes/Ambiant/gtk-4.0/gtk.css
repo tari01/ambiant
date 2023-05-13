@@ -1165,6 +1165,11 @@ windowhandle button.flat:hover:active:checked
     border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
 }
 
+windowhandle button row:hover:not(:selected)
+{
+    color: inherit;
+}
+
 windowhandle .linked > button
 {
     box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
