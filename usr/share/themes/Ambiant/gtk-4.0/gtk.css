@@ -873,551 +873,6 @@ headerbar:backdrop
     color: @backdrop_dark_fg_color;
 }
 
-/* GtkWindowHandle */
-
-windowhandle > box
-{
-    border-spacing: 8px;
-}
-
-windowhandle box.start
-{
-    border-spacing: 8px;
-}
-
-windowhandle box.end
-{
-    border-spacing: 8px;
-}
-
-windowhandle separator
-{
-    border-color: alpha(shade(@dark_bg_color, 0.94), 0.35);
-    border-bottom-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
-    border-right-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
-}
-
-windowhandle label.title
-{
-    font-weight: bold;
-}
-
-windowhandle label.subtitle
-{
-    font-size: smaller;
-    opacity: 0.5;
-}
-
-windowhandle entry
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    padding: 5px 6px;
-}
-
-windowhandle entry:focus
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar-focused.png"),url("assets/entry-toolbar-focused@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle entry > progress > trough > progress
-{
-    border-radius: 2px;
-    border-width: 0 0 2px;
-    border-color: @selected_bg_color;
-    border-style: solid;
-}
-
-windowhandle button
-{
-    background: transparent;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-    padding: 9px;
-}
-
-windowhandle button:hover
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button:focus
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-}
-
-windowhandle button:active
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
-}
-
-windowhandle button:checked
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button:disabled
-{
-    text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-    background-color: transparent;
-}
-
-windowhandle button:backdrop
-{
-    background-color: transparent;
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button.suggested-action
-{
-    background: alpha(green, 0.3);
-}
-
-windowhandle button:focus:hover
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-}
-
-windowhandle button:focus:active
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-}
-
-windowhandle button:focus:checked
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-}
-
-windowhandle button:checked:disabled
-{
-    text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.94), shade(@dark_bg_color, 1.02));
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-}
-
-windowhandle button:active:backdrop
-{
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar-active.png"), url("assets/backdrop-button-toolbar-active@2.png"));
-}
-
-windowhandle button:checked:backdrop
-{
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar-active.png"), url("assets/backdrop-button-toolbar-active@2.png"));
-}
-
-windowhandle button:hover:backdrop
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-    background-color: transparent;
-}
-
-windowhandle button:disabled:backdrop
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-    background-color: transparent;
-}
-
-windowhandle button.suggested-action:hover
-{
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
-}
-
-windowhandle button.suggested-action:checked
-{
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
-}
-
-windowhandle button.suggested-action:active
-{
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 0.95), shade(mix(@dark_bg_color, green, 0.3), 1.0));
-}
-
-windowhandle button.suggested-action:disabled
-{
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.01), shade(mix(@dark_bg_color, green, 0.3), 0.99));
-}
-
-windowhandle button.flat
-{
-    background: transparent;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
-    border-image-source: none;
-    padding: 9px;
-}
-
-windowhandle button.flat:hover
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button.flat:focus
-{
-    border-image-source: none;
-}
-
-windowhandle button.flat:active
-{
-    border-image-source: none;
-    background-image: none;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
-}
-
-windowhandle button.flat:checked
-{
-    background-image: none;
-    border-image-source: none;
-}
-
-windowhandle button.flat:disabled
-{
-    text-shadow: none;
-    background-image: none;
-    border-image-source: none;
-    background-color: transparent;
-}
-
-windowhandle button.flat:backdrop
-{
-    background-color: transparent;
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
-    border-image-source: none;
-}
-
-windowhandle button.flat:hover:focus
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button.flat:hover:active
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
-    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-}
-
-windowhandle button.flat:hover:checked
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button.flat:focus:active
-{
-    border-image-source: none;
-}
-
-windowhandle button.flat:focus:checked
-{
-    border-image-source: none;
-}
-
-windowhandle button.flat:checked:disabled
-{
-    text-shadow: none;
-    background-image: none;
-    border-image-source: none;
-}
-
-windowhandle button.flat:active:backdrop
-{
-    border-image-source: none;
-}
-
-windowhandle button.flat:checked:backdrop
-{
-    border-image-source: none;
-}
-
-windowhandle button.flat:hover:backdrop
-{
-    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
-    background-color: transparent;
-}
-
-windowhandle button.flat:disabled:backdrop
-{
-    background-image: none;
-    border-image-source: none;
-    background-color: transparent;
-}
-
-windowhandle button.flat:hover:focus:checked
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
-    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
-}
-
-windowhandle button.flat:hover:active:checked
-{
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
-    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-}
-
-windowhandle button row:hover:not(:selected)
-{
-    color: inherit;
-}
-
-windowhandle .linked > button
-{
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
-}
-
-windowhandle .linked > button:first-child
-{
-    box-shadow: inset -1px 0 shade(@dark_bg_color, 0.9);
-}
-
-windowhandle .linked > button:last-child
-{
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4);
-}
-
-windowhandle .linked > button:active
-{
-    box-shadow: none;
-}
-
-windowhandle .linked > button:disabled
-{
-    box-shadow: none;
-}
-
-windowhandle .linked > button:only-child
-{
-    box-shadow: none;
-}
-
-windowhandle > box switch
-{
-    padding: 2px;
-    border-radius: 6px;
-    background-image: linear-gradient(to bottom, #4E4C46, #5B5A56);
-    color: @dark_fg_color;
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:checked
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@dark_fg_color, 1.0);
-}
-
-windowhandle > box switch:disabled
-{
-    text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.93), shade(@dark_bg_color, 0.99));
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@dark_fg_color, 0.6);
-}
-
-windowhandle > box switch:backdrop
-{
-    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.93), shade(@dark_bg_color, 0.99));
-    color: shade(@dark_fg_color, 0.6);
-}
-
-windowhandle > box switch:checked:disabled
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:checked:backdrop
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@dark_fg_color, 1.0);
-}
-
-windowhandle > box switch > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@dark_slider_bg_color, 1.08), @dark_slider_bg_color 50%, shade(@dark_slider_bg_color, 0.94));
-}
-
-windowhandle > box switch:checked > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:backdrop > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@dark_slider_bg_color, 1.08), @dark_slider_bg_color 50%, shade(@dark_slider_bg_color, 0.94));
-}
-
-windowhandle > box switch:disabled > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:checked:backdrop > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
-}
-
-windowhandle > box switch:checked:disabled > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
-}
-
-windowhandle > box combobox > box.linked > button.combo
-{
-    border-image: -gtk-scaled(url("assets/combobox-button-toolbar.png"),url("assets/combobox-button-toolbar@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
-}
-
-windowhandle > box combobox > box.linked > button.combo:first-child
-{
-    border-image-width: 10px 0 10px 12px;
-    border-radius: 8px 0 0 8px;
-    border-right-width: 0;
-}
-
-windowhandle > box combobox > box.linked > button.combo:last-child
-{
-    border-image-width: 10px 12px 10px 1px;
-    border-radius: 0 8px 8px 0;
-    border-left-width: 0;
-}
-
-windowhandle > box combobox > box.linked > button.combo:only-child
-{
-    border-image-width: 10px 12px 10px 12px;
-    border-radius: 8px;
-}
-
-windowhandle > box combobox > box.linked > button.combo:focus
-{
-    border-image: -gtk-scaled(url("assets/combobox-button-toolbar-focused.png"),url("assets/combobox-button-toolbar-focused@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
-}
-
-windowhandle > box combobox > box.linked > button.combo:focus:active
-{
-    border-image: -gtk-scaled(url("assets/combobox-button-toolbar-pressed-focused.png"),url("assets/combobox-button-toolbar-pressed-focused@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
-}
-
-windowhandle > box combobox > box.linked > button.combo:focus:disabled
-{
-    border-image: -gtk-scaled(url("assets/combobox-button-toolbar.png"),url("assets/combobox-button-toolbar@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
-}
-
-windowhandle > box combobox > box.linked > entry.combo:first-child
-{
-    border-image-width: 10px 0 10px 12px;
-    border-radius: 8px 0 0 8px;
-    border-right-width: 0;
-}
-
-windowhandle > box combobox > box.linked > entry.combo:last-child
-{
-    border-image-width: 10px 12px 10px 1px;
-    border-radius: 0 8px 8px 0;
-    border-left-width: 0;
-}
-
-windowhandle > box combobox > box.linked > entry.combo:only-child
-{
-    border-image-width: 10px 12px 10px 12px;
-    border-radius: 8px;
-}
-
-windowhandle > box scale > trough
-{
-    background-color: @dark_bg_color;
-    background-image: none;
-    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 1.15)) 1;
-    border-image-width: 1px;
-}
-
-windowhandle > box scale > trough:backdrop
-{
-    background-color: @dark_bg_color;
-    background-image: none;
-    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 1.15)) 1;
-    border-image-width: 1px;
-}
-
-/* GtkWindowControls */
-
-windowcontrols > button
-{
-    background-clip: padding-box;
-    border: 1px solid #383734;
-    color: #3d3c37;
-    -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.1);
-    border-radius: 9px;
-    padding: 0px;
-    box-shadow: none;
-    background-image: linear-gradient(to top, #5a5955, #75746d 50%, #8e8d88);
-    margin-left: 1px;
-    margin-right: 1px;
-    min-width: 15px;
-    min-height: 15px;
-}
-
-windowcontrols > button.close
-{
-    color: #323112;
-    -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.25);
-    background-image: linear-gradient(to top, #81BA4A, #B5D793 50%, #DEEAD2);
-}
-
-windowcontrols > button:hover
-{
-    background-image: linear-gradient(to top, #969696, #bdbdbd 50%, #cacaca);
-}
-
-windowcontrols > button.close:hover
-{
-    background-image: linear-gradient(to top, #8EC956, #C0E1A1 50%, #EEF0EA);
-}
-
-windowcontrols > button:active
-{
-    -gtk-icon-shadow: none;
-    background-image: linear-gradient(to top, #77766f, #74736c);
-}
-
-windowcontrols > button.close:active
-{
-    background-image: linear-gradient(to top, #6A9542, #90B66A);
-}
-
-windowcontrols > button:backdrop
-{
-    color: #3d3c37;
-    -gtk-icon-shadow: none;
-    background-image: linear-gradient(to top, #605f59, #5b5a54);
-}
-
-windowcontrols > button:backdrop:hover
-{
-    background-image: linear-gradient(to top, #969696, #bdbdbd 50%, #cacaca);
-}
-
-windowcontrols > button.close > image
-{
-    -gtk-icon-style: symbolic;
-}
-
 /* GtkSpinButton */
 
 spinbutton
@@ -3372,6 +2827,30 @@ list > row
     padding: 6px;
 }
 
+list > row:selected
+{
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+list > row:hover:not(:selected)
+{
+    background-color: shade(@theme_selected_bg_color, 1.55);
+    color: shade(@theme_selected_bg_color, 0.35);
+}
+
+list > row:disabled
+{
+    color: #9c9c9c;
+    background-color: #fcfcfc;
+}
+
+list > row:selected:backdrop
+{
+    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    color: @theme_fg_color;
+}
+
 list > separator
 {
     margin: 4px 5px 3px 5px;
@@ -3428,6 +2907,30 @@ listview > row
     padding: 3px 3px 3px 0px;
 }
 
+listview > row:selected
+{
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+listview > row:hover:not(:selected)
+{
+    background-color: shade(@theme_selected_bg_color, 1.55);
+    color: shade(@theme_selected_bg_color, 0.35);
+}
+
+listview > row:disabled
+{
+    color: #9c9c9c;
+    background-color: #fcfcfc;
+}
+
+listview > row:selected:backdrop
+{
+    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    color: @theme_fg_color;
+}
+
 listview > row > cell
 {
     padding: 0px 7px 0px 8px;
@@ -3460,6 +2963,648 @@ listview > row treeexpander > expander:checked
 listview > row:selected treeexpander > expander:hover
 {
     color: @fg_color;
+}
+
+/* GtkWindowHandle */
+
+windowhandle > box
+{
+    border-spacing: 8px;
+}
+
+windowhandle box.start
+{
+    border-spacing: 8px;
+}
+
+windowhandle box.end
+{
+    border-spacing: 8px;
+}
+
+windowhandle separator
+{
+    border-color: alpha(shade(@dark_bg_color, 0.94), 0.35);
+    border-bottom-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
+    border-right-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
+}
+
+windowhandle label.title
+{
+    font-weight: bold;
+}
+
+windowhandle label.subtitle
+{
+    font-size: smaller;
+    opacity: 0.5;
+}
+
+windowhandle entry
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    padding: 5px 6px;
+}
+
+windowhandle entry:focus
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar-focused.png"),url("assets/entry-toolbar-focused@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+}
+
+windowhandle entry > progress > trough > progress
+{
+    border-radius: 2px;
+    border-width: 0 0 2px;
+    border-color: @selected_bg_color;
+    border-style: solid;
+}
+
+windowhandle listview
+{
+    background: transparent;
+    border-radius: 8px;
+}
+
+windowhandle listview > row
+{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    border-image-width: 10px 12px 10px 12px;
+    border-image-slice: 10 12 10 12;
+    border-image-repeat: stretch;
+    background: transparent;
+    color: @dark_fg_color;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    padding: 9px;
+}
+
+windowhandle listview > row:hover:not(:selected)
+{
+    color: @dark_fg_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle listview > row:selected
+{
+    color: @dark_fg_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle listview > row:backdrop
+{
+    background-color: transparent;
+    color: @backdrop_dark_fg_color;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle listview > row:hover:backdrop
+{
+    color: @backdrop_dark_fg_color;
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    background-color: transparent;
+}
+
+windowhandle listview > row:selected:backdrop
+{
+    color: @backdrop_dark_fg_color;
+    background-color: transparent;
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar-active.png"), url("assets/backdrop-button-toolbar-active@2.png"));
+}
+
+windowhandle button
+{
+    background: transparent;
+    color: @dark_fg_color;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    padding: 9px;
+}
+
+windowhandle button:hover
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button:focus
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+}
+
+windowhandle button:active
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
+}
+
+windowhandle button:checked
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button:disabled
+{
+    text-shadow: none;
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    background-color: transparent;
+}
+
+windowhandle button:backdrop
+{
+    background-color: transparent;
+    color: @backdrop_dark_fg_color;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button.suggested-action
+{
+    background: alpha(green, 0.3);
+}
+
+windowhandle button:focus:hover
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+}
+
+windowhandle button:focus:active
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
+}
+
+windowhandle button:focus:checked
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
+}
+
+windowhandle button:checked:disabled
+{
+    text-shadow: none;
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.94), shade(@dark_bg_color, 1.02));
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+}
+
+windowhandle button:active:backdrop
+{
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar-active.png"), url("assets/backdrop-button-toolbar-active@2.png"));
+}
+
+windowhandle button:checked:backdrop
+{
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar-active.png"), url("assets/backdrop-button-toolbar-active@2.png"));
+}
+
+windowhandle button:hover:backdrop
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    background-color: transparent;
+}
+
+windowhandle button:disabled:backdrop
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    background-color: transparent;
+}
+
+windowhandle button.suggested-action:hover
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
+}
+
+windowhandle button.suggested-action:checked
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
+}
+
+windowhandle button.suggested-action:active
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 0.95), shade(mix(@dark_bg_color, green, 0.3), 1.0));
+}
+
+windowhandle button.suggested-action:disabled
+{
+    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.01), shade(mix(@dark_bg_color, green, 0.3), 0.99));
+}
+
+windowhandle button.flat
+{
+    background: transparent;
+    color: @dark_fg_color;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    border-image-source: none;
+    padding: 9px;
+}
+
+windowhandle button.flat:hover
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button.flat:focus
+{
+    border-image-source: none;
+}
+
+windowhandle button.flat:active
+{
+    border-image-source: none;
+    background-image: none;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
+}
+
+windowhandle button.flat:checked
+{
+    background-image: none;
+    border-image-source: none;
+}
+
+windowhandle button.flat:disabled
+{
+    text-shadow: none;
+    background-image: none;
+    border-image-source: none;
+    background-color: transparent;
+}
+
+windowhandle button.flat:backdrop
+{
+    background-color: transparent;
+    color: @backdrop_dark_fg_color;
+    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    border-image-source: none;
+}
+
+windowhandle button.flat:hover:focus
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button.flat:hover:active
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
+    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
+}
+
+windowhandle button.flat:hover:checked
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button.flat:focus:active
+{
+    border-image-source: none;
+}
+
+windowhandle button.flat:focus:checked
+{
+    border-image-source: none;
+}
+
+windowhandle button.flat:checked:disabled
+{
+    text-shadow: none;
+    background-image: none;
+    border-image-source: none;
+}
+
+windowhandle button.flat:active:backdrop
+{
+    border-image-source: none;
+}
+
+windowhandle button.flat:checked:backdrop
+{
+    border-image-source: none;
+}
+
+windowhandle button.flat:hover:backdrop
+{
+    border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
+    background-color: transparent;
+}
+
+windowhandle button.flat:disabled:backdrop
+{
+    background-image: none;
+    border-image-source: none;
+    background-color: transparent;
+}
+
+windowhandle button.flat:hover:focus:checked
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
+}
+
+windowhandle button.flat:hover:active:checked
+{
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
+    border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
+}
+
+windowhandle button row:hover:not(:selected)
+{
+    color: inherit;
+}
+
+windowhandle .linked > button
+{
+    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
+}
+
+windowhandle .linked > button:first-child
+{
+    box-shadow: inset -1px 0 shade(@dark_bg_color, 0.9);
+}
+
+windowhandle .linked > button:last-child
+{
+    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4);
+}
+
+windowhandle .linked > button:active
+{
+    box-shadow: none;
+}
+
+windowhandle .linked > button:disabled
+{
+    box-shadow: none;
+}
+
+windowhandle .linked > button:only-child
+{
+    box-shadow: none;
+}
+
+windowhandle .linked > row
+{
+    border-radius: 0;
+    border-image-width: 10px 0 10px 0;
+    border-width: 1px 0 1px 0;
+    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
+}
+
+windowhandle .linked > row:selected
+{
+    box-shadow: inset 1px 0 @inset_dark_color;
+}
+
+windowhandle .linked > row:first-child
+{
+    box-shadow: inset -1px 0 shade(@dark_bg_color, 0.9);
+    border-image-width: 10px 0 10px 12px;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 8px 0 0 8px;
+}
+
+windowhandle .linked > row:first-child:selected
+{
+    box-shadow: inset 0 1px 1px alpha(black, 0.1);
+}
+
+windowhandle .linked > row:last-child
+{
+    border-image-width: 10px 12px 10px 0;
+    border-radius: 0 8px 8px 0;
+    border-width: 1px 1px 1px 0px;
+    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4);
+}
+
+windowhandle .linked > row:active
+{
+    box-shadow: none;
+}
+
+windowhandle > box switch
+{
+    padding: 2px;
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom, #4E4C46, #5B5A56);
+    color: @dark_fg_color;
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+}
+
+windowhandle > box switch:checked
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    color: shade(@dark_fg_color, 1.0);
+}
+
+windowhandle > box switch:disabled
+{
+    text-shadow: none;
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.93), shade(@dark_bg_color, 0.99));
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    color: shade(@dark_fg_color, 0.6);
+}
+
+windowhandle > box switch:backdrop
+{
+    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.93), shade(@dark_bg_color, 0.99));
+    color: shade(@dark_fg_color, 0.6);
+}
+
+windowhandle > box switch:checked:disabled
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+}
+
+windowhandle > box switch:checked:backdrop
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    color: shade(@dark_fg_color, 1.0);
+}
+
+windowhandle > box switch > slider
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@dark_slider_bg_color, 1.08), @dark_slider_bg_color 50%, shade(@dark_slider_bg_color, 0.94));
+}
+
+windowhandle > box switch:checked > slider
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+}
+
+windowhandle > box switch:backdrop > slider
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, shade(@dark_slider_bg_color, 1.08), @dark_slider_bg_color 50%, shade(@dark_slider_bg_color, 0.94));
+}
+
+windowhandle > box switch:disabled > slider
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+}
+
+windowhandle > box switch:checked:backdrop > slider
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+}
+
+windowhandle > box switch:checked:disabled > slider
+{
+    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+}
+
+windowhandle > box combobox > box.linked > button.combo
+{
+    border-image: -gtk-scaled(url("assets/combobox-button-toolbar.png"),url("assets/combobox-button-toolbar@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
+}
+
+windowhandle > box combobox > box.linked > button.combo:first-child
+{
+    border-image-width: 10px 0 10px 12px;
+    border-radius: 8px 0 0 8px;
+    border-right-width: 0;
+}
+
+windowhandle > box combobox > box.linked > button.combo:last-child
+{
+    border-image-width: 10px 12px 10px 1px;
+    border-radius: 0 8px 8px 0;
+    border-left-width: 0;
+}
+
+windowhandle > box combobox > box.linked > button.combo:only-child
+{
+    border-image-width: 10px 12px 10px 12px;
+    border-radius: 8px;
+}
+
+windowhandle > box combobox > box.linked > button.combo:focus
+{
+    border-image: -gtk-scaled(url("assets/combobox-button-toolbar-focused.png"),url("assets/combobox-button-toolbar-focused@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
+}
+
+windowhandle > box combobox > box.linked > button.combo:focus:active
+{
+    border-image: -gtk-scaled(url("assets/combobox-button-toolbar-pressed-focused.png"),url("assets/combobox-button-toolbar-pressed-focused@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
+}
+
+windowhandle > box combobox > box.linked > button.combo:focus:disabled
+{
+    border-image: -gtk-scaled(url("assets/combobox-button-toolbar.png"),url("assets/combobox-button-toolbar@2.png")) 10 12 10 1 / 10px 12px 10px 1px stretch;
+}
+
+windowhandle > box combobox > box.linked > entry.combo:first-child
+{
+    border-image-width: 10px 0 10px 12px;
+    border-radius: 8px 0 0 8px;
+    border-right-width: 0;
+}
+
+windowhandle > box combobox > box.linked > entry.combo:last-child
+{
+    border-image-width: 10px 12px 10px 1px;
+    border-radius: 0 8px 8px 0;
+    border-left-width: 0;
+}
+
+windowhandle > box combobox > box.linked > entry.combo:only-child
+{
+    border-image-width: 10px 12px 10px 12px;
+    border-radius: 8px;
+}
+
+windowhandle > box scale > trough
+{
+    background-color: @dark_bg_color;
+    background-image: none;
+    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 1.15)) 1;
+    border-image-width: 1px;
+}
+
+windowhandle > box scale > trough:backdrop
+{
+    background-color: @dark_bg_color;
+    background-image: none;
+    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 1.15)) 1;
+    border-image-width: 1px;
+}
+
+/* GtkWindowControls */
+
+windowcontrols > button
+{
+    background-clip: padding-box;
+    border: 1px solid #383734;
+    color: #3d3c37;
+    -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    padding: 0px;
+    box-shadow: none;
+    background-image: linear-gradient(to top, #5a5955, #75746d 50%, #8e8d88);
+    margin-left: 1px;
+    margin-right: 1px;
+    min-width: 15px;
+    min-height: 15px;
+}
+
+windowcontrols > button.close
+{
+    color: #323112;
+    -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.25);
+    background-image: linear-gradient(to top, #81BA4A, #B5D793 50%, #DEEAD2);
+}
+
+windowcontrols > button:hover
+{
+    background-image: linear-gradient(to top, #969696, #bdbdbd 50%, #cacaca);
+}
+
+windowcontrols > button.close:hover
+{
+    background-image: linear-gradient(to top, #8EC956, #C0E1A1 50%, #EEF0EA);
+}
+
+windowcontrols > button:active
+{
+    -gtk-icon-shadow: none;
+    background-image: linear-gradient(to top, #77766f, #74736c);
+}
+
+windowcontrols > button.close:active
+{
+    background-image: linear-gradient(to top, #6A9542, #90B66A);
+}
+
+windowcontrols > button:backdrop
+{
+    color: #3d3c37;
+    -gtk-icon-shadow: none;
+    background-image: linear-gradient(to top, #605f59, #5b5a54);
+}
+
+windowcontrols > button:backdrop:hover
+{
+    background-image: linear-gradient(to top, #969696, #bdbdbd 50%, #cacaca);
+}
+
+windowcontrols > button.close > image
+{
+    -gtk-icon-style: symbolic;
 }
 
 /* GtkSearchBar */
@@ -4249,30 +4394,6 @@ shortcut > .keycap
 }
 
 /* Row */
-
-row:selected
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-row:hover:not(:selected)
-{
-    background-color: shade(@theme_selected_bg_color, 1.55);
-    color: shade(@theme_selected_bg_color, 0.35);
-}
-
-row:disabled
-{
-    color: #9c9c9c;
-    background-color: #fcfcfc;
-}
-
-row:selected:backdrop
-{
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
-    color: @theme_fg_color;
-}
 
 row trough
 {
