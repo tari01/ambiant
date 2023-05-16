@@ -262,8 +262,8 @@ label > link
 
 label.dim-label
 {
-    color: shade(@bg_color, 0.6);
     -gtk-icon-filter: opacity(0.5);
+    opacity: 0.5;
 }
 
 /* GtkEditableLabel */
@@ -2020,11 +2020,19 @@ scale > value
 /* GtkGridView */
 /* GtkIconView */
 
-gridview,
 iconview
 {
     background-color: @base_color;
     color: @text_color;
+    border-spacing: 6px;
+}
+
+gridview
+{
+    background-color: @base_color;
+    color: @text_color;
+    border-spacing: 6px;
+    padding: 6px;
 }
 
 gridview:disabled,
@@ -2036,13 +2044,14 @@ iconview:disabled
 
 gridview > child
 {
+    border: 1px solid transparent;
     background-color: transparent;
     border-radius: 5px;
-    margin: 4px;
 }
 
 iconview .cell
 {
+    border: 1px solid transparent;
     background-color: transparent;
     border-radius: 5px;
 }
@@ -2051,24 +2060,28 @@ gridview > child:hover,
 iconview .cell:hover
 {
     background-color: shade(@theme_selected_bg_color, 1.55);
+    border-color: shade(@theme_selected_bg_color, 1.55);
+    color: shade(@theme_selected_bg_color, 0.35);
 }
 
 gridview > child:selected,
 iconview .cell:selected
 {
     background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.0), shade(@selected_bg_color, 0.9));
-    border-style: solid;
-    border-width: 1px;
     border-color: shade(@selected_bg_color, 0.8);
     border-bottom-color: shade(@selected_bg_color, 0.7);
     box-shadow: inset 1px 0 shade(@selected_bg_color, 1.05), inset -1px 0 shade(@selected_bg_color, 1.05), inset 0 1px shade(@selected_bg_color, 1.08), inset 0 -1px shade(@selected_bg_color, 1.0);
+    color: @theme_selected_fg_color;
 }
 
-gridview > child:selected:focus,
-iconview .cell:selected:focus
+gridview > child > box
 {
-    border-color: alpha(@text_color, 0.6);
-    border-style: dashed;
+    margin: 6px;
+}
+
+gridview > child box
+{
+    border-spacing: 6px;
 }
 
 /* GtkTextView */
@@ -4293,6 +4306,11 @@ window.dialog filechooser #pathbarbox
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     border-color: @borders;
+}
+
+window.dialog filechooser gridview filelistcell
+{
+    padding: 6px;
 }
 
 /* GtkPrintDialog */
