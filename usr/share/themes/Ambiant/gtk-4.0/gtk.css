@@ -3717,6 +3717,11 @@ dropdown > button > box > stack > row.activatable:hover
     background: none;
 }
 
+dropdown popover box.dropdown-searchbar
+{
+    margin-bottom: 4px;
+}
+
 /* GtkStatusBar */
 
 statusbar
