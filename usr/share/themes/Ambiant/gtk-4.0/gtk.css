@@ -2954,6 +2954,11 @@ listview > row > cell:first-child
     padding-left: 1px;
 }
 
+listview > row > box
+{
+    border-spacing: 6px;
+}
+
 listview > row treeexpander > expander
 {
     min-width: 16px;
@@ -2976,6 +2981,11 @@ listview > row treeexpander > expander:checked
 listview > row:selected treeexpander > expander:hover
 {
     color: @fg_color;
+}
+
+listview.separators.horizontal > row
+{
+    border-left: 1px solid shade(@bg_color, 0.92);
 }
 
 /* GtkWindowHandle */
@@ -3925,11 +3935,6 @@ popover listview > row:hover
     border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
     color: @selected_fg_color;
     text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-}
-
-popover listview > row > box > image
-{
-    margin-left: 5px;
 }
 
 popover treeview
