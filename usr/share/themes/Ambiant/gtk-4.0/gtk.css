@@ -2917,7 +2917,7 @@ listview
 
 listview > row
 {
-    padding: 3px 3px 3px 0px;
+    padding: 3px 3px 3px 3px;
 }
 
 listview > row:selected
@@ -2947,11 +2947,6 @@ listview > row:selected:backdrop
 listview > row > cell
 {
     padding: 0px 7px 0px 8px;
-}
-
-listview > row > cell:first-child
-{
-    padding-left: 1px;
 }
 
 listview > row > box
