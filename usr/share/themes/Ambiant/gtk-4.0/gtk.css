@@ -4160,6 +4160,13 @@ popover modelbutton:disabled > accelerator
     text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
 }
 
+/* GtkStackSwitcher */
+
+stackswitcher.circular
+{
+    border-spacing: 6px;
+}
+
 /* GtkWindow */
 
 window
