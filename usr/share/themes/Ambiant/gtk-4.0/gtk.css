@@ -2603,6 +2603,11 @@ popover.emoji-picker > contents
     padding: 0;
 }
 
+popover.emoji-picker > contents > box
+{
+    margin: 0;
+}
+
 popover.emoji-picker .emoji-searchbar
 {
     padding: 6px;
@@ -2621,10 +2626,6 @@ popover.emoji-picker .emoji-toolbar
 popover button.emoji-section
 {
     padding: 10px;
-}
-
-popover button.emoji-section
-{
     margin: 2px;
 }
 
@@ -2646,7 +2647,6 @@ popover.emoji-picker emoji
 popover.emoji-picker emoji:hover
 {
     background-image: image(shade(@theme_selected_bg_color, 1.55));
-    padding: 5px;
 }
 
 popover.emoji-picker emoji:focus
@@ -3766,22 +3766,22 @@ popover > contents
     border: 1px solid #000000;
     color: @dark_fg_color;
     box-shadow: 0 2px 3px @shadow_color, inset 0 1px shade(@dark_bg_color, 1.18), inset 0 -1px shade(@dark_bg_color, 1.18), inset -1px 0 shade(@dark_bg_color, 1.16), inset 1px 0 shade(@dark_bg_color, 1.18);
-    padding: 8px;
-}
-
-popover.menu > contents
-{
-    padding: 2px;
-}
-
-popover.entry-completion > contents
-{
     padding: 2px;
 }
 
 popover > contents:backdrop
 {
     box-shadow: none;
+}
+
+popover > contents > label
+{
+    margin: 6px;
+}
+
+popover > contents > box
+{
+    margin: 6px;
 }
 
 popover > arrow
@@ -3911,6 +3911,26 @@ popover box.circular-buttons button.circular
 {
     padding: 10px;
     -gtk-icon-size: 32px;
+}
+
+popover list
+{
+    background-color: transparent;
+}
+
+popover list > row
+{
+    border-radius: 3px;
+    padding: 0px;
+    color: @dark_fg_color;
+}
+
+popover list > row:hover:not(:selected)
+{
+    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
+    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
+    color: @selected_fg_color;
+    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
 }
 
 popover listview
