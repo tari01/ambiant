@@ -3779,7 +3779,7 @@ popover > contents > label
     margin: 6px;
 }
 
-popover > contents > box
+popover:not(.menu) > contents > box
 {
     margin: 6px;
 }
