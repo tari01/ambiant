@@ -176,9 +176,14 @@
 
 @define-color inset_light_color alpha(white, 0.45);
 @define-color inset_dark_color alpha(black, 0.07);
-
-@define-color wm_shadow alpha(black, 0.5);
-
+@define-color wm_title @dark_fg_color;
+@define-color wm_unfocused_title @backdrop_fg_color;
+@define-color wm_title_shadow shade(@dark_bg_color, 0.7);
+@define-color wm_bg_a @dark_bg_color;
+@define-color wm_bg_b shade(@dark_bg_color, 1.5);
+@define-color wm_bg_c shade(@dark_bg_color, 1.65);
+@define-color wm_bg_d shade(@dark_bg_color, 1.2);
+@define-color wm_border shade(@dark_bg_color, 1.1);
 @import url("gtk-widgets-borders.css");
 @import url("gtk-widgets-assets.css");
 @import url("gtk-widgets.css");
