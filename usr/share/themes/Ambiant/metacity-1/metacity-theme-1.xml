@@ -9,8 +9,9 @@
     </info>
     <constant name="TITLEBAR_A" value="gtk:custom(wm_bg_a,#474642)" />
     <constant name="TITLEBAR_B" value="gtk:custom(wm_bg_b,#3c3b37)" />
-    <constant name="TITLEBAR_C" value="gtk:custom(wm_bg_c,#474642)" />
-    <constant name="TITLEBAR_D" value="gtk:custom(wm_bg_d,#474642)" />
+    <constant name="TITLEBAR_C" value="gtk:custom(wm_bg_c,#3c3b37)" />
+    <constant name="TITLEBAR_D" value="gtk:custom(wm_bg_d,#3c3b37)" />
+    <constant name="TITLEBAR_E" value="gtk:custom(wm_bg_e,#474642)" />
     <constant name="TITLE_FOCUSED" value="gtk:custom(wm_title,#dfdbd2)" />
     <constant name="TITLE_UNFOCUSED" value="gtk:custom(wm_unfocused_title,#807d78)" />
     <constant name="TITLE_SHADOW" value="gtk:custom(wm_title_shadow,#333)" />
@@ -88,14 +89,14 @@
         <line color="TITLEBAR_D" x1="width-2" x2="width" y1="4" y2="4" />
     </draw_ops>
     <draw_ops name="draw_ops_titlebar_maximized_focused">
-        <rectangle color="TITLEBAR_C" filled="true" x="0" y="0" width="width" height="top_height" />
+        <rectangle color="TITLEBAR_D" filled="true" x="0" y="0" width="width" height="top_height" />
         <gradient type="vertical" x="0" y="1" width="width" height="top_height-1">
-            <color value="TITLEBAR_B" />
+            <color value="TITLEBAR_E" />
             <color value="TITLEBAR_A" />
         </gradient>
     </draw_ops>
     <draw_ops name="draw_ops_titlebar_maximized_unfocused">
-        <rectangle color="TITLEBAR_D" filled="true" x="0" y="0" width="width" height="1"/>
+        <rectangle color="TITLEBAR_E" filled="true" x="0" y="0" width="width" height="1"/>
         <rectangle color="TITLEBAR_A" filled="true" x="0" y="1" width="width" height="top_height-1"/>
     </draw_ops>
     <draw_ops name="draw_ops_frame">

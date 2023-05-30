@@ -183,6 +183,7 @@
 @define-color wm_bg_b shade(@dark_bg_color, 1.5);
 @define-color wm_bg_c shade(@dark_bg_color, 1.65);
 @define-color wm_bg_d shade(@dark_bg_color, 1.2);
+@define-color wm_bg_e shade(@dark_bg_color, 1.09);
 @define-color wm_border shade(@dark_bg_color, 1.1);
 @import url("gtk-widgets-borders.css");
 @import url("gtk-widgets-assets.css");
