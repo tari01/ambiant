@@ -4196,25 +4196,26 @@ window
     box-shadow: none;
     color: @fg_color;
     background-color: @bg_color;
+    border: 1px none @wm_border;
 }
 
 window.csd
 {
     border-radius: 10px 10px 0 0;
-    border-width: 0px;
-    box-shadow: 0 3px 15px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 15px 1px rgba(0, 0, 0, 0.5);
     margin: 10px;
     background-image: linear-gradient(@dark_bg_color 0px, @dark_bg_color 10px, @bg_color 11px);
+    border-style: solid;
 }
 
 window.solid-csd
 {
-    border: 1px solid darker(@fg_color);
+    border-style: solid;
 }
 
 window.ssd
 {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.23);
+    border-style: solid;
 }
 
 window.maximized
@@ -4236,7 +4237,8 @@ window.fullscreen
 
 window.tiled
 {
-    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
 }
 
 window:backdrop
