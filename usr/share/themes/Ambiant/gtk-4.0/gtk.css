@@ -2711,69 +2711,6 @@ expander-widget > box > title > expander:checked
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-/* GtkEmojiChooser */
-
-popover.emoji-picker > contents
-{
-    padding: 0;
-}
-
-popover.emoji-picker > contents > box
-{
-    margin: 0;
-}
-
-popover.emoji-picker .emoji-searchbar
-{
-    padding: 6px;
-    border-spacing: 6px;
-    box-shadow: 0 0 0 1px shade(@dark_bg_color, 1.26);
-    border-bottom: 1px solid shade(@dark_bg_color, 0.9);
-}
-
-popover.emoji-picker .emoji-toolbar
-{
-    padding: 3px;
-    border-top: 1px solid shade(@dark_bg_color, 1.26);
-    box-shadow: 0 0 0 1px shade(@dark_bg_color, 0.9);
-}
-
-popover button.emoji-section
-{
-    padding: 10px;
-    margin: 2px;
-}
-
-popover button.emoji-section:checked
-{
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-}
-
-popover.emoji-picker emoji
-{
-    font-size: x-large;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-popover.emoji-picker emoji:hover
-{
-    background-image: image(shade(@theme_selected_bg_color, 1.55));
-}
-
-popover.emoji-picker emoji:focus
-{
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-style: solid;
-    border-width: 1px;
-    border-color: shade(@selected_bg_color, 0.8);
-    border-bottom-color: shade(@selected_bg_color, 0.7);
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.05), inset -1px 0 shade(@selected_bg_color, 1.05), inset 0 1px shade(@selected_bg_color, 1.08), inset 0 -1px shade(@selected_bg_color, 1.0);
-}
-
 /* GtkPopoverMenuBar */
 
 menubar
@@ -4292,6 +4229,69 @@ popover modelbutton:disabled > accelerator
 {
     color: alpha(mix(@dark_fg_color, @dark_bg_color, 0.5), 0.5);
     text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+}
+
+/* GtkEmojiChooser */
+
+popover.emoji-picker > contents
+{
+    padding: 0;
+}
+
+popover.emoji-picker > contents > box
+{
+    margin: 0;
+}
+
+popover.emoji-picker .emoji-searchbar
+{
+    padding: 6px;
+    border-spacing: 6px;
+    box-shadow: 0 0 0 1px shade(@dark_bg_color, 1.26);
+    border-bottom: 1px solid shade(@dark_bg_color, 0.9);
+}
+
+popover.emoji-picker .emoji-toolbar
+{
+    padding: 3px;
+    border-top: 1px solid shade(@dark_bg_color, 1.26);
+    box-shadow: 0 0 0 1px shade(@dark_bg_color, 0.9);
+}
+
+popover button.emoji-section
+{
+    padding: 10px;
+    margin: 2px;
+}
+
+popover button.emoji-section:checked
+{
+    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
+    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
+    color: @selected_fg_color;
+    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+}
+
+popover.emoji-picker emoji
+{
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+popover.emoji-picker emoji:hover
+{
+    background-image: image(shade(@theme_selected_bg_color, 1.55));
+}
+
+popover.emoji-picker emoji:focus
+{
+    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
+    border-style: solid;
+    border-width: 1px;
+    border-color: shade(@selected_bg_color, 0.8);
+    border-bottom-color: shade(@selected_bg_color, 0.7);
+    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.05), inset -1px 0 shade(@selected_bg_color, 1.05), inset 0 1px shade(@selected_bg_color, 1.08), inset 0 -1px shade(@selected_bg_color, 1.0);
 }
 
 /* GtkStackSwitcher */
