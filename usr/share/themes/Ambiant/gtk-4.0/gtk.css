@@ -1,157 +1,329 @@
-@define-color success_color #4e9a06;
-@define-color fg_color #4c4c4c;
-@define-color selected_bg_color #87A556;
-@define-color selected_fg_color #ffffff;
-@define-color bg_color #f2f1f0;
-@define-color base_color #ffffff;
-@define-color text_color #3C3C3C;
-@define-color tooltip_bg_color #1e1e1e;
-@define-color tooltip_fg_color #ebebeb;
-@define-color theme_text_color black;
-@define-color theme_unfocused_text_color black;
-@define-color theme_fg_color @fg_color;
-@define-color theme_bg_color @bg_color;
-@define-color theme_base_color @base_color;
-@define-color theme_selected_bg_color @selected_bg_color;
-@define-color theme_selected_fg_color @selected_fg_color;
-@define-color insensitive_bg_color shade(@theme_bg_color, 0.95);
-@define-color insensitive_fg_color shade(@theme_bg_color, 0.6);
-@define-color insensitive_base_color @base_color;
-@define-color theme_unfocused_fg_color @backdrop_fg_color;
-@define-color theme_unfocused_bg_color @bg_color;
-@define-color theme_unfocused_base_color @base_color;
-@define-color theme_unfocused_selected_bg_color @selected_bg_color;
-@define-color theme_unfocused_selected_fg_color @selected_fg_color;
-@define-color borders shade(@bg_color, 0.82);
-@define-color unfocused_borders transparent;
-@define-color warning_color @warning_fg_color;
-@define-color info_fg_color rgb(181, 171, 156);
-@define-color info_bg_color rgb(252, 252, 189);
-@define-color warning_fg_color rgb(173, 120, 41);
-@define-color warning_bg_color rgb(250, 173, 61);
-@define-color question_fg_color rgb(97, 122, 214);
-@define-color question_bg_color rgb(138, 173, 212);
-@define-color error_fg_color rgb(235, 235, 235);
-@define-color error_bg_color rgb(223, 56, 44);
-@define-color link_color @selected_bg_color;
-@define-color error_color #df382c;
-@define-color button_bg_color shade(@bg_color, 1.02);
-@define-color notebook_button_bg_color shade(@bg_color, 1.02);
-@define-color button_insensitive_bg_color mix(@button_bg_color, @bg_color, 0.6);
-@define-color dark_bg_color #3c3b37;
-@define-color dark_bg_slider_color #4E4C46;
-@define-color dark_fg_color #dfdbd2;
-@define-color dark_button_bg_color shade(@dark_bg_color, 1.02);
-@define-color dark_slider_bg_color shade(@dark_bg_slider_color, 1.02);
-@define-color backdrop_fg_color mix(@bg_color, @fg_color, 0.8);
-@define-color backdrop_text_color mix(@base_color, @text_color, 0.8);
-@define-color backdrop_dark_fg_color mix(@dark_bg_color, @dark_fg_color, 0.75);
-@define-color backdrop_selected_bg_color shade(@bg_color, 0.92);
-@define-color backdrop_selected_fg_color @fg_color;
-@define-color backdrop_filling_bg #b0b0b0;
-@define-color focus_color alpha(@selected_bg_color, 0.5);
-@define-color focus_bg_color alpha(@selected_bg_color, 0.1);
-@define-color focus_color_dialog alpha(@selected_bg_color, 0.9);
-@define-color shadow_color alpha(black, 0.5);
-@define-color button_gradient_color_a #69696c;
-@define-color button_gradient_color_b shade(@dark_bg_color, 1.00);
-@define-color button_border #2a2a2a;
-@define-color core_color_a #B9C0A9;
-@define-color core_color_b #edeceb;
-@define-color notebook_bg_color shade(@core_color_b, 1.02);
-@define-color border_color shade(@core_color_b, 0.67);
-@define-color notebook_tab_inner_border_color shade(@core_color_b, 1.04);
-@define-color notebook_tab_gradient_a shade(@core_color_b, 0.97);
-@define-color notebook_tab_gradient_b shade(@bg_color, 0.98);
-@define-color notebook_tab_gradient_c shade(@core_color_b, 0.90);
-@define-color notebook_tab_gradient_d shade(@core_color_b, 0.86);
-@define-color notebook_active_tab_border @menubar_menuitem_hover_border_color;
-@define-color notebook_active_tab_strip_gradient_a shade(@core_color_a, 1.05);
-@define-color notebook_active_tab_strip_gradient_b shade(@core_color_a, 0.94);
-@define-color notebook_active_tab_strip_border_bottom_color mix(#727272, shade(@core_color_a, 0.84), 0.65);
-@define-color notebook_active_tab_gradient_a shade(@core_color_b, 1.07);
-@define-color notebook_active_tab_gradient_b @notebook_bg_color;
-@define-color osd_highlight #ffffff;
-@define-color osd_lowlight #525252;
-@define-color osd_base #0a1201;
-@define-color osd_fg #ededed;
-@define-color osd_bg alpha(@osd_base, 0.80);
-@define-color osd_bg_backdrop alpha(shade(@osd_base, 1.40), 0.90);
-@define-color osd_text_shadow alpha(black, 0.75);
-@define-color osd_toolbar_bg_a alpha(@osd_base, 0.80);
-@define-color osd_toolbar_bg_b alpha(#101010, 0.80);
-@define-color osd_toolbar_bg_c alpha(shade(@osd_base, 1.02), 0.80);
-@define-color osd_button_bg_a alpha(@osd_highlight, 0.16);
-@define-color osd_button_bg_b alpha(@osd_lowlight, 0.05);
-@define-color osd_button_bg_c alpha(@osd_highlight, 0.12);
-@define-color osd_button_bg_insensitive alpha(@osd_highlight, 0.25);
-@define-color osd_button_bg_insensitive_active alpha(@osd_highlight, 0.16);
-@define-color osd_button_bg_hover_a alpha(@osd_highlight, 0.28);
-@define-color osd_button_bg_hover_b alpha(@osd_lowlight, 0.14);
-@define-color osd_button_bg_hover_c alpha(@osd_highlight, 0.14);
+@define-color app_notification_bg_a rgba(0, 0, 0, 0.2);
+@define-color app_notification_button_bg rgba(101, 101, 104, 0.7);
+@define-color app_notification_button_bg_a rgb(105, 105, 108);
+@define-color app_notification_button_bg_checked rgba(37, 88, 128, 0.7);
+@define-color app_notification_button_bg_hover_a shade(@app_notification_button_bg_a, 1.2);
+@define-color app_notification_button_bg_hover_b shade(@app_notification_button_bg_a, 0.5);
+@define-color app_notification_button_bg_insensitive rgba(172, 205, 138, 0.7);
+@define-color app_notification_button_bg_shadow rgba(255, 255, 255, 0.1);
+@define-color app_notification_button_border rgba(75, 89, 112, 0.7);
+@define-color app_notification_button_fg_disabled rgb(135, 137, 137);
+@define-color app_notification_button_fg_insensitive rgb(238, 238, 236);
+@define-color app_notification_button_border_checked rgba(0, 0, 0, 0.7);
+@define-color app_notification_button_border_hover shade(@button_border, 1.1);
+@define-color app_notification_button_bg_disabled rgba(52, 57, 57, 0.5);
+@define-color app_notification_button_outline rgba(238, 238, 236, 0.3);
+@define-color assistant_sidebar_bg shade(@theme_bg_color, 0.97);
+@define-color assistant_sidebar_fg mix(@theme_fg_color, @theme_bg_color, 0.40);
+@define-color bg_dark_slider rgb(78, 76, 70);
+@define-color bg_insensitive shade(@theme_bg_color, 0.95);
+@define-color borders shade(@theme_bg_color, 0.82);
+@define-color button_bg_active_a rgb(220, 220, 220);
+@define-color button_bg_active_b rgb(243, 243, 243);
+@define-color button_bg_active_disabled rgb(227, 227, 227);
+@define-color button_bg_checked_a rgb(206, 206, 206);
+@define-color button_bg_checked_b rgb(232, 232, 232);
+@define-color button_bg_destructive mix(@button_bg_normal_b, @error_bg, 0.5);
+@define-color button_bg_destructive_a shade(@button_bg_destructive, 1.08);
+@define-color button_bg_destructive_b shade(@button_bg_destructive, 0.94);
+@define-color button_bg_destructive_active_a mix(@button_bg_active_a, @error_bg, 0.5);
+@define-color button_bg_destructive_active_b mix(@button_bg_active_b, @error_bg, 0.5);
+@define-color button_bg_destructive_checked_a mix(@button_bg_checked_a, @error_bg, 0.5);
+@define-color button_bg_destructive_checked_b mix(@button_bg_checked_b, @error_bg, 0.5);
+@define-color button_bg_destructive_disabled mix(mix(@tooltip_fg, @error_bg, 0.5), mix(@theme_bg_color, @error_bg, 0.5), 0.5);
+@define-color button_bg_destructive_hover_a shade(@button_bg_destructive, 1.12);
+@define-color button_bg_destructive_hover_b shade(@button_bg_destructive, 0.96);
+@define-color button_bg_disabled mix(@tooltip_fg, @theme_bg_color, 0.5);
+@define-color button_bg_hover_a shade(@button_bg_normal_b, 1.12);
+@define-color button_bg_hover_b shade(@button_bg_normal_b, 0.96);
+@define-color button_bg_insensitive mix(@button_bg_normal_b, @theme_bg_color, 0.6);
+@define-color button_bg_normal_a shade(@button_bg_normal_b, 1.08);
+@define-color button_bg_normal_b shade(@theme_bg_color, 1.02);
+@define-color button_bg_normal_c shade(@button_bg_normal_b, 0.94);
+@define-color button_bg_suggested mix(@button_bg_normal_b, @theme_selected_bg_color, 0.5);
+@define-color button_bg_suggested_a shade(@button_bg_suggested, 1.08);
+@define-color button_bg_suggested_b shade(@button_bg_suggested, 0.94);
+@define-color button_bg_suggested_active_a mix(@button_bg_active_a, @theme_selected_bg_color, 0.5);
+@define-color button_bg_suggested_active_b mix(@button_bg_active_b, @theme_selected_bg_color, 0.5);
+@define-color button_bg_suggested_checked_a mix(@button_bg_checked_a, @theme_selected_bg_color, 0.5);
+@define-color button_bg_suggested_checked_b mix(@button_bg_checked_b, @theme_selected_bg_color, 0.5);
+@define-color button_bg_suggested_disabled mix(mix(@tooltip_fg, @theme_selected_bg_color, 0.5), mix(@theme_bg_color, @theme_selected_bg_color, 0.5), 0.5);
+@define-color button_bg_suggested_hover_a shade(@button_bg_suggested, 1.12);
+@define-color button_bg_suggested_hover_b shade(@button_bg_suggested, 0.96);
+@define-color button_border rgb(42, 42, 42);
+@define-color button_border_active shade(@theme_selected_bg_color, 0.95);
+@define-color button_border_active_insensitive shade(@selected_bg_insensitive, 0.95);
+@define-color button_border_circular_focus rgba(0, 255, 0, 0.5);
+@define-color button_border_circular_hover rgba(0, 0, 0, 0.45);
+@define-color button_border_circular_normal rgba(0, 0, 0, 0.3);
+@define-color button_fg_dark_hover shade(@theme_selected_bg_color, 1.3);
+@define-color button_fg_shadow alpha(shade(@button_bg_normal_b, 1.25), 0.4);
+@define-color button_separator_border shade(@button_bg_normal_b, 0.9);
+@define-color button_separator_border_disabled shade(@button_bg_insensitive, 0.96);
+@define-color calendar_header_bg_b shade(@theme_bg_color, 0.89);
+@define-color columnview_border_dnd shade(@theme_selected_bg_color, 1.12);
+@define-color columnview_header_button_bg_a shade(@theme_bg_color, 1.04);
+@define-color columnview_header_button_bg_hover_insensitive_b shade(@theme_bg_color, 1.06);
+@define-color columnview_header_button_bg_shadow_a shade(@theme_bg_color, 1.1);
+@define-color columnview_header_button_bg_shadow_insensitive shade(@theme_bg_color, 1.03);
+@define-color columnview_header_button_fg_shadow alpha(shade(@theme_bg_color, 1.25), 0.4);
+@define-color columnview_header_button_border shade(@theme_bg_color, 0.9);
+@define-color columnview_header_button_border_insesitive_a shade(@theme_bg_color, 0.94);
+@define-color columnview_header_button_border_insesitive_b shade(@theme_bg_color, 0.88);
+@define-color entry_bg_disabled rgb(245, 245, 245);
+@define-color entry_bg_disabled_insensitive mix(@entry_bg_disabled, @theme_bg_color, 0.5);
+@define-color entry_bg_insensitive_a mix(@entry_bg_normal, @theme_bg_color, 0.5);
+@define-color entry_bg_insensitive_b mix(@theme_base_color, @theme_bg_color, 0.5);
+@define-color entry_bg_normal shade(@theme_base_color, 0.96);
+@define-color entry_fg_disabled mix(@theme_text_color, @theme_base_color, 0.4);
+@define-color error_bg rgb(223, 56, 44);
+@define-color error_bg_a shade(@error_bg, 1.04);
+@define-color error_bg_b shade(@error_bg, 0.96);
+@define-color error_bg_shadow_a shade(@error_bg, 1.08);
+@define-color error_bg_shadow_b shade(@error_bg, 1.1);
+@define-color error_border_a shade(@error_bg, 0.8);
+@define-color error_border_b shade(@error_bg, 0.75);
+@define-color fg_dark_insensitive mix(@wm_bg_a, @wm_title, 0.75);
+@define-color fg_disabled shade(@theme_bg_color, 0.6);
+@define-color focus alpha(@theme_selected_bg_color, 0.5);
+@define-color info_bg rgb(252, 252, 189);
+@define-color info_bg_a shade(@info_bg, 1.04);
+@define-color info_bg_b shade(@info_bg, 0.96);
+@define-color info_bg_shadow_a shade(@info_bg, 1.08);
+@define-color info_bg_shadow_b shade(@info_bg, 1.1);
+@define-color info_border shade(@info_bg, 0.8);
+@define-color info_border_b shade(@info_bg, 0.75);
+@define-color info_fg rgb(181, 171, 156);
+@define-color inset_dark rgba(0, 0, 0, 0.07);
+@define-color inset_light rgba(255, 255, 255, 0.45);
+@define-color label_selection_bg alpha(@theme_selected_bg_color, 0.9);
+@define-color levelbar_block_high_bg_a shade(@success, 1.2);
+@define-color levelbar_block_high_bg_c shade(@success, 0.95);
+@define-color levelbar_block_bg_filled rgb(143, 175, 83);
+@define-color levelbar_block_bg_low_a shade(@warning_bg, 1.3);
+@define-color levelbar_block_bg_low_c shade(@warning_bg, 0.9);
+@define-color levelbar_block_border_empty alpha(@theme_bg_color, 0.1);
+@define-color levelbar_block_border_high shade(@success, 0.85);
+@define-color levelbar_block_border_low shade(@warning_bg, 0.8);
+@define-color levelbar_block_insensitive rgb(176, 176, 176);
+@define-color linked_button_first_bg_shadow rgba(0, 0, 0, 0.1);
+@define-color list_cell_bg_normal shade(@theme_selected_bg_color, 1.55);
+@define-color list_cell_bg_selected shade(@theme_selected_bg_color, 0.9);
+@define-color list_cell_bg_selected_insensitive shade(@theme_unfocused_bg_color, 0.94);
+@define-color list_cell_bg_shadow_a shade(@theme_selected_bg_color, 1.05);
+@define-color list_cell_bg_shadow_b shade(@theme_selected_bg_color, 1.08);
+@define-color list_cell_border shade(@theme_selected_bg_color, 0.7);
+@define-color list_cell_fg_hover shade(@theme_selected_bg_color, 0.35);
+@define-color list_sidebar_fg_inactive mix(@theme_fg_color, @bg_insensitive, 0.2);
+@define-color list_sidebar_fg_shadow shade(@bg_insensitive, 1.04);
+@define-color list_sidebar_fg_shadow_inactive shade(@bg_insensitive, 1.02);
+@define-color list_sidebar_row_border_selected_inactive shade(@bg_insensitive, 0.88);
+@define-color list_sidebar_row_selected_inactive_a shade(@bg_insensitive, 0.94);
+@define-color list_sidebar_row_selected_inactive_b shade(@bg_insensitive, 0.86);
+@define-color list_spinbutton_button_fg_disabled shade(@theme_bg_color, 0.66);
+@define-color list_trough_border_a shade(@borders, 0.8);
+@define-color list_trough_border_b shade(@borders, 0.85);
+@define-color menubar_fg_shadow shade(@wm_bg_a, 0.6);
+@define-color menubar_fg_shadow_insensitive shade(@wm_bg_a, 0.8);
+@define-color menubar_item_fg_selected shade(@wm_title, 1.1);
+@define-color modelbutton_bg_shadow_hover_a shade(@theme_selected_bg_color, 1.02);
+@define-color modelbutton_bg_shadow_hover_b shade(@theme_selected_bg_color, 1.16);
+@define-color modelbutton_bg_shadow_hover_c shade(@theme_selected_bg_color, 0.96);
+@define-color notebook_arrow_fg_disabled rgb(199, 199, 199);
+@define-color notebook_arrow_fg_insensitive rgba(84, 89, 90, 0.4);
+@define-color notebook_bg shade(@notebook_tab_bg_b, 1.02);
+@define-color notebook_button_bg rgba(0, 0, 0, 0.08);
+@define-color notebook_button_bg_shadow rgba(0, 0, 0, 0.05);
+@define-color notebook_header_bg_shadow alpha(@borders, 0.9);
+@define-color notebook_button_border_a rgba(0, 0, 0, 0.27);
+@define-color notebook_button_border_b rgba(0, 0, 0, 0.13);
+@define-color notebook_label_fg shade(@theme_fg_color, 1.30);
+@define-color notebook_tab_bg_a shade(@notebook_tab_bg_b, 0.97);
+@define-color notebook_tab_bg_b rgb(237, 236, 235);
+@define-color notebook_tab_bg_c shade(@notebook_tab_bg_b, 0.9);
+@define-color notebook_tab_bg_checked shade(@notebook_bg, 1.18);
+@define-color osd_bg rgba(10, 18, 1, 0.8);
+@define-color osd_bg_a alpha(shade(@theme_selected_bg_color, 1.2), 0.7);
+@define-color osd_bg_b alpha(@button_border_active, 0.7);
+@define-color osd_button_bg shade(@osd_bg, 1.1);
 @define-color osd_button_bg_active_a alpha(@osd_lowlight, 0.18);
 @define-color osd_button_bg_active_b alpha(@osd_highlight, 0.23);
 @define-color osd_button_bg_active_c alpha(@osd_lowlight, 0.17);
-@define-color osd_button_bg_backdrop alpha(@osd_highlight, 0.18);
-@define-color osd_button_bg_backdrop_hover alpha(@osd_highlight, 0.25);
-@define-color osd_button_bg_backdrop_active alpha(@osd_highlight, 0.35);
-@define-color osd_button_bg_backdrop_insensitive alpha(@osd_highlight, 0.08);
-@define-color osd_button_fg_backdrop shade(@osd_fg, 0.70);
-@define-color osd_button_fg_backdrop_active shade(@osd_fg, 0.95);
-@define-color osd_button_fg shade(@osd_fg, 0.85);
-@define-color osd_button_fg_hover shade(@osd_fg, 0.96);
-@define-color osd_button_fg_active shade(@osd_fg, 1.10);
-@define-color osd_button_fg_insensitive shade(@osd_fg, 0.70);
+@define-color osd_button_bg_a alpha(@osd_highlight, 0.16);
+@define-color osd_button_bg_b alpha(@osd_lowlight, 0.05);
+@define-color osd_button_bg_c alpha(@osd_highlight, 0.12);
+@define-color osd_button_bg_hover_a alpha(@osd_highlight, 0.28);
+@define-color osd_button_bg_hover_b alpha(@osd_lowlight, 0.14);
+@define-color osd_button_bg_hover_c alpha(@osd_highlight, 0.14);
+@define-color osd_button_bg_insensitive alpha(@osd_highlight, 0.25);
 @define-color osd_button_border shade(@theme_selected_bg_color, 0.8);
-@define-color osd_button_inset shade(@osd_fg, 0.67);
-@define-color osd_button_shadow alpha(black, 0.35);
-@define-color osd_trough_bg alpha(@osd_button_fg, 0.10);
-@define-color scrollbar_track_color mix(@base_color, black, 0.1);
-@define-color scrollbar_trough shade(@theme_bg_color, 0.98);
-@define-color scrollbar_slider @theme_bg_color;
-@define-color scrollbar_slider_bg_color shade(@theme_selected_bg_color, 0.99);
-@define-color scrollbar_slider_hover_bg_color shade(@theme_selected_bg_color, 1.03);
+@define-color osd_button_fg shade(@osd_fg, 0.85);
+@define-color osd_button_fg_active shade(@osd_fg, 1.1);
+@define-color osd_button_fg_hover shade(@osd_fg, 0.96);
+@define-color osd_button_fg_insensitive shade(@osd_fg, 0.7);
+@define-color osd_button_shadow rgba(0, 0, 0, 0.35);
+@define-color osd_fg rgb(237, 237, 237);
+@define-color osd_highlight @theme_base_color;
+@define-color osd_lowlight rgb(82, 82, 82);
+@define-color osd_progressbar_bg shade(@osd_progressbar_bg_b, 1.3);
+@define-color osd_progressbar_bg_a @wm_title;
+@define-color osd_progressbar_bg_b @wm_title;
+@define-color osd_spinbutton_button_bg_hover_a alpha(shade(@theme_selected_bg_color, 1.2), 0.4);
+@define-color osd_spinbutton_button_bg_hover_b alpha(@button_border_active, 0.4);
+@define-color popover_bg shade(@wm_bg_a, 1.08);
+@define-color popover_bg_shadow_a shade(@wm_bg_a, 1.18);
+@define-color popover_bg_shadow_b shade(@wm_bg_a, 1.16);
+@define-color popover_border rgb(0, 0, 0);
+@define-color popover_button_bg_a shade(@wm_bg_a, 2.03);
+@define-color popover_button_bg_b shade(@wm_bg_a, 1.17);
+@define-color popover_button_bg_suggested_a shade(@popover_button_bg_suggested_disabled, 2.03);
+@define-color popover_button_bg_suggested_b shade(@popover_button_bg_suggested_disabled, 1.17);
+@define-color popover_button_bg_suggested_disabled mix(@wm_bg_a, @theme_selected_bg_color, 0.5);
+@define-color popover_entry_bg shade(@wm_bg_a, 1.3);
+@define-color popover_list_row_bg_hover shade(@theme_selected_bg_color, 1.1);
+@define-color popover_modelbutton_accelerator_fg alpha(@wm_title, 0.5);
+@define-color popover_modelbutton_disabled_accelerator_fg alpha(@popover_modelbutton_fg_disabled, 0.5);
+@define-color popover_modelbutton_fg_disabled mix(@wm_title, @wm_bg_a, 0.5);
+@define-color popover_modelbutton_hover_accelerator_fg alpha(@theme_selected_fg_color, 0.8);
+@define-color popover_separator_border shade(@wm_bg_a, 1.26);
 @define-color progressbar_fill_a shade(@theme_selected_bg_color, 1.07);
 @define-color progressbar_fill_b shade(mix(@theme_selected_bg_color, green, 0.10), 0.91);
-@define-color button_border_active shade(@theme_selected_bg_color, 0.95);
-@define-color osd_progressbar_background_a @dark_fg_color;
-@define-color osd_progressbar_background_b @dark_fg_color;
-@define-color progressbar_backdrop_fill_a shade(@backdrop_selected_bg_color, 1.07);
-@define-color progressbar_backdrop_fill_b shade(mix(@backdrop_selected_bg_color, grey, 0.10), 0.91);
-@define-color button_border_backdrop_active shade(@backdrop_selected_bg_color, 0.95);
-@define-color inset_light_color alpha(white, 0.45);
-@define-color inset_dark_color alpha(black, 0.07);
-@define-color content_view_bg #ffffff;
-@define-color text_view_bg #ffffff;
-@define-color unfocused_insensitive_color #d4d4d4;
-@define-color wm_shadow alpha(black, 0.5);
-@define-color wm_title @dark_fg_color;
-@define-color wm_unfocused_title @backdrop_fg_color;
-@define-color wm_title_shadow shade(@dark_bg_color, 0.7);
-@define-color wm_bg_a @dark_bg_color;
-@define-color wm_bg_b shade(@dark_bg_color, 1.5);
-@define-color wm_bg_c shade(@dark_bg_color, 1.65);
-@define-color wm_bg_d shade(@dark_bg_color, 1.2);
-@define-color wm_bg_e shade(@dark_bg_color, 1.09);
-@define-color wm_border shade(@dark_bg_color, 1.1);
-@define-color wm_borders_edge rgba(255, 255, 255, 0.8);
-@define-color wm_button_hover_color_a shade(#FAFAFA, 1.3);
-@define-color wm_button_hover_color_b #FAFAFA;
-@define-color wm_button_active_color_a shade(#FAFAFA, 0.85);
-@define-color wm_button_active_color_b shade(#FAFAFA, 0.89);
-@define-color wm_button_active_color_c shade(#FAFAFA, 0.9);
+@define-color progressbar_fill_insensitive_a shade(@selected_bg_insensitive, 1.07);
+@define-color progressbar_fill_insensitive_b shade(mix(@selected_bg_insensitive, grey, 0.10), 0.91);
+@define-color progressbar_progress_border_insensitive_a shade(@button_border_active_insensitive, 0.80);
+@define-color progressbar_progress_border_insensitive_b shade(@button_border_active_insensitive, 0.85);
+@define-color question_bg rgb(138, 173, 212);
+@define-color question_bg_a shade(@question_bg, 1.04);
+@define-color question_bg_b shade(@question_bg, 0.96);
+@define-color question_bg_shadow_a shade(@question_bg, 1.08);
+@define-color question_bg_shadow_b shade(@question_bg, 1.1);
+@define-color question_border_a shade(@question_bg, 0.8);
+@define-color question_border_b shade(@question_bg, 0.75);
+@define-color question_fg rgb(97, 122, 214);
+@define-color rubberband_bg alpha(@theme_selected_bg_color, 0.35);
+@define-color scale_indicator_bg shade(@theme_bg_color, 0.8);
+@define-color scrollbar_bg shade(@scrollbar_trough, 1.08);
+@define-color scrollbar_slider_bg shade(@theme_selected_bg_color, 0.99);
+@define-color scrollbar_slider_bg_disabled shade(@scrollbar_slider_bg, 0.85);
+@define-color scrollbar_slider_bg_hover shade(@theme_selected_bg_color, 1.03);
+@define-color scrollbar_slider_border shade(@scrollbar_slider_bg, 0.95);
+@define-color scrollbar_slider_border_disabled shade(@scrollbar_slider_bg, 0.75);
+@define-color scrollbar_trough shade(@theme_bg_color, 0.98);
+@define-color scrolledwindow_border_a shade(@theme_bg_color, 0.84);
+@define-color scrolledwindow_border_b shade(@theme_bg_color, 0.76);
+@define-color scrolledwindow_border_c shade(@theme_bg_color, 0.86);
+@define-color selected_bg_insensitive shade(@theme_bg_color, 0.92);
+@define-color separator_border_disabled alpha(shade(@theme_bg_color, 1.26), 0.3);
+@define-color separator_border_normal alpha(shade(@theme_bg_color, 1.26), 0.6);
+@define-color shortcut_keycap_bg_shadow rgb(251, 251, 251);
+@define-color shortcut_keycap_fg rgb(61, 61, 61);
+@define-color shortcut_keycap_border rgb(225, 225, 225);
+@define-color slider_bg_dark shade(@bg_dark_slider, 1.02);
+@define-color spinbutton_bg_active alpha(@theme_selected_bg_color, 0.2);
+@define-color spinbutton_border alpha(@fg_disabled, 0.22);
+@define-color spinbutton_entry_border_focus alpha(@borders, 0.1);
+@define-color success rgb(78, 154, 6);
+@define-color switch_bg_checked_a shade(@theme_selected_bg_color, 0.93);
+@define-color switch_bg_insensitive_a shade(@theme_bg_color, 0.93);
+@define-color switch_bg_insensitive_b shade(@theme_bg_color, 0.99);
+@define-color textview_bg_disabled rgb(252, 252, 252);
+@define-color textview_fg_disabled rgb(156, 156, 156);
+@define-color theme_base_color rgb(255, 255, 255);
+@define-color theme_bg_color rgb(242, 241, 240);
+@define-color theme_fg_color rgb(76, 76, 76);
+@define-color theme_selected_bg_color rgb(135, 165, 86);
+@define-color theme_selected_fg_color @theme_base_color;
+@define-color theme_text_color rgb(60, 60, 60);
+@define-color theme_unfocused_base_color @theme_base_color;
+@define-color theme_unfocused_bg_color @theme_bg_color;
+@define-color theme_unfocused_fg_color @wm_unfocused_title;
+@define-color theme_unfocused_selected_bg_color @theme_selected_bg_color;
+@define-color theme_unfocused_selected_fg_color @theme_selected_fg_color;
+@define-color theme_unfocused_text_color mix(@theme_base_color, @theme_text_color, 0.8);
+@define-color tooltip_bg rgb(30, 30, 30);
+@define-color tooltip_border shade(@wm_bg_a, 1.8);
+@define-color tooltip_fg rgb(235, 235, 235);
+@define-color tooltip_fg_shadow alpha(@popover_border, 0.8);
+@define-color trough_bg_disabled shade(@bg_insensitive, 0.96);
+@define-color trough_bg_normal rgb(209, 209, 209);
+@define-color trough_border_disabled shade(@insensitive_scale_borders, 0.75);
+@define-color trough_highlight_bg_disabled rgb(181, 181, 181);
+@define-color trough_highlight_border_a shade(@button_border_active, 0.80);
+@define-color trough_highlight_border_b shade(@button_border_active, 0.85);
+@define-color warning_bg rgb(250, 173, 61);
+@define-color warning_bg_a shade(@warning_bg, 1.04);
+@define-color warning_bg_b shade(@warning_bg, 0.96);
+@define-color warning_bg_shadow_a shade(@warning_bg, 1.08);
+@define-color warning_bg_shadow_b shade(@warning_bg, 1.1);
+@define-color warning_border_a shade(@warning_bg, 0.75);
+@define-color warning_fg rgb(173, 120, 41);
+@define-color window_headerbar_bg_maximized shade(@wm_bg_a, 0.96);
+@define-color windowcontrols_button_bg_a rgb(90, 89, 85);
+@define-color windowcontrols_button_bg_b rgb(117, 116, 109);
+@define-color windowcontrols_button_bg_c rgb(142, 141, 136);
+@define-color windowcontrols_button_bg_active_a rgb(119, 118, 111);
+@define-color windowcontrols_button_bg_active_b rgb(116, 115, 108);
+@define-color windowcontrols_button_bg_close_a rgb(129, 186, 74);
+@define-color windowcontrols_button_bg_close_b rgb(181, 215, 147);
+@define-color windowcontrols_button_bg_close_c rgb(222, 234, 210);
+@define-color windowcontrols_button_bg_close_active_a rgb(106, 149, 66);
+@define-color windowcontrols_button_bg_close_active_b rgb(144, 182, 106);
+@define-color windowcontrols_button_bg_close_hover_a rgb(142, 201, 86);
+@define-color windowcontrols_button_bg_close_hover_b rgb(192, 225, 161);
+@define-color windowcontrols_button_bg_close_hover_c rgb(238, 240, 234);
+@define-color windowcontrols_button_bg_hover_a rgb(150, 150, 150);
+@define-color windowcontrols_button_bg_hover_b rgb(189, 189, 189);
+@define-color windowcontrols_button_bg_hover_c rgb(202, 202, 202);
+@define-color windowcontrols_button_bg_insensitive_a rgb(96, 95, 89);
+@define-color windowcontrols_button_bg_insensitive_b rgb(91, 90, 84);
+@define-color windowcontrols_button_border rgb(56, 55, 52);
+@define-color windowcontrols_button_fg rgb(61, 60, 55);
+@define-color windowcontrols_button_fg_close rgb(50, 49, 18);
+@define-color windowhandle_button_bg_active_a shade(@wm_bg_a, 0.95);
+@define-color windowhandle_button_bg_checked_disabled shade(@wm_bg_a, 0.94);
+@define-color windowhandle_button_bg_checked_disabled_b shade(@wm_bg_a, 1.02);
+@define-color windowhandle_button_bg_disabled_a shade(@wm_bg_a, 1.01);
+@define-color windowhandle_button_bg_disabled_b shade(@wm_bg_a, 0.99);
+@define-color windowhandle_button_bg_suggested rgba(0, 255, 0, 0.3);
+@define-color windowhandle_button_bg_suggested_active_a shade(@windowhandle_button_bg_suggested_active_b, 0.95);
+@define-color windowhandle_button_bg_suggested_active_b mix(@wm_bg_a, rgb(0, 255, 0), 0.3);
+@define-color windowhandle_button_bg_suggested_disabled_a shade(@windowhandle_button_bg_suggested_active_b, 1.01);
+@define-color windowhandle_button_bg_suggested_disabled_b shade(@windowhandle_button_bg_suggested_active_b, 0.99);
+@define-color windowhandle_button_bg_suggested_hover_a shade(@windowhandle_button_bg_suggested_active_b, 1.2);
+@define-color windowhandle_button_bg_suggested_hover_b shade(@windowhandle_button_bg_suggested_active_b, 1.1);
+@define-color windowhandle_button_fg_shadow_insensitive shade(@wm_bg_a, 0.9);
+@define-color windowhandle_linked_button_bg_shadow_a shade(@wm_bg_a, 1.4);
+@define-color windowhandle_scale_trough_border_a shade(@wm_bg_a, 0.75);
+@define-color windowhandle_scale_trough_border_b shade(@wm_bg_a, 1.15);
+@define-color windowhandle_separator_border alpha(@windowhandle_button_bg_checked_disabled, 0.35);
+@define-color windowhandle_separator_border_b alpha(@popover_separator_border, 0.5);
+@define-color windowhandle_switch_bg_b rgb(91, 90, 86);
+@define-color windowhandle_switch_bg_disabled_a shade(@wm_bg_a, 0.93);
+@define-color windowhandle_switch_fg_disabled shade(@wm_title, 0.6);
+@define-color windowhandle_switch_slider_bg_a shade(@slider_bg_dark, 1.08);
+@define-color windowhandle_switch_slider_bg_a shade(@slider_bg_dark, 0.94);
+@define-color wm_bg_a rgb(60, 59, 55);
+@define-color wm_bg_b shade(@wm_bg_a, 1.5);
+@define-color wm_bg_c shade(@wm_bg_a, 1.65);
+@define-color wm_bg_d shade(@wm_bg_a, 1.2);
+@define-color wm_bg_e shade(@wm_bg_a, 1.09);
+@define-color wm_border shade(@wm_bg_a, 1.1);
+@define-color wm_shadow rgba(0, 0, 0, 0.5);
+@define-color wm_title rgb(223, 219, 210);
+@define-color wm_title_shadow shade(@wm_bg_a, 0.7);
+@define-color wm_unfocused_title mix(@theme_bg_color, @theme_fg_color, 0.8);
 
 *
 {
     -gtk-icon-style: regular;
     background-origin: border-box;
     background-clip: padding-box;
-    caret-color: @text_color;
+    caret-color: @theme_text_color;
 }
 
 *:disabled
 {
-    color: shade(@bg_color, 0.6);
+    color: @fg_disabled;
     -gtk-icon-filter: opacity(0.5);
 }
 
@@ -230,10 +402,10 @@ separator
 {
     border-style: solid;
     border-image: none;
-    border-color: shade(@bg_color, 0.92);
-    border-bottom-color: alpha(shade(@bg_color, 1.26), 0.6);
-    border-right-color: alpha(shade(@bg_color, 1.26), 0.6);
-    color: shade(@bg_color, 0.92);
+    border-color: @selected_bg_insensitive;
+    border-bottom-color: @separator_border_normal;
+    border-right-color: @separator_border_normal;
+    color: @selected_bg_insensitive;
 }
 
 separator.horizontal
@@ -250,13 +422,13 @@ separator.vertical
 
 label > selection
 {
-    background-color: alpha(@theme_selected_bg_color, 0.9);
+    background-color: @label_selection_bg;
     color: @theme_selected_fg_color;
 }
 
 label > link
 {
-    color: #a7bb85;
+    color: @theme_selected_bg_color;
     text-decoration: underline;
 }
 
@@ -271,15 +443,15 @@ label.dim-label
 editablelabel > stack > text
 {
     border-image: -gtk-scaled(url("assets/entry-focused.png"),url("assets/entry-focused@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: @text_color;
-    background-color: @base_color;
+    color: @theme_text_color;
+    background-color: @theme_base_color;
     padding: 2px;
 }
 
 editablelabel > stack > text > selection
 {
     color: @theme_selected_fg_color;
-    background-color: @selected_bg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 /* GtkButton */
@@ -290,9 +462,9 @@ button
     padding: 5px 6px;
     min-height: 18px;
     min-width: 14px;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.08), @button_bg_color 50%, shade(@button_bg_color, 0.94));
-    color: @fg_color;
-    text-shadow: 0 1px alpha(shade(@button_bg_color, 1.25), 0.4);
+    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
+    color: @theme_fg_color;
+    text-shadow: 0 1px @button_fg_shadow;
     border: 1px solid transparent;
     border-radius: 8px;
     border-image-source: -gtk-scaled(url("assets/button.png"), url("assets/button@2.png"));
@@ -310,26 +482,25 @@ button:focus
 
 button:hover
 {
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.12), @button_bg_color 50%, shade(@button_bg_color, 0.96));
+    background-image: linear-gradient(to bottom, @button_bg_hover_a, @button_bg_normal_b 50%, @button_bg_hover_b);
     border-image-source: -gtk-scaled(url("assets/button-hover.png"), url("assets/button-hover@2.png"));
 }
 
 button:checked
 {
-    background-image: linear-gradient(to bottom, #cecece, #e8e8e8);
+    background-image: linear-gradient(to bottom, @button_bg_checked_a, @button_bg_checked_b);
     border-image-source: -gtk-scaled(url("assets/button-active.png"), url("assets/button-active@2.png"));
 }
 
 button:active
 {
-    background-image: linear-gradient(to bottom, #dcdcdc, #f3f3f3);
+    background-image: linear-gradient(to bottom, @button_bg_active_a, @button_bg_active_b);
     border-image-source: -gtk-scaled(url("assets/button-active-hover.png"), url("assets/button-active-hover@2.png"));
 }
 
 button:disabled
 {
-    background-image: image(mix(#ebebeb, @bg_color, 0.5));
-    text-shadow: 0 1px alpha(shade(@button_bg_color, 1.25), 0.4);
+    background-image: image(@button_bg_disabled);
     border-image-source: -gtk-scaled(url("assets/button-disabled.png"), url("assets/button-disabled@2.png"));
 }
 
@@ -350,13 +521,13 @@ button:focus:active
 
 button:active:disabled
 {
-    background-image: linear-gradient(to bottom, #e3e3e3, #f3f3f3);
+    background-image: linear-gradient(to bottom, @button_bg_active_disabled, @button_bg_active_b);
     border-image-source: -gtk-scaled(url("assets/button-active-disabled.png"), url("assets/button-active-disabled@2.png"));
 }
 
 button.needs-attention > label
 {
-    background-image: radial-gradient(farthest-side, @warning_bg_color 80%, transparent);
+    background-image: radial-gradient(farthest-side, @warning_bg 80%, transparent);
     background-size: 10px 10px;
     background-repeat: no-repeat;
     background-position: right center;
@@ -365,64 +536,64 @@ button.needs-attention > label
 
 button.destructive-action
 {
-    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @error_bg_color, 0.5), 1.08), mix(@button_bg_color, @error_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @error_bg_color, 0.5), 0.94));
+    background-image: linear-gradient(to bottom, @button_bg_destructive_a, @button_bg_destructive 50%, @button_bg_destructive_b);
 }
 
 button.destructive-action:hover
 {
-    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @error_bg_color, 0.5), 1.12), mix(@button_bg_color, @error_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @error_bg_color, 0.5), 0.96));
+    background-image: linear-gradient(to bottom, @button_bg_destructive_hover_a, @button_bg_destructive 50%, @button_bg_destructive_hover_b);
 }
 
 button.destructive-action:checked
 {
-    background-image: linear-gradient(to bottom, mix(#cecece, @error_bg_color, 0.5), mix(#e8e8e8, @error_bg_color, 0.5));
+    background-image: linear-gradient(to bottom, @button_bg_destructive_checked_a, @button_bg_destructive_checked_b);
 }
 
 button.destructive-action:active
 {
-    background-image: linear-gradient(to bottom, mix(#dcdcdc, @error_bg_color, 0.5), mix(#f3f3f3, @error_bg_color, 0.5));
+    background-image: linear-gradient(to bottom, @button_bg_destructive_active_a, @button_bg_destructive_active_b);
 }
 
 button.destructive-action:disabled
 {
-    background-image: image(mix(mix(#ebebeb, @error_bg_color, 0.5), mix(@bg_color, @error_bg_color, 0.5), 0.5));
+    background-image: image(@button_bg_destructive_disabled);
 }
 
 button.suggested-action
 {
-    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 1.08), mix(@button_bg_color, @selected_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 0.94));
+    background-image: linear-gradient(to bottom, @button_bg_suggested_a, @button_bg_suggested 50%, @button_bg_suggested_b);
 }
 
 button.suggested-action:hover
 {
-    background-image: linear-gradient(to bottom, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 1.12), mix(@button_bg_color, @selected_bg_color, 0.5) 50%, shade(mix(@button_bg_color, @selected_bg_color, 0.5), 0.96));
+    background-image: linear-gradient(to bottom, @button_bg_suggested_hover_a, @button_bg_suggested 50%, @button_bg_suggested_hover_b);
 }
 
 button.suggested-action:checked
 {
-    background-image: linear-gradient(to bottom, mix(#cecece, @selected_bg_color, 0.5), mix(#e8e8e8, @selected_bg_color, 0.5));
+    background-image: linear-gradient(to bottom, @button_bg_suggested_checked_a, @button_bg_suggested_checked_a);
 }
 
 button.suggested-action:active
 {
-    background-image: linear-gradient(to bottom, mix(#dcdcdc, @selected_bg_color, 0.5), mix(#f3f3f3, @selected_bg_color, 0.5));
+    background-image: linear-gradient(to bottom, @button_bg_suggested_active_a, @button_bg_suggested_active_b);
 }
 
 button.suggested-action:disabled
 {
-    background-image: image(mix(mix(#ebebeb, @selected_bg_color, 0.5), mix(@bg_color, @selected_bg_color, 0.5), 0.5));
+    background-image: image(@button_bg_suggested_disabled);
 }
 
 button > separator
 {
-    border-color: shade(@button_bg_color, 0.9);
+    border-color: @button_separator_border;
 }
 
 button > separator:disabled
 {
-    border-color: shade(@button_insensitive_bg_color, 0.96);
-    border-bottom-color: alpha(shade(@bg_color, 1.26), 0.3);
-    border-right-color: alpha(shade(@bg_color, 1.26), 0.3);
+    border-color: @button_separator_border_disabled;
+    border-bottom-color: @separator_border_disabled;
+    border-right-color: @separator_border_disabled;
 }
 
 button > box > arrow
@@ -433,12 +604,6 @@ button > box > arrow
 button > box > arrow:not(:only-child)
 {
     margin-left: 6px;
-}
-
-menubutton.popup > button.image-button.toggle > box.horizontal > arrow.down
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-    margin-left: 5px;
 }
 
 button.text-button
@@ -464,19 +629,19 @@ button.flat:focus
 
 button.flat:hover
 {
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.12), @button_bg_color 50%, shade(@button_bg_color, 0.96));
+    background-image: linear-gradient(to bottom, @button_bg_hover_a, @button_bg_normal_b 50%, @button_bg_hover_b);
     border-image-source: -gtk-scaled(url("assets/button-hover.png"), url("assets/button-hover@2.png"));
 }
 
 button.flat:checked
 {
-    background-image: linear-gradient(to bottom, #cecece, #e8e8e8);
+    background-image: linear-gradient(to bottom, @button_bg_checked_a, @button_bg_checked_b);
     border-image-source: -gtk-scaled(url("assets/button-active.png"), url("assets/button-active@2.png"));
 }
 
 button.flat:active
 {
-    background-image: linear-gradient(to bottom, #dcdcdc, #f3f3f3);
+    background-image: linear-gradient(to bottom, @button_bg_active_a, @button_bg_active_b);
     border-image-source: -gtk-scaled(url("assets/button-active-hover.png"), url("assets/button-active-hover@2.png"));
 }
 
@@ -508,22 +673,28 @@ button.circular
     padding: 0;
     border-radius: 50%;
     border-image-source: none;
-    border-color: alpha(black, 0.3);
+    border-color: @button_border_circular_normal;
 }
 
 button.circular:hover
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 button.circular:focus
 {
     border-image-source: none;
-    border-color: alpha(green, 0.5);
+    border-color: @button_border_circular_focus;
 }
 
 /* GtkMenuButton */
+
+menubutton.popup > button.image-button.toggle > box.horizontal > arrow.down
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    margin-left: 5px;
+}
 
 menubutton.circular > button
 {
@@ -532,19 +703,19 @@ menubutton.circular > button
     padding: 0;
     border-radius: 50%;
     border-image-source: none;
-    border-color: alpha(black, 0.3);
+    border-color: @button_border_circular_normal;
 }
 
 menubutton.circular > button:focus
 {
     border-image-source: none;
-    border-color: alpha(green, 0.5);
+    border-color: @button_border_circular_focus;
 }
 
 menubutton.circular > button:hover
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 menubutton.circular > button.flat
@@ -556,7 +727,7 @@ menubutton.circular > button.flat
 menubutton.circular > button.flat:hover
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 menubutton.circular > button.flat:focus
@@ -568,31 +739,31 @@ menubutton.circular > button.flat:focus
 menubutton.circular > button.flat:active
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 menubutton.circular > button.flat:checked
 {
     border-image-source: none;
-    border-color: alpha(black, 0.3);
+    border-color: @button_border_circular_normal;
 }
 
 menubutton.circular > button.flat:focus:hover
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 menubutton.circular > button.flat:focus:checked
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 menubutton.circular > button.flat:focus:active
 {
     border-image-source: none;
-    border-color: alpha(black, 0.45);
+    border-color: @button_border_circular_hover;
 }
 
 /* GtkEntry */
@@ -604,9 +775,9 @@ entry
     border-style: solid;
     border-color: transparent;
     border-image: -gtk-scaled(url("assets/entry.png"),url("assets/entry@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, shade(@base_color, 0.96), @base_color);
+    background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
     padding: 5px 7px;
-    color: @text_color;
+    color: @theme_text_color;
 }
 
 entry:focus-within
@@ -617,23 +788,23 @@ entry:focus-within
 entry:disabled
 {
     border-image: -gtk-scaled(url("assets/entry-disabled.png"),url("assets/entry-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-color: #f5f5f5;
+    background-color: @entry_bg_disabled;
     background-image: none;
-    color: mix(@text_color, @base_color, 0.4);
+    color: @entry_fg_disabled;
 }
 
 entry:backdrop
 {
     border-image: -gtk-scaled(url("assets/backdrop-entry.png"), url("assets/backdrop-entry@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, mix(shade(@base_color, 0.96), @bg_color, 0.5), mix(@base_color, @bg_color, 0.5));
-    color: @backdrop_text_color;
+    background-image: linear-gradient(to bottom, @entry_bg_insensitive_a, @entry_bg_insensitive_b);
+    color: @theme_unfocused_text_color;
 }
 
 entry:disabled:backdrop
 {
     border-image: -gtk-scaled(url("assets/backdrop-entry-disabled.png"), url("assets/backdrop-entry-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-color: mix(#f5f5f5, @bg_color, 0.5);
-    color: mix(@text_color, @base_color, 0.4);
+    background-color: @entry_bg_disabled_insensitive;
+    color: @entry_fg_disabled;
 }
 
 entry.flat
@@ -648,20 +819,20 @@ entry.flat:focus
 
 entry > text.readonly
 {
-    background-color: #f5f5f5;
+    background-color: @entry_bg_disabled;
     background-image: none;
 }
 
 entry > text > selection
 {
     color: @theme_selected_fg_color;
-    background-color: @selected_bg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 entry > text > selection:focus
 {
     color: @theme_selected_fg_color;
-    background-color: @selected_bg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 entry > text > placeholder
@@ -684,7 +855,7 @@ entry > progress > trough > progress
 {
     border-radius: 2px;
     border-width: 0 0 2px;
-    border-color: @selected_bg_color;
+    border-color: @theme_selected_bg_color;
     border-style: solid;
 }
 
@@ -722,12 +893,12 @@ button.link
     padding: 5px 6px;
     min-height: 18px;
     min-width: 14px;
-    color: #a7bb85;
+    color: @theme_selected_bg_color;
 }
 
 button.link:visited
 {
-    color: #a7bb85;
+    color: @theme_selected_bg_color;
 }
 
 button.link > label
@@ -742,13 +913,13 @@ switch
     border-image: -gtk-scaled(url("assets/switch-trough-off.png"), url("assets/switch-trough-off@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
     padding: 2px;
     border-radius: 6px;
-    background-image: linear-gradient(to bottom, #cecece, #e8e8e8);
-    color: @fg_color;
+    background-image: linear-gradient(to bottom, @button_bg_checked_a, @button_bg_checked_b);
+    color: @theme_fg_color;
 }
 
 switch:focus
 {
-    outline: 2px solid @focus_color;
+    outline: 2px solid @focus;
     outline-offset: -2px;
     border-radius: 6px;
 }
@@ -756,21 +927,21 @@ switch:focus
 switch:checked
 {
     border-image: -gtk-scaled(url("assets/switch-trough-on.png"), url("assets/switch-trough-on@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.93), shade(@selected_bg_color, 0.99));
-    color: @selected_fg_color;
+    background-image: linear-gradient(to bottom, @switch_bg_checked_a, @scrollbar_slider_bg);
+    color: @theme_selected_fg_color;
 }
 
 switch:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 0.93), shade(@bg_color, 0.99));
+    background-image: linear-gradient(to bottom, @switch_bg_insensitive_a, @switch_bg_insensitive_b);
     border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@bg_color, 0.6);
+    color: @fg_disabled;
 }
 
 switch:disabled
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 0.93), shade(@bg_color, 0.99));
-    color: shade(@bg_color, 0.6);
+    background-image: linear-gradient(to bottom, @switch_bg_insensitive_a, @switch_bg_insensitive_b);
+    color: @fg_disabled;
     border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
 }
 
@@ -791,7 +962,7 @@ switch > slider
     border-radius: 6px;
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.08), @button_bg_color 50%, shade(@button_bg_color, 0.94));
+    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     border-image: -gtk-scaled(url("assets/switch-button-off.png"), url("assets/switch-button-off@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
 }
 
@@ -800,7 +971,7 @@ switch:backdrop > slider
     border-radius: 6px;
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.08), @button_bg_color 50%, shade(@button_bg_color, 0.94));
+    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     border-image: -gtk-scaled(url("assets/switch-button-off-disabled.png"), url("assets/switch-button-off-disabled@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
 }
 
@@ -816,7 +987,7 @@ switch:disabled > slider
 
 switch:focus > slider
 {
-    outline: 2px solid @focus_color;
+    outline: 2px solid @focus;
     outline-offset: -2px;
     border-radius: 6px;
 }
@@ -854,23 +1025,23 @@ headerbar
 {
     min-height: 30px;
     padding: 2px 6px;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.5), @dark_bg_color);
-    border-top-color: shade(@dark_bg_color, 1.5);
+    background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
+    border-top-color: @wm_bg_b;
     border-radius: 7px 7px 0 0;
     border-width: 1px 0 0 0;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
-    box-shadow: inset 0 1px shade(@dark_bg_color, 1.65);
+    color: @wm_title;
+    text-shadow: 0 -1px @wm_title_shadow;
+    box-shadow: inset 0 1px @wm_bg_c;
     border-style: solid;
 }
 
 headerbar:backdrop
 {
     background-image: none;
-    background-color: @dark_bg_color;
-    color: @backdrop_fg_color;
-    border-top-color: @dark_bg_color;
-    box-shadow: inset 0 1px shade(@dark_bg_color, 1.2);
+    background-color: @wm_bg_a;
+    color: @theme_unfocused_fg_color;
+    border-top-color: @wm_bg_a;
+    box-shadow: inset 0 1px @wm_bg_d;
 }
 
 /* GtkSpinButton */
@@ -878,7 +1049,7 @@ headerbar:backdrop
 spinbutton
 {
     font-feature-settings: "tnum";
-    border-color: alpha(shade(@bg_color, 0.6), 0.22);
+    border-color: @spinbutton_border;
     border-width: 1px;
     border-style: solid;
     border-radius: 7px;
@@ -887,8 +1058,8 @@ spinbutton
 
 spinbutton > text
 {
-    background-image: linear-gradient(to bottom, shade(@base_color, 0.96), @base_color);
-    box-shadow: inset 1px 0 @inset_dark_color;
+    background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 spinbutton.vertical > text
@@ -896,7 +1067,7 @@ spinbutton.vertical > text
     padding: 6px 4px 6px 2px;
     border-style: solid;
     border-width: 1px 0px 1px 0px;
-    border-color: alpha(shade(@bg_color, 0.6), 0.22);
+    border-color: @spinbutton_border;
     border-radius: 0px;
 }
 
@@ -908,28 +1079,28 @@ spinbutton.horizontal > text
 
 spinbutton > text:focus
 {
-    border-color: alpha(@borders, 0.1);
-    box-shadow: inset 0px 1px 0 0 shade(@theme_selected_bg_color, 1.3), inset 1px 0px 0 0 shade(@theme_selected_bg_color, 1.3), inset -1px 0px 0 0 shade(@theme_selected_bg_color, 1.3), inset 0px -1px 0 0 shade(@theme_selected_bg_color, 1.3);
+    border-color: @spinbutton_entry_border_focus;
+    box-shadow: inset 0px 1px 0 0 @button_fg_dark_hover, inset 1px 0px 0 0 @button_fg_dark_hover, inset -1px 0px 0 0 @button_fg_dark_hover, inset 0px -1px 0 0 @button_fg_dark_hover;
 }
 
 spinbutton > text:disabled
 {
     background-image: none;
-    background-color: @insensitive_bg_color;
-    color: mix(@text_color, @base_color, 0.4);
+    background-color: @bg_insensitive;
+    color: @entry_fg_disabled;
 }
 
 spinbutton > text:backdrop
 {
-    background-image: linear-gradient(to bottom, mix(shade(@base_color, 0.96), @bg_color, 0.5), mix(@base_color, @bg_color, 0.5));
-    color: @backdrop_text_color;
+    background-image: linear-gradient(to bottom, @entry_bg_insensitive_a, @entry_bg_insensitive_b);
+    color: @theme_unfocused_text_color;
 }
 
 spinbutton > text:backdrop:disabled
 {
     background-image: none;
-    background-color: @insensitive_bg_color;
-    color: mix(@text_color, @base_color, 0.4);
+    background-color: @bg_insensitive;
+    color: @entry_fg_disabled;
 }
 
 spinbutton > button
@@ -937,21 +1108,21 @@ spinbutton > button
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.08), @button_bg_color 50%, shade(@button_bg_color, 0.94));
+    box-shadow: inset 1px 0 @inset_dark;
+    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     background-color: transparent;
-    color: @fg_color;
+    color: @theme_fg_color;
     padding: 5px;
 }
 
 spinbutton > button:dir(rtl)
 {
-    box-shadow: inset -1px 0 @inset_dark_color;
+    box-shadow: inset -1px 0 @inset_dark;
 }
 
 spinbutton > button:hover
 {
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.12), @button_bg_color 50%, shade(@button_bg_color, 0.96));
+    background-image: linear-gradient(to bottom, @button_bg_hover_a, @button_bg_normal_b 50%, @button_bg_hover_b);
 }
 
 spinbutton > button:disabled
@@ -963,7 +1134,7 @@ spinbutton > button:disabled
 
 spinbutton > button:active
 {
-    background-image: radial-gradient(50% 50% at center center, alpha(@selected_bg_color, 0.2), alpha(@selected_bg_color, 0.0));
+    background-image: radial-gradient(50% 50% at center center, @spinbutton_bg_active, transparent);
 }
 
 spinbutton.horizontal > button.down
@@ -993,7 +1164,7 @@ frame
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    border-color: shade(@bg_color, 0.82);
+    border-color: @borders;
     border-image: none;
     background: none;
 }
@@ -1014,7 +1185,7 @@ notebook
 notebook > header
 {
     background-image: none;
-    background-color: shade(@theme_bg_color, 1.0);
+    background-color: @theme_bg_color;
     border-width: 0px;
 }
 
@@ -1024,7 +1195,7 @@ notebook > header.top
     border-width: 0px 0px 1px 0px;
     border-radius: 4px 4px 0px 0px;
     background-color: @theme_bg_color;
-    box-shadow: inset  0px -1px alpha(shade(@bg_color, 0.82), 0.90);
+    box-shadow: inset  0px -1px @notebook_header_bg_shadow;
 }
 
 notebook > header.bottom
@@ -1033,7 +1204,7 @@ notebook > header.bottom
     border-width: 1px 0px 0px 0px;
     border-radius: 0px 0px 4px 4px;
     background-color: @theme_bg_color;
-    box-shadow: inset  0px  1px alpha(shade(@bg_color, 0.82), 0.90);
+    box-shadow: inset  0px  1px @notebook_header_bg_shadow;
 }
 
 notebook > header.left
@@ -1042,7 +1213,7 @@ notebook > header.left
     border-width: 0px 1px 0px 0px;
     border-radius: 4px 0px 0px 4px;
     background-color: @theme_bg_color;
-    box-shadow: inset -1px  0px alpha(shade(@bg_color, 0.82), 0.90);
+    box-shadow: inset -1px  0px @notebook_header_bg_shadow;
 }
 
 notebook > header.right
@@ -1051,22 +1222,22 @@ notebook > header.right
     border-width: 0px 0px 0px 1px;
     border-radius: 0px 4px 4px 0px;
     background-color: @theme_bg_color;
-    box-shadow: inset  1px  0px alpha(shade(@bg_color, 0.82), 0.90);
+    box-shadow: inset  1px  0px @notebook_header_bg_shadow;
 }
 
 notebook > header > tabs > tab
 {
-    border-color: shade(@bg_color, 0.82);
+    border-color: @borders;
     border-style: solid;
     border-width: 1px;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, @notebook_tab_gradient_a, @notebook_tab_gradient_c);
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_a, @notebook_tab_bg_c);
     padding: 6px;
 }
 
 notebook tab.reorderable-page:checked
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0 0;
     box-shadow: none;
     border-style: solid;
@@ -1074,7 +1245,7 @@ notebook tab.reorderable-page:checked
 
 notebook tab.reorderable-page:checked:hover
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0 0;
     box-shadow: none;
     border-style: solid;
@@ -1099,19 +1270,19 @@ notebook > header > tabs > tab > box > button.flat:hover
 notebook > header > tabs > tab > box > button.flat:checked
 {
     color:  @button_active_text;
-    background-color: alpha(black, 0.08);
-    box-shadow: inset 0 1px alpha(black, 0.05);
+    background-color: @notebook_button_bg;
+    box-shadow: inset 0 1px @notebook_button_bg_shadow;
     -gtk-icon-shadow: 0 1px @button_active_text_shadow;
-    border-color: alpha(black, 0.27) alpha(black, 0.13) alpha(black, 0.13) alpha(black, 0.13);
+    border-color: @notebook_button_border_a @notebook_button_border_b @notebook_button_border_b @notebook_button_border_b;
 }
 
 notebook > header > tabs > tab > box > button.flat:hover:active
 {
     color: @button_active_text;
-    background-color: alpha(black, 0.08);
-    box-shadow: inset 0 1px alpha(black, 0.05);
+    background-color: @notebook_button_bg;
+    box-shadow: inset 0 1px @notebook_button_bg_shadow;
     -gtk-icon-shadow: 0 1px @button_active_text_shadow;
-    border-color: alpha(black, 0.27) alpha(black, 0.13) alpha(black, 0.13) alpha(black, 0.13);
+    border-color: @notebook_button_border_a @notebook_button_border_b @notebook_button_border_b @notebook_button_border_b;
 }
 
 notebook > header > tabs > tab > box > button.flat > image
@@ -1121,7 +1292,7 @@ notebook > header > tabs > tab > box > button.flat > image
 
 notebook > header > tabs > tab > label
 {
-    color: shade(@theme_fg_color, 1.30);
+    color: @notebook_label_fg;
     font-weight: normal;
 }
 
@@ -1180,12 +1351,12 @@ notebook > header > tabs > arrow:active
 
 notebook > header > tabs > arrow:disabled
 {
-    color: #c7c7c7;
+    color: @notebook_arrow_fg_disabled;
 }
 
 notebook > header > tabs > arrow:backdrop
 {
-    color: rgba(84, 89, 90, 0.4);
+    color: @notebook_arrow_fg_insensitive;
 }
 
 notebook > header.top > tabs > arrow.up
@@ -1232,8 +1403,8 @@ notebook.frame
 {
     padding: 0;
     border-style: solid;
-    border-color: shade(@bg_color, 0.82);
-    background-color: shade(@notebook_bg_color, 1.00);
+    border-color: @borders;
+    background-color: @notebook_bg;
     border-width: 1px;
     border-radius: 4px;
 }
@@ -1249,7 +1420,7 @@ notebook.frame > header.top > tabs > tab
 
 notebook.frame > header.top > tabs > tab:checked
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0px 0px;
     border-width: 1px 1px 0px 1px;
     border-style: solid;
@@ -1257,7 +1428,7 @@ notebook.frame > header.top > tabs > tab:checked
 
 notebook.frame > header.top > tabs > tab:checked:hover
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0px 0px;
     border-width: 1px 1px 0px 1px;
     border-style: solid;
@@ -1273,7 +1444,7 @@ notebook.frame > header.bottom > tabs > tab
 
 notebook.frame > header.bottom > tabs > tab:checked
 {
-    background-image: linear-gradient(to top, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to top, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 0px 0px 4px 4px;
     border-style: solid;
     border-width: 0px 1px 1px 1px;
@@ -1281,7 +1452,7 @@ notebook.frame > header.bottom > tabs > tab:checked
 
 notebook.frame > header.bottom > tabs > tab:checked:hover
 {
-    background-image: linear-gradient(to top, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to top, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 0px 0px 4px 4px;
     border-style: solid;
     border-width: 0px 1px 1px 1px;
@@ -1298,7 +1469,7 @@ notebook.frame > header.left > tabs > tab
 
 notebook.frame > header.left > tabs > tab:checked
 {
-    background-image: linear-gradient(to right,shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to right, @notebook_tab_bg_checked, @notebook_bg);
     border-style: solid;
     border-width: 1px 0px 1px 1px;
     border-radius: 4px 0px 0px 4px;
@@ -1306,7 +1477,7 @@ notebook.frame > header.left > tabs > tab:checked
 
 notebook.frame > header.left > tabs > tab:checked:hover
 {
-    background-image: linear-gradient(to right, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to right, @notebook_tab_bg_checked, @notebook_bg);
     border-style: solid;
     border-width: 1px 0px 1px 1px;
     border-radius: 4px 0px 0px 4px;
@@ -1323,7 +1494,7 @@ notebook.frame > header.right > tabs > tab
 
 notebook.frame > header.right > tabs > tab:checked
 {
-    background-image: linear-gradient(to left, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to left, @notebook_tab_bg_checked, @notebook_bg);
     border-style: solid;
     border-width: 1px 1px 1px 0px;
     border-radius: 0px 4px 4px 0px;
@@ -1331,7 +1502,7 @@ notebook.frame > header.right > tabs > tab:checked
 
 notebook.frame > header.right > tabs > tab:checked:hover
 {
-    background-image: linear-gradient(to left, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to left, @notebook_tab_bg_checked, @notebook_bg);
     border-style: solid;
     border-width: 1px 1px 1px 0px;
     border-radius: 0px 4px 4px 0px;
@@ -1341,8 +1512,8 @@ notebook.frame > header.right > tabs > tab:checked:hover
 
 paned
 {
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 paned > separator
@@ -1358,7 +1529,7 @@ paned.horizontal > notebook
 {
     border-width: 1px 1px 1px 1px;
     border-style: solid;
-    border-color: shade(@bg_color, 0.82);
+    border-color: @borders;
     border-radius: 4px 4px 0px 0px;
 }
 
@@ -1366,7 +1537,7 @@ paned.horizontal > notebook > header
 {
     border-width: 0px 0px 0px 0px;
     border-style: solid;
-    border-color: shade(@bg_color, 0.82);
+    border-color: @borders;
     border-radius: 4px 4px 0px 0px;
 }
 
@@ -1377,7 +1548,7 @@ paned.horizontal > notebook > header > tabs > tab > box > button.flat
 
 paned.horizontal > notebook > stack > box
 {
-    background-color: shade(@notebook_bg_color, 1.00);
+    background-color: @notebook_bg;
 }
 
 paned.horizontal > notebook > header > tabs > tab
@@ -1391,7 +1562,7 @@ paned.horizontal > notebook > header > tabs > tab
 
 paned.horizontal > notebook > header.top > tabs > tab:checked
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0 0;
     border-width: 1px 1px 0 1px;
     border-style: solid;
@@ -1400,7 +1571,7 @@ paned.horizontal > notebook > header.top > tabs > tab:checked
 
 paned.horizontal > notebook > header.top > tabs > tab:checked:hover
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0 0;
     border-width: 1px 1px 0 1px;
     border-style: solid;
@@ -1425,14 +1596,14 @@ scrollbar.vertical
 {
     border-width: 0px 0px 0px 1px;
     min-width: 13px;
-    background-image: linear-gradient(to right, @scrollbar_trough, shade(@scrollbar_trough, 1.08));
+    background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
 }
 
 scrollbar.horizontal
 {
     border-width: 1px 0px 0px 0px;
     min-height: 13px;
-    background-image: linear-gradient(to bottom, @scrollbar_trough, shade(@scrollbar_trough, 1.08));
+    background-image: linear-gradient(to bottom, @scrollbar_trough, @scrollbar_bg);
 }
 
 scrollbar > range > trough
@@ -1445,23 +1616,23 @@ scrollbar > range > trough
 scrollbar > range > trough.vertical
 {
     min-width: 13px;
-    background-image: linear-gradient(to right, @scrollbar_trough, shade(@scrollbar_trough, 1.08));
+    background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
 }
 
 scrollbar > range > trough.horizontal
 {
     min-height: 13px;
-    background-image: linear-gradient(to bottom, @scrollbar_trough, shade(@scrollbar_trough, 1.08));
+    background-image: linear-gradient(to bottom, @scrollbar_trough, @scrollbar_bg);
 }
 
 scrollbar > range > trough > slider
 {
-    background-color: @scrollbar_slider_bg_color;
+    background-color: @scrollbar_slider_bg;
     background-image: none;
     border-radius: 0;
     border-style: solid;
     border-image: none;
-    border-color: shade(@scrollbar_slider_bg_color, 0.95);
+    border-color: @scrollbar_slider_border;
     border-width: 1px;
 }
 
@@ -1481,13 +1652,13 @@ scrollbar.horizontal > range > trough > slider
 
 scrollbar > range > trough > slider:hover
 {
-    background-color: @scrollbar_slider_hover_bg_color;
+    background-color: @scrollbar_slider_bg_hover;
 }
 
 scrollbar > range > trough > slider:disabled
 {
-    background-color: shade(@scrollbar_slider_bg_color, 0.85);
-    border-color: shade(@scrollbar_slider_bg_color, 0.75);
+    background-color: @scrollbar_slider_bg_disabled;
+    border-color: @scrollbar_slider_border_disabled;
 }
 
 /* GtkCheckButton */
@@ -1738,7 +1909,7 @@ scale.horizontal > trough
     margin: 8px 6px;
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, #d1d1d1, #e8e8e8);
+    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     border-radius: 8px;
     min-height: 4px;
 }
@@ -1746,8 +1917,8 @@ scale.horizontal > trough
 scale.horizontal > trough:disabled
 {
     border-image: -gtk-scaled(url("assets/scale-horizontal-trough-disabled.png"), url("assets/scale-horizontal-trough-disabled@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    background-color: shade(@insensitive_bg_color, 0.96);
-    border-color: shade(@insensitive_scale_borders, 0.75);
+    background-color: @trough_bg_disabled;
+    border-color: @trough_border_disabled;
     box-shadow: none;
     background-image: none;
 }
@@ -1762,7 +1933,7 @@ scale.vertical > trough
     min-width: 4px;
     margin: 8px 6px;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #d1d1d1, #e8e8e8);
+    background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
     border-image: -gtk-scaled(url("assets/scale-vertical-trough.png"), url("assets/scale-vertical-trough@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
     border-style: solid;
     border-width: 1px;
@@ -1770,8 +1941,8 @@ scale.vertical > trough
 
 scale.vertical > trough:disabled
 {
-    background-color: shade(@insensitive_bg_color, 0.96);
-    border-color: shade(@insensitive_scale_borders, 0.75);
+    background-color: @trough_bg_disabled;
+    border-color: @trough_border_disabled;
     box-shadow: none;
     background-image: none;
     border-image: -gtk-scaled(url("assets/scale-vertical-trough-disabled.png"), url("assets/scale-vertical-trough-disabled@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
@@ -1795,16 +1966,16 @@ scale.horizontal > trough > highlight
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
 }
 
 scale.horizontal > trough > highlight:disabled
 {
     border-image: -gtk-scaled(url("assets/scale-horizontal-fill-disabled.png"), url("assets/scale-horizontal-fill-disabled@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    background-color: #b5b5b5;
+    background-color: @trough_highlight_bg_disabled;
     background-image: none;
     border-color: transparent;
 }
@@ -1812,7 +1983,7 @@ scale.horizontal > trough > highlight:disabled
 scale.horizontal > trough > highlight:backdrop
 {
     border-image: -gtk-scaled(url("assets/scale-horizontal-fill-backdrop.png"), url("assets/scale-horizontal-fill-backdrop@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    background-color: #dcdcdc;
+    background-color: @button_bg_active_a;
     background-image: none;
     border-color: transparent;
 }
@@ -1824,16 +1995,16 @@ scale.vertical > trough > highlight
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
 }
 
 scale.vertical > trough > highlight:disabled
 {
     border-image: -gtk-scaled(url("assets/scale-vertical-fill-disabled.png"), url("assets/scale-vertical-fill-disabled@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-    background-color: #b5b5b5;
+    background-color: @trough_highlight_bg_disabled;
     background-image: none;
     border-color: transparent;
 }
@@ -1841,7 +2012,7 @@ scale.vertical > trough > highlight:disabled
 scale.vertical > trough > highlight:backdrop
 {
     border-image: -gtk-scaled(url("assets/scale-vertical-fill-backdrop.png"), url("assets/scale-vertical-fill-backdrop@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-    background-color: #dcdcdc;
+    background-color: @button_bg_active_a;
     background-image: none;
     border-color: transparent;
 }
@@ -2005,7 +2176,7 @@ scale.vertical > marks.bottom
 
 scale > marks indicator
 {
-    background-color: shade(@bg_color, 0.8);
+    background-color: @scale_indicator_bg;
 }
 
 scale.horizontal > marks indicator
@@ -2029,15 +2200,15 @@ scale > value
 
 iconview
 {
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
     border-spacing: 6px;
 }
 
 iconview:disabled
 {
-    color: #9c9c9c;
-    background-color: #fcfcfc;
+    color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
 }
 
 iconview .cell
@@ -2049,17 +2220,17 @@ iconview .cell
 
 iconview .cell:hover
 {
-    background-color: shade(@theme_selected_bg_color, 1.55);
-    border-color: shade(@theme_selected_bg_color, 1.55);
-    color: shade(@theme_selected_bg_color, 0.35);
+    background-color: @list_cell_bg_normal;
+    border-color: @list_cell_bg_normal;
+    color: @list_cell_fg_hover;
 }
 
 iconview .cell:selected
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.0), shade(@selected_bg_color, 0.9));
-    border-color: shade(@selected_bg_color, 0.8);
-    border-bottom-color: shade(@selected_bg_color, 0.7);
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.05), inset -1px 0 shade(@selected_bg_color, 1.05), inset 0 1px shade(@selected_bg_color, 1.08), inset 0 -1px shade(@selected_bg_color, 1.0);
+    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @list_cell_bg_selected);
+    border-color: @osd_button_border;
+    border-bottom-color: @list_cell_border;
+    box-shadow: inset 1px 0 @list_cell_bg_shadow_a, inset -1px 0 @list_cell_bg_shadow_a, inset 0 1px @list_cell_bg_shadow_b, inset 0 -1px @theme_selected_bg_color;
     color: @theme_selected_fg_color;
 }
 
@@ -2067,16 +2238,16 @@ iconview .cell:selected
 
 gridview
 {
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
     border-spacing: 6px;
     padding: 6px;
 }
 
 gridview:disabled
 {
-    color: #9c9c9c;
-    background-color: #fcfcfc;
+    color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
 }
 
 gridview > child
@@ -2088,17 +2259,17 @@ gridview > child
 
 gridview > child:hover
 {
-    background-color: shade(@theme_selected_bg_color, 1.55);
-    border-color: shade(@theme_selected_bg_color, 1.55);
-    color: shade(@theme_selected_bg_color, 0.35);
+    background-color: @list_cell_bg_normal;
+    border-color: @list_cell_bg_normal;
+    color: @list_cell_fg_hover;
 }
 
 gridview > child:selected
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.0), shade(@selected_bg_color, 0.9));
-    border-color: shade(@selected_bg_color, 0.8);
-    border-bottom-color: shade(@selected_bg_color, 0.7);
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.05), inset -1px 0 shade(@selected_bg_color, 1.05), inset 0 1px shade(@selected_bg_color, 1.08), inset 0 -1px shade(@selected_bg_color, 1.0);
+    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @list_cell_bg_selected);
+    border-color: @osd_button_border;
+    border-bottom-color: @list_cell_border;
+    box-shadow: inset 1px 0 @list_cell_bg_shadow_a, inset -1px 0 @list_cell_bg_shadow_a, inset 0 1px @list_cell_bg_shadow_b, inset 0 -1px @theme_selected_bg_color;
     color: @theme_selected_fg_color;
 }
 
@@ -2116,14 +2287,14 @@ gridview > child box
 
 textview
 {
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 textview:disabled
 {
-    color: #9c9c9c;
-    background-color: #fcfcfc;
+    color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
 }
 
 textview > text > selection
@@ -2134,7 +2305,7 @@ textview > text > selection
 
 textview > text > selection:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
 }
 
@@ -2142,9 +2313,8 @@ textview > text > selection:backdrop
 
 treeview
 {
-    outline-color: alpha(currentColor, 0.6);
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 treeview:selected
@@ -2155,13 +2325,13 @@ treeview:selected
 
 treeview:selected:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
 }
 
 treeview.dnd
 {
-    border-color: shade(@selected_bg_color, 1.12);
+    border-color: @columnview_border_dnd;
     border-radius: 2px;
     border-width: 1px;
     border-style: solid;
@@ -2173,10 +2343,10 @@ treeview > header > button:active
 {
     border-radius: 0;
     border-width: 0 1px 1px 0;
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.99), shade(@bg_color, 0.9)) 1;
-    box-shadow: inset -1px 0 shade(@bg_color, 1.1), inset 0 -1px shade(@bg_color, 1.1);
-    text-shadow: 0 1px alpha(shade(@bg_color, 1.25), 0.4);
-    background: linear-gradient(to bottom, shade(@bg_color, 1.04), shade(@bg_color, 1.02));
+    border-image: linear-gradient(to bottom, @switch_bg_insensitive_b, @columnview_header_button_border) 1;
+    box-shadow: inset -1px 0 @columnview_header_button_bg_shadow_a, inset 0 -1px @columnview_header_button_bg_shadow_a;
+    text-shadow: 0 1px @columnview_header_button_fg_shadow;
+    background: linear-gradient(to bottom, @columnview_header_button_bg_a, @button_bg_normal_b);
     padding: 4px 4px;
     font-weight: normal;
 }
@@ -2185,21 +2355,21 @@ treeview > header > button:hover,
 treeview > header > button:focus:hover,
 treeview > header > button:active:hover
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 1.0), shade(@bg_color, 0.95));
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.99), shade(@bg_color, 0.9)) 1;
+    background-image: linear-gradient(to bottom, @theme_bg_color, @bg_insensitive);
+    border-image: linear-gradient(to bottom, @switch_bg_insensitive_b, @columnview_header_button_border) 1;
 }
 
 treeview > header > button:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 1.04), shade(@bg_color, 1.02));
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.94), shade(@bg_color, 0.88)) 1;
-    box-shadow: inset -1px 0 shade(@bg_color, 1.03), inset 0 -1px shade(@bg_color, 1.03);
+    background-image: linear-gradient(to bottom, @columnview_header_button_bg_a, @button_bg_normal_b);
+    border-image: linear-gradient(to bottom, @columnview_header_button_border_insesitive_a, @columnview_header_button_border_insesitive_b) 1;
+    box-shadow: inset -1px 0 @columnview_header_button_bg_shadow_insensitive, inset 0 -1px @columnview_header_button_bg_shadow_insensitive;
 }
 
 treeview > header > button:hover:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 1.1), shade(@bg_color, 1.06));
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.99), shade(@bg_color, 0.9)) 1;
+    background-image: linear-gradient(to bottom, @columnview_header_button_bg_shadow_a, @columnview_header_button_bg_hover_insensitive_b);
+    border-image: linear-gradient(to bottom, @switch_bg_insensitive_b, @columnview_header_button_border) 1;
 }
 
 treeview > header > button:last-child
@@ -2243,16 +2413,15 @@ treeview.expander:checked
 treeview.separator
 {
     min-height: 2px;
-    color: shade(@bg_color, 0.92);
+    color: @selected_bg_insensitive;
 }
 
 /* GtkColumnView */
 
 columnview
 {
-    outline-color: alpha(currentColor, 0.6);
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 columnview:selected
@@ -2263,13 +2432,13 @@ columnview:selected
 
 columnview:selected:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
 }
 
 columnview.dnd
 {
-    border-color: shade(@selected_bg_color, 1.12);
+    border-color: @columnview_border_dnd;
     border-radius: 2px;
     border-width: 1px;
     border-style: solid;
@@ -2279,31 +2448,31 @@ columnview > header > button
 {
     border-radius: 0;
     border-width: 0 1px 1px 0;
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.99), shade(@bg_color, 0.9)) 1;
-    box-shadow: inset -1px 0 shade(@bg_color, 1.1), inset 0 -1px shade(@bg_color, 1.1);
-    text-shadow: 0 1px alpha(shade(@bg_color, 1.25), 0.4);
-    background: linear-gradient(to bottom, shade(@bg_color, 1.04), shade(@bg_color, 1.02));
+    border-image: linear-gradient(to bottom, @switch_bg_insensitive_b, @columnview_header_button_border) 1;
+    box-shadow: inset -1px 0 @columnview_header_button_bg_shadow_a, inset 0 -1px @columnview_header_button_bg_shadow_a;
+    text-shadow: 0 1px @columnview_header_button_fg_shadow;
+    background: linear-gradient(to bottom, @columnview_header_button_bg_a, @button_bg_normal_b);
     padding: 4px 4px;
     font-weight: normal;
 }
 
 columnview > header > button:hover
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 1.0), shade(@bg_color, 0.95));
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.99), shade(@bg_color, 0.9)) 1;
+    background-image: linear-gradient(to bottom, @theme_bg_color, @bg_insensitive);
+    border-image: linear-gradient(to bottom, @switch_bg_insensitive_b, @columnview_header_button_border) 1;
 }
 
 columnview > header > button:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 1.04), shade(@bg_color, 1.02));
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.94), shade(@bg_color, 0.88)) 1;
-    box-shadow: inset -1px 0 shade(@bg_color, 1.03), inset 0 -1px shade(@bg_color, 1.03);
+    background-image: linear-gradient(to bottom, @columnview_header_button_bg_a, @button_bg_normal_b);
+    border-image: linear-gradient(to bottom, @columnview_header_button_border_insesitive_a, @columnview_header_button_border_insesitive_b) 1;
+    box-shadow: inset -1px 0 @columnview_header_button_bg_shadow_insensitive, inset 0 -1px @columnview_header_button_bg_shadow_insensitive;
 }
 
 columnview > header > button:hover:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(@bg_color, 1.1), shade(@bg_color, 1.06));
-    border-image: linear-gradient(to bottom, shade(@bg_color, 0.99), shade(@bg_color, 0.9)) 1;
+    background-image: linear-gradient(to bottom, @columnview_header_button_bg_shadow_a, @columnview_header_button_bg_hover_insensitive_b);
+    border-image: linear-gradient(to bottom, @switch_bg_insensitive_b, @columnview_header_button_border) 1;
 }
 
 columnview > header > button:last-child
@@ -2373,10 +2542,10 @@ progressbar.vertical
 
 progressbar > trough
 {
-    background-image: linear-gradient(to bottom, #d1d1d1, #e8e8e8);
+    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     border-style: solid;
     border-width: 1px;
-    color: @text_color;
+    color: @theme_text_color;
     border-image: -gtk-scaled(url("assets/progressbar-horizontal-trough.png"), url("assets/progressbar-horizontal-trough@2.png")) 6 7 6 7 / 6px 7px 6px 7px stretch;
 }
 progressbar.horizontal > trough
@@ -2389,7 +2558,7 @@ progressbar.vertical > trough
 {
     min-width: 18px;
     border-radius: 6px;
-    background-image: linear-gradient(to right, #d1d1d1, #e8e8e8);
+    background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
 }
 
 progressbar.horizontal > trough > progress
@@ -2399,10 +2568,10 @@ progressbar.horizontal > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -2414,10 +2583,10 @@ progressbar.vertical > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to right, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -2427,12 +2596,12 @@ progressbar.horizontal:backdrop > trough > progress
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
-    color: @backdrop_fg_color;
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -2441,12 +2610,12 @@ progressbar.vertical:backdrop > trough > progress
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
-    background-image: linear-gradient(to right, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
-    color: @backdrop_fg_color;
+    background-image: linear-gradient(to right, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -2491,7 +2660,7 @@ levelbar.vertical
 levelbar > trough
 {
     padding: 2px;
-    background-image: linear-gradient(to bottom, #d1d1d1, #e8e8e8);
+    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
@@ -2511,35 +2680,35 @@ levelbar.vertical > trough > block
 
 levelbar > trough > block.low
 {
-    border-color: shade(@warning_bg_color, 0.80);
-    background-image: linear-gradient(to bottom, shade(@warning_bg_color, 1.3), @warning_bg_color 75%, shade(@warning_bg_color, 0.90));
+    border-color: @levelbar_block_border_low;
+    background-image: linear-gradient(to bottom, @levelbar_block_bg_low_a, @warning_bg 75%, @levelbar_block_bg_low_c);
 }
 
 levelbar > trough > block.high
 {
-    border-color: shade(@success_color, 0.85);
-    background-image: linear-gradient(to bottom, shade(@success_color, 1.2), @success_color 75%, shade(@success_color, 0.95));
+    border-color: @levelbar_block_border_high;
+    background-image: linear-gradient(to bottom, @levelbar_block_high_bg_a, @success 75%, @levelbar_block_high_bg_c);
 }
 
 levelbar > trough > block.full
 {
-    border-color: shade(@success_color, 0.95);
-    background-image: linear-gradient(to bottom, shade(@success_color, 1.2), @success_color 75%, shade(@success_color, 0.95));
+    border-color: @levelbar_block_high_bg_c;
+    background-image: linear-gradient(to bottom, @levelbar_block_high_bg_a, @success 75%, @levelbar_block_high_bg_c);
 }
 
 levelbar > trough > block.empty
 {
     background-color: transparent;
     background-image: none;
-    border-color: alpha(@bg_color, 0.1);
+    border-color: @levelbar_block_border_empty;
 }
 
 levelbar > trough > block.filled
 {
     border-width: 1px;
     border-style: solid;
-    border-color: @selected_bg_color;
-    background-color: #8FAF53;
+    border-color: @theme_selected_bg_color;
+    background-color: @levelbar_block_bg_filled;
 }
 
 levelbar > trough > block.empty:backdrop
@@ -2550,22 +2719,22 @@ levelbar > trough > block.empty:backdrop
 
 levelbar > trough > block.filled:backdrop
 {
-    background-color: @backdrop_filling_bg;
-    border-color: @backdrop_filling_bg;
+    background-color: @levelbar_block_insensitive;
+    border-color: @levelbar_block_insensitive;
     background-image: none;
 }
 
 levelbar > trough > block.filled.high:backdrop
 {
-    background-color: @backdrop_filling_bg;
-    border-color: @backdrop_filling_bg;
+    background-color: @levelbar_block_insensitive;
+    border-color: @levelbar_block_insensitive;
     background-image: none;
 }
 
 levelbar > trough > block.filled.low:backdrop
 {
-    background-color: @backdrop_filling_bg;
-    border-color: @backdrop_filling_bg;
+    background-color: @levelbar_block_insensitive;
+    border-color: @levelbar_block_insensitive;
     background-image: none;
 }
 
@@ -2614,13 +2783,13 @@ video .osd button.flat
 
 video .osd button.flat:hover
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
     background-image: linear-gradient(to bottom, @osd_button_bg_hover_a, @osd_button_bg_hover_b 68%, @osd_button_bg_hover_c);
 }
 
 video .osd button.flat:active:focus
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
     background-image: linear-gradient(to bottom, @osd_button_bg_active_a, @osd_button_bg_active_b 68%, @osd_button_bg_active_c);
 }
 
@@ -2631,7 +2800,7 @@ calendar
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
-    border-color: shade(@bg_color, 0.82);
+    border-color: @borders;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -2639,7 +2808,7 @@ calendar
 calendar > header
 {
     border-radius: 3px 3px 0px 0px;
-    background-image: linear-gradient(to bottom, shade(@theme_bg_color, 1.04), shade(@theme_bg_color, 0.89));
+    background-image: linear-gradient(to bottom, @columnview_header_button_bg_a, @calendar_header_bg_b);
     border-width: 0px;
 }
 
@@ -2653,7 +2822,7 @@ calendar > header > button.image-button
 
 calendar > grid
 {
-    background-color: @base_color;
+    background-color: @theme_base_color;
     padding: 4px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -2683,7 +2852,7 @@ calendar > grid > label:selected
 
 calendar > grid > label:selected:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
 }
 
@@ -2691,7 +2860,7 @@ calendar > grid > label:selected:backdrop
 
 expander-widget > box > title
 {
-    color: @fg_color;
+    color: @theme_fg_color;
 }
 
 expander-widget > box > title > expander
@@ -2715,17 +2884,17 @@ expander-widget > box > title > expander:checked
 
 menubar
 {
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     background-image: none;
     border-width: 0;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
+    color: @wm_title;
+    text-shadow: 0 -1px @menubar_fg_shadow;
 }
 
 menubar:backdrop
 {
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.8);
+    color: @fg_dark_insensitive;
+    text-shadow: 0 -1px @menubar_fg_shadow_insensitive;
 }
 
 menubar > item
@@ -2737,12 +2906,12 @@ menubar > item
 
 menubar > item:selected
 {
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     background-clip: border-box;
-    box-shadow: inset 0 1px 1px 0 shade(@dark_bg_color, 1.8);
-    color: shade(@dark_fg_color, 1.1);
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
-    border: 1px solid #000000;
+    box-shadow: inset 0 1px 1px 0 @tooltip_border;
+    color: @menubar_item_fg_selected;
+    text-shadow: 0 -1px @wm_title_shadow;
+    border: 1px solid @popover_border;
     border-bottom-width: 0px;
     border-radius: 4px 4px 0 0;
 }
@@ -2779,13 +2948,13 @@ tooltip
 {
     border-radius: 5px;
     border-width: 1px;
-    border-color: shade(@dark_bg_color, 1.8);
+    border-color: @tooltip_border;
     border-style: solid;
-    background-color: @tooltip_bg_color;
+    background-color: @tooltip_bg;
     background-clip: padding-box;
-    color: @tooltip_fg_color;
+    color: @tooltip_fg;
     padding: 6px 10px;
-    text-shadow: 1px 1px alpha(#000000, 0.8);
+    text-shadow: 1px 1px @tooltip_fg_shadow;
     margin: 2px;
     box-shadow: 0 1px 2px @wm_shadow;
 }
@@ -2803,7 +2972,7 @@ tooltip
 spinner
 {
     -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
-    color: @selected_bg_color;
+    color: @theme_selected_bg_color;
     background: none;
     opacity: 0;
 }
@@ -2816,7 +2985,7 @@ spinner:checked
 
 spinner:checked:backdrop
 {
-    color: @backdrop_fg_color;
+    color: @theme_unfocused_fg_color;
 }
 
 spinner:checked:disabled
@@ -2838,30 +3007,30 @@ scrolledwindow junction
 
 scrolledwindow > overshoot.top
 {
-    background: radial-gradient(70% 70% at center top, shade(@bg_color, 0.92), alpha(@bg_color, 0.0));
+    background: radial-gradient(70% 70% at center top, @selected_bg_insensitive, transparent);
 }
 
 scrolledwindow > overshoot.bottom
 {
-    background: radial-gradient(70% 70% at center bottom, shade(@bg_color, 0.92), alpha(@bg_color, 0.0));
+    background: radial-gradient(70% 70% at center bottom, @selected_bg_insensitive, transparent);
 }
 
 scrolledwindow > overshoot.left
 {
-    background: radial-gradient(70% 70% at left center, shade(@bg_color, 0.92), alpha(@bg_color, 0.0));
+    background: radial-gradient(70% 70% at left center, @selected_bg_insensitive, transparent);
 }
 
 scrolledwindow > overshoot.right
 {
-    background: radial-gradient(70% 70% at right center, shade(@bg_color, 0.92), alpha(@bg_color, 0.0));
+    background: radial-gradient(70% 70% at right center, @selected_bg_insensitive, transparent);
 }
 
 scrolledwindow.frame
 {
-    border-top-color: shade(@bg_color, 0.84);
-    border-right-color: shade(@bg_color, 0.76);
-    border-bottom-color: shade(@bg_color, 0.86);
-    border-left-color: shade(@bg_color, 0.76);
+    border-top-color: @scrolledwindow_border_a;
+    border-right-color: @scrolledwindow_border_b;
+    border-bottom-color: @scrolledwindow_border_c;
+    border-left-color: @scrolledwindow_border_b;
     border-style: solid;
     border-width: 1px;
     border-image: none;
@@ -2877,14 +3046,14 @@ scrolledwindow.frame > treeview > check
 
 list
 {
-    background-color: @base_color;
-    color: @text_color;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
 }
 
 list:disabled
 {
-    color: #9c9c9c;
-    background-color: #fcfcfc;
+    color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
 }
 
 list > row
@@ -2900,43 +3069,43 @@ list > row:selected
 
 list > row:hover:not(:selected)
 {
-    background-color: shade(@theme_selected_bg_color, 1.55);
-    color: shade(@theme_selected_bg_color, 0.35);
+    background-color: @list_cell_bg_normal;
+    color: @list_cell_fg_hover;
 }
 
 list > row:disabled
 {
-    color: #9c9c9c;
-    background-color: #fcfcfc;
+    color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
 }
 
 list > row:selected:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
 }
 
 list > separator
 {
     margin: 4px 5px 2px 5px;
-    border-color: shade(@bg_color, 0.92);
-    border-bottom-color: alpha(shade(@bg_color, 1.26), 0.6);
+    border-color: @selected_bg_insensitive;
+    border-bottom-color: @separator_border_normal;
     background: none;
     min-height: 0;
 }
 
 list.navigation-sidebar
 {
-    background-color: shade(@bg_color, 0.98);
-    text-shadow: 0 1px shade(shade(@bg_color, 0.95), 1.04);
+    background-color: @scrollbar_trough;
+    text-shadow: 0 1px @list_sidebar_fg_shadow;
     border: none;
     padding: 0 2px 2px 2px;
 }
 
 list.navigation-sidebar:backdrop
 {
-    color: mix(@fg_color, shade(@bg_color, 0.95), 0.2);
-    text-shadow: 0 1px shade(shade(@bg_color, 0.95), 1.02);
+    color: @list_sidebar_fg_inactive;
+    text-shadow: 0 1px @list_sidebar_fg_shadow_inactive;
 }
 
 list.navigation-sidebar > row
@@ -2949,14 +3118,14 @@ list.navigation-sidebar > row
 
 list.navigation-sidebar > row:selected
 {
-    text-shadow: 0 1px shade(@selected_bg_color, 0.7);
+    text-shadow: 0 1px @list_cell_border;
 }
 
 list.navigation-sidebar > row:selected:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(shade(@bg_color, 0.95), 0.94), shade(shade(@bg_color, 0.95), 0.86));
-    border-top-color: shade(shade(@bg_color, 0.95), 0.88);
-    text-shadow: 0 1px shade(shade(@bg_color, 0.95), 0.96);
+    background-image: linear-gradient(to bottom, @list_sidebar_row_selected_inactive_a, @list_sidebar_row_selected_inactive_b);
+    border-top-color: @list_sidebar_row_border_selected_inactive;
+    text-shadow: 0 1px @trough_bg_disabled;
 }
 
 list.navigation-sidebar > row > revealer > box
@@ -2968,7 +3137,7 @@ list.navigation-sidebar > row > revealer > box
 
 listview
 {
-    background-color: @base_color;
+    background-color: @theme_base_color;
 }
 
 listview > row:selected
@@ -2979,19 +3148,19 @@ listview > row:selected
 
 listview > row:hover:not(:selected)
 {
-    background-color: shade(@theme_selected_bg_color, 1.55);
-    color: shade(@theme_selected_bg_color, 0.35);
+    background-color: @list_cell_bg_normal;
+    color: @list_cell_fg_hover;
 }
 
 listview > row:disabled
 {
-    color: #9c9c9c;
-    background-color: #fcfcfc;
+    color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
 }
 
 listview > row:selected:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
 }
 
@@ -3026,12 +3195,12 @@ listview > row treeexpander > expander:checked
 
 listview > row:selected treeexpander > expander:hover
 {
-    color: @fg_color;
+    color: @theme_fg_color;
 }
 
 listview.separators.horizontal > row
 {
-    border-left: 1px solid shade(@bg_color, 0.92);
+    border-left: 1px solid @selected_bg_insensitive;
 }
 
 /* GtkWindowHandle */
@@ -3053,9 +3222,9 @@ windowhandle box.end
 
 windowhandle separator
 {
-    border-color: alpha(shade(@dark_bg_color, 0.94), 0.35);
-    border-bottom-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
-    border-right-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
+    border-color: @windowhandle_separator_border;
+    border-bottom-color: @windowhandle_separator_border_b;
+    border-right-color: @windowhandle_separator_border_b;
 }
 
 windowhandle label.title
@@ -3084,7 +3253,7 @@ windowhandle entry > progress > trough > progress
 {
     border-radius: 2px;
     border-width: 0 0 2px;
-    border-color: @selected_bg_color;
+    border-color: @theme_selected_bg_color;
     border-style: solid;
 }
 
@@ -3102,46 +3271,46 @@ windowhandle listview > row
     border-image-slice: 10 12 10 12;
     border-image-repeat: stretch;
     background: transparent;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    color: @wm_title;
+    text-shadow: 0 -1px @wm_title_shadow;
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     padding: 9px;
 }
 
 windowhandle listview > row:hover:not(:selected)
 {
-    color: @dark_fg_color;
+    color: @wm_title;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle listview > row:selected
 {
-    color: @dark_fg_color;
+    color: @wm_title;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle listview > row:backdrop
 {
     background-color: transparent;
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    color: @fg_dark_insensitive;
+    text-shadow: 0 -1px @windowhandle_button_fg_shadow_insensitive;
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle listview > row:hover:backdrop
 {
-    color: @backdrop_dark_fg_color;
+    color: @fg_dark_insensitive;
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     background-color: transparent;
 }
 
 windowhandle listview > row:selected:backdrop
 {
-    color: @backdrop_dark_fg_color;
+    color: @fg_dark_insensitive;
     background-color: transparent;
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar-active.png"), url("assets/backdrop-button-toolbar-active@2.png"));
 }
@@ -3149,15 +3318,15 @@ windowhandle listview > row:selected:backdrop
 windowhandle button
 {
     background: transparent;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    color: @wm_title;
+    text-shadow: 0 -1px @wm_title_shadow;
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     padding: 9px;
 }
 
 windowhandle button:hover
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
@@ -3169,20 +3338,20 @@ windowhandle button:focus
 windowhandle button:active
 {
     border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_active_a, @wm_bg_a);
+    text-shadow: 0 -1px @menubar_fg_shadow;
 }
 
 windowhandle button:checked
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle button:disabled
 {
     text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_disabled_a, @windowhandle_button_bg_disabled_b);
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     background-color: transparent;
 }
@@ -3190,14 +3359,14 @@ windowhandle button:disabled
 windowhandle button:backdrop
 {
     background-color: transparent;
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    color: @fg_dark_insensitive;
+    text-shadow: 0 -1px @windowhandle_button_fg_shadow_insensitive;
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle button.suggested-action
 {
-    background: alpha(green, 0.3);
+    background: @windowhandle_button_bg_suggested;
 }
 
 windowhandle button:focus:hover
@@ -3218,7 +3387,7 @@ windowhandle button:focus:checked
 windowhandle button:checked:disabled
 {
     text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.94), shade(@dark_bg_color, 1.02));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_checked_disabled, @windowhandle_button_bg_checked_disabled_b);
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
 }
 
@@ -3240,43 +3409,43 @@ windowhandle button:hover:backdrop
 
 windowhandle button:disabled:backdrop
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_disabled_a, @windowhandle_button_bg_disabled_b);
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     background-color: transparent;
 }
 
 windowhandle button.suggested-action:hover
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_suggested_hover_a, @windowhandle_button_bg_suggested_hover_b);
 }
 
 windowhandle button.suggested-action:checked
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.2), shade(mix(@dark_bg_color, green, 0.3), 1.1));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_suggested_hover_a, @windowhandle_button_bg_suggested_hover_b);
 }
 
 windowhandle button.suggested-action:active
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 0.95), shade(mix(@dark_bg_color, green, 0.3), 1.0));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_suggested_active_a, @windowhandle_button_bg_suggested_active_b);
 }
 
 windowhandle button.suggested-action:disabled
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, green, 0.3), 1.01), shade(mix(@dark_bg_color, green, 0.3), 0.99));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_suggested_disabled_a, @windowhandle_button_bg_suggested_disabled_b);
 }
 
 windowhandle button.flat
 {
     background: transparent;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    color: @wm_title;
+    text-shadow: 0 -1px @wm_title_shadow;
     border-image-source: none;
     padding: 9px;
 }
 
 windowhandle button.flat:hover
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
@@ -3289,7 +3458,7 @@ windowhandle button.flat:active
 {
     border-image-source: none;
     background-image: none;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
+    text-shadow: 0 -1px @menubar_fg_shadow;
 }
 
 windowhandle button.flat:checked
@@ -3309,26 +3478,26 @@ windowhandle button.flat:disabled
 windowhandle button.flat:backdrop
 {
     background-color: transparent;
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    color: @fg_dark_insensitive;
+    text-shadow: 0 -1px @windowhandle_button_fg_shadow_insensitive;
     border-image-source: none;
 }
 
 windowhandle button.flat:hover:focus
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle button.flat:hover:active
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_active_a, @wm_bg_a);
     border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
 }
 
 windowhandle button.flat:hover:checked
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
@@ -3374,13 +3543,13 @@ windowhandle button.flat:disabled:backdrop
 
 windowhandle button.flat:hover:focus:checked
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 windowhandle button.flat:hover:active:checked
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_active_a, @wm_bg_a);
     border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
 }
 
@@ -3391,17 +3560,17 @@ windowhandle button row:hover:not(:selected)
 
 windowhandle .linked > button
 {
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
+    box-shadow: inset 1px 0 @windowhandle_linked_button_bg_shadow_a, inset -1px 0 @windowhandle_button_fg_shadow_insensitive;
 }
 
 windowhandle .linked > button:first-child
 {
-    box-shadow: inset -1px 0 shade(@dark_bg_color, 0.9);
+    box-shadow: inset -1px 0 @windowhandle_button_fg_shadow_insensitive;
 }
 
 windowhandle .linked > button:last-child
 {
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4);
+    box-shadow: inset 1px 0 @windowhandle_linked_button_bg_shadow_a;
 }
 
 windowhandle .linked > button:active
@@ -3424,17 +3593,17 @@ windowhandle .linked > row
     border-radius: 0;
     border-image-width: 10px 0 10px 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
+    box-shadow: inset 1px 0 @windowhandle_linked_button_bg_shadow_a, inset -1px 0 @windowhandle_button_fg_shadow_insensitive;
 }
 
 windowhandle .linked > row:selected
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 windowhandle .linked > row:first-child
 {
-    box-shadow: inset -1px 0 shade(@dark_bg_color, 0.9);
+    box-shadow: inset -1px 0 @windowhandle_button_fg_shadow_insensitive;
     border-image-width: 10px 0 10px 12px;
     border-width: 1px 0px 1px 1px;
     border-radius: 8px 0 0 8px;
@@ -3442,7 +3611,7 @@ windowhandle .linked > row:first-child
 
 windowhandle .linked > row:first-child:selected
 {
-    box-shadow: inset 0 1px 1px alpha(black, 0.1);
+    box-shadow: inset 0 1px 1px @linked_button_first_bg_shadow;
 }
 
 windowhandle .linked > row:last-child
@@ -3450,7 +3619,7 @@ windowhandle .linked > row:last-child
     border-image-width: 10px 12px 10px 0;
     border-radius: 0 8px 8px 0;
     border-width: 1px 1px 1px 0px;
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4);
+    box-shadow: inset 1px 0 @windowhandle_linked_button_bg_shadow_a;
 }
 
 windowhandle .linked > row:active
@@ -3462,30 +3631,30 @@ windowhandle > box switch
 {
     padding: 2px;
     border-radius: 6px;
-    background-image: linear-gradient(to bottom, #4E4C46, #5B5A56);
-    color: @dark_fg_color;
+    background-image: linear-gradient(to bottom, @bg_dark_slider, @windowhandle_switch_bg_b);
+    color: @wm_title;
     border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
 }
 
 windowhandle > box switch:checked
 {
     border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@dark_fg_color, 1.0);
+    color: @wm_title;
 }
 
 windowhandle > box switch:disabled
 {
     text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.93), shade(@dark_bg_color, 0.99));
+    background-image: linear-gradient(to bottom, @windowhandle_switch_bg_disabled_a, @windowhandle_button_bg_disabled_b);
     border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@dark_fg_color, 0.6);
+    color: @windowhandle_switch_fg_disabled;
 }
 
 windowhandle > box switch:backdrop
 {
     border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.93), shade(@dark_bg_color, 0.99));
-    color: shade(@dark_fg_color, 0.6);
+    background-image: linear-gradient(to bottom, @windowhandle_switch_bg_disabled_a, @windowhandle_button_bg_disabled_b);
+    color: @windowhandle_switch_fg_disabled;
 }
 
 windowhandle > box switch:checked:disabled
@@ -3496,7 +3665,7 @@ windowhandle > box switch:checked:disabled
 windowhandle > box switch:checked:backdrop
 {
     border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: shade(@dark_fg_color, 1.0);
+    color: @wm_title;
 }
 
 windowhandle > box switch > slider
@@ -3505,7 +3674,7 @@ windowhandle > box switch > slider
     border-radius: 6px;
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@dark_slider_bg_color, 1.08), @dark_slider_bg_color 50%, shade(@dark_slider_bg_color, 0.94));
+    background-image: linear-gradient(to bottom, @windowhandle_switch_slider_bg_a, @slider_bg_dark 50%, @windowhandle_switch_slider_bg_c);
 }
 
 windowhandle > box switch:checked > slider
@@ -3519,7 +3688,7 @@ windowhandle > box switch:backdrop > slider
     border-radius: 6px;
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@dark_slider_bg_color, 1.08), @dark_slider_bg_color 50%, shade(@dark_slider_bg_color, 0.94));
+    background-image: linear-gradient(to bottom, @windowhandle_switch_slider_bg_a, @slider_bg_dark 50%, @windowhandle_switch_slider_bg_c);
 }
 
 windowhandle > box switch:disabled > slider
@@ -3599,17 +3768,17 @@ windowhandle > box combobox > box.linked > entry.combo:only-child
 
 windowhandle > box scale > trough
 {
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     background-image: none;
-    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 1.15)) 1;
+    border-image: linear-gradient(to bottom, @windowhandle_scale_trough_border_a, @windowhandle_scale_trough_border_b) 1;
     border-image-width: 1px;
 }
 
 windowhandle > box scale > trough:backdrop
 {
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     background-image: none;
-    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 1.15)) 1;
+    border-image: linear-gradient(to bottom, @windowhandle_scale_trough_border_a, @windowhandle_scale_trough_border_b) 1;
     border-image-width: 1px;
 }
 
@@ -3618,13 +3787,13 @@ windowhandle > box scale > trough:backdrop
 windowcontrols > button
 {
     background-clip: padding-box;
-    border: 1px solid #383734;
-    color: #3d3c37;
-    -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid @windowcontrols_button_border;
+    color: @windowcontrols_button_fg;
+    -gtk-icon-shadow: 0 1px @app_notification_button_bg_shadow;
     border-radius: 9px;
     padding: 0px;
     box-shadow: none;
-    background-image: linear-gradient(to top, #5a5955, #75746d 50%, #8e8d88);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_a, @windowcontrols_button_bg_b 50%, @windowcontrols_button_bg_c);
     margin-left: 1px;
     margin-right: 1px;
     min-width: 15px;
@@ -3633,42 +3802,42 @@ windowcontrols > button
 
 windowcontrols > button.close
 {
-    color: #323112;
+    color: @windowcontrols_button_fg_close;
     -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.25);
-    background-image: linear-gradient(to top, #81BA4A, #B5D793 50%, #DEEAD2);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_close_a, @windowcontrols_button_bg_close_b 50%, @windowcontrols_button_bg_close_c);
 }
 
 windowcontrols > button:hover
 {
-    background-image: linear-gradient(to top, #969696, #bdbdbd 50%, #cacaca);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_hover_a, @windowcontrols_button_bg_hover_b 50%, @windowcontrols_button_bg_hover_c);
 }
 
 windowcontrols > button.close:hover
 {
-    background-image: linear-gradient(to top, #8EC956, #C0E1A1 50%, #EEF0EA);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_close_hover_a, @windowcontrols_button_bg_close_hover_b 50%, @windowcontrols_button_bg_close_hover_c);
 }
 
 windowcontrols > button:active
 {
     -gtk-icon-shadow: none;
-    background-image: linear-gradient(to top, #77766f, #74736c);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_active_a, @windowcontrols_button_bg_active_b);
 }
 
 windowcontrols > button.close:active
 {
-    background-image: linear-gradient(to top, #6A9542, #90B66A);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_close_active_a, @windowcontrols_button_bg_close_active_b);
 }
 
 windowcontrols > button:backdrop
 {
-    color: #3d3c37;
+    color: @windowcontrols_button_fg;
     -gtk-icon-shadow: none;
-    background-image: linear-gradient(to top, #605f59, #5b5a54);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_insensitive_a, @windowcontrols_button_bg_insensitive_b);
 }
 
 windowcontrols > button:backdrop:hover
 {
-    background-image: linear-gradient(to top, #969696, #bdbdbd 50%, #cacaca);
+    background-image: linear-gradient(to top, @windowcontrols_button_bg_hover_a, @windowcontrols_button_bg_hover_b 50%, @windowcontrols_button_bg_hover_c);
 }
 
 windowcontrols > button.close > image
@@ -3680,18 +3849,18 @@ windowcontrols > button.close > image
 
 searchbar > revealer > box
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.4), shade(@dark_bg_color, 0.96));
-    border-bottom: 1px solid shade(@dark_bg_color, 1.09);
+    background-image: linear-gradient(to bottom, @windowhandle_linked_button_bg_shadow_a, @window_headerbar_bg_maximized);
+    border-bottom: 1px solid @wm_bg_e;
     padding: 6px;
 }
 
 searchbar > revealer > box:backdrop
 {
     background-image: none;
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     box-shadow: none;
-    border-top-color: @dark_bg_color;
-    border-bottom-color: shade(@dark_bg_color, 0.9);
+    border-top-color: @wm_bg_a;
+    border-bottom-color: @windowhandle_button_fg_shadow_insensitive;
 }
 
 searchbar entry
@@ -3721,44 +3890,44 @@ infobar.info > revealer > box
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@info_bg_color, 1.04), shade(@info_bg_color, 0.96));
-    color: @info_fg_color;
-    border-color: shade(@info_bg_color, 0.8);
-    border-bottom-color: shade(@info_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@info_bg_color, 1.08), inset -1px 0 shade(@info_bg_color, 1.08), inset 0 1px shade(@info_bg_color, 1.1), inset 0 -1px shade(@info_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @info_bg_a, @info_bg_b);
+    color: @info_fg;
+    border-color: @info_border;
+    border-bottom-color: @info_border_b;
+    box-shadow: inset 1px 0 @info_bg_shadow_a, inset -1px 0 @info_bg_shadow_a, inset 0 1px @info_bg_shadow_b, inset 0 -1px @info_bg_a;
 }
 
 infobar.warning > revealer > box
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@warning_bg_color, 1.04), shade(@warning_bg_color, 0.96));
-    color: @warning_fg_color;
-    border-color: shade(@warning_bg_color, 0.8);
-    border-bottom-color: shade(@warning_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@warning_bg_color, 1.08), inset -1px 0 shade(@warning_bg_color, 1.08), inset 0 1px shade(@warning_bg_color, 1.1), inset 0 -1px shade(@warning_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @warning_bg_a, @warning_bg_b);
+    color: @warning_fg;
+    border-color: @levelbar_block_border_low;
+    border-bottom-color: @warning_border_b;
+    box-shadow: inset 1px 0 @warning_bg_shadow_a, inset -1px 0 @warning_bg_shadow_a, inset 0 1px @warning_bg_shadow_b, inset 0 -1px @warning_bg_a;
 }
 
 infobar.question > revealer > box
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@question_bg_color, 1.04), shade(@question_bg_color, 0.96));
-    color: @question_fg_color;
-    border-color: shade(@question_bg_color, 0.8);
-    border-bottom-color: shade(@question_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@question_bg_color, 1.08), inset -1px 0 shade(@question_bg_color, 1.08), inset 0 1px shade(@question_bg_color, 1.1), inset 0 -1px shade(@question_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @question_bg_a, @question_bg_b);
+    color: @question_fg;
+    border-color: @question_border_a;
+    border-bottom-color: @question_border_b;
+    box-shadow: inset 1px 0 @question_bg_shadow_a, inset -1px 0 @question_bg_shadow_a, inset 0 1px @question_bg_shadow_b, inset 0 -1px @question_bg_a;
 }
 
 infobar.error > revealer > box
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@error_bg_color, 1.04), shade(@error_bg_color, 0.96));
-    color: @error_fg_color;
-    border-color: shade(@error_bg_color, 0.8);
-    border-bottom-color: shade(@error_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@error_bg_color, 1.08), inset -1px 0 shade(@error_bg_color, 1.08), inset 0 1px shade(@error_bg_color, 1.1), inset 0 -1px shade(@error_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @error_bg_a, @error_bg_b);
+    color: @tooltip_fg;
+    border-color: @error_border_a;
+    border-bottom-color: @error_border_b;
+    box-shadow: inset 1px 0 @error_bg_shadow_a, inset -1px 0 @error_bg_shadow_a, inset 0 1px @error_bg_shadow_b, inset 0 -1px @error_bg_a;
 }
 
 /* GtkDropDown */
@@ -3802,9 +3971,9 @@ flowboxchild:selected
 
 flowboxchild:selected:backdrop
 {
-    background-color: shade(@theme_unfocused_bg_color, 0.94);
+    background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
-    outline-color: shade(@theme_unfocused_bg_color, 0.94);
+    outline-color: @list_cell_bg_selected_insensitive;
 }
 
 /* GtkPopover */
@@ -3813,10 +3982,10 @@ popover > contents
 {
     background-clip: border-box;
     border-radius: 5px;
-    background-color: shade(@dark_bg_color, 1.08);
-    border: 1px solid #000000;
-    color: @dark_fg_color;
-    box-shadow: 0 2px 3px @shadow_color, inset 0 1px shade(@dark_bg_color, 1.18), inset 0 -1px shade(@dark_bg_color, 1.18), inset -1px 0 shade(@dark_bg_color, 1.16), inset 1px 0 shade(@dark_bg_color, 1.18);
+    background-color: @popover_bg;
+    border: 1px solid @popover_border;
+    color: @wm_title;
+    box-shadow: 0 2px 3px @wm_shadow, inset 0 1px @popover_bg_shadow_a, inset 0 -1px @popover_bg_shadow_a, inset -1px 0 @popover_bg_shadow_b, inset 1px 0 @popover_bg_shadow_a;
     padding: 2px;
 }
 
@@ -3837,21 +4006,21 @@ popover:not(.menu) > contents > box
 
 popover > arrow
 {
-    background-color: shade(@dark_bg_color, 1.08);
-    border: 1px solid #000000;
+    background-color: @popover_bg;
+    border: 1px solid @popover_border;
 }
 
 popover expander-widget > box > title
 {
-    color: @dark_fg_color;
+    color: @wm_title;
 }
 
 popover separator
 {
     border-color: transparent;
-    border-bottom-color: shade(@dark_bg_color, 1.26);
+    border-bottom-color: @popover_separator_border;
     min-height: 1px;
-    background-color: shade(@dark_bg_color, 0.9);
+    background-color: @windowhandle_button_fg_shadow_insensitive;
     margin: 3px 0;
 }
 
@@ -3859,11 +4028,11 @@ popover scale.horizontal > trough
 {
     border-image: none;
     background-image: none;
-    background-color: @dark_bg_color;
-    border-top: 2px solid shade(@dark_bg_color, 0.75);
-    border-left: 2px solid shade(@dark_bg_color, 0.75);
-    border-right: 2px solid shade(@dark_bg_color, 1.15);
-    border-bottom: 2px solid shade(@dark_bg_color, 1.15);
+    background-color: @wm_bg_a;
+    border-top: 2px solid @windowhandle_scale_trough_border_a;
+    border-left: 2px solid @windowhandle_scale_trough_border_a;
+    border-right: 2px solid @windowhandle_scale_trough_border_b;
+    border-bottom: 2px solid @windowhandle_scale_trough_border_b;
     border-radius: 5px;
 }
 
@@ -3875,58 +4044,57 @@ popover scale.horizontal > trough > highlight
 
 popover button
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 2.03), shade(@dark_bg_color, 1.17));
-    background-color: shade(@dark_bg_color, 1.2);
-    color: @dark_fg_color;
+    background-image: linear-gradient(to bottom, @popover_button_bg_a, @popover_button_bg_b);
+    background-color: @wm_bg_d;
+    color: @wm_title;
     text-shadow: none;
     border-width: 0px;
     border-style: none;
     border-radius: 7px;
     border-image: none;
-    box-shadow: inset 0px 1px shade(@theme_bg_color, 0.6), inset 1px 0px shade(@theme_bg_color, 0.6), inset -1px  0px shade(@theme_bg_color, 0.6), inset 0px -1px shade(@theme_bg_color, 0.6);
+    box-shadow: inset 0px 1px @fg_disabled, inset 1px 0px @fg_disabled, inset -1px  0px @fg_disabled, inset 0px -1px @fg_disabled;
 }
 
 popover button:hover:not(:checked)
 {
-    color: shade(@theme_selected_bg_color, 1.3);
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 2.03), shade(@dark_bg_color, 1.17));
+    color: @button_fg_dark_hover;
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
+    background-image: linear-gradient(to bottom, @popover_button_bg_a, @popover_button_bg_b);
     border-image-source: -gtk-scaled(url("assets/button-hover.png"), url("assets/button-hover@2.png"));
 }
 
 popover button:checked
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 2.03), shade(@dark_bg_color, 1.17));
+    background-image: linear-gradient(to bottom, @popover_button_bg_a, @popover_button_bg_b);
 }
 
 popover button:disabled
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.0), shade(@dark_bg_color, 1.0));
+    background-image: linear-gradient(to bottom, @wm_bg_a, @wm_bg_a);
     text-shadow: none;
 }
 
 popover button.suggested-action
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 2.03), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.17));
-    background-color: shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.2);
-    color: @fg_color;
+    background-image: linear-gradient(to bottom, @popover_button_bg_suggested_a, @popover_button_bg_suggested_b);
+    color: @theme_fg_color;
 }
 
 popover button.suggested-action:hover:not(:checked)
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 2.03), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.17));
-    color: @fg_color;
+    background-image: linear-gradient(to bottom, @popover_button_bg_suggested_a, @popover_button_bg_suggested_b);
+    color: @theme_fg_color;
 }
 
 popover button.suggested-action:checked
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 2.03), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.17));
+    background-image: linear-gradient(to bottom, @popover_button_bg_suggested_a, @popover_button_bg_suggested_b);
 }
 
 popover button.suggested-action:disabled
 {
-    background-image: linear-gradient(to bottom, shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.0), shade(mix(@dark_bg_color, @selected_bg_color, 0.5), 1.0));
-    color: @fg_color;
+    background-image: image(@popover_button_bg_suggested_disabled);
+    color: @theme_fg_color;
 }
 
 popover button.flat
@@ -3937,9 +4105,9 @@ popover button.flat
 
 popover menubutton.circular > button.flat:checked
 {
-    color: shade(@theme_selected_bg_color, 1.3);
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 2.03), shade(@dark_bg_color, 1.17));
+    color: @button_fg_dark_hover;
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
+    background-image: linear-gradient(to bottom, @popover_button_bg_a, @popover_button_bg_b);
 }
 
 popover label.title
@@ -3973,15 +4141,15 @@ popover list > row
 {
     border-radius: 3px;
     padding: 0px;
-    color: @dark_fg_color;
+    color: @wm_title;
 }
 
 popover list > row:hover:not(:selected)
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover listview
@@ -3997,16 +4165,16 @@ popover listview > row
 
 popover listview > row:hover
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover treeview
 {
     background-color: transparent;
-    color: @dark_fg_color;
+    color: @wm_title;
 }
 
 popover modelbutton
@@ -4031,10 +4199,10 @@ popover modelbutton:hover
 {
     border-radius: 3px;
     padding: 5px;
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover modelbutton:active
@@ -4048,7 +4216,7 @@ popover modelbutton:active
 
 popover modelbutton:disabled
 {
-    color: mix(@dark_fg_color, @dark_bg_color, 0.5);
+    color: @popover_modelbutton_fg_disabled;
     border-image: none;
     border: none;
     border-radius: 3px;
@@ -4059,7 +4227,7 @@ popover modelbutton:disabled
 
 popover modelbutton *:disabled
 {
-    color: mix(@dark_fg_color, @dark_bg_color, 0.5);
+    color: @popover_modelbutton_fg_disabled;
     text-shadow: none;
     background: none;
 }
@@ -4076,20 +4244,20 @@ popover modelbutton:backdrop
 popover modelbutton:checked:hover
 {
     border-radius: 0;
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
     border-image-width: 1px;
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover modelbutton:backdrop:hover
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover modelbutton > label
@@ -4163,44 +4331,44 @@ popover modelbutton calendar
     border-style: solid;
     border-width: 0;
     padding: 1px;
-    color: @dark_fg_color;
-    background-color: shade(@dark_bg_color, 1.3);
+    color: @wm_title;
+    background-color: @popover_entry_bg;
     background-image: none;
 }
 
 popover modelbutton calendar:indeterminate
 {
-    color: shade(@bg_color, 0.6);
+    color: @fg_disabled;
 }
 
 popover modelbutton calendar > header
 {
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     background-image: none;
     border-radius: 0;
     border-style: solid;
     border-width: 0;
     padding: 1px;
-    color: @dark_fg_color;
+    color: @wm_title;
 }
 
 popover modelbutton calendar > header > button
 {
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     background-image: none;
     border-radius: 0;
     border-style: solid;
     border-width: 0;
     padding: 1px;
-    color: @dark_fg_color;
+    color: @wm_title;
 }
 
 popover modelbutton entry
 {
-    background-color: shade(@dark_bg_color, 1.3);
+    background-color: @popover_entry_bg;
     background-image: none;
-    color: @dark_fg_color;
-    border-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.75), shade(@dark_bg_color, 0.9)) 1;
+    color: @wm_title;
+    border-image: linear-gradient(to bottom, @windowhandle_scale_trough_border_a, @windowhandle_button_fg_shadow_insensitive) 1;
     border-image-width: 1px;
 }
 
@@ -4216,19 +4384,19 @@ popover modelbutton arrow.left
 
 popover modelbutton accelerator
 {
-    color: alpha(@dark_fg_color, 0.5);
+    color: @popover_modelbutton_accelerator_fg;
     margin-left: 18px;
 }
 
 popover modelbutton:hover accelerator
 {
-    color: alpha(@selected_fg_color, 0.8);
+    color: @popover_modelbutton_hover_accelerator_fg;
 }
 
 popover modelbutton:disabled > accelerator
 {
-    color: alpha(mix(@dark_fg_color, @dark_bg_color, 0.5), 0.5);
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    color: @popover_modelbutton_disabled_accelerator_fg;
+    text-shadow: 0 -1px @wm_title_shadow;
 }
 
 /* GtkEmojiChooser */
@@ -4247,15 +4415,15 @@ popover.emoji-picker .emoji-searchbar
 {
     padding: 6px;
     border-spacing: 6px;
-    box-shadow: 0 0 0 1px shade(@dark_bg_color, 1.26);
-    border-bottom: 1px solid shade(@dark_bg_color, 0.9);
+    box-shadow: 0 0 0 1px @popover_separator_border;
+    border-bottom: 1px solid @windowhandle_button_fg_shadow_insensitive;
 }
 
 popover.emoji-picker .emoji-toolbar
 {
     padding: 3px;
-    border-top: 1px solid shade(@dark_bg_color, 1.26);
-    box-shadow: 0 0 0 1px shade(@dark_bg_color, 0.9);
+    border-top: 1px solid @popover_separator_border;
+    box-shadow: 0 0 0 1px @windowhandle_button_fg_shadow_insensitive;
 }
 
 popover button.emoji-section
@@ -4266,10 +4434,10 @@ popover button.emoji-section
 
 popover button.emoji-section:checked
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover.emoji-picker emoji
@@ -4281,17 +4449,17 @@ popover.emoji-picker emoji
 
 popover.emoji-picker emoji:hover
 {
-    background-image: image(shade(@theme_selected_bg_color, 1.55));
+    background-image: image(@list_cell_bg_normal);
 }
 
 popover.emoji-picker emoji:focus
 {
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
     border-style: solid;
     border-width: 1px;
-    border-color: shade(@selected_bg_color, 0.8);
-    border-bottom-color: shade(@selected_bg_color, 0.7);
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.05), inset -1px 0 shade(@selected_bg_color, 1.05), inset 0 1px shade(@selected_bg_color, 1.08), inset 0 -1px shade(@selected_bg_color, 1.0);
+    border-color: @osd_button_border;
+    border-bottom-color: @list_cell_border;
+    box-shadow: inset 1px 0 @list_cell_bg_shadow_a, inset -1px 0 @list_cell_bg_shadow_a, inset 0 1px @list_cell_bg_shadow_b, inset 0 -1px @theme_selected_bg_color;
 }
 
 /* GtkStackSwitcher */
@@ -4306,17 +4474,17 @@ stackswitcher.circular
 window
 {
     box-shadow: none;
-    color: @fg_color;
-    background-color: @bg_color;
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
     border: 1px none @wm_border;
 }
 
 window.csd
 {
     border-radius: 10px 10px 0 0;
-    box-shadow: 0 3px 15px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 15px 1px @wm_shadow;
     margin: 10px;
-    background-image: linear-gradient(@dark_bg_color 0px, @dark_bg_color 10px, @bg_color 11px);
+    background-image: linear-gradient(@wm_bg_a 0px, @wm_bg_a 10px, @theme_bg_color 11px);
     border-style: solid;
 }
 
@@ -4355,7 +4523,7 @@ window.tiled
 
 window:backdrop
 {
-    color: @backdrop_fg_color;
+    color: @theme_unfocused_fg_color;
 }
 
 window.solid-csd > headerbar
@@ -4367,15 +4535,15 @@ window.solid-csd > headerbar
 window.maximized > headerbar
 {
     border-radius: 0;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.96), @dark_bg_color);
-    border-top-color: shade(@dark_bg_color, 1.2);
+    background-image: linear-gradient(to bottom, @window_headerbar_bg_maximized, @wm_bg_a);
+    border-top-color: @wm_bg_d;
     box-shadow: none;
 }
 
 window.maximized > headerbar:backdrop
 {
-    background-image: image(@dark_bg_color);
-    border-top-color: @dark_bg_color;
+    background-image: image(@wm_bg_a);
+    border-top-color: @wm_bg_a;
 }
 
 /* GtkDialog - DEPRECATED */
@@ -4405,12 +4573,12 @@ window.aboutdialog image.large-icons
 
 window.aboutdialog > box > box > stack > box > scrolledwindow > viewport
 {
-    background-color: @base_color;
+    background-color: @theme_base_color;
 }
 
 window.aboutdialog > link
 {
-    color: #a7bb85;
+    color: @theme_selected_bg_color;
     text-decoration: underline;
 }
 
@@ -4465,15 +4633,15 @@ window.dialog filechooser #pathbarbox
 
 window.dialog.print drawing paper
 {
-    background: white;
-    border: 1px solid shade(@bg_color, 0.82);
+    background: @theme_base_color;
+    border: 1px solid @borders;
 }
 
 window.dialog.print notebook
 {
     border-style: solid;
-    border-color: shade(@bg_color, 0.82);
-    background-color: @notebook_bg_color;
+    border-color: @borders;
+    background-color: @notebook_bg;
     border-width: 1px;
     border-radius: 4px;
 }
@@ -4486,7 +4654,7 @@ window.dialog.print notebook > header.top > tabs > tab
 
 window.dialog.print notebook > header.top > tabs > tab:checked
 {
-    background-image: linear-gradient(to bottom, shade(@notebook_bg_color, 1.18), shade(@notebook_bg_color, 1.00));
+    background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-radius: 4px 4px 0px 0px;
     border-width: 1px 1px 0px 1px;
 }
@@ -4495,20 +4663,20 @@ window.dialog.print notebook > header.top > tabs > tab:checked
 
 window.assistant box.sidebar
 {
-    background-color: shade(@bg_color, 0.97);
-    border-right-color: shade(@bg_color, 0.8);
+    background-color: @assistant_sidebar_bg;
+    border-right-color: @scale_indicator_bg;
     border-radius: 0;
     border-style: solid;
     border-width: 0 1px 0 0;
     padding: 12px;
-    color: mix(@fg_color, @bg_color, 0.40);
-    text-shadow: 0 1px shade(@bg_color, 1.04);
-    box-shadow: inset -1px 0 shade(@bg_color, 0.94);
+    color: @assistant_sidebar_fg;
+    text-shadow: 0 1px @columnview_header_button_bg_a;
+    box-shadow: inset -1px 0 @columnview_header_button_border_insesitive_a;
 }
 
 window.assistant box.sidebar > label.highlight
 {
-    color: @fg_color;
+    color: @theme_fg_color;
     font-weight: bold;
 }
 
@@ -4516,9 +4684,8 @@ window.assistant box.sidebar > label.highlight
 
 rubberband
 {
-    background-color: alpha(@selected_bg_color, 0.35);
-    background-image: linear-gradient(to bottom, alpha(@theme_selected_bg_color, 0.35), alpha(@theme_selected_bg_color, 0.35));
-    border-color: @selected_bg_color;
+    background-image: image(@rubberband_bg);
+    border-color: @theme_selected_bg_color;
     border-radius: 0;
     border-style: solid;
     border-width: 1px;
@@ -4550,12 +4717,11 @@ shortcut > .keycap
     padding-bottom: 3px;
     padding-left: 6px;
     padding-right: 6px;
-    color: #3D3D3D;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: #e1e1e1;
+    color: @shortcut_keycap_fg;
+    background-color: @theme_base_color;
+    border: 1px solid @shortcut_keycap_border;
     border-radius: 5px;
-    box-shadow: inset 0 -3px #fbfbfb;
+    box-shadow: inset 0 -3px @shortcut_keycap_bg_shadow;
     font-size: smaller;
 }
 
@@ -4563,15 +4729,15 @@ shortcut > .keycap
 
 row trough
 {
-    background-image: linear-gradient(to bottom, #d1d1d1, #e8e8e8);
+    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     border-style: solid;
     border-width: 1px;
-    color: @text_color;
+    color: @theme_text_color;
     border-radius: 3px;
-    border-top-color: shade(@borders, 0.80);
-    border-left-color: shade(@borders, 0.85);
-    border-right-color: shade(@borders, 0.85);
-    border-bottom-color: shade(@borders, 0.80);
+    border-top-color: @list_trough_border_a;
+    border-left-color: @list_trough_border_b;
+    border-right-color: @list_trough_border_b;
+    border-bottom-color: @list_trough_border_a;
 }
 
 row progressbar
@@ -4580,10 +4746,10 @@ row progressbar
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -4594,10 +4760,10 @@ row progressbar > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -4747,10 +4913,10 @@ row spinbutton > button
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.08), @button_bg_color 50%, shade(@button_bg_color, 0.94));
+    box-shadow: inset 1px 0 @inset_dark;
+    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     background-color: transparent;
-    color: @fg_color;
+    color: @theme_fg_color;
 }
 
 row spinbutton > button:hover
@@ -4758,10 +4924,10 @@ row spinbutton > button:hover
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.12), @button_bg_color 50%, shade(@button_bg_color, 0.96));
-    color: @fg_color;
+    background-image: linear-gradient(to bottom, @button_bg_hover_a, @button_bg_normal_b 50%, @button_bg_hover_b);
+    color: @theme_fg_color;
 }
 
 row spinbutton > button:focus
@@ -4769,10 +4935,10 @@ row spinbutton > button:focus
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
-    background-image: linear-gradient(to bottom, shade(@button_bg_color, 1.08), @button_bg_color 50%, shade(@button_bg_color, 0.94));
+    box-shadow: inset 1px 0 @inset_dark;
+    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     background-color: transparent;
-    color: @fg_color;
+    color: @theme_fg_color;
 }
 
 row spinbutton > button:active
@@ -4780,8 +4946,8 @@ row spinbutton > button:active
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
-    background-image: radial-gradient(50% 50% at center center, alpha(@selected_bg_color, 0.2), alpha(@selected_bg_color, 0.0));
+    box-shadow: inset 1px 0 @inset_dark;
+    background-image: radial-gradient(50% 50% at center center, @spinbutton_bg_active, transparent);
     background-color: transparent;
 }
 
@@ -4790,9 +4956,9 @@ row spinbutton > button:disabled
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     background-image: none;
-    color: shade(@bg_color, 0.66);
+    color: @list_spinbutton_button_fg_disabled;
     -gtk-icon-shadow: none;
 }
 
@@ -4801,7 +4967,7 @@ row spinbutton > button:backdrop
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 row spinbutton > button:focus:active
@@ -4809,7 +4975,7 @@ row spinbutton > button:focus:active
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 row spinbutton > button:active:backdrop
@@ -4817,7 +4983,7 @@ row spinbutton > button:active:backdrop
     border-style: none;
     border-image: none;
     border-radius: 0px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 row spinbutton > button.down
@@ -4841,7 +5007,7 @@ row spinbutton.horizontal > text
     border-image:none;
     border-style: none;
     border-radius: 7px 0px 0px 7px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 row spinbutton.horizontal > text:focus
@@ -4850,12 +5016,12 @@ row spinbutton.horizontal > text:focus
     border-image:none;
     border-style: none;
     border-radius: 7px 0px 0px 7px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 row spinbutton.horizontal > text:disabled
 {
-    background-color: @insensitive_bg_color;
+    background-color: @bg_insensitive;
 }
 
 row spinbutton.horizontal > text:backdrop
@@ -4864,20 +5030,20 @@ row spinbutton.horizontal > text:backdrop
     border-image:none;
     border-style: none;
     border-radius: 7px 0px 0px 7px;
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 row spinbutton.horizontal > text:backdrop:disabled
 {
-    background-color: @insensitive_bg_color;
+    background-color: @bg_insensitive;
 }
 
 row:selected trough
 {
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
 }
 
 row:selected progressbar
@@ -4886,10 +5052,10 @@ row:selected progressbar
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -4900,10 +5066,10 @@ row:selected progressbar > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -5074,10 +5240,10 @@ row:hover progressbar > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -5088,21 +5254,21 @@ row:nth-child(odd) progressbar > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
 
 row:backdrop progressbar
 {
-    background-image: linear-gradient(to bottom, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
 }
 
 row:backdrop progressbar > trough > progress
@@ -5110,12 +5276,12 @@ row:backdrop progressbar > trough > progress
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
-    color: @backdrop_fg_color;
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -5134,12 +5300,12 @@ row:hover:backdrop progressbar > trough > progress
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
-    color: @backdrop_fg_color;
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -5148,12 +5314,12 @@ row:selected:backdrop progressbar > trough > progress
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
-    color: @backdrop_fg_color;
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -5173,10 +5339,10 @@ row:selected:focus progressbar > trough > progress
     border-width: 1px;
     border-style: solid;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: shade(@button_border_active, 0.80);
-    border-left-color: shade(@button_border_active, 0.85);
-    border-right-color: shade(@button_border_active, 0.85);
-    border-bottom-color: shade(@button_border_active, 0.80);
+    border-top-color: @trough_highlight_border_a;
+    border-left-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_b;
+    border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -5216,12 +5382,12 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 6px;
     border-width: 1px;
     border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_backdrop_fill_a, @progressbar_backdrop_fill_b);
-    border-top-color: shade(@button_border_backdrop_active, 0.80);
-    border-left-color: shade(@button_border_backdrop_active, 0.85);
-    border-right-color: shade(@button_border_backdrop_active, 0.85);
-    border-bottom-color: shade(@button_border_backdrop_active, 0.80);
-    color: @backdrop_fg_color;
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
+    border-top-color: @progressbar_progress_border_insensitive_a;
+    border-left-color: @progressbar_progress_border_insensitive_b;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_a;
+    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -5232,7 +5398,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 10px 0 10px 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 shade(@bg_color, 0.84);
+    box-shadow: inset -1px 0 @scrolledwindow_border_a;
 }
 
 .linked > entry:first-child
@@ -5262,17 +5428,17 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 10px 0 10px 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 shade(@bg_color, 0.84);
+    box-shadow: inset -1px 0 @scrolledwindow_border_a;
 }
 
 .linked > button:checked
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 .linked > button:disabled
 {
-    box-shadow: inset -1px 0 @inset_dark_color;
+    box-shadow: inset -1px 0 @inset_dark;
 }
 
 .linked > button:first-child
@@ -5284,7 +5450,7 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .linked > button:first-child:checked
 {
-    box-shadow: inset 0 1px 1px alpha(black, 0.1);
+    box-shadow: inset 0 1px 1px @linked_button_first_bg_shadow;
 }
 
 .linked > button:last-child
@@ -5309,7 +5475,7 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .linked > button:only-child:checked
 {
-    box-shadow: inset 0 1px 1px alpha(black, 0.1);
+    box-shadow: inset 0 1px 1px @linked_button_first_bg_shadow;
 }
 
 .linked > menubutton > button
@@ -5317,17 +5483,17 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 10px 0 10px 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 shade(@bg_color, 0.84);
+    box-shadow: inset -1px 0 @scrolledwindow_border_a;
 }
 
 .linked > menubutton > button:checked
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 .linked > menubutton > button:disabled
 {
-    box-shadow: inset -1px 0 @inset_dark_color;
+    box-shadow: inset -1px 0 @inset_dark;
 }
 
 .linked > menubutton:first-child > button
@@ -5339,7 +5505,7 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .linked > menubutton:first-child > button:checked
 {
-    box-shadow: inset 0 1px 1px alpha(black, 0.1);
+    box-shadow: inset 0 1px 1px @linked_button_first_bg_shadow;
 }
 
 .linked > menubutton:last-child > button
@@ -5364,7 +5530,7 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .linked > menubutton:only-child > button:checked
 {
-    box-shadow: inset 0 1px 1px alpha(black, 0.1);
+    box-shadow: inset 0 1px 1px @linked_button_first_bg_shadow;
 }
 
 .linked button.image-button.model
@@ -5373,137 +5539,137 @@ row:selected:focus:backdrop progressbar > trough > progress
     background-image: none;
     border-image: none;
     border-style: none;
-    box-shadow: inset 0px 1px shade(@theme_bg_color, 0.6), inset -1px 0px shade(@theme_bg_color, 0.6), inset 0px -1px shade(@theme_bg_color, 0.6);
-    color: @dark_fg_color;
+    box-shadow: inset 0px 1px @fg_disabled, inset -1px 0px @fg_disabled, inset 0px -1px @fg_disabled;
+    color: @wm_title;
     border-radius: 0;
 }
 
 .linked button.image-button.model:checked
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.16), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    box-shadow: inset 0 1px @modelbutton_bg_shadow_hover_b, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:hover
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.16), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    box-shadow: inset 0 1px @modelbutton_bg_shadow_hover_b, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:focus:hover
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
 }
 
 .linked button.image-button.model:hover:active
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.16), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    box-shadow: inset 0 1px @modelbutton_bg_shadow_hover_b, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:checked:hover
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.16), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    box-shadow: inset 0 1px @modelbutton_bg_shadow_hover_b, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:focus:hover:active
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
 }
 
 .linked button.image-button.model:checked:hover:active
 {
-    color: @selected_fg_color;
-    text-shadow: 0 -1px shade(@selected_bg_color, 0.7);
-    background-image: linear-gradient(to bottom, shade(@selected_bg_color, 1.1), shade(@selected_bg_color, 0.9));
-    border-image: linear-gradient(to bottom, shade(@selected_bg_color, 0.7), shade(@selected_bg_color, 0.7)) 1;
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.16), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
+    box-shadow: inset 0 1px @modelbutton_bg_shadow_hover_b, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:first-child
 {
     border-radius: 6px 0 0 6px;
-    box-shadow: inset 0px 1px shade(@theme_bg_color, 0.6), inset 1px  0px shade(@theme_bg_color, 0.6), inset -1px 0px shade(@theme_bg_color, 0.6), inset 0px -1px shade(@theme_bg_color, 0.6);
+    box-shadow: inset 0px 1px @fg_disabled, inset 1px  0px @fg_disabled, inset -1px 0px @fg_disabled, inset 0px -1px @fg_disabled;
 }
 
 .linked button.image-button.model:first-child:focus
 {
-    box-shadow: inset 0px 1px shade(@theme_bg_color, 0.6), inset 1px 0px shade(@theme_bg_color, 0.6), inset -1px 0px shade(@theme_bg_color, 0.6), inset 0px -1px shade(@theme_bg_color, 0.6);
+    box-shadow: inset 0px 1px @fg_disabled, inset 1px 0px @fg_disabled, inset -1px 0px @fg_disabled, inset 0px -1px @fg_disabled;
 }
 
 .linked button.image-button.model:first-child:checked
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:first-child:hover
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:first-child:hover:active
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:first-child:checked:hover
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:first-child:checked:hover:active
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 1px shade(@selected_bg_color, 1.16), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 1px @modelbutton_bg_shadow_hover_b, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:last-child
 {
     border-radius: 0 6px 6px 0;
-    box-shadow: inset  0px 1px shade(@theme_bg_color, 0.6), inset -1px 0px shade(@theme_bg_color, 0.6), inset 0px -1px shade(@theme_bg_color, 0.6);
+    box-shadow: inset  0px 1px @fg_disabled, inset -1px 0px @fg_disabled, inset 0px -1px @fg_disabled;
 }
 
 .linked button.image-button.model:last-child:checked
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:last-child:hover
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:last-child:hover:active
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:last-child:checked:hover
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked button.image-button.model:last-child:checked:hover:active
 {
-    box-shadow: inset 1px 0 shade(@selected_bg_color, 1.02), inset -1px 0 shade(@selected_bg_color, 1.02), inset 0 -1px shade(@selected_bg_color, 0.96);
+    box-shadow: inset 1px 0 @modelbutton_bg_shadow_hover_a, inset -1px 0 @modelbutton_bg_shadow_hover_a, inset 0 -1px @modelbutton_bg_shadow_hover_c;
 }
 
 .linked > combobox > box.linked > button.combo
@@ -5511,7 +5677,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 10px 0 10px 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 shade(@bg_color, 0.84);
+    box-shadow: inset -1px 0 @scrolledwindow_border_a;
 }
 
 .linked > combobox:first-child > box.linked > button.combo:first-child
@@ -5538,27 +5704,27 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .linked.horizontal > combobox > box.linked > button.combo
 {
-    box-shadow: inset 1px 0 @inset_light_color, inset -1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_light, inset -1px 0 @inset_dark;
 }
 
 .linked.horizontal > combobox > box.linked > button.combo:checked
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 .linked.horizontal > combobox > box.linked > button.combo:disabled
 {
-    box-shadow: inset -1px 0 @inset_dark_color;
+    box-shadow: inset -1px 0 @inset_dark;
 }
 
 .linked.horizontal > combobox:first-child > box.linked > button.combo:first-child
 {
-    box-shadow: inset -1px 0 @inset_dark_color;
+    box-shadow: inset -1px 0 @inset_dark;
 }
 
 .linked.horizontal > combobox:last-child > box.linked > button.combo:last-child
 {
-    box-shadow: inset 1px 0 @inset_light_color;
+    box-shadow: inset 1px 0 @inset_light;
 }
 
 .linked.vertical > combobox > box.linked > button.combo
@@ -5566,7 +5732,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 0 12px 0 12px;
     border-width: 0 1px 0 1px;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical combobox > box.linked > button.combo:first-child
@@ -5574,69 +5740,69 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-image-width: 10px 12px 0px 12px;
     border-width: 1px 1px 1px 1px;
     border-radius: 8px 8px 0 0;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > spinbutton.horizontal
 {
-    border-color: alpha(shade(@bg_color, 0.6), 0.22);
+    border-color: @spinbutton_border;
     border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-radius: 0px;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > spinbutton.horizontal:focus
 {
-    border-color: alpha(shade(@bg_color, 0.6), 0.22);
+    border-color: @spinbutton_border;
     border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-radius: 0px;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > spinbutton.horizontal:backdrop
 {
-    border-color: alpha(shade(@bg_color, 0.6), 0.22);
+    border-color: @spinbutton_border;
     border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-radius: 0px;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > spinbutton.horizontal > button
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
 }
 
 .linked.vertical > spinbutton.horizontal > button:focus
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
 }
 
 .linked.vertical > spinbutton.horizontal:backdrop
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
 }
 
 .linked.vertical > spinbutton.horizontal > text
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
 }
 
 .linked.vertical > spinbutton.horizontal > text:focus
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
 }
 
 .linked.vertical > spinbutton.horizontal > text:backdrop
 {
-    box-shadow: inset 1px 0 @inset_dark_color;
+    box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
 }
 
@@ -5645,7 +5811,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 0 12px 0 12px;
     border-width: 0 1px 0 1px;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > entry:first-child
@@ -5653,7 +5819,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-image-width: 10px 12px 0px 12px;
     border-width: 1px 1px 1px 1px;
     border-radius: 8px 8px 0 0;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > entry:last-child
@@ -5676,7 +5842,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-radius: 0;
     border-image-width: 0 12px 0 12px;
     border-width: 0 1px 0 1px;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > button:first-child
@@ -5684,7 +5850,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-image-width: 10px 12px 0px 12px;
     border-width: 1px 1px 1px 1px;
     border-radius: 8px 8px 0 0;
-    box-shadow: inset -1px -1px shade(@bg_color, 0.84);
+    box-shadow: inset -1px -1px @scrolledwindow_border_a;
 }
 
 .linked.vertical > button:last-child
@@ -5706,41 +5872,41 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .toolbar
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.96), shade(@dark_bg_color, 1.4));
-    border-bottom-color: shade(@dark_bg_color, 1.1);
-    border-top-color: shade(@dark_bg_color, 1.09);
+    background-image: linear-gradient(to bottom, @window_headerbar_bg_maximized, @windowhandle_linked_button_bg_shadow_a);
+    border-bottom-color: @wm_border;
+    border-top-color: @wm_bg_e;
     border-style: solid;
     border-width: 1px 0 1px 0;
     border-radius: 0;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
-    box-shadow: inset 0 1px shade(@dark_bg_color, 0.94);
+    color: @wm_title;
+    text-shadow: 0 -1px @wm_title_shadow;
+    box-shadow: inset 0 1px @windowhandle_button_bg_checked_disabled;
     margin-right: -10px;
 }
 
 .toolbar:backdrop
 {
     background-image: none;
-    background-color: @dark_bg_color;
+    background-color: @wm_bg_a;
     box-shadow: none;
-    border-top-color: @dark_bg_color;
-    border-bottom-color: shade(@dark_bg_color, 0.9);
-    color: @backdrop_dark_fg_color;
+    border-top-color: @wm_bg_a;
+    border-bottom-color: @windowhandle_button_fg_shadow_insensitive;
+    color: @fg_dark_insensitive;
 }
 
 .toolbar box.linked button
 {
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4), inset -1px 0 shade(@dark_bg_color, 0.9);
+    box-shadow: inset 1px 0 @windowhandle_linked_button_bg_shadow_a, inset -1px 0 @windowhandle_button_fg_shadow_insensitive;
 }
 
 .toolbar box.linked button:first-child
 {
-    box-shadow: inset -1px 0 shade(@dark_bg_color, 0.9);
+    box-shadow: inset -1px 0 @windowhandle_button_fg_shadow_insensitive;
 }
 
 .toolbar box.linked button:last-child
 {
-    box-shadow: inset 1px 0 shade(@dark_bg_color, 1.4);
+    box-shadow: inset 1px 0 @windowhandle_linked_button_bg_shadow_a;
 }
 
 .toolbar box.linked button:only-child
@@ -5760,21 +5926,21 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .toolbar :disabled
 {
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    text-shadow: 0 -1px @wm_title_shadow;
 }
 
 .toolbar button
 {
     background: transparent;
-    color: @dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.7);
+    color: @wm_title;
+    text-shadow: 0 -1px @wm_title_shadow;
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     -gtk-icon-size: 24px;
 }
 
 .toolbar button:hover
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
@@ -5786,19 +5952,19 @@ row:selected:focus:backdrop progressbar > trough > progress
 .toolbar button:active
 {
     border-image-source: -gtk-scaled(url("assets/button-toolbar-active.png"), url("assets/button-toolbar-active@2.png"));
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.95), shade(@dark_bg_color, 1.0));
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.6);
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_active_a, @wm_bg_a);
+    text-shadow: 0 -1px @menubar_fg_shadow;
 }
 
 .toolbar button:checked
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.2), shade(@dark_bg_color, 1.1));
+    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
 .toolbar button:disabled
 {
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 1.01), shade(@dark_bg_color, 0.99));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_disabled_a, @windowhandle_button_bg_disabled_b);
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
     text-shadow: none;
 }
@@ -5806,8 +5972,8 @@ row:selected:focus:backdrop progressbar > trough > progress
 .toolbar button:backdrop
 {
     background-color: transparent;
-    color: @backdrop_dark_fg_color;
-    text-shadow: 0 -1px shade(@dark_bg_color, 0.9);
+    color: @fg_dark_insensitive;
+    text-shadow: 0 -1px @windowhandle_button_fg_shadow_insensitive;
     border-image-source: -gtk-scaled(url("assets/backdrop-button-toolbar.png"), url("assets/backdrop-button-toolbar@2.png"));
 }
 
@@ -5834,16 +6000,16 @@ row:selected:focus:backdrop progressbar > trough > progress
 .toolbar button:checked:disabled
 {
     text-shadow: none;
-    background-image: linear-gradient(to bottom, shade(@dark_bg_color, 0.94), shade(@dark_bg_color, 1.02));
+    background-image: linear-gradient(to bottom, @windowhandle_button_bg_checked_disabled, @windowhandle_button_bg_checked_disabled_b);
     border-image-source: -gtk-scaled(url("assets/button-toolbar.png"), url("assets/button-toolbar@2.png"));
 }
 
 .toolbar separator
 {
     border-width: 0 1px 0 1px;
-    border-color: alpha(shade(@dark_bg_color, 0.94), 0.35);
-    border-bottom-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
-    border-right-color: alpha(shade(@dark_bg_color, 1.26), 0.5);
+    border-color: @windowhandle_separator_border;
+    border-bottom-color: @windowhandle_separator_border_b;
+    border-right-color: @windowhandle_separator_border_b;
     margin: 0 4px;
 }
 
@@ -5896,10 +6062,9 @@ row:selected:focus:backdrop progressbar > trough > progress
     padding: 10px;
     border-style: solid;
     border-width: 1px;
-    border-color: shade(@theme_selected_bg_color, 0.8);
+    border-color: @osd_button_border;
     border-radius: 7px;
-    background-image: linear-gradient(to left, alpha(shade(@theme_selected_bg_color, 1.2), 0.7), alpha(shade(@theme_selected_bg_color, 0.95), 0.7));
-    background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
+    background-image: linear-gradient(to left, @osd_bg_a, @osd_bg_b);
 }
 
 .osd button
@@ -5909,7 +6074,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     border-image: none;
     border-color: @osd_button_border;
     box-shadow: none;
-    background-color: shade(@osd_bg, 1.10);
+    background-color: @osd_button_bg;
     padding: 8px;
     background-image: linear-gradient(to bottom, @osd_button_bg_a, @osd_button_bg_b 68%, @osd_button_bg_c);
     color: @osd_button_fg;
@@ -5988,7 +6153,7 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-image: none;
     background-image: none;
-    background-color: @osd_button_bg_insensitive_active;
+    background-color: @osd_button_bg_a;
     color: @osd_button_fg_insensitive;
 }
 
@@ -6043,30 +6208,30 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-image: none;
     background-image: none;
-    background-color: @dark_bg_color;
-    border-top: 2px solid shade(@dark_bg_color, 0.75);
-    border-left: 2px solid shade(@dark_bg_color, 0.75);
-    border-right: 2px solid shade(@dark_bg_color, 1.15);
-    border-bottom: 2px solid shade(@dark_bg_color, 1.15);
+    background-color: @wm_bg_a;
+    border-top: 2px solid @windowhandle_scale_trough_border_a;
+    border-left: 2px solid @windowhandle_scale_trough_border_a;
+    border-right: 2px solid @windowhandle_scale_trough_border_b;
+    border-bottom: 2px solid @windowhandle_scale_trough_border_b;
 }
 
 .osd .horizontal > trough:backdrop
 {
     border-image: none;
     background-image: none;
-    background-color: @dark_bg_color;
-    border-top: 2px solid shade(@dark_bg_color, 0.75);
-    border-left: 2px solid shade(@dark_bg_color, 0.75);
-    border-right: 2px solid shade(@dark_bg_color, 1.15);
-    border-bottom: 2px solid shade(@dark_bg_color, 1.15);
+    background-color: @wm_bg_a;
+    border-top: 2px solid @windowhandle_scale_trough_border_a;
+    border-left: 2px solid @windowhandle_scale_trough_border_a;
+    border-right: 2px solid @windowhandle_scale_trough_border_b;
+    border-bottom: 2px solid @windowhandle_scale_trough_border_b;
 }
 
 .osd progressbar
 {
     padding: 0;
     border-style: none;
-    background-color: shade(@osd_progressbar_background_b, 1.3);
-    background-image: linear-gradient(to bottom, @osd_progressbar_background_a, @osd_progressbar_background_b);
+    background-color: @osd_progressbar_bg;
+    background-image: linear-gradient(to bottom, @osd_progressbar_bg_a, @osd_progressbar_bg_b);
     border-radius: 2px;
 }
 
@@ -6109,14 +6274,12 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .osd spinbutton > button:hover
 {
-    background-image: linear-gradient(to bottom, alpha(shade(@theme_selected_bg_color, 1.2), 0.4), alpha(shade(@theme_selected_bg_color, 0.95), 0.4));
-    background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
+    background-image: linear-gradient(to bottom, @osd_spinbutton_button_bg_hover_a, @osd_spinbutton_button_bg_hover_b);
 }
 
 .osd spinbutton > button:active
 {
-    background-image: linear-gradient(to bottom, alpha(shade(@theme_selected_bg_color, 1.2), 0.4), alpha(shade(@theme_selected_bg_color, 0.95), 0.4));
-    background-color: alpha(shade(@theme_selected_bg_color, 1.0), 0.4);
+    background-image: linear-gradient(to bottom, @osd_spinbutton_button_bg_hover_a, @osd_spinbutton_button_bg_hover_b);
 }
 
 .osd scale > trough:disabled
@@ -6157,8 +6320,7 @@ row:selected:focus:backdrop progressbar > trough > progress
     padding: 10px;
     border: none;
     border-radius: 0 0 4px 4px;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent 2px);
+    background-image: linear-gradient(to bottom, @app_notification_bg_a, transparent 2px);
     background-clip: padding-box;
 }
 
@@ -6175,15 +6337,15 @@ row:selected:focus:backdrop progressbar > trough > progress
 .app-notification button
 {
     color: @theme_dark_fg_color;
-    border-color: rgba(75, 89, 112, 0.7);
+    border-color: @app_notification_button_border;
     border-radius: 3px;
     background-image: none;
-    background-color:rgba(101, 101, 104, 0.7);
+    background-color: @app_notification_button_bg;
     background-clip: padding-box;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px @app_notification_button_bg_shadow;
     text-shadow: none;
     -gtk-icon-shadow: 0 1px black;
-    outline-color: rgba(238, 238, 236, 0.3);
+    outline-color: @app_notification_button_outline;
     min-height: 20px;
     min-width: 20px;
     padding: 4px;
@@ -6195,34 +6357,34 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-image: none;
     border-style: solid;
-    border-color: shade(@button_border, 1.1);
-    background-image: radial-gradient(200% 300% at 50% -200%, shade(@button_gradient_color_a, 1.2), shade(@button_gradient_color_a, 0.5) 42%, @dark_bg_color 43%, shade(@button_gradient_color_b, 0.7));
+    border-color: @app_notification_button_border_hover;
+    background-image: radial-gradient(200% 300% at 50% -200%, @app_notification_button_bg_hover_a, @app_notification_button_bg_hover_b 42%, @wm_bg_a 43%, @wm_title_shadow);
     background-clip: padding-box;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px @app_notification_button_bg_shadow;
     text-shadow: none;
     -gtk-icon-shadow: 0 1px black;
-    outline-color: rgba(238, 238, 236, 0.3);
+    outline-color: @app_notification_button_outline;
     border-radius: 3px;
 }
 
 .app-notification button:checked
 {
-    color: white;
-    border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(37, 88, 128, 0.7), rgba(37, 88, 128, 0.7));
+    color: @theme_base_color;
+    border-color: @app_notification_button_border_checked;
+    background-image: image(@app_notification_button_bg_checked);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
     -gtk-icon-shadow: none;
-    outline-color: rgba(238, 238, 236, 0.3);
+    outline-color: @app_notification_button_outline;
     border-radius: 3px;
 }
 
 .app-notification button:disabled
 {
-    color: #878989;
-    border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(52, 57, 57, 0.5), rgba(52, 57, 57, 0.5));
+    color: @app_notification_button_fg_disabled;
+    border-color: @app_notification_button_border_checked;
+    background-image: image(@app_notification_button_bg_disabled);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -6233,9 +6395,9 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .app-notification button:backdrop
 {
-    color: #eeeeec;
-    border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(172, 205, 138, 0.7), rgba(172, 205, 138, 0.7));
+    color: @app_notification_button_fg_insensitive;
+    border-color: @app_notification_button_border_checked;
+    background-image: image(@app_notification_button_bg_insensitive);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -6246,22 +6408,22 @@ row:selected:focus:backdrop progressbar > trough > progress
 
 .app-notification button:backdrop:checked
 {
-    color: white;
-    border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(37, 88, 128, 0.7), rgba(37, 88, 128, 0.7));
+    color: @theme_base_color;
+    border-color: @app_notification_button_border_checked;
+    background-image: image(@app_notification_button_bg_checked);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
     -gtk-icon-shadow: none;
-    outline-color: rgba(238, 238, 236, 0.3);
+    outline-color: @app_notification_button_outline;
     border-radius: 3px;
 }
 
 .app-notification button:backdrop:disabled
 {
-    color: #878989;
-    border-color: rgba(0, 0, 0, 0.7);
-    background-image: linear-gradient(to bottom, rgba(52, 57, 57, 0.5), rgba(52, 57, 57, 0.5));
+    color: @app_notification_button_fg_disabled;
+    border-color: @app_notification_button_border_checked;
+    background-image: image(@app_notification_button_bg_disabled);
     background-clip: padding-box;
     box-shadow: none;
     text-shadow: none;
@@ -6274,8 +6436,8 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     color: @theme_dark_fg_color;
     border-style: solid;
-    border-color: shade(@button_border, 1.1);
-    background-image: linear-gradient(to bottom, shade(@button_gradient_color_b, 0.7), @dark_bg_color 50%, shade(@button_gradient_color_a, 1.0));
+    border-color: @app_notification_button_border_hover;
+    background-image: linear-gradient(to bottom, @wm_title_shadow, @wm_bg_a 50%, @app_notification_button_bg_a);
 }
 
 /* Info */
@@ -6284,11 +6446,11 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@info_bg_color, 1.04), shade(@info_bg_color, 0.96));
-    color: @info_fg_color;
-    border-color: shade(@info_bg_color, 0.8);
-    border-bottom-color: shade(@info_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@info_bg_color, 1.08), inset -1px 0 shade(@info_bg_color, 1.08), inset 0 1px shade(@info_bg_color, 1.1), inset 0 -1px shade(@info_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @info_bg_a, @info_bg_b);
+    color: @info_fg;
+    border-color: @info_border;
+    border-bottom-color: @info_border_b;
+    box-shadow: inset 1px 0 @info_bg_shadow_a, inset -1px 0 @info_bg_shadow_a, inset 0 1px @info_bg_shadow_b, inset 0 -1px @info_bg_a;
 }
 
 /* Warning */
@@ -6297,11 +6459,11 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@warning_bg_color, 1.04), shade(@warning_bg_color, 0.96));
-    color: @warning_fg_color;
-    border-color: shade(@warning_bg_color, 0.8);
-    border-bottom-color: shade(@warning_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@warning_bg_color, 1.08), inset -1px 0 shade(@warning_bg_color, 1.08), inset 0 1px shade(@warning_bg_color, 1.1), inset 0 -1px shade(@warning_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @warning_bg_a, @warning_bg_b);
+    color: @warning_fg;
+    border-color: @levelbar_block_border_low;
+    border-bottom-color: @warning_border_b;
+    box-shadow: inset 1px 0 @warning_bg_shadow_a, inset -1px 0 @warning_bg_shadow_a, inset 0 1px @warning_bg_shadow_b, inset 0 -1px @warning_bg_a;
 }
 
 /* Question */
@@ -6310,11 +6472,11 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@question_bg_color, 1.04), shade(@question_bg_color, 0.96));
-    color: @question_fg_color;
-    border-color: shade(@question_bg_color, 0.8);
-    border-bottom-color: shade(@question_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@question_bg_color, 1.08), inset -1px 0 shade(@question_bg_color, 1.08), inset 0 1px shade(@question_bg_color, 1.1), inset 0 -1px shade(@question_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @question_bg_a, @question_bg_b);
+    color: @question_fg;
+    border-color: @question_border_a;
+    border-bottom-color: @question_border_b;
+    box-shadow: inset 1px 0 @question_bg_shadow_a, inset -1px 0 @question_bg_shadow_a, inset 0 1px @question_bg_shadow_b, inset 0 -1px @question_bg_a;
 }
 
 /* Error */
@@ -6323,9 +6485,9 @@ row:selected:focus:backdrop progressbar > trough > progress
 {
     border-style: solid;
     border-width: 1px;
-    background-image: linear-gradient(to bottom, shade(@error_bg_color, 1.04), shade(@error_bg_color, 0.96));
-    color: @error_fg_color;
-    border-color: shade(@error_bg_color, 0.8);
-    border-bottom-color: shade(@error_bg_color, 0.75);
-    box-shadow: inset 1px 0 shade(@error_bg_color, 1.08), inset -1px 0 shade(@error_bg_color, 1.08), inset 0 1px shade(@error_bg_color, 1.1), inset 0 -1px shade(@error_bg_color, 1.04);
+    background-image: linear-gradient(to bottom, @error_bg_a, @error_bg_b);
+    color: @tooltip_fg;
+    border-color: @error_border_a;
+    border-bottom-color: @error_border_b;
+    box-shadow: inset 1px 0 @error_bg_shadow_a, inset -1px 0 @error_bg_shadow_a, inset 0 1px @error_bg_shadow_b, inset 0 -1px @error_bg_a;
 }
