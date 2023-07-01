@@ -1,3 +1,9 @@
+# 23.7.1
+
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Use colour variables (cc41a76)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix GtkEmojiChooser padding (23fa43d)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Mark deprecated widgets (117cb50)
+
 # 23.6.1
 
  - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Drop shadow from tiled windows (b039f37)
