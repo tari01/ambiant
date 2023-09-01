@@ -1,3 +1,7 @@
+# 23.9.1
+
+ - Drop assets and use only CSS for GTK4 buttons (0a033f0)
+
 # 23.7.1
 
  - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Use colour variables (cc41a76)
