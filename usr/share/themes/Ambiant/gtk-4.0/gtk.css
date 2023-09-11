@@ -110,6 +110,13 @@
 @define-color entry_bg_insensitive_a mix(@entry_bg_normal, @theme_bg_color, 0.5);
 @define-color entry_bg_insensitive_b mix(@theme_base_color, @theme_bg_color, 0.5);
 @define-color entry_bg_normal shade(@theme_base_color, 0.96);
+@define-color entry_border_disabled rgb(200, 200, 200);
+@define-color entry_border_normal_a rgb(160, 160, 160);
+@define-color entry_border_normal_b rgb(146, 146, 146);
+@define-color entry_border_normal_c rgb(180, 180, 180);
+@define-color entry_border_toolbar_normal_a rgb(44, 44, 41);
+@define-color entry_border_toolbar_normal_b rgb(41, 41, 39);
+@define-color entry_border_toolbar_normal_c rgb(47, 47, 43);
 @define-color entry_fg_disabled mix(@theme_text_color, @theme_base_color, 0.4);
 @define-color error_bg rgb(223, 56, 44);
 @define-color error_bg_a shade(@error_bg, 1.04);
@@ -118,6 +125,10 @@
 @define-color error_bg_shadow_b shade(@error_bg, 1.1);
 @define-color error_border_a shade(@error_bg, 0.8);
 @define-color error_border_b shade(@error_bg, 0.75);
+@define-color entry_border_disabled_insensitive rgb(210, 210, 210);
+@define-color entry_border_insensitive_a rgb(170, 170, 170);
+@define-color entry_border_insensitive_b rgb(180, 180, 180);
+@define-color entry_border_insensitive_c rgb(190, 190, 190);
 @define-color fg_dark_insensitive mix(@wm_bg_a, @wm_title, 0.75);
 @define-color fg_disabled shade(@theme_bg_color, 0.6);
 @define-color info_bg rgb(252, 252, 189);
@@ -504,7 +515,6 @@ button
     border: 1px solid @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
     border-radius: 6px;
-    padding: 6px;
 }
 
 button:checked
@@ -1047,53 +1057,117 @@ list > row button
 
 entry
 {
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
-    border-image: -gtk-scaled(url("assets/entry.png"),url("assets/entry@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    border-radius: 6px;
+    border: 1px solid @entry_border_normal_a;
+    border-top-color: @entry_border_normal_b;
+    border-bottom-color: @entry_border_normal_c;
     background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
-    padding: 5px 7px;
+    padding: 6px;
     color: @theme_text_color;
 }
 
 entry:disabled
 {
-    border-image: -gtk-scaled(url("assets/entry-disabled.png"),url("assets/entry-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-color: @entry_bg_disabled;
-    background-image: none;
+    border-color: @entry_border_disabled;
+    background-image: image(@entry_bg_disabled);
     color: @entry_fg_disabled;
 }
 
 entry:backdrop
 {
-    border-image: -gtk-scaled(url("assets/backdrop-entry.png"), url("assets/backdrop-entry@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    border-color: @entry_border_insensitive_a;
+    border-top-color: @entry_border_insensitive_b;
+    border-bottom-color: @entry_border_insensitive_c;
     background-image: linear-gradient(to bottom, @entry_bg_insensitive_a, @entry_bg_insensitive_b);
     color: @theme_unfocused_text_color;
 }
 
 entry:disabled:backdrop
 {
-    border-image: -gtk-scaled(url("assets/backdrop-entry-disabled.png"), url("assets/backdrop-entry-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-color: @entry_bg_disabled_insensitive;
+    border-color: @entry_border_disabled_insensitive;
+    background-image: image(@entry_bg_disabled_insensitive);
     color: @entry_fg_disabled;
+}
+
+searchbar entry,
+windowhandle entry,
+popover entry
+{
+    border-color: @entry_border_toolbar_normal_a;
+    border-top-color: @entry_border_toolbar_normal_b;
+    border-bottom-color: @entry_border_toolbar_normal_c;
+    background-image: image(@popover_entry_bg);
+    color: @wm_title;
+}
+
+.linked > entry
+{
+    border-radius: 0;
+    border-width: 1px 0 1px 0;
+    box-shadow: inset -1px 0 @scrolledwindow_border_a;
+}
+
+.linked > entry:first-child
+{
+    border-width: 1px 0px 1px 1px;
+    border-radius: 6px 0 0 6px;
+}
+
+.linked > entry:last-child
+{
+    border-radius: 0 6px 6px 0;
+    border-width: 1px 1px 1px 0px;
+    box-shadow: none;
+}
+
+.linked > entry:only-child
+{
+    border-width: 1px;
+    border-radius: 6px;
+}
+
+.linked.vertical > entry
+{
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+    box-shadow: inset 0 -1px @scrolledwindow_border_a;
+}
+
+.linked.vertical > entry:first-child
+{
+    border-width: 1px 1px 0px 1px;
+    border-radius: 6px 6px 0 0;
+}
+
+.linked.vertical > entry:last-child
+{
+    border-radius: 0 0 6px 6px;
+    border-width: 0px 1px 1px 1px;
+    box-shadow: none;
+}
+
+.linked.vertical > entry:only-child
+{
+    border-radius: 6px;
+    border-width: 1px;
 }
 
 entry.flat
 {
-    padding: 3px 2px 2px 2px;
+    padding: 2px;
+    border-radius: 0;
 }
 
 entry > text.readonly
 {
-    background-color: @entry_bg_disabled;
+    background-image: image(@entry_bg_disabled);
     background-image: none;
 }
 
 entry > text > selection
 {
     color: @theme_selected_fg_color;
-    background-color: @theme_selected_bg_color;
+    background-image: image(@theme_selected_bg_color);
 }
 
 entry > text > placeholder
@@ -3219,12 +3293,6 @@ windowhandle label.subtitle
     opacity: 0.5;
 }
 
-windowhandle entry
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    padding: 5px 6px;
-}
-
 windowhandle entry > progress > trough > progress
 {
     border-radius: 2px;
@@ -3411,25 +3479,6 @@ windowhandle > box switch:checked:disabled > slider
     border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
 }
 
-windowhandle > box combobox > box.linked > entry.combo:first-child
-{
-    border-radius: 6px 0 0 6px;
-    border-right-width: 0;
-}
-
-windowhandle > box combobox > box.linked > entry.combo:last-child
-{
-    border-image-width: 10px 12px 10px 1px;
-    border-radius: 0 8px 8px 0;
-    border-left-width: 0;
-}
-
-windowhandle > box combobox > box.linked > entry.combo:only-child
-{
-    border-image-width: 10px 12px 10px 12px;
-    border-radius: 8px;
-}
-
 windowhandle > box scale > trough
 {
     background-color: @wm_bg_a;
@@ -3519,11 +3568,6 @@ searchbar > revealer > box:backdrop
     box-shadow: none;
     border-top-color: @wm_bg_a;
     border-bottom-color: @windowhandle_button_fg_shadow_insensitive;
-}
-
-searchbar entry
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
 }
 
 /* GtkInfoBar - DEPRECATED */
@@ -3947,15 +3991,6 @@ popover modelbutton calendar > header
     padding: 1px;
     color: @wm_title;
 }*/
-
-popover modelbutton entry
-{
-    background-color: @popover_entry_bg;
-    background-image: none;
-    color: @wm_title;
-    border-image: linear-gradient(to bottom, @windowhandle_scale_trough_border_a, @windowhandle_button_fg_shadow_insensitive) 1;
-    border-image-width: 1px;
-}
 
 popover modelbutton arrow.right
 {
@@ -4800,36 +4835,6 @@ row:selected:backdrop check:hover
 
 /* Linked */
 
-.linked > entry
-{
-    border-radius: 0;
-    border-image-width: 10px 0 10px 0;
-    border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 @scrolledwindow_border_a;
-}
-
-.linked > entry:first-child
-{
-    border-image-width: 10px 0 10px 12px;
-    border-width: 1px 0px 1px 1px;
-    border-radius: 8px 0 0 8px;
-}
-
-.linked > entry:last-child
-{
-    border-image-width: 10px 12px 10px 0;
-    border-radius: 0 8px 8px 0;
-    border-width: 1px 1px 1px 0px;
-    box-shadow: none;
-}
-
-.linked > entry:only-child
-{
-    border-image-width: 10px 12px 10px 12px;
-    border-radius: 8px;
-    border-width: 1px;
-}
-
 .linked.vertical > spinbutton.horizontal
 {
     border-color: @spinbutton_border;
@@ -4864,37 +4869,6 @@ row:selected:backdrop check:hover
 {
     box-shadow: inset 1px 0 @inset_dark;
     border-radius: 0px;
-}
-
-.linked.vertical > entry
-{
-    border-radius: 0;
-    border-image-width: 0 12px 0 12px;
-    border-width: 0 1px 0 1px;
-    box-shadow: inset -1px -1px @scrolledwindow_border_a;
-}
-
-.linked.vertical > entry:first-child
-{
-    border-image-width: 10px 12px 0px 12px;
-    border-width: 1px 1px 1px 1px;
-    border-radius: 8px 8px 0 0;
-    box-shadow: inset -1px -1px @scrolledwindow_border_a;
-}
-
-.linked.vertical > entry:last-child
-{
-    border-image-width: 0px 12px 10px 12px;
-    border-radius: 0 0 8px 8px;
-    border-width: 0px 1px 1px 1px;
-    box-shadow: none;
-}
-
-.linked.vertical > entry:only-child
-{
-    border-image-width: 10px 12px 10px 12px;
-    border-radius: 8px;
-    border-width: 1px;
 }
 
 /* Toolbar */
@@ -4935,26 +4909,6 @@ row:selected:backdrop check:hover
     border-bottom-color: @windowhandle_separator_border_b;
     border-right-color: @windowhandle_separator_border_b;
     margin: 0 4px;
-}
-
-.toolbar combobox > box.linked > entry.combo:first-child
-{
-    border-image-width: 10px 0 10px 12px;
-    border-radius: 8px 0 0 8px;
-    border-right-width: 0;
-}
-
-.toolbar combobox > box.linked > entry.combo:last-child
-{
-    border-image-width: 10px 12px 10px 1px;
-    border-radius: 0 8px 8px 0;
-    border-left-width: 0;
-}
-
-.toolbar combobox > box.linked > entry.combo:only-child
-{
-    border-image-width: 10px 12px 10px 12px;
-    border-radius: 8px;
 }
 
 /* OSD */
