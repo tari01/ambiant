@@ -1,21 +1,5 @@
-@define-color app_notification_bg_a rgba(0, 0, 0, 0.2);
-@define-color app_notification_button_bg rgba(101, 101, 104, 0.7);
-@define-color app_notification_button_bg_a rgb(105, 105, 108);
-@define-color app_notification_button_bg_checked rgba(37, 88, 128, 0.7);
-@define-color app_notification_button_bg_hover_a shade(@app_notification_button_bg_a, 1.2);
-@define-color app_notification_button_bg_hover_b shade(@app_notification_button_bg_a, 0.5);
-@define-color app_notification_button_bg_insensitive rgba(172, 205, 138, 0.7);
-@define-color app_notification_button_bg_shadow rgba(255, 255, 255, 0.1);
-@define-color app_notification_button_border rgba(75, 89, 112, 0.7);
-@define-color app_notification_button_fg_disabled rgb(135, 137, 137);
-@define-color app_notification_button_fg_insensitive rgb(238, 238, 236);
-@define-color app_notification_button_border_checked rgba(0, 0, 0, 0.7);
-@define-color app_notification_button_border_hover shade(rgb(42, 42, 42), 1.1);
-@define-color app_notification_button_bg_disabled rgba(52, 57, 57, 0.5);
-@define-color app_notification_button_outline rgba(238, 238, 236, 0.3);
 @define-color assistant_sidebar_bg shade(@theme_bg_color, 0.97);
 @define-color assistant_sidebar_fg mix(@theme_fg_color, @theme_bg_color, 0.40);
-@define-color bg_dark_slider rgb(78, 76, 70);
 @define-color bg_insensitive shade(@theme_bg_color, 0.95);
 @define-color borders shade(@theme_bg_color, 0.82);
 @define-color button_bg_active_a rgb(220, 220, 220);
@@ -31,8 +15,6 @@
 @define-color button_bg_destructive_checked_a mix(@button_bg_checked_a, @error_bg, 0.5);
 @define-color button_bg_destructive_checked_b mix(@button_bg_checked_b, @error_bg, 0.5);
 @define-color button_bg_destructive_disabled mix(mix(@tooltip_fg, @error_bg, 0.5), mix(@theme_bg_color, @error_bg, 0.5), 0.5);
-@define-color button_bg_destructive_hover_a shade(@button_bg_destructive, 1.12);
-@define-color button_bg_destructive_hover_b shade(@button_bg_destructive, 0.96);
 @define-color button_bg_disabled mix(@tooltip_fg, @theme_bg_color, 0.5);
 @define-color button_bg_hover_a shade(@button_bg_normal_b, 1.12);
 @define-color button_bg_hover_b shade(@button_bg_normal_b, 0.96);
@@ -46,11 +28,12 @@
 @define-color button_bg_suggested_active_a mix(@button_bg_active_a, @theme_selected_bg_color, 0.5);
 @define-color button_bg_suggested_active_b mix(@button_bg_active_b, @theme_selected_bg_color, 0.5);
 @define-color button_bg_suggested_checked_a mix(@button_bg_checked_a, @theme_selected_bg_color, 0.5);
-@define-color button_bg_suggested_checked_b mix(@button_bg_checked_b, @theme_selected_bg_color, 0.5);
 @define-color button_bg_suggested_disabled mix(mix(@tooltip_fg, @theme_selected_bg_color, 0.5), mix(@theme_bg_color, @theme_selected_bg_color, 0.5), 0.5);
-@define-color button_bg_suggested_hover_a shade(@button_bg_suggested, 1.12);
-@define-color button_bg_suggested_hover_b shade(@button_bg_suggested, 0.96);
-@define-color button_bg_toolbar_normal rgba(255, 255, 255, 0.07);
+@define-color button_bg_toolbar_disabled_a shade(@wm_bg_a, 1.01);
+@define-color button_bg_toolbar_disabled_b shade(@wm_bg_a, 0.99);
+@define-color button_bg_toolbar_normal_a shade(shade(@switch_bg_toolbar_normal_a, 1.02), 1.18);
+@define-color button_bg_toolbar_normal_b shade(@switch_bg_toolbar_normal_a, 1.12);
+@define-color button_bg_toolbar_normal_c shade(shade(@switch_bg_toolbar_normal_a, 1.02), 1.04);
 @define-color button_border_active_a rgb(162, 162, 162);
 @define-color button_border_active_b rgb(180, 180, 180);
 @define-color button_border_active_c rgb(141, 141, 141);
@@ -58,9 +41,6 @@
 @define-color button_border_checked_a rgb(156, 156, 156);
 @define-color button_border_checked_b rgb(141, 141, 141);
 @define-color button_border_checked_c rgb(180, 180, 180);
-@define-color button_border_circular_focus rgba(0, 255, 0, 0.5);
-@define-color button_border_circular_hover rgba(0, 0, 0, 0.45);
-@define-color button_border_circular_normal rgba(0, 0, 0, 0.3);
 @define-color button_border_destructive_active_a mix(@button_border_active_a, @error_bg, 0.5);
 @define-color button_border_destructive_active_b mix(@button_border_active_b, @error_bg, 0.5);
 @define-color button_border_destructive_active_c mix(@button_border_active_c, @error_bg, 0.5);
@@ -68,12 +48,10 @@
 @define-color button_border_destructive_checked_b mix(@button_border_checked_b, @error_bg, 0.5);
 @define-color button_border_destructive_checked_c mix(@button_border_checked_c, @error_bg, 0.5);
 @define-color button_border_destructive_disabled mix(@button_border_disabled, @error_bg, 0.5);
-@define-color button_border_destructive_focus rgb(220, 0, 0);
 @define-color button_border_destructive_normal_a mix(@button_border_normal_a, @error_bg, 0.5);
 @define-color button_border_destructive_normal_b mix(@button_border_normal_b, @error_bg, 0.5);
 @define-color button_border_disabled rgb(200, 200, 200);
 @define-color button_border_focus_a rgb(168, 199, 118);
-@define-color button_border_focus_b rgb(130, 191, 31);
 @define-color button_border_normal_a rgb(180, 180, 180);
 @define-color button_border_normal_b rgb(147, 147, 147);
 @define-color button_border_suggested_active_a mix(@button_border_active_a, @theme_selected_bg_color, 0.5);
@@ -83,7 +61,6 @@
 @define-color button_border_suggested_checked_b mix(@button_border_checked_b, @theme_selected_bg_color, 0.5);
 @define-color button_border_suggested_checked_c mix(@button_border_checked_c, @theme_selected_bg_color, 0.5);
 @define-color button_border_suggested_disabled mix(@button_border_disabled, @theme_selected_bg_color, 0.5);
-@define-color button_border_suggested_focus rgb(0, 150, 0);
 @define-color button_border_suggested_normal_a mix(@button_border_normal_a, @theme_selected_bg_color, 0.5);
 @define-color button_border_suggested_normal_b mix(@button_border_normal_b, @theme_selected_bg_color, 0.5);
 @define-color button_border_toolbar_active_a rgb(44, 44, 41);
@@ -91,20 +68,13 @@
 @define-color button_border_toolbar_active_c rgb(47, 47, 43);
 @define-color button_border_toolbar_checked shade(@button_border_toolbar_normal, 0.5);
 @define-color button_border_toolbar_normal rgb(52, 52, 48);
-@define-color button_fg_dark_hover shade(@theme_selected_bg_color, 1.3);
 @define-color button_fg_shadow alpha(shade(@button_bg_normal_b, 1.25), 0.4);
 @define-color button_separator_border shade(@button_bg_normal_b, 0.9);
 @define-color button_separator_border_disabled shade(@button_bg_insensitive, 0.96);
 @define-color calendar_header_bg_b shade(@theme_bg_color, 0.89);
 @define-color columnview_border_dnd shade(@theme_selected_bg_color, 1.12);
 @define-color columnview_header_button_bg_a shade(@theme_bg_color, 1.04);
-@define-color columnview_header_button_bg_hover_insensitive_b shade(@theme_bg_color, 1.06);
-@define-color columnview_header_button_bg_shadow_a shade(@theme_bg_color, 1.1);
-@define-color columnview_header_button_bg_shadow_insensitive shade(@theme_bg_color, 1.03);
-@define-color columnview_header_button_fg_shadow alpha(shade(@theme_bg_color, 1.25), 0.4);
-@define-color columnview_header_button_border shade(@theme_bg_color, 0.9);
 @define-color columnview_header_button_border_insesitive_a shade(@theme_bg_color, 0.94);
-@define-color columnview_header_button_border_insesitive_b shade(@theme_bg_color, 0.88);
 @define-color entry_bg_disabled rgb(245, 245, 245);
 @define-color entry_bg_disabled_insensitive mix(@entry_bg_disabled, @theme_bg_color, 0.5);
 @define-color entry_bg_insensitive_a mix(@entry_bg_normal, @theme_bg_color, 0.5);
@@ -165,7 +135,6 @@
 @define-color list_sidebar_row_border_selected_inactive shade(@bg_insensitive, 0.88);
 @define-color list_sidebar_row_selected_inactive_a shade(@bg_insensitive, 0.94);
 @define-color list_sidebar_row_selected_inactive_b shade(@bg_insensitive, 0.86);
-@define-color list_spinbutton_button_fg_disabled shade(@theme_bg_color, 0.66);
 @define-color list_trough_border_a shade(@borders, 0.8);
 @define-color list_trough_border_b shade(@borders, 0.85);
 @define-color menubar_fg_shadow shade(@wm_bg_a, 0.6);
@@ -177,50 +146,24 @@
 @define-color notebook_arrow_fg_disabled rgb(199, 199, 199);
 @define-color notebook_arrow_fg_insensitive rgba(84, 89, 90, 0.4);
 @define-color notebook_bg shade(@notebook_tab_bg_b, 1.02);
-@define-color notebook_button_bg rgba(0, 0, 0, 0.08);
-@define-color notebook_button_bg_shadow rgba(0, 0, 0, 0.05);
 @define-color notebook_header_bg_shadow alpha(@borders, 0.9);
-@define-color notebook_button_border_a rgba(0, 0, 0, 0.27);
-@define-color notebook_button_border_b rgba(0, 0, 0, 0.13);
 @define-color notebook_label_fg shade(@theme_fg_color, 1.30);
 @define-color notebook_tab_bg_a shade(@notebook_tab_bg_b, 0.97);
 @define-color notebook_tab_bg_b rgb(237, 236, 235);
 @define-color notebook_tab_bg_c shade(@notebook_tab_bg_b, 0.9);
 @define-color notebook_tab_bg_checked shade(@notebook_bg, 1.18);
 @define-color osd_bg alpha(@wm_bg_a, 0.9);
-@define-color osd_button_bg shade(@osd_bg, 1.1);
-@define-color osd_button_bg_active_a alpha(@osd_lowlight, 0.18);
-@define-color osd_button_bg_active_b alpha(@osd_highlight, 0.23);
-@define-color osd_button_bg_active_c alpha(@osd_lowlight, 0.17);
-@define-color osd_button_bg_a alpha(@osd_highlight, 0.16);
-@define-color osd_button_bg_b alpha(@osd_lowlight, 0.05);
-@define-color osd_button_bg_c alpha(@osd_highlight, 0.12);
-@define-color osd_button_bg_hover_a alpha(@osd_highlight, 0.28);
-@define-color osd_button_bg_hover_b alpha(@osd_lowlight, 0.14);
-@define-color osd_button_bg_hover_c alpha(@osd_highlight, 0.14);
-@define-color osd_button_bg_insensitive alpha(@osd_highlight, 0.25);
 @define-color osd_button_border shade(@theme_selected_bg_color, 0.8);
-@define-color osd_button_fg shade(@osd_fg, 0.85);
-@define-color osd_button_fg_active shade(@osd_fg, 1.1);
-@define-color osd_button_fg_hover shade(@osd_fg, 0.96);
-@define-color osd_button_fg_insensitive shade(@osd_fg, 0.7);
-@define-color osd_button_shadow rgba(0, 0, 0, 0.35);
 @define-color osd_fg rgb(237, 237, 237);
 @define-color osd_highlight @theme_base_color;
 @define-color osd_lowlight rgb(82, 82, 82);
 @define-color osd_progressbar_bg shade(@osd_progressbar_bg_b, 1.3);
 @define-color osd_progressbar_bg_a @wm_title;
 @define-color osd_progressbar_bg_b @wm_title;
-@define-color osd_spinbutton_button_bg_hover_a alpha(shade(@theme_selected_bg_color, 1.2), 0.4);
-@define-color osd_spinbutton_button_bg_hover_b alpha(shade(@theme_selected_bg_color, 0.95), 0.4);
 @define-color popover_bg shade(@wm_bg_a, 1.08);
 @define-color popover_bg_shadow_a shade(@wm_bg_a, 1.18);
 @define-color popover_bg_shadow_b shade(@wm_bg_a, 1.16);
 @define-color popover_border rgb(0, 0, 0);
-@define-color popover_button_bg_a shade(@wm_bg_a, 2.03);
-@define-color popover_button_bg_b shade(@wm_bg_a, 1.17);
-@define-color popover_button_bg_suggested_a shade(@popover_button_bg_suggested_disabled, 2.03);
-@define-color popover_button_bg_suggested_b shade(@popover_button_bg_suggested_disabled, 1.17);
 @define-color popover_button_bg_suggested_disabled mix(@wm_bg_a, @theme_selected_bg_color, 0.5);
 @define-color popover_entry_bg shade(@wm_bg_a, 1.3);
 @define-color popover_list_row_bg_hover shade(@theme_selected_bg_color, 1.1);
@@ -261,14 +204,20 @@
 @define-color shortcut_keycap_bg_shadow rgb(251, 251, 251);
 @define-color shortcut_keycap_fg rgb(61, 61, 61);
 @define-color shortcut_keycap_border rgb(225, 225, 225);
-@define-color slider_bg_dark shade(@bg_dark_slider, 1.02);
-@define-color spinbutton_bg_active alpha(@theme_selected_bg_color, 0.2);
 @define-color spinbutton_border alpha(@fg_disabled, 0.22);
-@define-color spinbutton_entry_border_focus alpha(@borders, 0.1);
 @define-color success rgb(78, 154, 6);
-@define-color switch_bg_checked_a shade(@theme_selected_bg_color, 0.93);
 @define-color switch_bg_insensitive_a shade(@theme_bg_color, 0.93);
 @define-color switch_bg_insensitive_b shade(@theme_bg_color, 0.99);
+@define-color switch_bg_toolbar_disabled_a alpha(@switch_bg_toolbar_normal_a, 0.9);
+@define-color switch_bg_toolbar_disabled_b alpha(@switch_bg_toolbar_normal_b, 0.9);
+@define-color switch_bg_toolbar_normal_a rgb(78, 76, 70);
+@define-color switch_bg_toolbar_normal_b rgb(91, 90, 86);
+@define-color switch_border_checked_a rgb(71, 101, 21);
+@define-color switch_border_checked_b rgb(58, 85, 5);
+@define-color switch_border_checked_c rgb(89, 119, 43);
+@define-color switch_border_normal_a rgb(161, 161, 161);
+@define-color switch_border_normal_b rgb(141, 141, 141);
+@define-color switch_border_normal_c rgb(180, 180, 180);
 @define-color textview_bg_disabled rgb(252, 252, 252);
 @define-color textview_fg_disabled rgb(156, 156, 156);
 @define-color theme_base_color rgb(255, 255, 255);
@@ -298,14 +247,9 @@
 @define-color warning_bg_b shade(@warning_bg, 0.96);
 @define-color warning_bg_shadow_a shade(@warning_bg, 1.08);
 @define-color warning_bg_shadow_b shade(@warning_bg, 1.1);
-@define-color warning_border_a shade(@warning_bg, 0.75);
 @define-color warning_fg rgb(173, 120, 41);
 @define-color window_headerbar_bg_maximized shade(@wm_bg_a, 0.96);
-@define-color windowcontrols_button_bg_a rgb(90, 89, 85);
 @define-color windowcontrols_button_bg_b rgb(117, 116, 109);
-@define-color windowcontrols_button_bg_c rgb(142, 141, 136);
-@define-color windowcontrols_button_bg_active_a rgb(119, 118, 111);
-@define-color windowcontrols_button_bg_active_b rgb(116, 115, 108);
 @define-color windowcontrols_button_bg_close_a rgb(129, 186, 74);
 @define-color windowcontrols_button_bg_close_b rgb(181, 215, 147);
 @define-color windowcontrols_button_bg_close_c rgb(222, 234, 210);
@@ -314,37 +258,17 @@
 @define-color windowcontrols_button_bg_close_hover_a rgb(142, 201, 86);
 @define-color windowcontrols_button_bg_close_hover_b rgb(192, 225, 161);
 @define-color windowcontrols_button_bg_close_hover_c rgb(238, 240, 234);
-@define-color windowcontrols_button_bg_hover_a rgb(150, 150, 150);
-@define-color windowcontrols_button_bg_hover_b rgb(189, 189, 189);
-@define-color windowcontrols_button_bg_hover_c rgb(202, 202, 202);
-@define-color windowcontrols_button_bg_insensitive_a rgb(96, 95, 89);
-@define-color windowcontrols_button_bg_insensitive_b rgb(91, 90, 84);
-@define-color windowcontrols_button_border rgb(56, 55, 52);
-@define-color windowcontrols_button_fg rgb(61, 60, 55);
-@define-color windowcontrols_button_fg_close rgb(50, 49, 18);
 @define-color windowhandle_button_bg_active_a shade(@wm_bg_a, 0.95);
 @define-color windowhandle_button_bg_checked_disabled shade(@wm_bg_a, 0.94);
 @define-color windowhandle_button_bg_checked_disabled_b shade(@wm_bg_a, 1.02);
-@define-color windowhandle_button_bg_disabled_a shade(@wm_bg_a, 1.01);
-@define-color windowhandle_button_bg_disabled_b shade(@wm_bg_a, 0.99);
-@define-color windowhandle_button_bg_suggested rgba(0, 255, 0, 0.3);
-@define-color windowhandle_button_bg_suggested_active_a shade(@windowhandle_button_bg_suggested_active_b, 0.95);
 @define-color windowhandle_button_bg_suggested_active_b mix(@wm_bg_a, rgb(0, 255, 0), 0.3);
-@define-color windowhandle_button_bg_suggested_disabled_a shade(@windowhandle_button_bg_suggested_active_b, 1.01);
-@define-color windowhandle_button_bg_suggested_disabled_b shade(@windowhandle_button_bg_suggested_active_b, 0.99);
-@define-color windowhandle_button_bg_suggested_hover_a shade(@windowhandle_button_bg_suggested_active_b, 1.2);
-@define-color windowhandle_button_bg_suggested_hover_b shade(@windowhandle_button_bg_suggested_active_b, 1.1);
 @define-color windowhandle_button_fg_shadow_insensitive shade(@wm_bg_a, 0.9);
 @define-color windowhandle_linked_button_bg_shadow_a shade(@wm_bg_a, 1.4);
 @define-color windowhandle_scale_trough_border_a shade(@wm_bg_a, 0.75);
 @define-color windowhandle_scale_trough_border_b shade(@wm_bg_a, 1.15);
 @define-color windowhandle_separator_border alpha(@windowhandle_button_bg_checked_disabled, 0.35);
 @define-color windowhandle_separator_border_b alpha(@popover_separator_border, 0.5);
-@define-color windowhandle_switch_bg_b rgb(91, 90, 86);
-@define-color windowhandle_switch_bg_disabled_a shade(@wm_bg_a, 0.93);
 @define-color windowhandle_switch_fg_disabled shade(@wm_title, 0.6);
-@define-color windowhandle_switch_slider_bg_a shade(@slider_bg_dark, 1.08);
-@define-color windowhandle_switch_slider_bg_a shade(@slider_bg_dark, 0.94);
 @define-color wm_bg_a rgb(60, 59, 55);
 @define-color wm_bg_b shade(@wm_bg_a, 1.5);
 @define-color wm_bg_c shade(@wm_bg_a, 1.65);
@@ -806,7 +730,7 @@ windowhandle button,
 .toolbar button,
 popover button
 {
-    background-image: image(@button_bg_toolbar_normal);
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
     color: @wm_title;
     text-shadow: 0 -1px @wm_title_shadow;
     border-color: @button_border_toolbar_normal;
@@ -842,7 +766,7 @@ windowhandle button:disabled,
 popover button:disabled
 {
     text-shadow: none;
-    background-image: linear-gradient(to bottom, @windowhandle_button_bg_disabled_a, @windowhandle_button_bg_disabled_b);
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
     border-color: @button_border_toolbar_normal;
 }
 
@@ -895,7 +819,7 @@ windowhandle button:disabled:backdrop,
 .toolbar button:disabled:backdrop,
 popover button:disabled:backdrop
 {
-    background-image: linear-gradient(to bottom, @windowhandle_button_bg_disabled_a, @windowhandle_button_bg_disabled_b);
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
     border-color: @button_border_toolbar_normal;
 }
 
@@ -927,7 +851,7 @@ windowhandle button.flat:hover,
 .toolbar button.flat:hover,
 popover button.flat:hover
 {
-    background-image: image(@button_bg_toolbar_normal);
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
     border-color: @button_border_toolbar_normal;
 }
 
@@ -1217,8 +1141,10 @@ button.link > label
 
 switch
 {
-    border-image: -gtk-scaled(url("assets/switch-trough-off.png"), url("assets/switch-trough-off@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    padding: 2px;
+    border: 1px solid @switch_border_normal_a;
+    border-top-color: @switch_border_normal_b;
+    border-bottom-color: @switch_border_normal_c;
+    padding: 1px;
     border-radius: 6px;
     background-image: linear-gradient(to bottom, @button_bg_checked_a, @button_bg_checked_b);
     color: @theme_fg_color;
@@ -1226,73 +1152,77 @@ switch
 
 switch:checked
 {
-    border-image: -gtk-scaled(url("assets/switch-trough-on.png"), url("assets/switch-trough-on@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, @switch_bg_checked_a, @scrollbar_slider_bg);
+    border-color: @switch_border_checked_a;
+    border-top-color: @switch_border_checked_b;
+    border-bottom-color: @switch_border_checked_c;
+    background-image: linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
     color: @theme_selected_fg_color;
 }
 
+switch:disabled,
 switch:backdrop
 {
     background-image: linear-gradient(to bottom, @switch_bg_insensitive_a, @switch_bg_insensitive_b);
-    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
     color: @fg_disabled;
+    border-color: @button_border_disabled;
 }
 
-switch:disabled
+windowhandle switch
 {
-    background-image: linear-gradient(to bottom, @switch_bg_insensitive_a, @switch_bg_insensitive_b);
-    color: @fg_disabled;
-    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    background-image: linear-gradient(to bottom, @switch_bg_toolbar_normal_a, @switch_bg_toolbar_normal_b);
+    color: @wm_title;
+    border-color: @entry_border_toolbar_normal_a;
+    border-top-color: @entry_border_toolbar_normal_b;
+    border-bottom-color: @entry_border_toolbar_normal_c;
 }
 
-switch:checked:disabled
+windowhandle switch:disabled,
+windowhandle switch:backdrop
 {
-    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-switch:checked:backdrop
-{
-    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    border-color: @button_border_toolbar_normal;
+    background-image: linear-gradient(to bottom, @switch_bg_toolbar_disabled_a, @switch_bg_toolbar_disabled_b);
+    color: @fg_dark_insensitive;
 }
 
 switch > slider
 {
     min-width: 36px;
     min-height: 22px;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
+    border-radius: 5px;
     background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
-    border-image: -gtk-scaled(url("assets/switch-button-off.png"), url("assets/switch-button-off@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
-}
-
-switch:backdrop > slider
-{
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
-    border-image: -gtk-scaled(url("assets/switch-button-off-disabled.png"), url("assets/switch-button-off-disabled@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+    border: 1px solid @button_border_normal_a;
+    border-bottom-color: @button_border_normal_b;
 }
 
 switch:checked > slider
 {
-    border-image: -gtk-scaled(url("assets/switch-button-on.png"), url("assets/switch-button-on@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+    border-color: @switch_border_checked_c;
+    border-top-color: @switch_border_checked_b;
+    border-bottom-color: @switch_border_checked_a;
 }
 
 switch:disabled > slider
 {
-    border-image: -gtk-scaled(url("assets/switch-button-off-disabled.png"), url("assets/switch-button-off-disabled@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+    background-image: image(@button_bg_disabled);
+    border-color: @button_border_disabled;
 }
 
-switch:checked:backdrop > slider
+windowhandle switch > slider
 {
-    border-image: -gtk-scaled(url("assets/switch-button-on-disabled.png"), url("assets/switch-button-on-disabled@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+    border-color: @button_border_toolbar_normal;
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
 }
 
-switch:checked:disabled > slider
+windowhandle switch:checked > slider
 {
-    border-image: -gtk-scaled(url("assets/switch-button-on-disabled.png"), url("assets/switch-button-on-disabled@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
+    border-color: @button_border_toolbar_normal;
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
+}
+
+windowhandle switch:disabled > slider
+{
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
+    border-color: @button_border_toolbar_normal;
 }
 
 /* GtkComboBox - DEPRECATED */
@@ -3400,85 +3330,6 @@ windowhandle .linked > row:active
     box-shadow: none;
 }
 
-windowhandle > box switch
-{
-    padding: 2px;
-    border-radius: 6px;
-    background-image: linear-gradient(to bottom, @bg_dark_slider, @windowhandle_switch_bg_b);
-    color: @wm_title;
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:checked
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: @wm_title;
-}
-
-windowhandle > box switch:disabled
-{
-    text-shadow: none;
-    background-image: linear-gradient(to bottom, @windowhandle_switch_bg_disabled_a, @windowhandle_button_bg_disabled_b);
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: @windowhandle_switch_fg_disabled;
-}
-
-windowhandle > box switch:backdrop
-{
-    border-image: -gtk-scaled(url("assets/switch-trough-disabled.png"), url("assets/switch-trough-disabled@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    background-image: linear-gradient(to bottom, @windowhandle_switch_bg_disabled_a, @windowhandle_button_bg_disabled_b);
-    color: @windowhandle_switch_fg_disabled;
-}
-
-windowhandle > box switch:checked:disabled
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:checked:backdrop
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"), url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    color: @wm_title;
-}
-
-windowhandle > box switch > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, @windowhandle_switch_slider_bg_a, @slider_bg_dark 50%, @windowhandle_switch_slider_bg_c);
-}
-
-windowhandle > box switch:checked > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:backdrop > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 1px;
-    background-image: linear-gradient(to bottom, @windowhandle_switch_slider_bg_a, @slider_bg_dark 50%, @windowhandle_switch_slider_bg_c);
-}
-
-windowhandle > box switch:disabled > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
-}
-
-windowhandle > box switch:checked:backdrop > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
-}
-
-windowhandle > box switch:checked:disabled > slider
-{
-    border-image: -gtk-scaled(url("assets/entry-toolbar.png"),url("assets/entry-toolbar@2.png")) 9 11 9 11 / 9px 11px 9px 11px stretch;
-}
-
 windowhandle > box scale > trough
 {
     background-color: @wm_bg_a;
@@ -3530,7 +3381,7 @@ windowcontrols > button.close:backdrop
 {
     color: @fg_dark_insensitive;
     -gtk-icon-shadow: 0 1px @windowhandle_button_fg_shadow_insensitive;
-    background-image: image(@button_bg_toolbar_normal);
+    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
 }
 
 windowcontrols > button.close:hover
