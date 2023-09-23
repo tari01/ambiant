@@ -101,6 +101,7 @@
 @define-color entry_border_insensitive_c rgb(190, 190, 190);
 @define-color fg_dark_insensitive mix(@wm_bg_a, @wm_title, 0.75);
 @define-color fg_disabled shade(@theme_bg_color, 0.6);
+@define-color headerbar_bg_maximized shade(@wm_bg_a, 0.96);
 @define-color info_bg rgb(252, 252, 189);
 @define-color info_bg_a shade(@info_bg, 1.04);
 @define-color info_bg_b shade(@info_bg, 0.96);
@@ -248,7 +249,6 @@
 @define-color warning_bg_shadow_a shade(@warning_bg, 1.08);
 @define-color warning_bg_shadow_b shade(@warning_bg, 1.1);
 @define-color warning_fg rgb(173, 120, 41);
-@define-color window_headerbar_bg_maximized shade(@wm_bg_a, 0.96);
 @define-color windowcontrols_button_bg_b rgb(117, 116, 109);
 @define-color windowcontrols_button_bg_close_a rgb(129, 186, 74);
 @define-color windowcontrols_button_bg_close_b rgb(181, 215, 147);
@@ -1239,24 +1239,29 @@ combobox arrow
 headerbar
 {
     min-height: 30px;
-    padding: 2px 6px;
-    background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
-    border-top-color: @wm_bg_b;
-    border-radius: 7px 7px 0 0;
-    border-width: 1px 0 0 0;
-    color: @wm_title;
+    padding: 2px 4px 2px 2px;
     text-shadow: 0 -1px @wm_title_shadow;
+    background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
+    color: @wm_title;
     box-shadow: inset 0 1px @wm_bg_c;
-    border-style: solid;
 }
 
 headerbar:backdrop
 {
-    background-image: none;
-    background-color: @wm_bg_a;
+    background-image: image(@wm_bg_a);
     color: @theme_unfocused_fg_color;
-    border-top-color: @wm_bg_a;
     box-shadow: inset 0 1px @wm_bg_d;
+}
+
+window.maximized > headerbar
+{
+    background-image: linear-gradient(to bottom, @headerbar_bg_maximized, @wm_bg_a);
+    box-shadow: none;
+}
+
+window.maximized > headerbar:backdrop
+{
+    background-image: image(@wm_bg_a);
 }
 
 /* GtkSpinButton */
@@ -3400,7 +3405,7 @@ windowcontrols > button > image
 
 searchbar > revealer > box
 {
-    background-image: linear-gradient(to bottom, @windowhandle_linked_button_bg_shadow_a, @window_headerbar_bg_maximized);
+    background-image: linear-gradient(to bottom, @windowhandle_linked_button_bg_shadow_a, @headerbar_bg_maximized);
     border-bottom: 1px solid @wm_bg_e;
     padding: 6px;
 }
@@ -3927,7 +3932,7 @@ window
 
 window.csd
 {
-    border-radius: 10px 10px 0 0;
+    border-radius: 7px 7px 0 0;
     box-shadow: 0 3px 15px 1px @wm_shadow;
     margin: 10px;
     background-image: linear-gradient(@wm_bg_a 0px, @wm_bg_a 10px, @theme_bg_color 11px);
@@ -3970,26 +3975,6 @@ window.tiled
 window:backdrop
 {
     color: @theme_unfocused_fg_color;
-}
-
-window.solid-csd > headerbar
-{
-    border-radius: 0;
-    border: none;
-}
-
-window.maximized > headerbar
-{
-    border-radius: 0;
-    background-image: linear-gradient(to bottom, @window_headerbar_bg_maximized, @wm_bg_a);
-    border-top-color: @wm_bg_d;
-    box-shadow: none;
-}
-
-window.maximized > headerbar:backdrop
-{
-    background-image: image(@wm_bg_a);
-    border-top-color: @wm_bg_a;
 }
 
 /* GtkDialog - DEPRECATED */
@@ -4719,7 +4704,7 @@ row:selected:backdrop check:hover
 
 .toolbar
 {
-    background-image: linear-gradient(to bottom, @window_headerbar_bg_maximized, @windowhandle_linked_button_bg_shadow_a);
+    background-image: linear-gradient(to bottom, @headerbar_bg_maximized, @windowhandle_linked_button_bg_shadow_a);
     border-bottom-color: @wm_border;
     border-top-color: @wm_bg_e;
     border-style: solid;
