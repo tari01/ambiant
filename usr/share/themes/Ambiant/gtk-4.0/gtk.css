@@ -291,7 +291,7 @@
 *:disabled
 {
     color: @fg_disabled;
-    -gtk-icon-filter: opacity(0.5);
+    -gtk-icon-filter: grayscale(1.0) opacity(0.5);
 }
 
 *:focus:focus-visible
@@ -1232,13 +1232,6 @@ combobox arrow
     color: @theme_fg_color;
     min-height: 16px;
     min-width: 16px;
-}
-
-/* GtkImage */
-
-image:disabled
-{
-    -gtk-icon-filter: opacity(0.5);
 }
 
 /* GtkHeaderBar */
