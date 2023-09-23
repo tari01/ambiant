@@ -411,6 +411,26 @@ label.dim-label
     opacity: 0.5;
 }
 
+/* GtkText */
+
+text > placeholder
+{
+    opacity: 0.55;
+    text-shadow: none;
+}
+
+text > selection
+{
+    color: @theme_selected_fg_color;
+    background-image: image(@theme_selected_bg_color);
+}
+
+text > selection:backdrop
+{
+    background-color: @list_cell_bg_selected_insensitive;
+    color: @theme_fg_color;
+}
+
 /* GtkEditableLabel */
 
 editablelabel > stack > text
@@ -419,12 +439,6 @@ editablelabel > stack > text
     color: @theme_text_color;
     background-color: @theme_base_color;
     padding: 2px;
-}
-
-editablelabel > stack > text > selection
-{
-    color: @theme_selected_fg_color;
-    background-color: @theme_selected_bg_color;
 }
 
 /* GtkButton */
@@ -1088,18 +1102,6 @@ entry > text.readonly
     background-image: none;
 }
 
-entry > text > selection
-{
-    color: @theme_selected_fg_color;
-    background-image: image(@theme_selected_bg_color);
-}
-
-entry > text > placeholder
-{
-    opacity: 0.55;
-    text-shadow: none;
-}
-
 entry > image:first-child
 {
     padding-right: 7px;
@@ -1266,50 +1268,58 @@ window.maximized > headerbar:backdrop
 
 /* GtkSpinButton */
 
-spinbutton
-{
-    font-feature-settings: "tnum";
-}
-
 spinbutton > text
 {
-    background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
-    box-shadow: inset 1px 0 @inset_dark;
-}
-
-spinbutton.vertical > text
-{
-    padding: 6px 4px 6px 2px;
+    font-feature-settings: "tnum";
     border-style: solid;
-    border-width: 1px 0px 1px 0px;
-    border-color: @spinbutton_border;
-    border-radius: 0px;
-}
-
-spinbutton.horizontal > text
-{
-    padding: 5px 10px 5px 4px;
-    border-radius: 6px 0px 0px 6px;
+    border-color: @entry_border_normal_a;
+    border-top-color: @entry_border_normal_b;
+    border-bottom-color: @entry_border_normal_c;
+    background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
+    padding: 6px;
+    color: @theme_text_color;
 }
 
 spinbutton > text:disabled
 {
-    background-image: none;
-    background-color: @bg_insensitive;
+    border-color: @entry_border_disabled;
+    background-image: image(@entry_bg_disabled);
     color: @entry_fg_disabled;
 }
 
 spinbutton > text:backdrop
 {
+    border-color: @entry_border_insensitive_a;
+    border-top-color: @entry_border_insensitive_b;
+    border-bottom-color: @entry_border_insensitive_c;
     background-image: linear-gradient(to bottom, @entry_bg_insensitive_a, @entry_bg_insensitive_b);
     color: @theme_unfocused_text_color;
 }
 
 spinbutton > text:backdrop:disabled
 {
-    background-image: none;
-    background-color: @bg_insensitive;
+    border-color: @entry_border_disabled_insensitive;
+    background-image: image(@entry_bg_disabled_insensitive);
     color: @entry_fg_disabled;
+}
+
+spinbutton.vertical > text
+{
+    border-width: 0px 1px 0px 1px;
+    border-radius: 0px;
+}
+
+spinbutton.horizontal > text
+{
+    border-width: 1px 0px 1px 1px;
+    border-radius: 6px 0px 0px 6px;
+}
+
+.linked.vertical > spinbutton.horizontal > text
+{
+    border-width: 0px 0px 0px 1px;
+    border-radius: 0px;
+    box-shadow: inset 0 -1px @scrolledwindow_border_a;
 }
 
 spinbutton.horizontal > button.down
@@ -2402,18 +2412,6 @@ textview:disabled
 {
     color: @textview_fg_disabled;
     background-color: @textview_bg_disabled;
-}
-
-textview > text > selection
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-textview > text > selection:backdrop
-{
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
 }
 
 /* GtkTreeView - DEPRECATED */
@@ -4339,34 +4337,6 @@ row check:indeterminate:hover:backdrop
     -gtk-icon-source: -gtk-scaled(url("assets/backdrop-check-mixed-hover-alt.png"), url("assets/backdrop-check-mixed-hover-alt@2.png"));
 }
 
-row spinbutton.horizontal > text
-{
-    padding: 5px 10px 5px 4px;
-    border-image:none;
-    border-style: none;
-    border-radius: 7px 0px 0px 7px;
-    box-shadow: inset 1px 0 @inset_dark;
-}
-
-row spinbutton.horizontal > text:disabled
-{
-    background-color: @bg_insensitive;
-}
-
-row spinbutton.horizontal > text:backdrop
-{
-    padding: 5px 10px 5px 4px;
-    border-image:none;
-    border-style: none;
-    border-radius: 7px 0px 0px 7px;
-    box-shadow: inset 1px 0 @inset_dark;
-}
-
-row spinbutton.horizontal > text:backdrop:disabled
-{
-    background-color: @bg_insensitive;
-}
-
 row:selected trough
 {
     border-top-color: @trough_highlight_border_a;
@@ -4660,44 +4630,6 @@ row:selected:backdrop check
 row:selected:backdrop check:hover
 {
     -gtk-icon-source: -gtk-scaled(url("assets/backdrop-check-unselected-hover-alt.png"), url("assets/backdrop-check-unselected-hover-alt@2.png"));
-}
-
-/* Linked */
-
-.linked.vertical > spinbutton.horizontal
-{
-    border-color: @spinbutton_border;
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-radius: 0px;
-    box-shadow: inset -1px -1px @scrolledwindow_border_a;
-}
-
-.linked.vertical > spinbutton.horizontal:backdrop
-{
-    border-color: @spinbutton_border;
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-radius: 0px;
-    box-shadow: inset -1px -1px @scrolledwindow_border_a;
-}
-
-.linked.vertical > spinbutton.horizontal:backdrop
-{
-    box-shadow: inset 1px 0 @inset_dark;
-    border-radius: 0px;
-}
-
-.linked.vertical > spinbutton.horizontal > text
-{
-    box-shadow: inset 1px 0 @inset_dark;
-    border-radius: 0px;
-}
-
-.linked.vertical > spinbutton.horizontal > text:backdrop
-{
-    box-shadow: inset 1px 0 @inset_dark;
-    border-radius: 0px;
 }
 
 /* Toolbar */
