@@ -194,8 +194,6 @@
 @define-color scrollbar_slider_bg shade(@theme_selected_bg_color, 0.99);
 @define-color scrollbar_slider_bg_disabled shade(@scrollbar_slider_bg, 0.85);
 @define-color scrollbar_slider_bg_hover shade(@theme_selected_bg_color, 1.03);
-@define-color scrollbar_slider_border shade(@scrollbar_slider_bg, 0.95);
-@define-color scrollbar_slider_border_disabled shade(@scrollbar_slider_bg, 0.75);
 @define-color scrollbar_trough shade(@theme_bg_color, 0.98);
 @define-color scrolledwindow_border_a shade(@theme_bg_color, 0.84);
 @define-color scrolledwindow_border_b shade(@theme_bg_color, 0.76);
@@ -1537,78 +1535,73 @@ paned > separator
 
 scrollbar
 {
-    background-image: none;
-    border-style: solid;
-    border-color: @borders;
+    opacity: 0.8;
 }
 
 scrollbar.vertical
 {
-    border-width: 0 0 0 1px;
-    min-width: 13px;
     background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
 }
 
 scrollbar.horizontal
 {
-    border-width: 1px 0 0 0;
-    min-height: 13px;
     background-image: linear-gradient(to bottom, @scrollbar_trough, @scrollbar_bg);
 }
 
-scrollbar > range > trough
+scrollbar.top
 {
-    border-style: none;
-    border-radius: 0;
-    border-image: none;
+    border-bottom: 1px solid @borders;
 }
 
-scrollbar > range > trough.vertical
+scrollbar.bottom
 {
-    min-width: 13px;
-    background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
+    border-top: 1px solid @borders;
 }
 
-scrollbar > range > trough.horizontal
+scrollbar.left
 {
-    min-height: 13px;
-    background-image: linear-gradient(to bottom, @scrollbar_trough, @scrollbar_bg);
+    border-right: 1px solid @borders;
+}
+
+scrollbar.right
+{
+    border-left: 1px solid @borders;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering)
+{
+    border-color: transparent;
+    opacity: 0.4;
 }
 
 scrollbar > range > trough > slider
 {
-    background-color: @scrollbar_slider_bg;
-    background-image: none;
-    border-radius: 0;
-    border-style: solid;
-    border-image: none;
-    border-color: @scrollbar_slider_border;
-    border-width: 1px;
-}
-
-scrollbar.vertical > range > trough > slider
-{
-    min-width: 11px;
-    min-height: 42px;
-    margin: 0 -1px 0 -1px;
-}
-
-scrollbar.horizontal > range > trough > slider
-{
-    min-width: 42px;
+    min-width: 12px;
     min-height: 12px;
-    margin: -1px 0 -1px 0;
+    background-image: image(@scrollbar_slider_bg);
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background-clip: padding-box;
 }
 
 scrollbar > range > trough > slider:hover
 {
-    background-color: @scrollbar_slider_bg_hover;
+    background-image: image(@scrollbar_slider_bg_hover);
 }
 
 scrollbar > range > trough > slider:disabled
 {
-    background-color: @scrollbar_slider_bg_disabled;
-    border-color: @scrollbar_slider_border_disabled;
+    background-image: image(@scrollbar_slider_bg_disabled);
+}
+
+scrollbar.horizontal > range > trough > slider
+{
+    min-width: 40px;
+}
+
+scrollbar.vertical > range > trough > slider
+{
+    min-height: 40px;
 }
 
 /* GtkCheckButton */
@@ -2792,6 +2785,8 @@ scrolledwindow junction
     border-radius: 0;
     border-image: none;
     box-shadow: none;
+    background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
+    border-left: 1px solid @borders;
 }
 
 scrolledwindow > overshoot.top
