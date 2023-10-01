@@ -1,3 +1,18 @@
+# 23.10.1
+
+ - Drop GtkCheckButton assets and draw controls in CSS (2810aef)
+ - Drop broken symlinks (d7649a4)
+ - Add small icons for Strawberry (91d21f4)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix GtkScrollbar (2bae70b)
+ - Drop DE-specific icons and styles (48e0323)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix GtkNotebook and GtkPaned (40d2391)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Some GtkFrame tweaks (4c09bc3)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix GtkText and GtkSpinButton (de7f667)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Some headerbar tweaks (ee17af0)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Grayscale disabled widget icons (e7ddb3b)
+ - Drop assets and use only CSS for GTK4 switches (2579743)
+ - Drop assets and use only CSS for GTK4 entries (c696f4c)
+
 # 23.9.1
 
  - Drop assets and use only CSS for GTK4 buttons (0a033f0)
