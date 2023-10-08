@@ -125,6 +125,12 @@
 @define-color fg_dark_insensitive mix(@wm_bg_a, @wm_title, 0.75);
 @define-color fg_disabled shade(@theme_bg_color, 0.6);
 @define-color headerbar_bg_maximized shade(@wm_bg_a, 0.96);
+@define-color highlight_background_disabled_a rgb(169, 169, 169);
+@define-color highlight_background_disabled_b rgb(181, 181, 181);
+@define-color highlight_border_backdrop rgb(198, 198, 198);
+@define-color highlight_border_disabled_a rgb(143, 143, 143);
+@define-color highlight_border_disabled_b rgb(128, 128, 128);
+@define-color highlight_border_disabled_c rgb(157, 157, 157);
 @define-color info_bg rgb(252, 252, 189);
 @define-color info_bg_a shade(@info_bg, 1.04);
 @define-color info_bg_b shade(@info_bg, 0.96);
@@ -225,8 +231,6 @@
 @define-color shortcut_keycap_fg rgb(61, 61, 61);
 @define-color shortcut_keycap_border rgb(225, 225, 225);
 @define-color success rgb(78, 154, 6);
-@define-color switch_bg_insensitive_a shade(@theme_bg_color, 0.93);
-@define-color switch_bg_insensitive_b shade(@theme_bg_color, 0.99);
 @define-color switch_bg_toolbar_disabled_a alpha(@switch_bg_toolbar_normal_a, 0.9);
 @define-color switch_bg_toolbar_disabled_b alpha(@switch_bg_toolbar_normal_b, 0.9);
 @define-color switch_bg_toolbar_normal_a rgb(78, 76, 70);
@@ -234,9 +238,6 @@
 @define-color switch_border_checked_a rgb(71, 101, 21);
 @define-color switch_border_checked_b rgb(58, 85, 5);
 @define-color switch_border_checked_c rgb(89, 119, 43);
-@define-color switch_border_normal_a rgb(161, 161, 161);
-@define-color switch_border_normal_b rgb(141, 141, 141);
-@define-color switch_border_normal_c rgb(180, 180, 180);
 @define-color textview_bg_disabled rgb(252, 252, 252);
 @define-color textview_fg_disabled rgb(156, 156, 156);
 @define-color theme_base_color rgb(255, 255, 255);
@@ -255,12 +256,15 @@
 @define-color tooltip_border shade(@wm_bg_a, 1.8);
 @define-color tooltip_fg rgb(235, 235, 235);
 @define-color tooltip_fg_shadow alpha(@popover_border, 0.8);
-@define-color trough_bg_disabled shade(@bg_insensitive, 0.96);
+@define-color trough_bg_disabled_a shade(@theme_bg_color, 0.93);
+@define-color trough_bg_disabled_b shade(@theme_bg_color, 0.99);
 @define-color trough_bg_normal rgb(209, 209, 209);
-@define-color trough_border_disabled shade(@insensitive_scale_borders, 0.75);
+@define-color trough_border_backdrop rgb(212, 212, 212);
+@define-color trough_border_normal_a rgb(179, 179, 179);
+@define-color trough_border_normal_b rgb(161, 161, 161);
+@define-color trough_border_normal_c rgb(196, 196, 196);
 @define-color trough_border_toolbar_a shade(@wm_bg_a, 0.75);
 @define-color trough_border_toolbar_b shade(@wm_bg_a, 1.15);
-@define-color trough_highlight_bg_disabled rgb(181, 181, 181);
 @define-color trough_highlight_border_a shade(shade(@theme_selected_bg_color, 0.95), 0.80);
 @define-color trough_highlight_border_b shade(shade(@theme_selected_bg_color, 0.95), 0.85);
 @define-color warning_bg rgb(250, 173, 61);
@@ -1147,12 +1151,12 @@ button.link > label
 
 switch
 {
-    border: 1px solid @switch_border_normal_a;
-    border-top-color: @switch_border_normal_b;
-    border-bottom-color: @switch_border_normal_c;
+    border: 1px solid @trough_border_normal_a;
+    border-top-color: @trough_border_normal_b;
+    border-bottom-color: @trough_border_normal_c;
     padding: 1px;
     border-radius: 6px;
-    background-image: linear-gradient(to bottom, @button_bg_checked_a, @button_bg_checked_b);
+    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     color: @theme_fg_color;
 }
 
@@ -1165,10 +1169,9 @@ switch:checked
     color: @theme_selected_fg_color;
 }
 
-switch:disabled,
-switch:backdrop
+switch:disabled
 {
-    background-image: linear-gradient(to bottom, @switch_bg_insensitive_a, @switch_bg_insensitive_b);
+    background-image: linear-gradient(to bottom, @trough_bg_disabled_a, @trough_bg_disabled_b);
     color: @fg_disabled;
     border-color: @button_border_disabled;
 }
@@ -1838,130 +1841,128 @@ radio:indeterminate:disabled
     box-shadow: none;
 }
 
-/* GtkScale */
+/* trough */
 
-scale.horizontal
+scale.horizontal > trough,
+progressbar.horizontal > trough,
+levelbar > trough
 {
-    min-height: 10px;
-}
-
-scale.vertical
-{
-    min-width: 10px;
-}
-
-scale.horizontal > trough
-{
-    border-image: -gtk-scaled(url("assets/scale-horizontal-trough.png"), url("assets/scale-horizontal-trough@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    margin: 8px 6px;
-    border-style: solid;
-    border-width: 1px;
+    /*margin: 8px 6px;*/
+    border: 1px solid @trough_border_normal_a;
+    border-top-color: @trough_border_normal_b;
+    border-bottom-color: @trough_border_normal_c;
     background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
-    border-radius: 8px;
-    min-height: 4px;
+    border-radius: 4px;
+    min-height: 15px;
+}
+
+popover scale.horizontal > trough,
+windowhandle scale.horizontal > trough,
+.osd scale.horizontal > trough
+{
+    background-image: image(@popover_entry_bg);
+    border-color: @entry_border_toolbar_normal_a;
+    border-top-color: @entry_border_toolbar_normal_b;
+    border-bottom-color: @entry_border_toolbar_normal_c;
 }
 
 scale.horizontal > trough:disabled
 {
-    border-image: -gtk-scaled(url("assets/scale-horizontal-trough-disabled.png"), url("assets/scale-horizontal-trough-disabled@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    background-color: @trough_bg_disabled;
-    border-color: @trough_border_disabled;
-    box-shadow: none;
-    background-image: none;
+    background-image: linear-gradient(to bottom, @trough_bg_disabled_a, @trough_bg_disabled_b);
+    border-color: @button_border_disabled;
 }
 
-scale.horizontal > trough:backdrop
+popover scale.horizontal > trough:disabled,
+windowhandle scale.horizontal > trough:disabled,
+.osd scale.horizontal > trough:disabled
 {
-    border-image: -gtk-scaled(url("assets/scale-horizontal-trough-backdrop.png"), url("assets/scale-horizontal-trough-backdrop@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
+    background-image: image(@button_bg_toolbar_disabled_a);
+    border-color: @entry_border_toolbar_normal_a;
 }
 
-scale.vertical > trough
+popover scale.horizontal > trough:backdrop,
+windowhandle scale.horizontal > trough:backdrop,
+.osd scale.horizontal > trough:backdrop
 {
-    min-width: 4px;
-    margin: 8px 6px;
-    border-radius: 8px;
+    background-image: image(@button_bg_toolbar_disabled_a);
+    border-color: @entry_border_toolbar_normal_a;
+}
+
+scale.vertical > trough,
+progressbar.vertical > trough
+{
+    /*margin: 8px 6px;*/
+    border: 1px solid @trough_border_normal_a;
+    border-left-color: @trough_border_normal_b;
+    border-right-color: @trough_border_normal_c;
     background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
-    border-image: -gtk-scaled(url("assets/scale-vertical-trough.png"), url("assets/scale-vertical-trough@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-    border-style: solid;
-    border-width: 1px;
+    border-radius: 4px;
+    min-width: 15px;
 }
 
 scale.vertical > trough:disabled
 {
-    background-color: @trough_bg_disabled;
-    border-color: @trough_border_disabled;
-    box-shadow: none;
-    background-image: none;
-    border-image: -gtk-scaled(url("assets/scale-vertical-trough-disabled.png"), url("assets/scale-vertical-trough-disabled@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-}
-
-scale.color > trough
-{
-    border-color: @scale_highlight_border;
-    border-radius: 3px;
-}
-
-scale.vertical > trough:backdrop
-{
-    border-image: -gtk-scaled(url("assets/scale-vertical-trough-backdrop.png"), url("assets/scale-vertical-trough-backdrop@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
+    background-image: linear-gradient(to right, @trough_bg_disabled_a, @trough_bg_disabled_b);
+    border-color: @button_border_disabled;
 }
 
 scale.horizontal > trough > highlight
 {
-    border-image: -gtk-scaled(url("assets/scale-horizontal-fill.png"), url("assets/scale-horizontal-fill@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
+    border-radius: 4px;
+    margin: -1px;
+    border: 1px solid @trough_highlight_border_b;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
     border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
     border-bottom-color: @trough_highlight_border_a;
+}
+
+popover scale.horizontal > trough > highlight,
+windowhandle scale.horizontal > trough > highlight,
+.osd scale.horizontal > trough > highlight,
+popover scale.vertical > trough > highlight,
+windowhandle scale.vertical > trough > highlight,
+.osd scale.vertical > trough > highlight
+{
+    margin: 0;
+    border-radius: 5px;
 }
 
 scale.horizontal > trough > highlight:disabled
 {
-    border-image: -gtk-scaled(url("assets/scale-horizontal-fill-disabled.png"), url("assets/scale-horizontal-fill-disabled@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    background-color: @trough_highlight_bg_disabled;
-    background-image: none;
-    border-color: transparent;
+    background-image: linear-gradient(to bottom, @highlight_background_disabled_a, @highlight_background_disabled_b);
+    border-color: @highlight_border_disabled_a;
+    border-top-color: @highlight_border_disabled_b;
+    border-bottom-color: @highlight_border_disabled_c;
 }
 
 scale.horizontal > trough > highlight:backdrop
 {
-    border-image: -gtk-scaled(url("assets/scale-horizontal-fill-backdrop.png"), url("assets/scale-horizontal-fill-backdrop@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    background-color: @button_bg_active_a;
-    background-image: none;
-    border-color: transparent;
+    background-image: image(@button_bg_active_a);
+    border-color: @highlight_border_backdrop;
 }
 
 scale.vertical > trough > highlight
 {
-    border-image: -gtk-scaled(url("assets/scale-vertical-fill.png"), url("assets/scale-vertical-fill@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
+    border-radius: 4px;
+    margin: -1px;
+    border: 1px solid @trough_highlight_border_a;
+    background-image: linear-gradient(to right, @progressbar_fill_a, @progressbar_fill_b);
     border-left-color: @trough_highlight_border_b;
     border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
 }
 
 scale.vertical > trough > highlight:disabled
 {
-    border-image: -gtk-scaled(url("assets/scale-vertical-fill-disabled.png"), url("assets/scale-vertical-fill-disabled@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-    background-color: @trough_highlight_bg_disabled;
-    background-image: none;
-    border-color: transparent;
+    background-image: linear-gradient(to right, @highlight_background_disabled_a, @highlight_background_disabled_b);
+    border-color: @highlight_border_disabled_a;
+    border-left-color: @highlight_border_disabled_b;
+    border-right-color: @highlight_border_disabled_c;
 }
 
 scale.vertical > trough > highlight:backdrop
 {
-    border-image: -gtk-scaled(url("assets/scale-vertical-fill-backdrop.png"), url("assets/scale-vertical-fill-backdrop@2.png")) 6 2 6 2 / 6px 2px 6px 2px stretch;
-    background-color: @button_bg_active_a;
-    background-image: none;
-    border-color: transparent;
+    background-image: image(@button_bg_active_a);
+    border-color: @highlight_border_backdrop;
 }
 
 scale.horizontal > trough > slider
@@ -1986,11 +1987,6 @@ scale.vertical > trough > slider
     background-image: -gtk-scaled(url("assets/slider-vertical.png"), url("assets/slider-vertical@2.png"));
 }
 
-scale.horizontal > trough > slider:hover
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-hover.png"), url("assets/slider-horizontal-hover@2.png"));
-}
-
 scale.horizontal > trough > slider:active
 {
     background-image: -gtk-scaled(url("assets/slider-horizontal-focused-hover.png"), url("assets/slider-horizontal-focused-hover@2.png"));
@@ -2004,11 +2000,6 @@ scale.horizontal > trough > slider:disabled
 scale.horizontal > trough > slider:backdrop
 {
     background-image: -gtk-scaled(url("assets/slider-horizontal-disabled.png"), url("assets/slider-horizontal-disabled@2.png"));
-}
-
-scale.vertical > trough > slider:hover
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-hover.png"), url("assets/slider-vertical-hover@2.png"));
 }
 
 scale.vertical > trough > slider:active
@@ -2031,11 +2022,6 @@ scale.horizontal.marks-before > trough > slider
     background-image: -gtk-scaled(url("assets/slider-horizontal-up.png"), url("assets/slider-horizontal-up@2.png"));
 }
 
-scale.horizontal.marks-before > trough > slider:hover
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-hover-up.png"), url("assets/slider-horizontal-hover-up@2.png"));
-}
-
 scale.horizontal.marks-before > trough > slider:active
 {
     background-image: -gtk-scaled(url("assets/slider-horizontal-focused-hover-up.png"), url("assets/slider-horizontal-focused-hover-up@2.png"));
@@ -2054,11 +2040,6 @@ scale.horizontal.marks-before > trough > slider:backdrop
 scale.vertical.marks-before > trough > slider
 {
     background-image: -gtk-scaled(url("assets/slider-vertical-left.png"), url("assets/slider-vertical-left@2.png"));
-}
-
-scale.vertical.marks-before > trough > slider:hover
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-hover-left.png"), url("assets/slider-vertical-hover-left@2.png"));
 }
 
 scale.vertical.marks-before > trough > slider:active
@@ -2373,27 +2354,6 @@ progressbar.vertical
     min-width: 16px;
 }
 
-progressbar > trough
-{
-    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
-    border-style: solid;
-    border-width: 1px;
-    color: @theme_text_color;
-    border-image: -gtk-scaled(url("assets/progressbar-horizontal-trough.png"), url("assets/progressbar-horizontal-trough@2.png")) 6 7 6 7 / 6px 7px 6px 7px stretch;
-}
-progressbar.horizontal > trough
-{
-    min-height: 18px;
-    border-radius: 6px;
-}
-
-progressbar.vertical > trough
-{
-    min-width: 18px;
-    border-radius: 6px;
-    background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
-}
-
 progressbar.horizontal > trough > progress
 {
     min-height: 16px;
@@ -2488,17 +2448,6 @@ levelbar.vertical
 {
     min-width: 3px;
     min-height: 34px;
-}
-
-levelbar > trough
-{
-    padding: 2px;
-    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
-    border-image: -gtk-scaled(url("assets/progressbar-horizontal-trough.png"), url("assets/progressbar-horizontal-trough@2.png")) 6 7 6 7 / 6px 7px 6px 7px stretch;
 }
 
 levelbar.horizontal > trough > block
@@ -3133,22 +3082,6 @@ windowhandle .linked > row:active
     box-shadow: none;
 }
 
-windowhandle > box scale > trough
-{
-    background-color: @wm_bg_a;
-    background-image: none;
-    border-image: linear-gradient(to bottom, @trough_border_toolbar_a, @trough_border_toolbar_b) 1;
-    border-image-width: 1px;
-}
-
-windowhandle > box scale > trough:backdrop
-{
-    background-color: @wm_bg_a;
-    background-image: none;
-    border-image: linear-gradient(to bottom, @trough_border_toolbar_a, @trough_border_toolbar_b) 1;
-    border-image-width: 1px;
-}
-
 /* GtkWindowControls */
 
 windowcontrols > button
@@ -3373,24 +3306,6 @@ popover separator
     min-height: 1px;
     background-color: @button_textshadow_toolbar_backdrop;
     margin: 3px 0;
-}
-
-popover scale.horizontal > trough
-{
-    border-image: none;
-    background-image: none;
-    background-color: @wm_bg_a;
-    border-top: 2px solid @trough_border_toolbar_a;
-    border-left: 2px solid @trough_border_toolbar_a;
-    border-right: 2px solid @trough_border_toolbar_b;
-    border-bottom: 2px solid @trough_border_toolbar_b;
-    border-radius: 5px;
-}
-
-popover scale.horizontal > trough > highlight
-{
-    border: none;
-    min-height: 6px;
 }
 
 popover label.title
@@ -3881,19 +3796,6 @@ shortcut > .keycap
 
 /* Row */
 
-row trough
-{
-    background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
-    border-style: solid;
-    border-width: 1px;
-    color: @theme_text_color;
-    border-radius: 3px;
-    border-top-color: @list_trough_border_a;
-    border-left-color: @list_trough_border_b;
-    border-right-color: @list_trough_border_b;
-    border-bottom-color: @list_trough_border_a;
-}
-
 row progressbar
 {
     border-radius: 3px;
@@ -3908,28 +3810,6 @@ row progressbar
     text-shadow: none;
 }
 
-row progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-    color: @theme_fg_color;
-    text-shadow: none;
-}
-
-row:selected trough
-{
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-}
-
 row:selected progressbar
 {
     border-radius: 3px;
@@ -3941,99 +3821,6 @@ row:selected progressbar
     border-right-color: @trough_highlight_border_b;
     border-bottom-color: @trough_highlight_border_a;
     color: @theme_fg_color;
-    text-shadow: none;
-}
-
-row:selected progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-    color: @theme_fg_color;
-    text-shadow: none;
-}
-
-row:hover progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-    color: @theme_fg_color;
-    text-shadow: none;
-}
-
-row:nth-child(odd) progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-    color: @theme_fg_color;
-    text-shadow: none;
-}
-
-row:backdrop progressbar
-{
-    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
-    border-top-color: @progressbar_progress_border_insensitive_a;
-    border-left-color: @progressbar_progress_border_insensitive_b;
-    border-right-color: @progressbar_progress_border_insensitive_b;
-    border-bottom-color: @progressbar_progress_border_insensitive_a;
-}
-
-row:backdrop progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
-    border-top-color: @progressbar_progress_border_insensitive_a;
-    border-left-color: @progressbar_progress_border_insensitive_b;
-    border-right-color: @progressbar_progress_border_insensitive_b;
-    border-bottom-color: @progressbar_progress_border_insensitive_a;
-    color: @theme_unfocused_fg_color;
-    text-shadow: none;
-}
-
-row:hover:backdrop progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
-    border-top-color: @progressbar_progress_border_insensitive_a;
-    border-left-color: @progressbar_progress_border_insensitive_b;
-    border-right-color: @progressbar_progress_border_insensitive_b;
-    border-bottom-color: @progressbar_progress_border_insensitive_a;
-    color: @theme_unfocused_fg_color;
-    text-shadow: none;
-}
-
-row:selected:backdrop progressbar > trough > progress
-{
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_a, @progressbar_fill_insensitive_b);
-    border-top-color: @progressbar_progress_border_insensitive_a;
-    border-left-color: @progressbar_progress_border_insensitive_b;
-    border-right-color: @progressbar_progress_border_insensitive_b;
-    border-bottom-color: @progressbar_progress_border_insensitive_a;
-    color: @theme_unfocused_fg_color;
     text-shadow: none;
 }
 
@@ -4088,28 +3875,6 @@ row:selected:backdrop progressbar > trough > progress
     padding: 10px;
 }
 
-.osd .horizontal > trough
-{
-    border-image: none;
-    background-image: none;
-    background-color: @wm_bg_a;
-    border-top: 2px solid @trough_border_toolbar_a;
-    border-left: 2px solid @trough_border_toolbar_a;
-    border-right: 2px solid @trough_border_toolbar_b;
-    border-bottom: 2px solid @trough_border_toolbar_b;
-}
-
-.osd .horizontal > trough:backdrop
-{
-    border-image: none;
-    background-image: none;
-    background-color: @wm_bg_a;
-    border-top: 2px solid @trough_border_toolbar_a;
-    border-left: 2px solid @trough_border_toolbar_a;
-    border-right: 2px solid @trough_border_toolbar_b;
-    border-bottom: 2px solid @trough_border_toolbar_b;
-}
-
 .osd progressbar
 {
     padding: 0;
@@ -4122,36 +3887,6 @@ row:selected:backdrop progressbar > trough > progress
 .osd progressbar.horizontal
 {
     min-height: 3px;
-}
-
-.osd scale > trough:disabled
-{
-    background-image: none;
-    background-color: transparent;
-}
-
-.osd scale > trough > highlight
-{
-    border: none;
-    min-height: 6px;
-}
-
-.osd scale > trough > highlight:backdrop
-{
-    border-image: -gtk-scaled(url("assets/scale-horizontal-fill.png"), url("assets/scale-horizontal-fill@2.png")) 2 6 2 6 / 2px 6px 2px 6px stretch;
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    background-color: transparent;
-    border: none;
-    min-height: 6px;
-}
-
-.osd scale > trough > highlight:disabled
-{
-    background-image: none;
-    background-color: transparent;
 }
 
 /* App notification */
