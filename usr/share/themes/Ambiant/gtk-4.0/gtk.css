@@ -456,7 +456,8 @@ editablelabel > stack > text
 
 /* GtkButton */
 
-button
+button,
+scale slider
 {
     padding: 6px;
     min-height: 18px;
@@ -484,7 +485,8 @@ button:active
     border-bottom-color: @button_border_active_c;
 }
 
-button:disabled
+button:disabled,
+scale slider:disabled
 {
     background-image: image(@button_bg_disabled);
     border-color: @button_border_disabled;
@@ -755,7 +757,12 @@ windowhandle button,
 .app-notification button,
 .osd button,
 .toolbar button,
-popover button
+popover button,
+windowhandle scale slider,
+.app-notification scale slider,
+.osd scale slider,
+.toolbar scale slider,
+popover scale slider
 {
     background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
     color: @wm_title;
@@ -790,7 +797,12 @@ windowhandle button:disabled,
 .app-notification button:disabled,
 .osd button:disabled,
 .toolbar button:disabled,
-popover button:disabled
+popover button:disabled,
+windowhandle scale slider:disabled,
+.app-notification scale slider:disabled,
+.osd scale slider:disabled,
+.toolbar scale slider:disabled,
+popover scale slider:disabled
 {
     text-shadow: none;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
@@ -801,7 +813,12 @@ windowhandle button:backdrop,
 .app-notification button:backdrop,
 .osd button:backdrop,
 .toolbar button:backdrop,
-popover button:backdrop
+popover button:backdrop,
+windowhandle scale slider:backdrop,
+.app-notification scale slider:backdrop,
+.osd scale slider:backdrop,
+.toolbar scale slider:backdrop,
+popover scale slider:backdrop
 {
     color: @fg_dark_insensitive;
     text-shadow: 0 -1px @button_textshadow_toolbar_backdrop;
@@ -844,7 +861,12 @@ windowhandle button:disabled:backdrop,
 .app-notification button:disabled:backdrop,
 .osd button:disabled:backdrop,
 .toolbar button:disabled:backdrop,
-popover button:disabled:backdrop
+popover button:disabled:backdrop,
+windowhandle scale slider:disabled:backdrop,
+.app-notification scale slider:disabled:backdrop,
+.osd scale slider:disabled:backdrop,
+.toolbar scale slider:disabled:backdrop,
+popover scale slider:disabled:backdrop
 {
     background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
     border-color: @button_border_toolbar_normal;
@@ -1195,8 +1217,8 @@ windowhandle switch:backdrop
 
 switch > slider
 {
-    min-width: 36px;
-    min-height: 22px;
+    min-width: 34px;
+    min-height: 26px;
     border-radius: 5px;
     background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     border: 1px solid @button_border_normal_a;
@@ -1629,21 +1651,15 @@ checkbutton
 
 check
 {
-    min-height: 15px;
-    min-width: 15px;
+    min-height: 14px;
+    min-width: 14px;
     background-image: linear-gradient(to bottom, @check_background_normal_a, @check_background_normal_b);
     background-repeat: no-repeat;
     border: 1px solid @check_border_normal_a;
     border-top-color: @check_border_normal_b;
     border-bottom-color: @check_border_normal_c;
-    border-radius: 4px;
+    border-radius: 3px;
     box-shadow: 0 1px 0 @check_boxshadow_checked_a inset, 1px 0 0 @check_boxshadow_checked_b inset, -1px 0 0 @check_boxshadow_checked_b inset;
-}
-
-treeview check, /* GtkTreeView - DEPRECATED */
-listview check,
-popover check
-{
     transform: scale(0.85);
 }
 
@@ -1738,8 +1754,8 @@ check:indeterminate:disabled
 
 radio
 {
-    min-height: 15px;
-    min-width: 15px;
+    min-height: 14px;
+    min-width: 14px;
     background-image: linear-gradient(to bottom, @check_background_normal_a,  @check_background_normal_b);
     background-repeat: no-repeat;
     border: 1px solid @check_border_normal_a;
@@ -1747,13 +1763,6 @@ radio
     border-bottom-color: @check_border_normal_c;
     border-radius: 50%;
     box-shadow: 0 1px 0 @check_boxshadow_checked_a inset, 1px 0 0 @check_boxshadow_checked_b inset, -1px 0 0 @check_boxshadow_checked_b inset;
-}
-
-list radio,
-treeview radio, /* GtkTreeView - DEPRECATED */
-listview radio,
-popover radio
-{
     transform: scale(0.85);
 }
 
@@ -1843,17 +1852,21 @@ radio:indeterminate:disabled
 
 /* trough */
 
+scale.horizontal > trough
+{
+    margin: 2px 0px;
+}
+
 scale.horizontal > trough,
 progressbar.horizontal > trough,
 levelbar > trough
 {
-    /*margin: 8px 6px;*/
     border: 1px solid @trough_border_normal_a;
     border-top-color: @trough_border_normal_b;
     border-bottom-color: @trough_border_normal_c;
     background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     border-radius: 4px;
-    min-height: 15px;
+    min-height: 14px;
 }
 
 popover scale.horizontal > trough,
@@ -1891,13 +1904,12 @@ windowhandle scale.horizontal > trough:backdrop,
 scale.vertical > trough,
 progressbar.vertical > trough
 {
-    /*margin: 8px 6px;*/
     border: 1px solid @trough_border_normal_a;
     border-left-color: @trough_border_normal_b;
     border-right-color: @trough_border_normal_c;
     background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
     border-radius: 4px;
-    min-width: 15px;
+    min-width: 14px;
 }
 
 scale.vertical > trough:disabled
@@ -1965,101 +1977,26 @@ scale.vertical > trough > highlight:backdrop
     border-color: @highlight_border_backdrop;
 }
 
-scale.horizontal > trough > slider
+/* scale slider */
+
+scale slider
 {
-    min-width: 15px;
-    min-height: 19px;
-    margin: -9px 0 -9px 0;
-    border-radius: 9px;
-    border-style: none;
-    background-color: transparent;
-    background-image: -gtk-scaled(url("assets/slider-horizontal.png"), url("assets/slider-horizontal@2.png"));
+    border-radius: 4px;
+    padding: 0;
 }
 
-scale.vertical > trough > slider
+scale.horizontal slider
 {
-    min-height: 15px;
-    min-width: 19px;
-    margin: 0 -9px 0 -9px;
-    border-radius: 9px;
-    border-style: none;
-    background-color: transparent;
-    background-image: -gtk-scaled(url("assets/slider-vertical.png"), url("assets/slider-vertical@2.png"));
+    min-width: 14px;
+    min-height: 18px;
+    margin: -4px -1px;
 }
 
-scale.horizontal > trough > slider:active
+scale.vertical slider
 {
-    background-image: -gtk-scaled(url("assets/slider-horizontal-focused-hover.png"), url("assets/slider-horizontal-focused-hover@2.png"));
-}
-
-scale.horizontal > trough > slider:disabled
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-disabled.png"), url("assets/slider-horizontal-disabled@2.png"));
-}
-
-scale.horizontal > trough > slider:backdrop
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-disabled.png"), url("assets/slider-horizontal-disabled@2.png"));
-}
-
-scale.vertical > trough > slider:active
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-focused-hover.png"), url("assets/slider-vertical-focused-hover@2.png"));
-}
-
-scale.vertical > trough > slider:disabled
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-disabled.png"), url("assets/slider-vertical-disabled@2.png"));
-}
-
-scale.vertical > trough > slider:backdrop
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-disabled.png"), url("assets/slider-vertical-disabled@2.png"));
-}
-
-scale.horizontal.marks-before > trough > slider
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-up.png"), url("assets/slider-horizontal-up@2.png"));
-}
-
-scale.horizontal.marks-before > trough > slider:active
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-focused-hover-up.png"), url("assets/slider-horizontal-focused-hover-up@2.png"));
-}
-
-scale.horizontal.marks-before > trough > slider:disabled
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-disabled-up.png"), url("assets/slider-horizontal-disabled-up@2.png"));
-}
-
-scale.horizontal.marks-before > trough > slider:backdrop
-{
-    background-image: -gtk-scaled(url("assets/slider-horizontal-disabled-up.png"), url("assets/slider-horizontal-disabled-up@2.png"));
-}
-
-scale.vertical.marks-before > trough > slider
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-left.png"), url("assets/slider-vertical-left@2.png"));
-}
-
-scale.vertical.marks-before > trough > slider:active
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-focused-hover-left.png"), url("assets/slider-vertical-focused-hover-left@2.png"));
-}
-
-scale.vertical.marks-before > trough > slider:disabled
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-disabled-left.png"), url("assets/slider-vertical-disabled-left@2.png"));
-}
-
-scale.vertical.marks-before > trough > slider:backdrop
-{
-    background-image: -gtk-scaled(url("assets/slider-vertical-disabled-left.png"), url("assets/slider-vertical-disabled-left@2.png"));
-}
-
-scale.color > trough > slider
-{
-    margin: 0;
+    min-width: 18px;
+    min-height: 14px;
+    margin: -1px -4px;
 }
 
 scale.horizontal > marks.top
