@@ -1999,44 +1999,48 @@ scale.vertical slider
     margin: -1px -4px;
 }
 
-scale.horizontal > marks.top
+/* scale marks */
+
+scale.horizontal marks.top
 {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
-scale.horizontal > marks.bottom
+scale.horizontal marks.bottom
 {
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
-scale.vertical > marks.top
+scale.vertical marks.top
 {
-    margin-right: 6px;
+    margin-right: 4px;
 }
 
-scale.vertical > marks.bottom
+scale.vertical marks.bottom
 {
-    margin-left: 6px;
+    margin-left: 4px;
 }
 
-scale > marks indicator
+/* scale indicator */
+
+scale indicator
 {
     background-color: @scale_indicator_bg;
 }
 
-scale.horizontal > marks indicator
+scale.horizontal indicator
 {
     min-height: 8px;
     min-width: 1px;
 }
 
-scale.vertical > marks indicator
+scale.vertical indicator
 {
     min-height: 1px;
     min-width: 8px;
 }
 
-scale > value
+scale value
 {
     font-feature-settings: "tnum";
 }
