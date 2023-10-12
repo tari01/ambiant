@@ -406,12 +406,6 @@ separator.vertical
 
 /* GtkLabel */
 
-label > selection
-{
-    background-color: @label_selection_bg;
-    color: @theme_selected_fg_color;
-}
-
 label > link
 {
     color: @theme_selected_bg_color;
@@ -432,13 +426,15 @@ text > placeholder
     text-shadow: none;
 }
 
-text > selection
+/* selection */
+
+selection
 {
     color: @theme_selected_fg_color;
-    background-image: image(@theme_selected_bg_color);
+    background-color: @theme_selected_bg_color;
 }
 
-text > selection:backdrop
+selection:backdrop
 {
     background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
@@ -2048,21 +2044,27 @@ scale value
 /* view */
 
 gridview,
-iconview /* DEPRECATED*/
+iconview, /* DEPRECATED*/
+textview
 {
     background-image: image(@theme_base_color);
     color: @theme_text_color;
-    border-spacing: 6px;
+    border-spacing: 0px;
+}
+
+gridview
+{
     padding: 6px;
 }
 
-iconview /* DEPRECATED*/
+textview
 {
-    padding: 0;
+    padding: 6px 0 6px 0;
 }
 
 gridview:disabled,
-iconview:disabled /* DEPRECATED*/
+iconview:disabled, /* DEPRECATED*/
+textview:disabled
 {
     color: @textview_fg_disabled;
     background-image: image(@textview_bg_disabled);
@@ -2104,20 +2106,6 @@ gridview > child > box
 gridview > child box
 {
     border-spacing: 6px;
-}
-
-/* GtkTextView */
-
-textview
-{
-    background-color: @theme_base_color;
-    color: @theme_text_color;
-}
-
-textview:disabled
-{
-    color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
 }
 
 /* GtkTreeView - DEPRECATED */
