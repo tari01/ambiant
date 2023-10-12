@@ -2045,81 +2045,55 @@ scale value
     font-feature-settings: "tnum";
 }
 
-/* GtkIconView - DEPRECATED*/
+/* view */
 
-iconview
+gridview,
+iconview /* DEPRECATED*/
 {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
-    border-spacing: 6px;
-}
-
-iconview:disabled
-{
-    color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
-}
-
-iconview .cell
-{
-    border: 1px solid transparent;
-    background-color: transparent;
-    border-radius: 5px;
-}
-
-iconview .cell:hover
-{
-    background-color: @list_cell_bg_normal;
-    border-color: @list_cell_bg_normal;
-    color: @list_cell_fg_hover;
-}
-
-iconview .cell:selected
-{
-    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @list_cell_bg_selected);
-    border-color: @osd_button_border;
-    border-bottom-color: @list_cell_border;
-    box-shadow: inset 1px 0 @list_cell_bg_shadow_a, inset -1px 0 @list_cell_bg_shadow_a, inset 0 1px @list_cell_bg_shadow_b, inset 0 -1px @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-/* GtkGridView */
-
-gridview
-{
-    background-color: @theme_base_color;
+    background-image: image(@theme_base_color);
     color: @theme_text_color;
     border-spacing: 6px;
     padding: 6px;
 }
 
-gridview:disabled
+iconview /* DEPRECATED*/
+{
+    padding: 0;
+}
+
+gridview:disabled,
+iconview:disabled /* DEPRECATED*/
 {
     color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
+    background-image: image(@textview_bg_disabled);
+}
+
+/* view child */
+
+gridview > child,
+iconview .cell /* DEPRECATED*/
+{
+    border-radius: 6px;
 }
 
 gridview > child
 {
-    border: 1px solid transparent;
-    background-color: transparent;
-    border-radius: 5px;
+    padding: 6px;
 }
 
-gridview > child:hover
+gridview > child:hover,
+iconview .cell:hover /* DEPRECATED*/
 {
-    background-color: @list_cell_bg_normal;
-    border-color: @list_cell_bg_normal;
+    background-image: image(@list_cell_bg_normal);
     color: @list_cell_fg_hover;
 }
 
-gridview > child:selected
+gridview > child:selected,
+iconview .cell:selected /* DEPRECATED*/
 {
-    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @list_cell_bg_selected);
-    border-color: @osd_button_border;
-    border-bottom-color: @list_cell_border;
-    box-shadow: inset 1px 0 @list_cell_bg_shadow_a, inset -1px 0 @list_cell_bg_shadow_a, inset 0 1px @list_cell_bg_shadow_b, inset 0 -1px @theme_selected_bg_color;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
     color: @theme_selected_fg_color;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 gridview > child > box
