@@ -301,6 +301,11 @@
     caret-color: @theme_text_color;
 }
 
+popover *
+{
+    caret-color: @wm_title;
+}
+
 *:disabled
 {
     color: @fg_disabled;
@@ -428,13 +433,15 @@ text > placeholder
 
 /* selection */
 
-selection
+selection,
+treeview:selected /* DEPRECATED */
 {
     color: @theme_selected_fg_color;
     background-color: @theme_selected_bg_color;
 }
 
-selection:backdrop
+selection:backdrop,
+treeview:selected:backdrop /* DEPRECATED */
 {
     background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
@@ -1376,6 +1383,11 @@ frame
     border: 1px solid @borders;
 }
 
+popover frame
+{
+    border-color: @entry_border_toolbar_normal_a;
+}
+
 overlay > frame
 {
     border: none;
@@ -1908,10 +1920,36 @@ progressbar.vertical > trough
     min-width: 14px;
 }
 
+popover scale.vertical > trough,
+windowhandle scale.vertical > trough,
+.osd scale.vertical > trough
+{
+    background-image: image(@popover_entry_bg);
+    border-color: @entry_border_toolbar_normal_a;
+    border-left-color: @entry_border_toolbar_normal_b;
+    border-right-color: @entry_border_toolbar_normal_c;
+}
+
 scale.vertical > trough:disabled
 {
     background-image: linear-gradient(to right, @trough_bg_disabled_a, @trough_bg_disabled_b);
     border-color: @button_border_disabled;
+}
+
+popover scale.vertical > trough:disabled,
+windowhandle scale.vertical > trough:disabled,
+.osd scale.vertical > trough:disabled
+{
+    background-image: image(@button_bg_toolbar_disabled_a);
+    border-color: @entry_border_toolbar_normal_a;
+}
+
+popover scale.vertical > trough:backdrop,
+windowhandle scale.vertical > trough:backdrop,
+.osd scale.vertical > trough:backdrop
+{
+    background-image: image(@button_bg_toolbar_disabled_a);
+    border-color: @entry_border_toolbar_normal_a;
 }
 
 scale.horizontal > trough > highlight
@@ -2045,29 +2083,87 @@ scale value
 
 gridview,
 iconview, /* DEPRECATED*/
-textview
+textview,
+treeview /* DEPRECATED*/
 {
-    background-image: image(@theme_base_color);
+    background-color: @theme_base_color;
     color: @theme_text_color;
-    border-spacing: 0px;
+    border-spacing: 6px;
 }
 
-gridview
+popover textview,
+popover treeview /* DEPRECATED */
 {
-    padding: 6px;
-}
-
-textview
-{
-    padding: 6px 0 6px 0;
+    background-color: @popover_entry_bg;
+    color: @wm_title;
 }
 
 gridview:disabled,
 iconview:disabled, /* DEPRECATED*/
-textview:disabled
+textview:disabled,
+treeview:disabled /* DEPRECATED*/
 {
     color: @textview_fg_disabled;
-    background-image: image(@textview_bg_disabled);
+    background-color: @textview_bg_disabled;
+}
+
+scrolledwindow.frame > treeview, /* DEPRECATED */
+scrolledwindow.frame > textview,
+scrolledwindow.frame > iconview, /* DEPRECATED */
+scrolledwindow.frame > listview,
+scrolledwindow.frame > viewport,
+scrolledwindow.frame > viewport > list
+{
+    border-radius: 6px;
+}
+
+/* view header button */
+
+treeview > header > button, /* DEPRECATED */
+columnview > header > button
+{
+    border-radius: 0;
+    border-width: 0 1px 1px 0;
+}
+
+treeview > header > button:last-child, /* DEPRECATED */
+columnview > header > button:last-child
+{
+    border-width: 0 0 1px 0;
+}
+
+treeview > header > button sort-indicator.ascending, /* DEPRECATED */
+columnview > header > button sort-indicator.ascending
+{
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+treeview > header > button sort-indicator.descending, /* DEPRECATED */
+columnview > header > button sort-indicator.descending
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* view expander */
+
+treeview.expander, /* DEPRECATED */
+columnview.expander
+{
+    min-width: 16px;
+    min-height: 16px;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+treeview.expander:dir(rtl), /* DEPRECATED */
+columnview.expander:dir(rtl)
+{
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+treeview.expander:checked, /* DEPRECATED */
+columnview.expander:checked
+{
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 /* view child */
@@ -2076,11 +2172,6 @@ gridview > child,
 iconview .cell /* DEPRECATED*/
 {
     border-radius: 6px;
-}
-
-gridview > child
-{
-    padding: 6px;
 }
 
 gridview > child:hover,
@@ -2098,6 +2189,25 @@ iconview .cell:selected /* DEPRECATED*/
     text-shadow: 0 -1px @list_cell_border;
 }
 
+/* textview */
+
+textview
+{
+    padding: 0 6px 0 6px;
+}
+
+/* gridview */
+
+gridview
+{
+    padding: 6px;
+}
+
+gridview > child
+{
+    padding: 6px;
+}
+
 gridview > child > box
 {
     margin: 6px;
@@ -2108,75 +2218,15 @@ gridview > child box
     border-spacing: 6px;
 }
 
-/* GtkTreeView - DEPRECATED */
+/* treeview */
 
-treeview
+treeview.dnd /* DEPRECATED */
 {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
-}
-
-treeview:selected
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-treeview:selected:backdrop
-{
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
-}
-
-treeview.dnd
-{
-    border-color: @columnview_border_dnd;
     border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid @columnview_border_dnd;
 }
 
-treeview > header > button, /* DEPRECATED */
-columnview > header > button
-{
-    border-radius: 0;
-    border-width: 0 1px 1px 0;
-}
-
-treeview > header > button:last-child, /* DEPRECATED */
-columnview > header > button:last-child
-{
-    border-width: 0 0 1px 0;
-}
-
-treeview > header > button sort-indicator.ascending
-{
-    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
-}
-
-treeview > header > button sort-indicator.descending
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
-treeview.expander
-{
-    min-width: 16px;
-    min-height: 16px;
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-}
-
-treeview.expander:dir(rtl)
-{
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-}
-
-treeview.expander:checked
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
-treeview.separator
+treeview.separator /* DEPRECATED */
 {
     min-height: 2px;
     color: @selected_bg_insensitive;
@@ -2208,33 +2258,6 @@ columnview.dnd
     border-radius: 2px;
     border-width: 1px;
     border-style: solid;
-}
-
-columnview > header > button sort-indicator.ascending
-{
-    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
-}
-
-columnview > header > button sort-indicator.descending
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
-columnview.expander
-{
-    min-width: 16px;
-    min-height: 16px;
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-}
-
-columnview.expander:dir(rtl)
-{
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-}
-
-columnview.expander:checked
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 /* GtkProgressBar */
@@ -2672,6 +2695,7 @@ scrolledwindow > overshoot.right
 
 scrolledwindow.frame
 {
+    border-radius: 6px;
     border-top-color: @scrolledwindow_border_a;
     border-right-color: @scrolledwindow_border_b;
     border-bottom-color: @scrolledwindow_border_c;
@@ -2680,6 +2704,13 @@ scrolledwindow.frame
     border-width: 1px;
     border-image: none;
     background: none;
+}
+
+popover scrolledwindow.frame
+{
+    border-color: @entry_border_toolbar_normal_a;
+    border-top-color: @entry_border_toolbar_normal_b;
+    border-bottom-color: @entry_border_toolbar_normal_c;
 }
 
 /* GtkListBox */
@@ -3272,12 +3303,6 @@ popover listview > row:hover
     text-shadow: 0 -1px @list_cell_border;
 }
 
-popover treeview
-{
-    background-color: transparent;
-    color: @wm_title;
-}
-
 popover modelbutton
 {
     border-image: none;
@@ -3656,6 +3681,7 @@ window.assistant box.sidebar > label.highlight
 
 rubberband
 {
+    /* TODO: fix colours in treeview */
     background-image: image(@rubberband_bg);
     border-color: @theme_selected_bg_color;
     border-radius: 0;
@@ -3695,36 +3721,6 @@ shortcut > .keycap
     border-radius: 5px;
     box-shadow: inset 0 -3px @shortcut_keycap_bg_shadow;
     font-size: smaller;
-}
-
-/* Row */
-
-row progressbar
-{
-    border-radius: 3px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-    color: @theme_fg_color;
-    text-shadow: none;
-}
-
-row:selected progressbar
-{
-    border-radius: 3px;
-    border-width: 1px;
-    border-style: solid;
-    background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
-    border-top-color: @trough_highlight_border_a;
-    border-left-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_b;
-    border-bottom-color: @trough_highlight_border_a;
-    color: @theme_fg_color;
-    text-shadow: none;
 }
 
 /* Toolbar */
