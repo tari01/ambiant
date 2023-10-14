@@ -447,11 +447,11 @@ treeview:selected:backdrop /* DEPRECATED */
     color: @theme_fg_color;
 }
 
-/* GtkEditableLabel */
+/* editablelabel */
 
 editablelabel > stack > text
 {
-    border-image: -gtk-scaled(url("assets/entry-focused.png"),url("assets/entry-focused@2.png")) 10 12 10 12 / 10px 12px 10px 12px stretch;
+    /*border: 1px solid @entry_border_normal_a;*/
     color: @theme_text_color;
     background-color: @theme_base_color;
     padding: 2px;
@@ -2100,8 +2100,7 @@ popover treeview /* DEPRECATED */
 
 gridview:disabled,
 iconview:disabled, /* DEPRECATED*/
-textview:disabled,
-treeview:disabled /* DEPRECATED*/
+textview:disabled
 {
     color: @textview_fg_disabled;
     background-color: @textview_bg_disabled;
