@@ -434,14 +434,16 @@ text > placeholder
 /* selection */
 
 selection,
-treeview:selected /* DEPRECATED */
+treeview:selected, /* DEPRECATED */
+columnview:selected
 {
     color: @theme_selected_fg_color;
     background-color: @theme_selected_bg_color;
 }
 
 selection:backdrop,
-treeview:selected:backdrop /* DEPRECATED */
+treeview:selected:backdrop, /* DEPRECATED */
+columnview:selected:backdrop
 {
     background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
@@ -2083,10 +2085,16 @@ scale value
 gridview,
 iconview, /* DEPRECATED*/
 textview,
-treeview /* DEPRECATED*/
+treeview, /* DEPRECATED*/
+columnview
 {
     background-color: @theme_base_color;
     color: @theme_text_color;
+}
+
+gridview,
+iconview /* DEPRECATED*/
+{
     border-spacing: 6px;
 }
 
@@ -2103,6 +2111,13 @@ textview:disabled
 {
     color: @textview_fg_disabled;
     background-color: @textview_bg_disabled;
+}
+
+treeview.dnd, /* DEPRECATED */
+columnview.dnd
+{
+    border-radius: 2px;
+    border: 1px solid @columnview_border_dnd;
 }
 
 scrolledwindow.frame > treeview, /* DEPRECATED */
@@ -2218,44 +2233,10 @@ gridview > child box
 
 /* treeview */
 
-treeview.dnd /* DEPRECATED */
-{
-    border-radius: 2px;
-    border: 1px solid @columnview_border_dnd;
-}
-
 treeview.separator /* DEPRECATED */
 {
     min-height: 2px;
     color: @selected_bg_insensitive;
-}
-
-/* GtkColumnView */
-
-columnview
-{
-    background-color: @theme_base_color;
-    color: @theme_text_color;
-}
-
-columnview:selected
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-columnview:selected:backdrop
-{
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
-}
-
-columnview.dnd
-{
-    border-color: @columnview_border_dnd;
-    border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
 }
 
 /* GtkProgressBar */
