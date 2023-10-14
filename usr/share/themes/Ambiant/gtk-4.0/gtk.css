@@ -451,7 +451,6 @@ treeview:selected:backdrop /* DEPRECATED */
 
 editablelabel > stack > text
 {
-    /*border: 1px solid @entry_border_normal_a;*/
     color: @theme_text_color;
     background-color: @theme_base_color;
     padding: 2px;
