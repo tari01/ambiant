@@ -2264,104 +2264,62 @@ treeview.separator /* DEPRECATED */
     color: @selected_bg_insensitive;
 }
 
-/* GtkLevelBar */
+/* levelbar block */
 
-levelbar.horizontal
+levelbar block.filled
 {
-    min-width: 34px;
-    min-height: 3px;
+    background-image: image(@levelbar_block_bg_filled);
+    box-shadow: 0 -1px @theme_selected_bg_color, 1px 0 @theme_selected_bg_color, 0 1px @theme_selected_bg_color, -1px 0 @theme_selected_bg_color;
+    min-height: 14px;
+    border-radius: 3px;
 }
 
-levelbar.vertical
+levelbar.discrete.horizontal block:not(:first-child)
 {
-    min-width: 3px;
-    min-height: 34px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-levelbar.horizontal > trough > block
+levelbar.discrete.horizontal block:not(:last-child)
 {
-    min-height: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-levelbar.vertical > trough > block
+levelbar.discrete.vertical block:not(:first-child)
 {
-    min-width: 3px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-levelbar > trough > block.low
+levelbar.discrete.vertical block:not(:last-child)
 {
-    border-color: @levelbar_block_border_low;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+levelbar block.filled.low
+{
     background-image: linear-gradient(to bottom, @levelbar_block_bg_low_a, @warning_bg 75%, @levelbar_block_bg_low_c);
+    box-shadow: 0 -1px @levelbar_block_border_low, 1px 0 @levelbar_block_border_low, 0 1px @levelbar_block_border_low, -1px 0 @levelbar_block_border_low;
 }
 
-levelbar > trough > block.high
+levelbar block.filled.high
 {
-    border-color: @levelbar_block_border_high;
     background-image: linear-gradient(to bottom, @levelbar_block_high_bg_a, @success 75%, @levelbar_block_high_bg_c);
+    box-shadow: 0 -1px @levelbar_block_border_high, 1px 0 @levelbar_block_border_high, 0 1px @levelbar_block_border_high, -1px 0 @levelbar_block_border_high;
 }
 
-levelbar > trough > block.full
+levelbar block.filled.full
 {
-    border-color: @levelbar_block_high_bg_c;
     background-image: linear-gradient(to bottom, @levelbar_block_high_bg_a, @success 75%, @levelbar_block_high_bg_c);
+    box-shadow: 0 -1px @levelbar_block_high_bg_c, 1px 0 @levelbar_block_high_bg_c, 0 1px @levelbar_block_high_bg_c, -1px 0 @levelbar_block_high_bg_c;
 }
 
-levelbar > trough > block.empty
+levelbar block.filled:backdrop
 {
-    background-color: transparent;
-    background-image: none;
-    border-color: @levelbar_block_border_empty;
-}
-
-levelbar > trough > block.filled
-{
-    border-width: 1px;
-    border-style: solid;
-    border-color: @theme_selected_bg_color;
-    background-color: @levelbar_block_bg_filled;
-}
-
-levelbar > trough > block.empty:backdrop
-{
-    border-color: transparent;
-    background-color: transparent;
-}
-
-levelbar > trough > block.filled:backdrop
-{
-    background-color: @levelbar_block_insensitive;
-    border-color: @levelbar_block_insensitive;
-    background-image: none;
-}
-
-levelbar > trough > block.filled.high:backdrop
-{
-    background-color: @levelbar_block_insensitive;
-    border-color: @levelbar_block_insensitive;
-    background-image: none;
-}
-
-levelbar > trough > block.filled.low:backdrop
-{
-    background-color: @levelbar_block_insensitive;
-    border-color: @levelbar_block_insensitive;
-    background-image: none;
-}
-
-levelbar.continuous > trough > block.filled
-{
-    padding: 2px;
-    border-radius: 2px;
-}
-
-levelbar.discrete.horizontal > trough > block.filled
-{
-    margin: 0 1px;
-}
-
-levelbar.discrete.vertical > trough > block.filled
-{
-    margin: 1px 0;
+    background-image: image(@levelbar_block_insensitive);
+    box-shadow: 0 -1px @levelbar_block_insensitive, 1px 0 @levelbar_block_insensitive, 0 1px @levelbar_block_insensitive, -1px 0 @levelbar_block_insensitive;
 }
 
 /* GtkVideo */
