@@ -2322,7 +2322,7 @@ levelbar block.filled:backdrop
     box-shadow: 0 -1px @levelbar_block_insensitive, 1px 0 @levelbar_block_insensitive, 0 1px @levelbar_block_insensitive, -1px 0 @levelbar_block_insensitive;
 }
 
-/* GtkVideo */
+/* video */
 
 video
 {
@@ -2333,7 +2333,7 @@ video > overlay > image.osd
 {
     min-width: 64px;
     min-height: 64px;
-    border-radius: 8px;
+    border-radius: 50%;
 }
 
 video .osd
