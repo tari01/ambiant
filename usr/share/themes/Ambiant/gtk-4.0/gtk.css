@@ -417,7 +417,8 @@ label > link
     text-decoration: underline;
 }
 
-label.dim-label
+label.dim-label,
+calendar label.other-month
 {
     -gtk-icon-filter: opacity(0.5);
     opacity: 0.5;
@@ -438,15 +439,19 @@ treeview:selected, /* DEPRECATED */
 columnview:selected
 {
     color: @theme_selected_fg_color;
+    background-image: image(@theme_selected_bg_color);
     background-color: @theme_selected_bg_color;
 }
 
 selection:backdrop,
 treeview:selected:backdrop, /* DEPRECATED */
-columnview:selected:backdrop
+columnview:selected:backdrop,
+calendar label:selected:backdrop
 {
+    background-image: image(@list_cell_bg_selected_insensitive);
     background-color: @list_cell_bg_selected_insensitive;
     color: @theme_fg_color;
+    text-shadow: none;
 }
 
 /* editablelabel */
@@ -454,7 +459,7 @@ columnview:selected:backdrop
 editablelabel > stack > text
 {
     color: @theme_text_color;
-    background-color: @theme_base_color;
+    background-image: image(@theme_base_color);
     padding: 2px;
 }
 
@@ -581,7 +586,8 @@ button.suggested-action:active:disabled
     border-color: @button_border_suggested_disabled;
 }
 
-button.flat
+button.flat,
+calendar > header > button
 {
     background-image: none;
     border-color: transparent;
@@ -1376,7 +1382,7 @@ spinbutton.vertical > button.up
     border-radius: 6px 6px 0 0;
 }
 
-/* GtkFrame */
+/* frame */
 
 frame
 {
@@ -2090,7 +2096,7 @@ scale.vertical marks.bottom
 
 scale indicator
 {
-    background-color: @scale_indicator_bg;
+    background-image: image(@scale_indicator_bg);
 }
 
 scale.horizontal indicator
@@ -2113,7 +2119,7 @@ textview,
 treeview, /* DEPRECATED*/
 columnview
 {
-    background-color: @theme_base_color;
+    background-image: image(@theme_base_color);
     color: @theme_text_color;
 }
 
@@ -2126,7 +2132,7 @@ iconview /* DEPRECATED*/
 popover textview,
 popover treeview /* DEPRECATED */
 {
-    background-color: @popover_entry_bg;
+    background-image: image(@popover_entry_bg);
     color: @wm_title;
 }
 
@@ -2135,7 +2141,7 @@ iconview:disabled, /* DEPRECATED*/
 textview:disabled
 {
     color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
+    background-image: image(@textview_bg_disabled);
 }
 
 treeview.dnd, /* DEPRECATED */
@@ -2341,65 +2347,76 @@ video .osd
     border-radius: 0;
 }
 
-/* GtkCalendar */
+/* calendar */
 
 calendar
 {
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: @borders;
-    color: @theme_fg_color;
-    text-shadow: none;
+    color: @theme_text_color;
 }
 
-calendar > header
+calendar header
 {
-    border-radius: 3px 3px 0 0;
+    border-radius: 6px 6px 0 0;
     background-image: linear-gradient(to bottom, @columnview_header_button_bg_a, @calendar_header_bg_b);
-    border-width: 0;
 }
 
-calendar > header > button.image-button
+calendar button
 {
     background-image: none;
     border: none;
 }
 
-calendar > grid
+calendar button:hover
 {
-    background-color: @theme_base_color;
-    padding: 4px;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    color: @button_border_normal_a;
 }
 
-calendar > grid > label
+calendar button:active
 {
-    padding: 1px 0 1px 0;
+    background-image: none;
+    color: @button_border_checked_a;
 }
 
-calendar > grid > label.day-name
+calendar grid
 {
-    background-color: @theme_selected_bg_color;
+    background-image: image(@theme_base_color);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 3px;
+}
+
+calendar label
+{
+    border-radius: 4px;
+    padding: 6px;
+}
+
+calendar label.day-name
+{
+    border-radius: 0;
+    background-image: image(@calendar_header_bg_b);
+    border: 1px solid @selected_bg_insensitive;
+    box-shadow: 0 -1px @button_border_disabled;
+    border-bottom-color: @button_border_disabled;
+    border-width: 1px 0 1px 0;
+    margin: -3px -3px 3px -3px;
+}
+
+calendar label.day-number
+{
+    margin: 3px;
+}
+
+calendar label.today
+{
+    background-color: @list_cell_bg_normal;
+    color: @list_cell_fg_hover;
+}
+
+calendar label:selected
+{
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
     color: @theme_selected_fg_color;
-}
-
-calendar > grid > label.other-month
-{
-    opacity: 0.40;
-}
-
-calendar > grid > label:selected
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-calendar > grid > label:selected:backdrop
-{
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
 }
 
 /* GtkExpander */
@@ -2553,7 +2570,8 @@ scrolledwindow > overshoot.right
     background: radial-gradient(70% 70% at right center, @selected_bg_insensitive, transparent);
 }
 
-scrolledwindow.frame
+scrolledwindow.frame,
+calendar
 {
     border-radius: 6px;
     border-top-color: @scrolledwindow_border_a;
