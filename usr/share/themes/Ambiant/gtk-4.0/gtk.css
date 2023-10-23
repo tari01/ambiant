@@ -2188,28 +2188,6 @@ columnview > header > button sort-indicator.descending
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-/* view expander */
-
-treeview.expander, /* DEPRECATED */
-columnview.expander
-{
-    min-width: 16px;
-    min-height: 16px;
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-}
-
-treeview.expander:dir(rtl), /* DEPRECATED */
-columnview.expander:dir(rtl)
-{
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-}
-
-treeview.expander:checked, /* DEPRECATED */
-columnview.expander:checked
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
 /* view child */
 
 gridview > child,
@@ -2409,7 +2387,7 @@ calendar label.day-number
 
 calendar label.today
 {
-    background-color: @list_cell_bg_normal;
+    background-image: image(@list_cell_bg_normal);
     color: @list_cell_fg_hover;
 }
 
@@ -2419,26 +2397,41 @@ calendar label:selected
     color: @theme_selected_fg_color;
 }
 
-/* GtkExpander */
+/* expander */
 
-expander-widget > box > title
+expander-widget > box > title,
+listview > row treeexpander
 {
-    color: @theme_fg_color;
+    border-spacing: 6px;
 }
 
-expander-widget > box > title > expander
+popover expander-widget > box > title
+{
+    color: @wm_title;
+}
+
+treeview.expander, /* DEPRECATED */
+columnview.expander,
+expander-widget > box > title > expander,
+listview > row treeexpander > expander
 {
     min-width: 16px;
     min-height: 16px;
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
-expander-widget > box > title > expander:dir(rtl)
+treeview.expander:dir(rtl), /* DEPRECATED */
+columnview.expander:dir(rtl),
+expander-widget > box > title > expander:dir(rtl),
+listview > row treeexpander > expander:dir(rtl)
 {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
-expander-widget > box > title > expander:checked
+treeview.expander:checked, /* DEPRECATED */
+columnview.expander:checked,
+expander-widget > box > title > expander:checked,
+listview > row treeexpander > expander:checked
 {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
@@ -2721,30 +2714,6 @@ listview > row box
 listview > row > cell
 {
     padding: 4px 12px 4px 0;
-}
-
-listview > row treeexpander > expander
-{
-    min-width: 16px;
-    min-height: 16px;
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-    margin-right: 3px;
-}
-
-listview > row treeexpander > expander:dir(rtl)
-{
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-    margin-left: 3px;
-}
-
-listview > row treeexpander > expander:checked
-{
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
-listview > row:selected treeexpander > expander:hover
-{
-    color: @theme_fg_color;
 }
 
 listview.separators.horizontal > row
@@ -3104,11 +3073,6 @@ popover > arrow
 {
     background-color: @popover_bg;
     border: 1px solid @popover_border;
-}
-
-popover expander-widget > box > title
-{
-    color: @wm_title;
 }
 
 popover separator
