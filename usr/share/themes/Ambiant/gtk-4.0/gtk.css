@@ -2476,21 +2476,17 @@ menubar > item > popover > contents
     margin-left: 0;
 }
 
-/* GtkTooltip */
+/* tooltip */
 
 tooltip
 {
     border-radius: 5px;
-    border-width: 1px;
-    border-color: @tooltip_border;
-    border-style: solid;
-    background-color: @tooltip_bg;
-    background-clip: padding-box;
+    border: 1px solid @tooltip_border;
+    background-image: image(@tooltip_bg);
     color: @tooltip_fg;
-    padding: 6px 10px;
+    padding: 6px;
     text-shadow: 1px 1px @tooltip_fg_shadow;
     margin: 2px;
-    box-shadow: 0 1px 2px @wm_shadow;
 }
 
 /* GtkSpinner */
