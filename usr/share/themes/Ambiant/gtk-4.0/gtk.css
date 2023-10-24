@@ -2499,28 +2499,16 @@ tooltip
     }
 }
 
-spinner
-{
-    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
-    color: @theme_selected_bg_color;
-    background: none;
-    opacity: 0;
-}
-
 spinner:checked
 {
+    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
     animation: spin 1s linear infinite;
-    opacity: 1;
+    color: @theme_selected_bg_color;
 }
 
 spinner:checked:backdrop
 {
     color: @theme_unfocused_fg_color;
-}
-
-spinner:checked:disabled
-{
-    opacity: 0.5;
 }
 
 /* GtkScrolledWindow */
