@@ -436,7 +436,8 @@ text > placeholder
 
 selection,
 treeview:selected, /* DEPRECATED */
-columnview:selected
+columnview:selected,
+list > row:selected
 {
     color: @theme_selected_fg_color;
     background-image: image(@theme_selected_bg_color);
@@ -446,7 +447,8 @@ columnview:selected
 selection:backdrop,
 treeview:selected:backdrop, /* DEPRECATED */
 columnview:selected:backdrop,
-calendar label:selected:backdrop
+calendar label:selected:backdrop,
+list > row:selected:backdrop
 {
     background-image: image(@list_cell_bg_selected_insensitive);
     background-color: @list_cell_bg_selected_insensitive;
@@ -1604,29 +1606,29 @@ scrollbar.horizontal
 scrollbar.top
 {
     border-bottom: 1px solid @borders;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 scrollbar.bottom
 {
     border-top: 1px solid @borders;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 scrollbar.left
 {
     border-right: 1px solid @borders;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 scrollbar.right
 {
     border-left: 1px solid @borders;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering)
@@ -2125,7 +2127,8 @@ gridview,
 iconview, /* DEPRECATED*/
 textview,
 treeview, /* DEPRECATED*/
-columnview
+columnview,
+list
 {
     background-image: image(@theme_base_color);
     color: @theme_text_color;
@@ -2138,7 +2141,8 @@ iconview /* DEPRECATED*/
 }
 
 popover textview,
-popover treeview /* DEPRECATED */
+popover treeview, /* DEPRECATED */
+popover list
 {
     background-image: image(@popover_entry_bg);
     color: @wm_title;
@@ -2146,7 +2150,9 @@ popover treeview /* DEPRECATED */
 
 gridview:disabled,
 iconview:disabled, /* DEPRECATED*/
-textview:disabled
+textview:disabled,
+list:disabled,
+list > row:disabled
 {
     color: @textview_fg_disabled;
     background-image: image(@textview_bg_disabled);
@@ -2166,7 +2172,7 @@ scrolledwindow.frame > listview,
 scrolledwindow.frame > viewport,
 scrolledwindow.frame > viewport > list
 {
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 /* view header button */
@@ -2199,13 +2205,20 @@ columnview > header > button sort-indicator.descending
 /* view child */
 
 gridview > child,
+list > row
+{
+    padding: 6px;
+}
+
+gridview > child,
 iconview .cell /* DEPRECATED*/
 {
     border-radius: 6px;
 }
 
 gridview > child:hover,
-iconview .cell:hover /* DEPRECATED*/
+iconview .cell:hover, /* DEPRECATED*/
+list > row:hover:not(:selected)
 {
     background-image: image(@list_cell_bg_normal);
     color: @list_cell_fg_hover;
@@ -2229,11 +2242,6 @@ textview
 /* gridview */
 
 gridview
-{
-    padding: 6px;
-}
-
-gridview > child
 {
     padding: 6px;
 }
@@ -2342,7 +2350,7 @@ calendar
 
 calendar header
 {
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     background-image: linear-gradient(to bottom, @columnview_header_button_bg_a, @calendar_header_bg_b);
 }
 
@@ -2366,8 +2374,8 @@ calendar button:active
 calendar grid
 {
     background-image: image(@theme_base_color);
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 3px;
 }
 
@@ -2525,7 +2533,7 @@ scrolledwindow junction
 {
     background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
     border-left: 1px solid @borders;
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 5px;
 }
 
 scrolledwindow > overshoot.top
@@ -2566,64 +2574,19 @@ popover scrolledwindow.frame
     background-image: image(@popover_entry_bg);
 }
 
-/* GtkListBox */
+/* list */
 
-list
+list.separators > row:not(:first-child)
 {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
-}
-
-list:disabled
-{
-    color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
-}
-
-list > row
-{
-    padding: 6px;
-}
-
-list > row:selected
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-list > row:hover:not(:selected)
-{
-    background-color: @list_cell_bg_normal;
-    color: @list_cell_fg_hover;
-}
-
-list > row:disabled
-{
-    color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
-}
-
-list > row:selected:backdrop
-{
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
-}
-
-list > separator
-{
-    margin: 4px 5px 2px 5px;
-    border-color: @selected_bg_insensitive;
-    border-bottom-color: @separator_border_normal;
-    background: none;
-    min-height: 0;
+    border-top: 1px solid @selected_bg_insensitive;
 }
 
 list.navigation-sidebar
 {
-    background-color: @scrollbar_trough;
+    background-image: image(@scrollbar_trough);
     text-shadow: 0 1px @list_sidebar_fg_shadow;
-    border: none;
-    padding: 0 2px 2px 2px;
+    padding: 6px;
+    border-right: 1px solid @selected_bg_insensitive;
 }
 
 list.navigation-sidebar:backdrop
@@ -2634,22 +2597,31 @@ list.navigation-sidebar:backdrop
 
 list.navigation-sidebar > row
 {
-    padding: 0;
-    margin: 2px 0 0 0;
-    border-radius: 3px;
-    min-height: 28px;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+list.navigation-sidebar > row:hover
+{
+    background-image: none;
+}
+
+list.navigation-sidebar > row:hover:backdrop
+{
+    color: @list_sidebar_fg_inactive;
 }
 
 list.navigation-sidebar > row:selected
 {
     text-shadow: 0 1px @list_cell_border;
+    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
 }
 
 list.navigation-sidebar > row:selected:backdrop
 {
-    background-image: linear-gradient(to bottom, @list_sidebar_row_selected_inactive_a, @list_sidebar_row_selected_inactive_b);
-    border-top-color: @list_sidebar_row_border_selected_inactive;
     text-shadow: 0 1px @trough_bg_disabled;
+    background-image: image(@list_cell_bg_selected_insensitive);
+    color: @theme_fg_color;
 }
 
 list.navigation-sidebar > row > revealer > box
@@ -2657,7 +2629,7 @@ list.navigation-sidebar > row > revealer > box
     border-spacing: 6px;
 }
 
-/* GtkListView */
+/* listview */
 
 listview
 {
@@ -3086,26 +3058,6 @@ popover box.circular-buttons button.circular
 {
     padding: 10px;
     -gtk-icon-size: 32px;
-}
-
-popover list
-{
-    background-color: transparent;
-}
-
-popover list > row
-{
-    border-radius: 3px;
-    padding: 0;
-    color: @wm_title;
-}
-
-popover list > row:hover:not(:selected)
-{
-    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
-    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
-    color: @theme_selected_fg_color;
-    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover listview
