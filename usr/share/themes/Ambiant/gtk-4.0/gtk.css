@@ -1584,7 +1584,7 @@ paned > separator
     background-image: image(@theme_bg_color);
 }
 
-/* GtkScrollbar */
+/* scrollbar */
 
 scrollbar
 {
@@ -1604,21 +1604,29 @@ scrollbar.horizontal
 scrollbar.top
 {
     border-bottom: 1px solid @borders;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 scrollbar.bottom
 {
     border-top: 1px solid @borders;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 scrollbar.left
 {
     border-right: 1px solid @borders;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
 scrollbar.right
 {
     border-left: 1px solid @borders;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering)
@@ -2511,52 +2519,43 @@ spinner:checked:backdrop
     color: @theme_unfocused_fg_color;
 }
 
-/* GtkScrolledWindow */
+/* scrolledwindow */
 
 scrolledwindow junction
 {
-    background-image: none;
-    background-color: @theme_bg_color;
-    border-width: 0;
-    border-radius: 0;
-    border-image: none;
-    box-shadow: none;
     background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
     border-left: 1px solid @borders;
+    border-bottom-right-radius: 6px;
 }
 
 scrolledwindow > overshoot.top
 {
-    background: radial-gradient(70% 70% at center top, @selected_bg_insensitive, transparent);
+    background: radial-gradient(60% 20% at center top, @linked_button_first_bg_shadow, transparent);
 }
 
 scrolledwindow > overshoot.bottom
 {
-    background: radial-gradient(70% 70% at center bottom, @selected_bg_insensitive, transparent);
+    background: radial-gradient(60% 20% at center bottom, @linked_button_first_bg_shadow, transparent);
 }
 
 scrolledwindow > overshoot.left
 {
-    background: radial-gradient(70% 70% at left center, @selected_bg_insensitive, transparent);
+    background: radial-gradient(60% 20% at left center, @linked_button_first_bg_shadow, transparent);
 }
 
 scrolledwindow > overshoot.right
 {
-    background: radial-gradient(70% 70% at right center, @selected_bg_insensitive, transparent);
+    background: radial-gradient(60% 20% at right center, @linked_button_first_bg_shadow, transparent);
 }
 
 scrolledwindow.frame,
 calendar
 {
     border-radius: 6px;
+    border: 1px solid @scrolledwindow_border_b;
     border-top-color: @scrolledwindow_border_a;
-    border-right-color: @scrolledwindow_border_b;
     border-bottom-color: @scrolledwindow_border_c;
-    border-left-color: @scrolledwindow_border_b;
-    border-style: solid;
-    border-width: 1px;
-    border-image: none;
-    background: none;
+    background-image: image(@theme_base_color);
 }
 
 popover scrolledwindow.frame
@@ -2564,6 +2563,7 @@ popover scrolledwindow.frame
     border-color: @entry_border_toolbar_normal_a;
     border-top-color: @entry_border_toolbar_normal_b;
     border-bottom-color: @entry_border_toolbar_normal_c;
+    background-image: image(@popover_entry_bg);
 }
 
 /* GtkListBox */
