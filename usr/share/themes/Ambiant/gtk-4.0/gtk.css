@@ -2750,9 +2750,7 @@ searchbar > revealer > box
 
 searchbar > revealer > box:backdrop
 {
-    background-image: none;
-    background-color: @wm_bg_a;
-    box-shadow: none;
+    background-image: image(@wm_bg_a);
     border-top-color: @wm_bg_a;
     border-bottom-color: @button_textshadow_toolbar_backdrop;
 }
