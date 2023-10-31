@@ -409,7 +409,7 @@ separator.vertical
     border-width: 0 1px 0 1px;
 }
 
-/* GtkLabel */
+/* label */
 
 label > link
 {
@@ -418,10 +418,21 @@ label > link
 }
 
 label.dim-label,
-calendar label.other-month
+calendar label.other-month,
+label.subtitle
 {
     -gtk-icon-filter: opacity(0.5);
     opacity: 0.5;
+}
+
+label.title
+{
+    font-weight: bold;
+}
+
+label.subtitle
+{
+    font-size: smaller;
 }
 
 /* GtkText */
@@ -2658,86 +2669,12 @@ window.dialog fontchooser grid > scrolledwindow > listview > row
     font-size: 18pt;
 }
 
-/* GtkWindowHandle */
+/* windowhandle */
 
-windowhandle > box
-{
-    border-spacing: 8px;
-}
-
-windowhandle box.start
-{
-    border-spacing: 8px;
-}
-
+windowhandle box.start,
 windowhandle box.end
 {
     border-spacing: 8px;
-}
-
-windowhandle separator
-{
-    border-color: @separator_border_toolbar_a;
-    border-bottom-color: @separator_border_toolbar_b;
-    border-right-color: @separator_border_toolbar_b;
-}
-
-windowhandle label.title
-{
-    font-weight: bold;
-}
-
-windowhandle label.subtitle
-{
-    font-size: smaller;
-    opacity: 0.5;
-}
-
-windowhandle entry > progress > trough > progress
-{
-    border-radius: 2px;
-    border-width: 0 0 2px;
-    border-color: @theme_selected_bg_color;
-    border-style: solid;
-}
-
-windowhandle .linked > row
-{
-    border-radius: 0;
-    border-image-width: 10px 0 10px 0;
-    border-width: 1px 0 1px 0;
-    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @button_textshadow_toolbar_backdrop;
-}
-
-windowhandle .linked > row:selected
-{
-    box-shadow: inset 1px 0 @inset_dark;
-}
-
-windowhandle .linked > row:first-child
-{
-    box-shadow: inset -1px 0 @button_textshadow_toolbar_backdrop;
-    border-image-width: 10px 0 10px 12px;
-    border-width: 1px 0 1px 1px;
-    border-radius: 8px 0 0 8px;
-}
-
-windowhandle .linked > row:first-child:selected
-{
-    box-shadow: inset 0 1px 1px @linked_button_first_bg_shadow;
-}
-
-windowhandle .linked > row:last-child
-{
-    border-image-width: 10px 12px 10px 0;
-    border-radius: 0 8px 8px 0;
-    border-width: 1px 1px 1px 0;
-    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a;
-}
-
-windowhandle .linked > row:active
-{
-    box-shadow: none;
 }
 
 /* GtkWindowControls */
@@ -3428,7 +3365,8 @@ shortcut > .keycap
     text-shadow: 0 -1px @wm_title_shadow;
 }*/
 
-.toolbar separator
+.toolbar separator,
+windowhandle separator
 {
     border-width: 0 1px 0 1px;
     border-color: @separator_border_toolbar_a;
