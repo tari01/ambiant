@@ -2677,7 +2677,12 @@ windowhandle box.end
     border-spacing: 8px;
 }
 
-/* GtkWindowControls */
+/* windowcontrols */
+
+windowcontrols
+{
+    border-spacing: 3px;
+}
 
 windowcontrols > button
 {
@@ -2734,7 +2739,7 @@ windowcontrols > button > image
     -gtk-icon-style: symbolic;
 }
 
-/* GtkSearchBar */
+/* searchbar */
 
 searchbar > revealer > box
 {
