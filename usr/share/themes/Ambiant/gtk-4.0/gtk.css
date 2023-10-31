@@ -2755,61 +2755,49 @@ searchbar > revealer > box:backdrop
     border-bottom-color: @button_textshadow_toolbar_backdrop;
 }
 
-/* GtkInfoBar - DEPRECATED */
+/* infobar */
 
-infobar > revealer > box
+infobar > revealer > box /* DEPRECATED */
 {
-    padding: 9px 8px 8px 8px;
+    padding: 6px;
+    border-spacing: 6px;
 }
 
-infobar.action > revealer > box
+infobar > revealer > box > box:nth-child(2) /* DEPRECATED */
 {
-    padding: 6px 6px 6px 8px;
-    border-spacing: 12px;
+    padding-left: 2px;
 }
 
-infobar.info > revealer > box
+infobar.info > revealer > box /* DEPRECATED */
 {
-    border-style: solid;
-    border-width: 1px;
     background-image: linear-gradient(to bottom, @info_bg_a, @info_bg_b);
     color: @info_fg;
-    border-color: @info_border;
-    border-bottom-color: @info_border_b;
-    box-shadow: inset 1px 0 @info_bg_shadow_a, inset -1px 0 @info_bg_shadow_a, inset 0 1px @info_bg_shadow_b, inset 0 -1px @info_bg_a;
+    border-bottom: 1px solid @info_border_b;
+    box-shadow: inset 0 1px @info_bg_shadow_b, inset 0 -1px @info_bg_a;
 }
 
-infobar.warning > revealer > box
+infobar.warning > revealer > box /* DEPRECATED */
 {
-    border-style: solid;
-    border-width: 1px;
     background-image: linear-gradient(to bottom, @warning_bg_a, @warning_bg_b);
     color: @warning_fg;
-    border-color: @levelbar_block_border_low;
-    border-bottom-color: @warning_border_b;
-    box-shadow: inset 1px 0 @warning_boxshadow_a, inset -1px 0 @warning_boxshadow_a, inset 0 1px @warning_boxshadow_b, inset 0 -1px @warning_bg_a;
+    border-bottom: 1px solid @warning_border_b;
+    box-shadow: inset 0 1px @warning_boxshadow_b, inset 0 -1px @warning_bg_a;
 }
 
-infobar.question > revealer > box
+infobar.question > revealer > box /* DEPRECATED */
 {
-    border-style: solid;
-    border-width: 1px;
     background-image: linear-gradient(to bottom, @question_bg_a, @question_bg_b);
     color: @question_fg;
-    border-color: @question_border_a;
-    border-bottom-color: @question_border_b;
-    box-shadow: inset 1px 0 @question_bg_shadow_a, inset -1px 0 @question_bg_shadow_a, inset 0 1px @question_bg_shadow_b, inset 0 -1px @question_bg_a;
+    border-bottom: 1px solid @question_border_b;
+    box-shadow: inset 0 1px @question_bg_shadow_b, inset 0 -1px @question_bg_a;
 }
 
-infobar.error > revealer > box
+infobar.error > revealer > box /* DEPRECATED */
 {
-    border-style: solid;
-    border-width: 1px;
     background-image: linear-gradient(to bottom, @error_bg_a, @error_bg_b);
     color: @tooltip_fg;
-    border-color: @error_border_a;
-    border-bottom-color: @error_border_b;
-    box-shadow: inset 1px 0 @error_bg_shadow_a, inset -1px 0 @error_bg_shadow_a, inset 0 1px @error_bg_shadow_b, inset 0 -1px @error_bg_a;
+    border-bottom: 1px solid @error_border_b;
+    box-shadow: inset 0 1px @error_bg_shadow_b, inset 0 -1px @error_bg_a;
 }
 
 /* GtkDropDown */
