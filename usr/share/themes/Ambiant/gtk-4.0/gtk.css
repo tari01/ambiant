@@ -437,7 +437,8 @@ text > placeholder
 selection,
 treeview:selected, /* DEPRECATED */
 columnview:selected,
-list > row:selected
+list > row:selected,
+listview > row:selected
 {
     color: @theme_selected_fg_color;
     background-image: image(@theme_selected_bg_color);
@@ -448,7 +449,8 @@ selection:backdrop,
 treeview:selected:backdrop, /* DEPRECATED */
 columnview:selected:backdrop,
 calendar label:selected:backdrop,
-list > row:selected:backdrop
+list > row:selected:backdrop,
+listview > row:selected:backdrop
 {
     background-image: image(@list_cell_bg_selected_insensitive);
     background-color: @list_cell_bg_selected_insensitive;
@@ -2128,7 +2130,8 @@ iconview, /* DEPRECATED*/
 textview,
 treeview, /* DEPRECATED*/
 columnview,
-list
+list,
+listview
 {
     background-image: image(@theme_base_color);
     color: @theme_text_color;
@@ -2142,7 +2145,8 @@ iconview /* DEPRECATED*/
 
 popover textview,
 popover treeview, /* DEPRECATED */
-popover list
+popover list,
+popover listview
 {
     background-image: image(@popover_entry_bg);
     color: @wm_title;
@@ -2152,7 +2156,8 @@ gridview:disabled,
 iconview:disabled, /* DEPRECATED*/
 textview:disabled,
 list:disabled,
-list > row:disabled
+list > row:disabled,
+listview > row:disabled
 {
     color: @textview_fg_disabled;
     background-image: image(@textview_bg_disabled);
@@ -2204,6 +2209,12 @@ columnview > header > button sort-indicator.descending
 
 /* view child */
 
+gridview > child box,
+listview > row box
+{
+    border-spacing: 6px;
+}
+
 gridview > child,
 list > row
 {
@@ -2218,7 +2229,8 @@ iconview .cell /* DEPRECATED*/
 
 gridview > child:hover,
 iconview .cell:hover, /* DEPRECATED*/
-list > row:hover:not(:selected)
+list > row:hover:not(:selected),
+listview > row:hover:not(:selected)
 {
     background-image: image(@list_cell_bg_normal);
     color: @list_cell_fg_hover;
@@ -2249,11 +2261,6 @@ gridview
 gridview > child > box
 {
     margin: 6px;
-}
-
-gridview > child box
-{
-    border-spacing: 6px;
 }
 
 /* treeview */
@@ -2631,48 +2638,24 @@ list.navigation-sidebar > row > revealer > box
 
 /* listview */
 
-listview
+listview > row
 {
-    background-color: @theme_base_color;
-}
-
-listview > row:selected
-{
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
-}
-
-listview > row:hover:not(:selected)
-{
-    background-color: @list_cell_bg_normal;
-    color: @list_cell_fg_hover;
-}
-
-listview > row:disabled
-{
-    color: @textview_fg_disabled;
-    background-color: @textview_bg_disabled;
-}
-
-listview > row:selected:backdrop
-{
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
-}
-
-listview > row box
-{
-    border-spacing: 6px;
+    padding: 4px;
 }
 
 listview > row > cell
 {
-    padding: 4px 12px 4px 0;
+    padding: 0 4px;
 }
 
 listview.separators.horizontal > row
 {
     border-left: 1px solid @selected_bg_insensitive;
+}
+
+window.dialog fontchooser grid > scrolledwindow > listview > row
+{
+    font-size: 18pt;
 }
 
 /* GtkWindowHandle */
@@ -2716,66 +2699,6 @@ windowhandle entry > progress > trough > progress
     border-width: 0 0 2px;
     border-color: @theme_selected_bg_color;
     border-style: solid;
-}
-
-windowhandle listview
-{
-    background: transparent;
-    border-radius: 8px;
-}
-
-windowhandle listview > row
-{
-    border: 1px solid transparent;
-    border-radius: 8px;
-    border-image-width: 10px 12px 10px 12px;
-    border-image-slice: 10 12 10 12;
-    border-image-repeat: stretch;
-    background: transparent;
-    color: @wm_title;
-    text-shadow: 0 -1px @wm_title_shadow;
-    border-color: @button_border_toolbar_normal;
-    padding: 9px;
-}
-
-windowhandle listview > row:hover:not(:selected)
-{
-    color: @wm_title;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
-    border-color: @button_border_toolbar_normal;
-}
-
-windowhandle listview > row:selected
-{
-    color: @wm_title;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
-    border-color: @button_border_toolbar_normal;
-}
-
-windowhandle listview > row:backdrop
-{
-    background-color: transparent;
-    color: @fg_dark_insensitive;
-    text-shadow: 0 -1px @button_textshadow_toolbar_backdrop;
-    border-color: @button_border_toolbar_normal;
-}
-
-windowhandle listview > row:hover:backdrop
-{
-    color: @fg_dark_insensitive;
-    border-color: @button_border_toolbar_normal;
-    background-color: transparent;
-}
-
-windowhandle listview > row:selected:backdrop
-{
-    color: @fg_dark_insensitive;
-    background-color: transparent;
-    border-color: @button_border_toolbar_active_a;
-    border-top-color: @button_border_toolbar_active_b;
-    border-bottom-color: @button_border_toolbar_active_c;
 }
 
 windowhandle .linked > row
@@ -3058,25 +2981,6 @@ popover box.circular-buttons button.circular
 {
     padding: 10px;
     -gtk-icon-size: 32px;
-}
-
-popover listview
-{
-    background-color: transparent;
-}
-
-popover listview > row
-{
-    border-radius: 3px;
-    padding: 5px;
-}
-
-popover listview > row:hover
-{
-    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
-    border-image: linear-gradient(to bottom, @list_cell_border, @list_cell_border) 1;
-    color: @theme_selected_fg_color;
-    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover modelbutton
@@ -3402,12 +3306,6 @@ window.dialog colorchooser overlay > grid
 window.dialog fontchooser
 {
     margin: -5px -4px -8px -4px;
-}
-
-window.dialog fontchooser grid > scrolledwindow > listview > row
-{
-    font-size: 18pt;
-    padding: 4px 0 3px 1px;
 }
 
 /* GtkFileDialog */
