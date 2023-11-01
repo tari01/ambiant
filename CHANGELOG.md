@@ -1,3 +1,30 @@
+# 23.11.1
+
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix infobar (596d37a)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix searchbar (2f3fb46)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix windowcontrols (83d6794)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix windowhandle (6405825)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix listview (fa1a5d3)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix list (d51c0d7)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix scrolledwindow (ae574e8)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix spinner (d53740a)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix tooltip (13251e8)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix menubar (50a907d)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix expander (a4d9f97)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix calendar (8dddab8)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix video overlay image (40e957b)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix levelbar block (9ece5bb)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix progressbar (53bb56a)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix columnview (e668862)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Drop assets and style editablelabel using css only (5e553dd)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix editablelabel (bc2c680)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix treeview (a6d2015)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix textview (443053a)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix gridview and iconview (2fe3697)
+ - Adjust GTK4 scale marks and indicators (7c7bb42)
+ - Drop assets and use only CSS for GTK4 scale sliders (56a2751)
+ - Drop assets and use only CSS for GTK4 troughs and highlights (e271246)
+
 # 23.10.1
 
  - Drop GtkCheckButton assets and draw controls in CSS (2810aef)
