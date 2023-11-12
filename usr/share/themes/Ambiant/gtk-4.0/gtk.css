@@ -449,7 +449,8 @@ selection,
 treeview:selected, /* DEPRECATED */
 columnview:selected,
 list > row:selected,
-listview > row:selected
+listview > row:selected,
+flowboxchild:selected
 {
     color: @theme_selected_fg_color;
     background-image: image(@theme_selected_bg_color);
@@ -461,7 +462,8 @@ treeview:selected:backdrop, /* DEPRECATED */
 columnview:selected:backdrop,
 calendar label:selected:backdrop,
 list > row:selected:backdrop,
-listview > row:selected:backdrop
+listview > row:selected:backdrop,
+flowboxchild:selected:backdrop
 {
     background-image: image(@list_cell_bg_selected_insensitive);
     background-color: @list_cell_bg_selected_insensitive;
@@ -2805,7 +2807,7 @@ statusbar /* DEPRECATED */
     padding: 6px;
 }
 
-/* GtkFlowBoxChild */
+/* flowboxchild */
 
 flowboxchild
 {
@@ -2815,15 +2817,11 @@ flowboxchild
 
 flowboxchild:selected
 {
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
     outline-color: @theme_selected_bg_color;
 }
 
 flowboxchild:selected:backdrop
 {
-    background-color: @list_cell_bg_selected_insensitive;
-    color: @theme_fg_color;
     outline-color: @list_cell_bg_selected_insensitive;
 }
 
