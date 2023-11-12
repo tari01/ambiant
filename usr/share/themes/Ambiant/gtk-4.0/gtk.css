@@ -2800,11 +2800,9 @@ infobar.error > revealer > box /* DEPRECATED */
     box-shadow: inset 0 1px @error_bg_shadow_b, inset 0 -1px @error_bg_a;
 }
 
-/* GtkStatusbar - DEPRECATED */
-
-statusbar
+statusbar /* DEPRECATED */
 {
-    padding: 12px 11px 11px 14px;
+    padding: 6px;
 }
 
 /* GtkFlowBoxChild */
