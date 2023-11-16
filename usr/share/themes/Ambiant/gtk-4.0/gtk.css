@@ -1329,7 +1329,7 @@ combobox arrow
     min-width: 16px;
 }
 
-/* GtkHeaderBar */
+/* headerbar */
 
 headerbar
 {
@@ -3002,68 +3002,56 @@ popover modelbutton:disabled > accelerator
     background-image: image(@list_cell_bg_normal);
 }
 
-/* GtkStackSwitcher */
+/* stackswitcher */
 
 stackswitcher.circular
 {
     border-spacing: 6px;
 }
 
-/* GtkWindow */
+/* window */
 
 window
 {
-    box-shadow: none;
     color: @theme_fg_color;
-    background-color: @theme_bg_color;
+    background-image: image(@theme_bg_color);
     border: 1px none @wm_border;
+    background-clip: padding-box;
+    background-origin: padding-box;
+}
+
+window:backdrop
+{
+    color: @theme_unfocused_fg_color;
 }
 
 window.csd
 {
-    border-radius: 7px 7px 0 0;
+    border-radius: 6px 6px 0 0;
     box-shadow: 0 3px 15px 1px @wm_shadow;
     margin: 10px;
-    background-image: linear-gradient(@wm_bg_a 0, @wm_bg_a 10px, @theme_bg_color 11px);
     border-style: solid;
 }
 
-window.solid-csd
-{
-    border-style: solid;
-}
-
+window.solid-csd,
 window.ssd
 {
     border-style: solid;
 }
 
-window.maximized
-{
-    border-radius: 0;
-    border-width: 0;
-    box-shadow: none;
-    margin: 0;
-}
-
+window.maximized,
 window.fullscreen
 {
     border-radius: 0;
-    border-width: 0;
+    border-style: none;
     box-shadow: none;
     margin: 0;
-    background-image: none;
 }
 
 window.tiled
 {
     box-shadow: none;
     margin: 0;
-}
-
-window:backdrop
-{
-    color: @theme_unfocused_fg_color;
 }
 
 /* GtkDialog - DEPRECATED */
@@ -3243,11 +3231,6 @@ shortcut > .keycap
     border-bottom-color: @button_textshadow_toolbar_backdrop;
     color: @fg_dark_insensitive;
 }
-
-/*.toolbar :disabled
-{
-    text-shadow: 0 -1px @wm_title_shadow;
-}*/
 
 /* OSD */
 
