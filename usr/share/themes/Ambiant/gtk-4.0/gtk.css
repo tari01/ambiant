@@ -2954,47 +2954,50 @@ popover modelbutton:disabled > accelerator
     text-shadow: 0 -1px @wm_title_shadow;
 }
 
-/* GtkEmojiChooser */
+/* emoji-picker */
 
-popover.emoji-picker > contents
+.emoji-picker > contents
 {
-    padding: 0;
+    padding: 0px;
 }
 
-popover.emoji-picker > contents > box
+.emoji-picker .emoji-searchbar
 {
-    margin: 0;
-}
-
-popover.emoji-picker .emoji-searchbar
-{
-    padding: 6px;
-    border-spacing: 6px;
-    box-shadow: 0 0 0 1px @popover_separator_border;
+    padding-bottom: 6px;
+    box-shadow: 0 1px @popover_separator_border;
     border-bottom: 1px solid @button_textshadow_toolbar_backdrop;
 }
 
-popover.emoji-picker .emoji-toolbar
+.emoji-picker .emoji-toolbar
 {
-    padding: 3px;
+    padding-top: 6px;
     border-top: 1px solid @popover_separator_border;
-    box-shadow: 0 0 0 1px @button_textshadow_toolbar_backdrop;
+    box-shadow: 0 -1px @button_textshadow_toolbar_backdrop;
 }
 
-popover button.emoji-section
+.emoji-picker .emoji-toolbar flowboxchild:not(:first-child)
+{
+    padding-left: 6px;
+}
+
+.emoji-picker .emoji-section
 {
     -gtk-icon-size: 22px;
-    margin: 2px;
 }
 
-popover.emoji-picker emoji
+.emoji-picker viewport
+{
+    margin: -3px -3px 3px -3px;
+}
+
+.emoji-picker emoji
 {
     font-size: x-large;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 6px;
+    border-radius: 4px;
 }
 
-popover.emoji-picker emoji:hover
+.emoji-picker emoji:hover
 {
     background-image: image(@list_cell_bg_normal);
 }
