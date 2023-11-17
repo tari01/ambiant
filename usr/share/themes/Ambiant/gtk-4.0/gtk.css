@@ -382,6 +382,11 @@ popover *
     -gtk-icon-size: 32px;
 }
 
+.aboutdialog .large-icons
+{
+    -gtk-icon-size: 128px;
+}
+
 .monospace
 {
     font-family: monospace;
@@ -454,7 +459,8 @@ separator.vertical,
 
 /* label */
 
-label > link
+label > link,
+window.aboutdialog > link
 {
     color: @theme_selected_bg_color;
     text-decoration: underline;
@@ -471,6 +477,11 @@ label.subtitle
 label.title
 {
     font-weight: bold;
+}
+
+.dialog.message label.title
+{
+    font-size: 12pt;
 }
 
 popover label.title
@@ -531,7 +542,8 @@ editablelabel > stack > text
 /* GtkButton */
 
 button,
-scale slider
+scale slider,
+colorswatch#add-color-button
 {
     padding: 6px;
     min-height: 18px;
@@ -3054,11 +3066,9 @@ window.tiled
     margin: 0;
 }
 
-/* GtkDialog - DEPRECATED */
-
 window.dialog:not(.csd)
 {
-    padding: 12px;
+    padding: 8px;
 }
 
 window.dialog .dialog-action-area
@@ -3072,71 +3082,50 @@ window.dialog .dialog-action-area > button
     min-width: 70px;
 }
 
-/* GtkAboutDialog */
-
-window.aboutdialog image.large-icons
-{
-    -gtk-icon-size: 128px;
-}
-
-window.aboutdialog > box > box > stack > box > scrolledwindow > viewport
-{
-    background-color: @theme_base_color;
-}
-
-window.aboutdialog > link
-{
-    color: @theme_selected_bg_color;
-    text-decoration: underline;
-}
-
-/* GtkMessageDialog - DEPRECATED */
-
-window.dialog.message .title
-{
-    font-weight: bold;
-    font-size: 12pt;
-}
-
-/* GtkColorDialog */
-
 window.dialog colorchooser
 {
-    margin: -9px -9px -10px -9px;
+    margin: -10px;
 }
 
 window.dialog colorchooser overlay > grid
 {
-    margin: 0 -30px 0 -36px;
+    margin: 0 -30px 0 -28px;
 }
 
-/* GtkFontDialog */
+window.dialog colorchooser colorswatch
+{
+    border-radius: 3px;
+}
+
+window.dialog colorchooser colorswatch#editor-color-sample
+{
+    border-radius: 5px;
+}
+
+window.dialog colorchooser colorswatch#add-color-button
+{
+    padding: 0;
+}
 
 window.dialog fontchooser
 {
-    margin: -5px -4px -8px -4px;
+    margin: -5px;
 }
 
-/* GtkFileDialog */
+window.dialog.print drawing paper
+{
+    background-image: image(@theme_base_color);
+    border: 1px solid @borders;
+}
 
 window.dialog filechooser placessidebar
 {
-    border-style: solid;
-    border-width: 1px;
-    border-color: @borders;
+    border: 1px solid @borders;
 }
 
 window.dialog filechooser #pathbarbox
 {
-    background-color: @theme_bg_color;
-}
-
-/* GtkPrintUnixDialog */
-
-window.dialog.print drawing paper
-{
-    background: @theme_base_color;
-    border: 1px solid @borders;
+    background-image: image(@theme_bg_color);
 }
 
 /* GtkAssistant - DEPRECATED */
