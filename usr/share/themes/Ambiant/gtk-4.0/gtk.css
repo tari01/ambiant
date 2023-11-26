@@ -509,7 +509,9 @@ treeview:selected, /* DEPRECATED */
 columnview:selected,
 list > row:selected,
 listview > row:selected,
-flowboxchild:selected
+flowboxchild:selected,
+list.navigation-sidebar > row:selected,
+window.assistant box.sidebar > label.highlight /* DEPRECATED */
 {
     color: @theme_selected_fg_color;
     background-image: image(@theme_selected_bg_color);
@@ -522,7 +524,10 @@ columnview:selected:backdrop,
 calendar label:selected:backdrop,
 list > row:selected:backdrop,
 listview > row:selected:backdrop,
-flowboxchild:selected:backdrop
+flowboxchild:selected:backdrop,
+list.navigation-sidebar > row:selected:backdrop,
+list.navigation-sidebar > row:selected:backdrop:hover,
+window.assistant box.sidebar > label.highlight:backdrop /* DEPRECATED */
 {
     background-image: image(@list_cell_bg_selected_insensitive);
     background-color: @list_cell_bg_selected_insensitive;
@@ -2642,21 +2647,22 @@ list.separators > row:not(:first-child)
     border-top: 1px solid @selected_bg_insensitive;
 }
 
-list.navigation-sidebar
+list.navigation-sidebar,
+window.assistant box.sidebar /* DEPRECATED */
 {
     background-image: image(@scrollbar_trough);
-    text-shadow: 0 1px @list_sidebar_fg_shadow;
     padding: 6px;
     border-right: 1px solid @selected_bg_insensitive;
 }
 
-list.navigation-sidebar:backdrop
+list.navigation-sidebar:backdrop,
+window.assistant box.sidebar:backdrop /* DEPRECATED */
 {
     color: @list_sidebar_fg_inactive;
-    text-shadow: 0 1px @list_sidebar_fg_shadow_inactive;
 }
 
-list.navigation-sidebar > row
+list.navigation-sidebar > row,
+window.assistant box.sidebar > label /* DEPRECATED */
 {
     padding: 6px;
     border-radius: 4px;
@@ -2667,22 +2673,9 @@ list.navigation-sidebar > row:hover
     background-image: none;
 }
 
-list.navigation-sidebar > row:hover:backdrop
+list.navigation-sidebar:backdrop > row:hover
 {
     color: @list_sidebar_fg_inactive;
-}
-
-list.navigation-sidebar > row:selected
-{
-    text-shadow: 0 1px @list_cell_border;
-    background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
-}
-
-list.navigation-sidebar > row:selected:backdrop
-{
-    text-shadow: 0 1px @trough_bg_disabled;
-    background-image: image(@list_cell_bg_selected_insensitive);
-    color: @theme_fg_color;
 }
 
 list.navigation-sidebar > row > revealer > box
@@ -3126,27 +3119,6 @@ window.dialog filechooser placessidebar
 window.dialog filechooser #pathbarbox
 {
     background-image: image(@theme_bg_color);
-}
-
-/* GtkAssistant - DEPRECATED */
-
-window.assistant box.sidebar
-{
-    background-color: @assistant_sidebar_bg;
-    border-right-color: @scale_indicator_bg;
-    border-radius: 0;
-    border-style: solid;
-    border-width: 0 1px 0 0;
-    padding: 12px;
-    color: @assistant_sidebar_fg;
-    text-shadow: 0 1px @columnview_header_button_bg_a;
-    box-shadow: inset -1px 0 @columnview_header_button_border_insesitive_a;
-}
-
-window.assistant box.sidebar > label.highlight
-{
-    color: @theme_fg_color;
-    font-weight: bold;
 }
 
 /* Rubberband */
