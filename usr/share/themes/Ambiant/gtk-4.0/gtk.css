@@ -167,6 +167,7 @@
 @define-color list_sidebar_row_selected_inactive_b shade(@bg_insensitive, 0.86);
 @define-color list_trough_border_a shade(@borders, 0.8);
 @define-color list_trough_border_b shade(@borders, 0.85);
+@define-color menubar_border rgb(48, 47, 44);
 @define-color menubar_fg_shadow shade(@wm_bg_a, 0.6);
 @define-color menubar_fg_shadow_insensitive shade(@wm_bg_a, 0.8);
 @define-color menubar_item_fg_selected shade(@wm_title, 1.1);
@@ -222,6 +223,7 @@
 @define-color scrolledwindow_border_a shade(@theme_bg_color, 0.84);
 @define-color scrolledwindow_border_b shade(@theme_bg_color, 0.76);
 @define-color scrolledwindow_border_c shade(@theme_bg_color, 0.86);
+@define-color searchbar_border rgb(94, 94, 83);
 @define-color selected_bg_insensitive shade(@theme_bg_color, 0.92);
 @define-color separator_border_disabled alpha(shade(@theme_bg_color, 1.26), 0.3);
 @define-color separator_border_normal alpha(shade(@theme_bg_color, 1.26), 0.6);
@@ -252,6 +254,8 @@
 @define-color theme_unfocused_selected_bg_color @theme_selected_bg_color;
 @define-color theme_unfocused_selected_fg_color @theme_selected_fg_color;
 @define-color theme_unfocused_text_color mix(@theme_base_color, @theme_text_color, 0.8);
+@define-color toolbar_border_a rgb(73, 71, 65);
+@define-color toolbar_border_b rgb(68, 66, 61);
 @define-color tooltip_bg rgb(30, 30, 30);
 @define-color tooltip_border shade(@wm_bg_a, 1.8);
 @define-color tooltip_fg rgb(235, 235, 235);
@@ -2525,6 +2529,7 @@ menubar
     color: @wm_title;
     text-shadow: 0 -1px @menubar_fg_shadow;
     padding-top: 2px;
+    border-bottom: 1px solid @menubar_border;
 }
 
 menubar:backdrop
@@ -2780,8 +2785,8 @@ windowcontrols > button > image
 searchbar > revealer > box
 {
     background-image: linear-gradient(to bottom, @button_boxshadow_toolbar_linked_a, @headerbar_bg_maximized);
-    border-bottom: 1px solid @wm_bg_e;
     padding: 6px;
+    border-top: 1px solid @searchbar_border;
 }
 
 searchbar > revealer > box:backdrop
@@ -3163,30 +3168,15 @@ shortcut > .keycap
     text-shadow: 0px -1px 0px @popover_border;
 }
 
-/* Toolbar */
+/* toolbar */
 
 .toolbar
 {
-    background-image: linear-gradient(to bottom, @headerbar_bg_maximized, @button_boxshadow_toolbar_linked_a);
-    border-bottom-color: @wm_border;
-    border-top-color: @wm_bg_e;
-    border-style: solid;
-    border-width: 1px 0 1px 0;
-    border-radius: 0;
-    color: @wm_title;
-    text-shadow: 0 -1px @wm_title_shadow;
-    box-shadow: inset 0 1px @button_bg_toolbar_checked_disabled_a;
-    margin-right: -10px;
-}
-
-.toolbar:backdrop
-{
-    background-image: none;
-    background-color: @wm_bg_a;
-    box-shadow: none;
-    border-top-color: @wm_bg_a;
-    border-bottom-color: @button_textshadow_toolbar_backdrop;
-    color: @fg_dark_insensitive;
+    background-image: linear-gradient(to bottom, @wm_bg_a, @button_boxshadow_toolbar_linked_a);
+    border-top: 1px solid @toolbar_border_a;
+    border-bottom: 1px solid @toolbar_border_b;
+    border-spacing: 6px;
+    padding: 6px;
 }
 
 /* OSD */
