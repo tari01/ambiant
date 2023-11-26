@@ -3125,12 +3125,8 @@ window.dialog filechooser #pathbarbox
 
 rubberband
 {
-    /* TODO: fix colours in treeview */
     background-image: image(@rubberband_bg);
-    border-color: @theme_selected_bg_color;
-    border-radius: 0;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid @theme_selected_bg_color;
 }
 
 /* Shortcuts */
