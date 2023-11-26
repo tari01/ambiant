@@ -3179,9 +3179,10 @@ shortcut > .keycap
     padding: 6px;
 }
 
-/* OSD */
+/* osd */
 
-.osd
+.osd,
+.app-notification
 {
     background-image: image(@osd_bg);
     color: @wm_title;
@@ -3190,15 +3191,10 @@ shortcut > .keycap
     padding: 10px;
 }
 
-/* App notification */
+/* app-notification */
 
 .app-notification
 {
-    background-image: image(@osd_bg);
-    color: @wm_title;
-    text-shadow: 0 -1px @menubar_fg_shadow;
-    border-radius: 7px;
-    padding: 10px;
     border: 1px solid @popover_border;
 }
 
