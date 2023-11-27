@@ -439,15 +439,12 @@ popover separator
     border-color: @button_textshadow_toolbar_backdrop;
     border-bottom-color: @popover_separator_border;
     border-right-color: @popover_separator_border;
-    margin: 0 4px;
+    margin: 0 3px;
 }
 
 popover separator
 {
-    border-color: @button_textshadow_toolbar_backdrop;
-    border-bottom-color: @popover_separator_border;
-    border-right-color: @popover_separator_border;
-    margin: 3px 0;
+    margin: 6px 3px;
 }
 
 separator.horizontal
@@ -555,8 +552,8 @@ scale slider,
 colorswatch#add-color-button
 {
     padding: 6px;
-    min-height: 18px;
-    min-width: 18px;
+    min-height: 23px;
+    min-width: 23px;
     background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     text-shadow: 0 1px @button_fg_shadow;
     border: 1px solid @button_border_normal_a;
@@ -1109,6 +1106,8 @@ list > row button
 
 entry
 {
+    min-height: 23px;
+    min-width: 23px;
     border-radius: 6px;
     border: 1px solid @entry_border_normal_a;
     border-top-color: @entry_border_normal_b;
@@ -1302,8 +1301,8 @@ windowhandle switch:backdrop
 
 switch > slider
 {
-    min-width: 34px;
-    min-height: 26px;
+    min-width: 47px;
+    min-height: 31px;
     border-radius: 5px;
     background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     border: 1px solid @button_border_normal_a;
@@ -1341,13 +1340,9 @@ windowhandle switch:disabled > slider
     border-color: @button_border_toolbar_normal;
 }
 
-/* GtkComboBox - DEPRECATED */
-
-combobox arrow
+combobox arrow /* DEPRECATED */
 {
-    color: @theme_fg_color;
-    min-height: 16px;
-    min-width: 16px;
+    padding-left: 4px;
 }
 
 /* headerbar */
@@ -1392,6 +1387,8 @@ spinbutton > text
     background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
     padding: 6px;
     color: @theme_text_color;
+    min-width: 23px;
+    min-height: 23px;
 }
 
 spinbutton > text:disabled
@@ -1535,6 +1532,8 @@ notebook > header > tabs > tab
     border: 1px solid @borders;
     background-image: linear-gradient(to bottom, @notebook_tab_bg_a, @notebook_tab_bg_c);
     padding: 6px;
+    min-width: 23px;
+    min-height: 23px;
 }
 
 notebook > header.top > tabs > tab
@@ -1733,7 +1732,7 @@ scrollbar.vertical > range > trough > slider
     min-height: 40px;
 }
 
-/* GtkCheckButton */
+/* checkbutton */
 
 checkbutton
 {
@@ -1742,8 +1741,8 @@ checkbutton
 
 check
 {
-    min-height: 14px;
-    min-width: 14px;
+    min-height: 17px;
+    min-width: 17px;
     background-image: linear-gradient(to bottom, @check_background_normal_a, @check_background_normal_b);
     background-repeat: no-repeat;
     border: 1px solid @check_border_normal_a;
@@ -1751,7 +1750,6 @@ check
     border-bottom-color: @check_border_normal_c;
     border-radius: 3px;
     box-shadow: 0 1px 0 @check_boxshadow_checked_a inset, 1px 0 0 @check_boxshadow_checked_b inset, -1px 0 0 @check_boxshadow_checked_b inset;
-    transform: scale(0.85);
 }
 
 windowhandle check,
@@ -1795,6 +1793,7 @@ check:indeterminate
     border-color: @check_border_checked_a;
     border-top-color: @check_border_checked_b;
     border-bottom-color: @check_border_checked_c;
+    -gtk-icon-source: none;
 }
 
 check:checked:backdrop
@@ -1845,8 +1844,8 @@ check:indeterminate:disabled
 
 radio
 {
-    min-height: 14px;
-    min-width: 14px;
+    min-height: 17px;
+    min-width: 17px;
     background-image: linear-gradient(to bottom, @check_background_normal_a,  @check_background_normal_b);
     background-repeat: no-repeat;
     border: 1px solid @check_border_normal_a;
@@ -1854,7 +1853,6 @@ radio
     border-bottom-color: @check_border_normal_c;
     border-radius: 50%;
     box-shadow: 0 1px 0 @check_boxshadow_checked_a inset, 1px 0 0 @check_boxshadow_checked_b inset, -1px 0 0 @check_boxshadow_checked_b inset;
-    transform: scale(0.85);
 }
 
 windowhandle radio,
@@ -1882,7 +1880,7 @@ popover radio:disabled
 
 radio:checked
 {
-    background-image: radial-gradient(closest-side at center, @check_background_normal_b 37.5%, transparent 40%), radial-gradient(closest-side at center 56.25%, @check_iconshadow_normal 37.5%, transparent 40%), linear-gradient(to bottom, @check_background_checked_a,  @check_background_checked_b);
+    background-image: radial-gradient(closest-side at center, @check_background_normal_b 40%, transparent 50%), radial-gradient(closest-side at center 56.25%, @check_iconshadow_normal 37.5%, transparent 50%), linear-gradient(to bottom, @check_background_checked_a,  @check_background_checked_b);
     border-color: @check_border_checked_a;
     border-top-color: @check_border_checked_b;
     border-bottom-color: @check_border_checked_c;
@@ -1900,7 +1898,7 @@ radio:indeterminate
 
 radio:checked:backdrop
 {
-    background-image: radial-gradient(closest-side at center, @theme_base_color 37.5%, transparent 40%), linear-gradient(to bottom, @check_background_checked_backdrop_a, @check_border_normal_a);
+    background-image: radial-gradient(closest-side at center, @theme_base_color 37.5%, transparent 50%), linear-gradient(to bottom, @check_background_checked_backdrop_a, @check_border_normal_a);
     border-color: @check_border_checked_backdrop_a;
     border-top-color: @check_border_checked_backdrop_b;
     border-bottom-color: @check_border_checked_backdrop_c;
@@ -1909,7 +1907,7 @@ radio:checked:backdrop
 
 radio:checked:disabled
 {
-    background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 37.5%, transparent 40%), image(@tooltip_fg);
+    background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 37.5%, transparent 50%), image(@tooltip_fg);
     border-color: @button_border_disabled;
     box-shadow: none;
 }
@@ -1917,7 +1915,7 @@ radio:checked:disabled
 windowhandle radio:checked:disabled,
 popover radio:checked:disabled
 {
-    background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 50%, transparent 55%), image(@button_bg_toolbar_disabled_a);
+    background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 37.5%, transparent 55%), image(@button_bg_toolbar_disabled_a);
     border-color: @entry_border_toolbar_normal_a;
 }
 
@@ -1966,7 +1964,8 @@ levelbar > trough
     border-bottom-color: @trough_border_normal_c;
     background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     border-radius: 4px;
-    min-height: 14px;
+    min-width: 17px;
+    min-height: 17px;
 }
 
 popover scale.horizontal > trough,
@@ -2009,7 +2008,8 @@ progressbar.vertical > trough
     border-right-color: @trough_border_normal_c;
     background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
     border-radius: 4px;
-    min-width: 14px;
+    min-width: 17px;
+    min-height: 17px;
 }
 
 popover scale.vertical > trough,
@@ -2052,7 +2052,7 @@ progressbar.horizontal > trough > progress
     border-radius: 3px;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
     box-shadow: 0 -1px @trough_highlight_border_a, 1px 0 @trough_highlight_border_b, 0 1px @trough_highlight_border_a, -1px 0 @trough_highlight_border_b;
-    min-height: 14px;
+    min-height: 17px;
 }
 
 popover scale.horizontal > trough > highlight,
@@ -2068,7 +2068,8 @@ popover progressbar.vertical > trough > progress,
 windowhandle progressbar.vertical > trough > progress,
 .osd progressbar.vertical > trough > progress
 {
-    min-height: 12px;
+    min-height: 15px;
+    min-width: 15px;
     margin: 1px;
 }
 
@@ -2100,7 +2101,7 @@ progressbar.vertical > trough > progress
     border-radius: 3px;
     background-image: linear-gradient(to right, @progressbar_fill_a, @progressbar_fill_b);
     box-shadow: 0 -1px @trough_highlight_border_a, 1px 0 @trough_highlight_border_b, 0 1px @trough_highlight_border_a, -1px 0 @trough_highlight_border_b;
-    min-width: 14px;
+    min-width: 17px;
 }
 
 scale.vertical > trough > highlight:disabled,
@@ -2134,38 +2135,38 @@ scale slider
 
 scale.horizontal slider
 {
-    min-width: 14px;
-    min-height: 18px;
-    margin: -4px -1px;
+    min-width: 17px;
+    min-height: 17px;
+    margin: -1px -1px;
 }
 
 scale.vertical slider
 {
-    min-width: 18px;
-    min-height: 14px;
-    margin: -1px -4px;
+    min-width: 17px;
+    min-height: 17px;
+    margin: -1px -1px;
 }
 
 /* scale marks */
 
 scale.horizontal marks.top
 {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 scale.horizontal marks.bottom
 {
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 scale.vertical marks.top
 {
-    margin-right: 4px;
+    margin-right: 6px;
 }
 
 scale.vertical marks.bottom
 {
-    margin-left: 4px;
+    margin-left: 6px;
 }
 
 /* scale indicator */
@@ -2177,14 +2178,14 @@ scale indicator
 
 scale.horizontal indicator
 {
-    min-height: 8px;
+    min-height: 12px;
     min-width: 1px;
 }
 
 scale.vertical indicator
 {
     min-height: 1px;
-    min-width: 8px;
+    min-width: 12px;
 }
 
 /* view */
@@ -2273,8 +2274,8 @@ columnview > header > button sort-indicator.descending
 
 /* view child */
 
-gridview > child box,
-listview > row box
+gridview > child box:not(.linked),
+listview > row box:not(.linked)
 {
     border-spacing: 6px;
 }
@@ -2671,6 +2672,8 @@ window.assistant box.sidebar > label /* DEPRECATED */
 {
     padding: 6px;
     border-radius: 4px;
+    min-width: 25px;
+    min-height: 25px;
 }
 
 list.navigation-sidebar > row:hover
@@ -2690,9 +2693,22 @@ list.navigation-sidebar > row > revealer > box
 
 /* listview */
 
+dropdown > popover listview
+{
+    background-image: none;
+}
+
 listview > row
 {
-    padding: 4px;
+    padding: 6px 6px 6px 0;
+}
+
+dropdown > popover listview > row
+{
+    border-radius: 4px;
+    padding: 6px;
+    min-height: 25px;
+    background-image: none;
 }
 
 listview > row > cell
@@ -2728,6 +2744,7 @@ windowcontrols
 windowcontrols > button
 {
     -gtk-icon-shadow: 0 1px @wm_title_shadow;
+    -gtk-icon-size: 15px;
     border-radius: 50%;
     padding: 3px;
 }
@@ -2922,10 +2939,13 @@ popover box.dropdown-searchbar
 popover modelbutton
 {
     border-radius: 3px;
-    padding: 5px;
+    padding: 6px;
+    min-height: 25px;
 }
 
-popover modelbutton:hover
+popover modelbutton:hover,
+dropdown > popover listview > row:hover,
+dropdown > popover listview > row:selected
 {
     text-shadow: 0 -1px @list_cell_border;
     background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
