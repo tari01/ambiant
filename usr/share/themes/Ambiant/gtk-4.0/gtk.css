@@ -429,7 +429,7 @@ paned > separator
 {
     min-width: 3px;
     min-height: 3px;
-    background-image: image(@theme_bg_color);
+    background-image: image(@borders);
 }
 
 .toolbar separator,
@@ -3136,14 +3136,72 @@ window.dialog.print drawing paper
     border: 1px solid @borders;
 }
 
-window.dialog filechooser placessidebar
+window.filechooser placessidebar > scrolledwindow
 {
     border: 1px solid @borders;
+    border-radius: 6px;
+    margin-right: 6px;
 }
 
-window.dialog filechooser #pathbarbox
+window.filechooser list.navigation-sidebar
 {
-    background-image: image(@theme_bg_color);
+    border: none;
+}
+
+window.filechooser list.navigation-sidebar separator
+{
+    margin: 6px 0;
+}
+
+window.filechooser placessidebar > scrolledwindow > *
+{
+    border-radius: 6px;
+}
+
+window.filechooser #pathbarbox
+{
+    margin: -6px -6px 0 0;
+}
+
+window.filechooser actionbar
+{
+    margin-top: 6px;
+}
+
+window.filechooser actionbar > revealer > box > box.start
+{
+    margin-left: 6px;
+}
+
+window.filechooser actionbar > revealer > box > box.end
+{
+    border-spacing: 6px;
+}
+
+window.filechooser .dialog-action-box
+{
+    margin: -6px -6px -6px 0;
+}
+
+window.filechooser paned > box > box > stack > box > scrolledwindow,
+window.filechooser placesview > stack > scrolledwindow
+{
+    border-radius: 6px;
+    border: 1px solid @borders;
+    margin-left: 6px;
+}
+
+window.filechooser paned > box > box > stack > box > scrolledwindow > *,
+window.filechooser placesview > stack > scrolledwindow > *
+{
+    border-radius: 6px;
+}
+
+window.filechooser paned > separator
+{
+    min-width: 0;
+    background-image: none;
+    border-width: 1px;
 }
 
 /* Rubberband */
