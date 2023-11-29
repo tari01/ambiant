@@ -291,6 +291,7 @@
 @define-color wm_bg_c shade(@wm_bg_a, 1.65);
 @define-color wm_bg_d shade(@wm_bg_a, 1.2);
 @define-color wm_bg_e shade(@wm_bg_a, 1.09);
+@define-color wm_bg_f shade(@wm_bg_a, 1.4);
 @define-color wm_border shade(@wm_bg_a, 1.1);
 @define-color wm_shadow rgba(0, 0, 0, 0.5);
 @define-color wm_title rgb(223, 219, 210);
@@ -1360,25 +1361,13 @@ headerbar
     background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @wm_title;
     box-shadow: inset 0 1px @wm_bg_c;
-    border-radius: 5px 5px 0 0;
 }
 
 headerbar:backdrop
 {
-    background-image: image(@wm_bg_a);
+    background-image: linear-gradient(to bottom, @wm_bg_f, @wm_bg_a);
     color: @theme_unfocused_fg_color;
-    box-shadow: inset 0 1px @wm_bg_d;
-}
-
-window.maximized > headerbar
-{
-    background-image: linear-gradient(to bottom, @headerbar_bg_maximized, @wm_bg_a);
-    box-shadow: none;
-}
-
-window.maximized > headerbar:backdrop
-{
-    background-image: image(@wm_bg_a);
+    box-shadow: inset 0 1px @wm_bg_b;
 }
 
 /* GtkSpinButton */
