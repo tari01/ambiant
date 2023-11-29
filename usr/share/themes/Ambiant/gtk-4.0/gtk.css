@@ -300,8 +300,8 @@
 *
 {
     -gtk-icon-style: regular;
-    background-origin: border-box;
-    background-clip: border-box;
+    background-origin: padding-box;
+    background-clip: padding-box;
     caret-color: @theme_text_color;
 }
 
@@ -429,7 +429,7 @@ paned > separator
 {
     min-width: 3px;
     min-height: 3px;
-    background-image: image(@borders);
+    background-image: image(@theme_bg_color);
 }
 
 .toolbar separator,
@@ -545,7 +545,7 @@ editablelabel > stack > text
     padding: 2px;
 }
 
-/* GtkButton */
+/* button */
 
 button,
 scale slider,
@@ -558,7 +558,7 @@ colorswatch#add-color-button
     text-shadow: 0 1px @button_fg_shadow;
     border: 1px solid @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 button:checked
@@ -715,6 +715,11 @@ button > box
     border-spacing: 6px;
 }
 
+button > colorswatch
+{
+    border-radius: 4px;
+}
+
 button > box > arrow
 {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -748,7 +753,7 @@ button > box > arrow
 .linked > combobox:first-child > .linked > button:first-child /* DEPRECATED */
 {
     border-width: 1px 0 1px 1px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
 }
 
 .linked > button:first-child:checked,
@@ -762,7 +767,7 @@ button > box > arrow
 .linked > menubutton:last-child > button,
 .linked > combobox:last-child > .linked > button:last-child /* DEPRECATED */
 {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px 1px 1px 0;
     box-shadow: none;
 }
@@ -778,7 +783,7 @@ button > box > arrow
 .linked > menubutton:only-child > button,
 .linked > combobox:only-child > .linked > button:only-child /* DEPRECATED */
 {
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -821,7 +826,7 @@ button > box > arrow
 .linked.vertical > spinbutton.horizontal:first-child > button:first-child
 {
     border-width: 1px 1px 0 1px;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 
 .linked.vertical > button:last-child,
@@ -829,7 +834,7 @@ button > box > arrow
 .linked.vertical > combobox:last-child > .linked > button:last-child, /* DEPRECATED */
 .linked.vertical > spinbutton.horizontal:last-child > button:last-child
 {
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     border-width: 0 1px 1px 1px;
     box-shadow: none;
 }
@@ -1108,7 +1113,7 @@ entry
 {
     min-height: 23px;
     min-width: 23px;
-    border-radius: 6px;
+    border-radius: 5px;
     border: 1px solid @entry_border_normal_a;
     border-top-color: @entry_border_normal_b;
     border-bottom-color: @entry_border_normal_c;
@@ -1162,12 +1167,12 @@ popover entry:backdrop
 .linked > entry:first-child
 {
     border-width: 1px 0 1px 1px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
 }
 
 .linked > entry:last-child
 {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     border-width: 1px 1px 1px 0;
     box-shadow: none;
 }
@@ -1175,7 +1180,7 @@ popover entry:backdrop
 .linked > entry:only-child
 {
     border-width: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 .linked.vertical > entry
@@ -1188,19 +1193,19 @@ popover entry:backdrop
 .linked.vertical > entry:first-child
 {
     border-width: 1px 1px 0 1px;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 
 .linked.vertical > entry:last-child
 {
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     border-width: 0 1px 1px 1px;
     box-shadow: none;
 }
 
 .linked.vertical > entry:only-child
 {
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1px;
 }
 
@@ -1261,7 +1266,7 @@ switch
     border-top-color: @trough_border_normal_b;
     border-bottom-color: @trough_border_normal_c;
     padding: 1px;
-    border-radius: 6px;
+    border-radius: 5px;
     background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
     color: @theme_fg_color;
 }
@@ -1303,7 +1308,7 @@ switch > slider
 {
     min-width: 47px;
     min-height: 31px;
-    border-radius: 5px;
+    border-radius: 4px;
     background-image: linear-gradient(to bottom, @button_bg_normal_a, @button_bg_normal_b 50%, @button_bg_normal_c);
     border: 1px solid @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
@@ -1350,11 +1355,12 @@ combobox arrow /* DEPRECATED */
 headerbar
 {
     min-height: 30px;
-    padding: 2px 4px 2px 2px;
+    padding: 6px;
     text-shadow: 0 -1px @wm_title_shadow;
     background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @wm_title;
     box-shadow: inset 0 1px @wm_bg_c;
+    border-radius: 5px 5px 0 0;
 }
 
 headerbar:backdrop
@@ -1423,7 +1429,7 @@ spinbutton.vertical > text
 spinbutton.horizontal > text
 {
     border-width: 1px 0 1px 1px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
 }
 
 .linked.vertical > spinbutton.horizontal > text
@@ -1441,24 +1447,24 @@ spinbutton.horizontal > button.down
 
 spinbutton.horizontal > button.up
 {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
 }
 
 spinbutton.vertical > button.down
 {
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
 }
 
 spinbutton.vertical > button.up
 {
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 
 /* frame */
 
 frame
 {
-    border-radius: 6px;
+    border-radius: 5px;
     border: 1px solid @borders;
 }
 
@@ -1477,7 +1483,7 @@ overlay > frame
 notebook
 {
     background-image: image(@notebook_bg);
-    border-radius: 6px;
+    border-radius: 5px;
     border: none;
 }
 
@@ -1497,28 +1503,28 @@ notebook > header
 notebook > header.top
 {
     margin: -1px -1px 0 0;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     box-shadow: inset 0 -1px @notebook_header_bg_shadow;
 }
 
 notebook > header.bottom
 {
     margin: 0 -1px -1px 0;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     box-shadow: inset 0 1px @notebook_header_bg_shadow;
 }
 
 notebook > header.left
 {
     margin: 0 0 -1px -1px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     box-shadow: inset -1px 0 @notebook_header_bg_shadow;
 }
 
 notebook > header.right
 {
     margin: 0 -1px -1px 0;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     box-shadow: inset 1px 0 @notebook_header_bg_shadow;
 }
 
@@ -1538,7 +1544,7 @@ notebook > header > tabs > tab
 
 notebook > header.top > tabs > tab
 {
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
     margin: 0 0 0 -1px;
 }
 
@@ -1550,7 +1556,7 @@ notebook > header.top > tabs > tab:checked
 
 notebook > header.bottom > tabs > tab
 {
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     margin: 0 0 0 -1px;
 }
 
@@ -1562,7 +1568,7 @@ notebook > header.bottom > tabs > tab:checked
 
 notebook > header.left > tabs > tab
 {
-    border-radius: 6px 0 0 6px;
+    border-radius: 5px 0 0 5px;
     margin: -1px 0 0 0;
 }
 
@@ -1574,7 +1580,7 @@ notebook > header.left > tabs > tab:checked
 
 notebook > header.right > tabs > tab
 {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 5px 5px 0;
     margin: -1px 0 0 0;
 }
 
@@ -1671,35 +1677,59 @@ scrollbar.horizontal
 scrollbar.top
 {
     border-bottom: 1px solid @borders;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 scrollbar.bottom
 {
     border-top: 1px solid @borders;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 scrollbar.left
 {
     border-right: 1px solid @borders;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 scrollbar.right
 {
     border-left: 1px solid @borders;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+columnview ~ scrollbar.top,
+treeview ~ scrollbar.top /* DEPRECATED */
+{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+columnview ~ scrollbar.left,
+treeview ~ scrollbar.left /* DEPRECATED */
+{
+    border-top-left-radius: 0;
+}
+
+columnview ~ scrollbar.right,
+treeview ~ scrollbar.right /* DEPRECATED */
+{
+    border-top-right-radius: 0;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering)
 {
     border-color: transparent;
     opacity: 0.4;
+}
+
+scrollbar > range > trough
+{
+    border-radius: 0;
 }
 
 scrollbar > range > trough > slider
@@ -1709,7 +1739,6 @@ scrollbar > range > trough > slider
     background-image: image(@scrollbar_slider_bg);
     border: 2px solid transparent;
     border-radius: 7px;
-    background-clip: padding-box;
 }
 
 scrollbar > range > trough > slider:hover
@@ -1963,7 +1992,7 @@ levelbar > trough
     border-top-color: @trough_border_normal_b;
     border-bottom-color: @trough_border_normal_c;
     background-image: linear-gradient(to bottom, @trough_bg_normal, @button_bg_checked_b);
-    border-radius: 4px;
+    border-radius: 3px;
     min-width: 17px;
     min-height: 17px;
 }
@@ -2007,7 +2036,7 @@ progressbar.vertical > trough
     border-left-color: @trough_border_normal_b;
     border-right-color: @trough_border_normal_c;
     background-image: linear-gradient(to right, @trough_bg_normal, @button_bg_checked_b);
-    border-radius: 4px;
+    border-radius: 3px;
     min-width: 17px;
     min-height: 17px;
 }
@@ -2049,7 +2078,7 @@ windowhandle scale.vertical > trough:backdrop,
 scale.horizontal > trough > highlight,
 progressbar.horizontal > trough > progress
 {
-    border-radius: 3px;
+    border-radius: 2px;
     background-image: linear-gradient(to bottom, @progressbar_fill_a, @progressbar_fill_b);
     box-shadow: 0 -1px @trough_highlight_border_a, 1px 0 @trough_highlight_border_b, 0 1px @trough_highlight_border_a, -1px 0 @trough_highlight_border_b;
     min-height: 17px;
@@ -2098,7 +2127,7 @@ progressbar.horizontal:disabled:backdrop > trough > progress
 scale.vertical > trough > highlight,
 progressbar.vertical > trough > progress
 {
-    border-radius: 3px;
+    border-radius: 2px;
     background-image: linear-gradient(to right, @progressbar_fill_a, @progressbar_fill_b);
     box-shadow: 0 -1px @trough_highlight_border_a, 1px 0 @trough_highlight_border_b, 0 1px @trough_highlight_border_a, -1px 0 @trough_highlight_border_b;
     min-width: 17px;
@@ -2129,7 +2158,7 @@ progressbar.vertical:disabled:backdrop > trough > progress
 
 scale slider
 {
-    border-radius: 4px;
+    border-radius: 3px;
     padding: 0;
 }
 
@@ -2235,14 +2264,9 @@ columnview.dnd
     border: 1px solid @columnview_border_dnd;
 }
 
-scrolledwindow.frame > treeview, /* DEPRECATED */
-scrolledwindow.frame > textview,
-scrolledwindow.frame > iconview, /* DEPRECATED */
-scrolledwindow.frame > listview,
-scrolledwindow.frame > viewport,
-scrolledwindow.frame > viewport > list
+scrolledwindow.frame > *:not(scrollbar)
 {
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 /* view header button */
@@ -2289,7 +2313,7 @@ list > row
 gridview > child,
 iconview .cell /* DEPRECATED*/
 {
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 gridview > child:hover,
@@ -2335,7 +2359,7 @@ levelbar block.filled
     background-image: image(@levelbar_block_bg_filled);
     box-shadow: 0 -1px @theme_selected_bg_color, 1px 0 @theme_selected_bg_color, 0 1px @theme_selected_bg_color, -1px 0 @theme_selected_bg_color;
     min-height: 14px;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 levelbar.discrete.horizontal block:not(:first-child)
@@ -2548,7 +2572,6 @@ menubar > item
 menubar > item:selected
 {
     background-image: image(@wm_bg_a);
-    background-clip: border-box;
     box-shadow: inset 0 1px 1px 0 @tooltip_border;
     color: @menubar_item_fg_selected;
     text-shadow: 0 -1px @wm_title_shadow;
@@ -2567,7 +2590,7 @@ menubar > item > popover > contents
 
 tooltip
 {
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid @tooltip_border;
     background-image: image(@tooltip_bg);
     color: @tooltip_fg;
@@ -2630,7 +2653,7 @@ scrolledwindow > overshoot.right
 scrolledwindow.frame,
 calendar
 {
-    border-radius: 6px;
+    border-radius: 5px;
     border: 1px solid @scrolledwindow_border_b;
     border-top-color: @scrolledwindow_border_a;
     border-bottom-color: @scrolledwindow_border_c;
@@ -2700,7 +2723,7 @@ dropdown > popover listview
 
 listview > row
 {
-    padding: 6px 6px 6px 0;
+    padding: 6px;
 }
 
 dropdown > popover listview > row
@@ -2713,7 +2736,7 @@ dropdown > popover listview > row
 
 listview > row > cell
 {
-    padding: 0 4px;
+    padding: 4px;
 }
 
 listview.separators.horizontal > row
@@ -3046,8 +3069,6 @@ window
     color: @theme_fg_color;
     background-image: image(@theme_bg_color);
     border: 1px none @wm_border;
-    background-clip: padding-box;
-    background-origin: padding-box;
 }
 
 window:backdrop
@@ -3115,11 +3136,6 @@ window.dialog colorchooser colorswatch
     border-radius: 3px;
 }
 
-window.dialog colorchooser colorswatch#editor-color-sample
-{
-    border-radius: 5px;
-}
-
 window.dialog colorchooser colorswatch#add-color-button
 {
     padding: 0;
@@ -3139,7 +3155,7 @@ window.dialog.print drawing paper
 window.filechooser placessidebar > scrolledwindow
 {
     border: 1px solid @borders;
-    border-radius: 6px;
+    border-radius: 5px;
     margin-right: 6px;
 }
 
@@ -3153,9 +3169,9 @@ window.filechooser list.navigation-sidebar separator
     margin: 6px 0;
 }
 
-window.filechooser placessidebar > scrolledwindow > *
+window.filechooser placessidebar > scrolledwindow > *:not(scrollbar)
 {
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 window.filechooser #pathbarbox
@@ -3186,15 +3202,15 @@ window.filechooser .dialog-action-box
 window.filechooser paned > box > box > stack > box > scrolledwindow,
 window.filechooser placesview > stack > scrolledwindow
 {
-    border-radius: 6px;
+    border-radius: 5px;
     border: 1px solid @borders;
     margin-left: 6px;
 }
 
-window.filechooser paned > box > box > stack > box > scrolledwindow > *,
-window.filechooser placesview > stack > scrolledwindow > *
+window.filechooser paned > box > box > stack > box > scrolledwindow > *:not(scrollbar),
+window.filechooser placesview > stack > scrolledwindow > *:not(scrollbar)
 {
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 window.filechooser paned > separator
@@ -3202,6 +3218,18 @@ window.filechooser paned > separator
     min-width: 0;
     background-image: none;
     border-width: 1px;
+}
+
+/* colorswatch */
+
+colorswatch#editor-color-sample
+{
+    border-radius: 4px;
+}
+
+colorswatch.activatable
+{
+    border-radius: 3px;
 }
 
 /* Rubberband */
@@ -3232,8 +3260,8 @@ shortcut
 
 shortcut > .keycap
 {
-    min-width: 20px;
-    min-height: 25px;
+    min-width: 26px;
+    min-height: 30px;
     margin-top: 2px;
     padding: 0 6px 3px 6px;
     color: @shortcut_keycap_fg;
