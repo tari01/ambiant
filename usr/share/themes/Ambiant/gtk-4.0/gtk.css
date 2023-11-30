@@ -77,24 +77,6 @@
 @define-color button_separator_border_disabled shade(@button_bg_insensitive, 0.96);
 @define-color button_textshadow_toolbar_backdrop shade(@wm_bg_a, 0.9);
 @define-color calendar_header_bg_b shade(@theme_bg_color, 0.89);
-@define-color check_background_checked_a rgb(100, 148, 28);
-@define-color check_background_checked_b rgb(135, 165, 86);
-@define-color check_background_checked_backdrop_a rgb(115, 115, 115);
-@define-color check_background_normal_a rgb(245, 245, 245);
-@define-color check_background_normal_b rgb(255, 255, 255);
-@define-color check_border_checked_a rgb(72, 102, 24);
-@define-color check_border_checked_b rgb(53, 84, 4);
-@define-color check_border_checked_c rgb(90, 120, 44);
-@define-color check_border_checked_backdrop_a rgb(100, 148, 28);
-@define-color check_border_checked_backdrop_b rgb(100, 100, 100);
-@define-color check_border_checked_backdrop_c rgb(119, 119, 119);
-@define-color check_border_indeterminate_backdrop_a rgb(81, 81, 81);
-@define-color check_border_normal_a rgb(163, 163, 163);
-@define-color check_border_normal_b rgb(145, 145, 145);
-@define-color check_border_normal_c rgb(180, 180, 180);
-@define-color check_boxshadow_checked_a rgba(0, 0, 0, 0.1);
-@define-color check_boxshadow_checked_b rgba(0, 0, 0, 0.05);
-@define-color check_iconshadow_normal rgba(0, 0, 0, 0.3);
 @define-color columnview_border_dnd shade(@theme_selected_bg_color, 1.12);
 @define-color columnview_header_button_bg_a shade(@theme_bg_color, 1.04);
 @define-color columnview_header_button_border_insesitive_a shade(@theme_bg_color, 0.94);
@@ -889,11 +871,15 @@ windowhandle scale slider:disabled,
 .app-notification scale slider:disabled,
 .osd scale slider:disabled,
 .toolbar scale slider:disabled,
-popover scale slider:disabled
+popover scale slider:disabled,
+windowhandle check:disabled,
+popover check:disabled,
+windowhandle radio:disabled,
+popover radio:disabled
 {
     text-shadow: none;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
-    border-color: @button_border_toolbar_normal;
+    border-color: @popover_border;
 }
 
 windowhandle button:backdrop,
@@ -1123,7 +1109,9 @@ entry
     color: @theme_text_color;
 }
 
-entry:disabled
+entry:disabled,
+check:disabled,
+radio:disabled
 {
     border-color: @entry_border_disabled;
     background-image: image(@entry_bg_disabled);
@@ -1149,7 +1137,11 @@ entry:disabled:backdrop
 searchbar entry,
 windowhandle entry,
 popover entry,
-popover entry:backdrop
+popover entry:backdrop,
+windowhandle check,
+popover check,
+windowhandle radio,
+popover radio
 {
     border-color: @entry_border_toolbar_normal_a;
     border-top-color: @entry_border_toolbar_normal_b;
@@ -1761,200 +1753,151 @@ check
 {
     min-height: 17px;
     min-width: 17px;
-    background-image: linear-gradient(to bottom, @check_background_normal_a, @check_background_normal_b);
+    background-image: linear-gradient(to bottom, @entry_bg_normal, @theme_base_color);
     background-repeat: no-repeat;
-    border: 1px solid @check_border_normal_a;
-    border-top-color: @check_border_normal_b;
-    border-bottom-color: @check_border_normal_c;
+    border: 1px solid @entry_border_normal_a;
+    border-top-color: @entry_border_normal_b;
+    border-bottom-color: @entry_border_normal_c;
     border-radius: 3px;
-    box-shadow: 0 1px 0 @check_boxshadow_checked_a inset, 1px 0 0 @check_boxshadow_checked_b inset, -1px 0 0 @check_boxshadow_checked_b inset;
-}
-
-windowhandle check,
-popover check
-{
-    background-image: image(@popover_entry_bg);
-    border-color: @entry_border_toolbar_normal_a;
-    border-top-color: @entry_border_toolbar_normal_b;
-    border-bottom-color: @entry_border_toolbar_normal_c;
-}
-
-check:disabled
-{
-    border-color: @button_border_disabled;
-    background-image: image(@tooltip_fg);
-    box-shadow: none;
-}
-
-windowhandle check:disabled,
-popover check:disabled
-{
-    background-image: image(@button_bg_toolbar_disabled_a);
-    border-color: @entry_border_toolbar_normal_a;
 }
 
 check:checked
 {
-    background-image: linear-gradient(to bottom, @check_background_checked_a, @check_background_checked_b);
-    border-color: @check_border_checked_a;
-    border-top-color: @check_border_checked_b;
-    border-bottom-color: @check_border_checked_c;
+    background-image: linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
+    border-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_a;
+    border-bottom-color: @trough_highlight_border_a;
     -gtk-icon-source: -gtk-icontheme("check-enabled");
-    -gtk-icon-shadow: 0 1px @check_iconshadow_normal;
+    -gtk-icon-shadow: 0 1px @wm_shadow;
 }
 
 check:indeterminate
 {
-    background-image: image(@theme_base_color), image(@check_iconshadow_normal), linear-gradient(to bottom, @check_background_checked_a, @check_background_checked_b);
+    background-image: image(@theme_base_color), image(@wm_shadow), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
     background-position: 50% 50%, 50% 56.25%, 100% 100%;
     background-size: 62.5% 12.5%, 62.5% 12.5%, 100% 100%;
-    border-color: @check_border_checked_a;
-    border-top-color: @check_border_checked_b;
-    border-bottom-color: @check_border_checked_c;
+    border-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_a;
+    border-bottom-color: @trough_highlight_border_a;
     -gtk-icon-source: none;
 }
 
 check:checked:backdrop
 {
-    background-image: linear-gradient(to bottom, @check_background_checked_backdrop_a, @check_border_normal_a);
-    border-color: @check_border_checked_backdrop_a;
-    border-top-color: @check_border_checked_backdrop_b;
-    border-bottom-color: @check_border_checked_backdrop_c;
     -gtk-icon-shadow: none;
-    box-shadow: none;
+    background-image: linear-gradient(to bottom, @progressbar_fill_insensitive_b, @progressbar_fill_insensitive_a);
+    border-color: @progressbar_progress_border_insensitive_a;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_b;
 }
 
 check:checked:disabled
 {
-    background-image: image(@tooltip_fg);
-    border-color: @button_border_disabled;
-    -gtk-icon-source: -gtk-icontheme("check-disabled");
     -gtk-icon-shadow: none;
-    box-shadow: none;
+    background-image: linear-gradient(to bottom, @highlight_background_disabled_a, @highlight_background_disabled_b);
+    border-color: @highlight_border_disabled_b;
+    border-right-color: @highlight_border_disabled_a;
+    border-bottom-color: @highlight_border_disabled_c;
 }
 
 windowhandle check:checked:disabled,
 popover check:checked:disabled
 {
     background-image: image(@button_bg_toolbar_disabled_a);
-    border-color: @entry_border_toolbar_normal_a;
+    border-color: @popover_border;
 }
 
 check:indeterminate:backdrop
 {
-    background-image: image(@theme_base_color), linear-gradient(to bottom, @check_background_checked_backdrop_a, @check_border_normal_a);
+    background-image: image(@theme_base_color), linear-gradient(to bottom, @progressbar_fill_insensitive_b, @progressbar_fill_insensitive_a);
+    border-color: @progressbar_progress_border_insensitive_a;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_b;
     background-position: 50% 50%, 100% 100%;
     background-size: 62.5% 12.5%, 100% 100%;
-    border-color: @check_border_indeterminate_backdrop_a;
-    border-top-color: @check_border_checked_backdrop_b;
-    border-bottom-color: @check_border_checked_backdrop_c;
-    box-shadow: none;
 }
 
 check:indeterminate:disabled
 {
-    background-image: image(@entry_border_insensitive_a), image(@tooltip_fg);
+    background-image: image(@theme_base_color), linear-gradient(to bottom, @highlight_background_disabled_a, @highlight_background_disabled_b);
     background-position: 50% 50%, 100% 100%;
     background-size: 62.5% 12.5%, 100% 100%;
-    border-color: @button_border_disabled;
-    box-shadow: none;
+    border-color: @highlight_border_disabled_b;
+    border-right-color: @highlight_border_disabled_a;
+    border-bottom-color: @highlight_border_disabled_c;
 }
 
 radio
 {
     min-height: 17px;
     min-width: 17px;
-    background-image: linear-gradient(to bottom, @check_background_normal_a,  @check_background_normal_b);
+    background-image: linear-gradient(to bottom, @entry_bg_normal,  @theme_base_color);
     background-repeat: no-repeat;
-    border: 1px solid @check_border_normal_a;
-    border-top-color: @check_border_normal_b;
-    border-bottom-color: @check_border_normal_c;
+    border: 1px solid @entry_border_normal_a;
+    border-top-color: @entry_border_normal_b;
+    border-bottom-color: @entry_border_normal_c;
     border-radius: 50%;
-    box-shadow: 0 1px 0 @check_boxshadow_checked_a inset, 1px 0 0 @check_boxshadow_checked_b inset, -1px 0 0 @check_boxshadow_checked_b inset;
-}
-
-windowhandle radio,
-popover radio
-{
-    background-image: image(@popover_entry_bg);
-    border-color: @entry_border_toolbar_normal_a;
-    border-top-color: @entry_border_toolbar_normal_b;
-    border-bottom-color: @entry_border_toolbar_normal_c;
-}
-
-radio:disabled
-{
-    border-color: @button_border_disabled;
-    background-image: image(@tooltip_fg);
-    box-shadow: none;
-}
-
-windowhandle radio:disabled,
-popover radio:disabled
-{
-    background-image: image(@button_bg_toolbar_disabled_a);
-    border-color: @entry_border_toolbar_normal_a;
 }
 
 radio:checked
 {
-    background-image: radial-gradient(closest-side at center, @check_background_normal_b 40%, transparent 50%), radial-gradient(closest-side at center 56.25%, @check_iconshadow_normal 37.5%, transparent 50%), linear-gradient(to bottom, @check_background_checked_a,  @check_background_checked_b);
-    border-color: @check_border_checked_a;
-    border-top-color: @check_border_checked_b;
-    border-bottom-color: @check_border_checked_c;
+    background-image: radial-gradient(closest-side at center, @theme_base_color 40%, transparent 50%), radial-gradient(closest-side at center 56.25%, @wm_shadow 37.5%, transparent 50%), linear-gradient(to bottom, @progressbar_fill_b,  @progressbar_fill_a);
+    border-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_a;
+    border-bottom-color: @trough_highlight_border_a;
 }
 
 radio:indeterminate
 {
-    background-image: image(@theme_base_color), image(@check_iconshadow_normal), linear-gradient(to bottom, @check_background_checked_a, @check_background_checked_b);
+    background-image: image(@theme_base_color), image(@wm_shadow), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
     background-position: 50% 50%, 50% 56.25%, 100% 100%;
     background-size: 62.5% 12.5%, 62.5% 12.5%, 100% 100%;
-    border-color: @check_border_checked_a;
-    border-top-color: @check_border_checked_b;
-    border-bottom-color: @check_border_checked_c;
+    border-color: @trough_highlight_border_b;
+    border-right-color: @trough_highlight_border_a;
+    border-bottom-color: @trough_highlight_border_a;
 }
 
 radio:checked:backdrop
 {
-    background-image: radial-gradient(closest-side at center, @theme_base_color 37.5%, transparent 50%), linear-gradient(to bottom, @check_background_checked_backdrop_a, @check_border_normal_a);
-    border-color: @check_border_checked_backdrop_a;
-    border-top-color: @check_border_checked_backdrop_b;
-    border-bottom-color: @check_border_checked_backdrop_c;
-    box-shadow: none;
+    background-image: radial-gradient(closest-side at center, @theme_base_color 37.5%, transparent 50%), linear-gradient(to bottom, @progressbar_fill_insensitive_b, @progressbar_fill_insensitive_a);
+    border-color: @progressbar_progress_border_insensitive_a;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_b;
 }
 
 radio:checked:disabled
 {
-    background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 37.5%, transparent 50%), image(@tooltip_fg);
-    border-color: @button_border_disabled;
-    box-shadow: none;
+    background-image: radial-gradient(closest-side at center, @theme_base_color 37.5%, transparent 50%), linear-gradient(to bottom, @highlight_background_disabled_a, @highlight_background_disabled_b);
+    border-color: @highlight_border_disabled_b;
+    border-right-color: @highlight_border_disabled_a;
+    border-bottom-color: @highlight_border_disabled_c;
 }
 
 windowhandle radio:checked:disabled,
 popover radio:checked:disabled
 {
     background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 37.5%, transparent 55%), image(@button_bg_toolbar_disabled_a);
-    border-color: @entry_border_toolbar_normal_a;
+    border-color: @popover_border;
 }
 
 radio:indeterminate:backdrop
 {
-    background-image: image(@theme_base_color), linear-gradient(to bottom, @check_background_checked_backdrop_a, @check_border_normal_a);
+    background-image: image(@theme_base_color), linear-gradient(to bottom, @progressbar_fill_insensitive_b, @progressbar_fill_insensitive_a);
+    border-color: @progressbar_progress_border_insensitive_a;
+    border-right-color: @progressbar_progress_border_insensitive_b;
+    border-bottom-color: @progressbar_progress_border_insensitive_b;
     background-position: 50% 50%, 100% 100%;
     background-size: 62.5% 12.5%, 100% 100%;
-    border-color: @check_border_indeterminate_backdrop_a;
-    border-top-color: @check_border_checked_backdrop_b;
-    border-bottom-color: @check_border_checked_backdrop_c;
-    box-shadow: none;
 }
 
 radio:indeterminate:disabled
 {
-    background-image: image(@entry_border_insensitive_a), image(@tooltip_fg);
+    background-image: image(@theme_base_color), linear-gradient(to bottom, @highlight_background_disabled_a, @highlight_background_disabled_b);
+    border-color: @highlight_border_disabled_b;
+    border-right-color: @highlight_border_disabled_a;
+    border-bottom-color: @highlight_border_disabled_c;
     background-position: 50% 50%, 100% 100%;
     background-size: 62.5% 12.5%, 100% 100%;
-    border-color: @button_border_disabled;
-    box-shadow: none;
 }
 
 /* progressbar */
