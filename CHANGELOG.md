@@ -1,3 +1,24 @@
+# 23.12.1
+
+ - Derive check/radio colours from progressbar (a8825e8)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Update headerbar background (8f7d135)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Update widget radii (b87784c)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Style filechooser window (3902506)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Adjust widget sizes (441dbbb)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix info/question/warning/error (0e4ce52)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix osd (ed33633)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix toolbar (ebf323d)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix shortcuts (81db2ce)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix rubberband (88928b0)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix window.assistent (013a94c)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix dialogs (5751194)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix window (a780219)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix emoji-picker (0b50dd9)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix popover (26ebbd3)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix flowboxchild (b92b15c)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix statusbar (f14a8d0)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix dropdown (97d1e0d)
+
 # 23.11.1
 
  - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix infobar (596d37a)
