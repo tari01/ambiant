@@ -2623,6 +2623,11 @@ listview > row
     padding: 6px;
 }
 
+columnview > listview > row
+{
+    padding: 0;
+}
+
 dropdown > popover listview > row
 {
     border-radius: 4px;
@@ -2633,7 +2638,7 @@ dropdown > popover listview > row
 
 listview > row > cell
 {
-    padding: 4px;
+    padding: 6px;
 }
 
 listview.separators.horizontal > row
