@@ -259,15 +259,23 @@
 @define-color warning_boxshadow_a shade(@warning_bg, 1.08);
 @define-color warning_boxshadow_b shade(@warning_bg, 1.1);
 @define-color warning_fg rgb(173, 120, 41);
-@define-color windowcontrols_button_bg_b rgb(117, 116, 109);
-@define-color windowcontrols_button_bg_close_a rgb(129, 186, 74);
-@define-color windowcontrols_button_bg_close_b rgb(181, 215, 147);
-@define-color windowcontrols_button_bg_close_c rgb(222, 234, 210);
+@define-color windowcontrols_button_bg_backdrop_a rgb(103, 102, 97);
+@define-color windowcontrols_button_bg_backdrop_b rgb(86, 85, 79);
+@define-color windowcontrols_button_bg_hover_b rgb(148, 148, 148);
+@define-color windowcontrols_button_bg_active_a rgb(105, 104, 97);
+@define-color windowcontrols_button_bg_active_b rgb(129, 129, 123);
+@define-color windowcontrols_button_bg_normal_a rgb(138, 137, 131);
+@define-color windowcontrols_button_bg_normal_b rgb(91, 90, 86);
 @define-color windowcontrols_button_bg_close_active_a rgb(106, 149, 66);
 @define-color windowcontrols_button_bg_close_active_b rgb(144, 182, 106);
-@define-color windowcontrols_button_bg_close_hover_a rgb(142, 201, 86);
-@define-color windowcontrols_button_bg_close_hover_b rgb(192, 225, 161);
-@define-color windowcontrols_button_bg_close_hover_c rgb(238, 240, 234);
+@define-color windowcontrols_button_bg_close_hover_a shade(rgb(239, 240, 236), 1.2);
+@define-color windowcontrols_button_bg_close_hover_b shade(rgb(142, 202, 86), 1.1);
+@define-color windowcontrols_button_bg_normal_close_a rgb(223, 234, 212);
+@define-color windowcontrols_button_bg_normal_close_b rgb(128, 186, 73);
+@define-color windowcontrols_button_border rgb(55, 56, 52);
+@define-color windowcontrols_button_fg_hover rgb(81, 80, 75);
+@define-color windowcontrols_button_fg_normal rgb(61, 60, 55);
+@define-color windowcontrols_button_text_shadow rgb(117, 116, 111);
 @define-color wm_bg_a rgb(60, 59, 55);
 @define-color wm_bg_b shade(@wm_bg_a, 1.5);
 @define-color wm_bg_c shade(@wm_bg_a, 1.65);
@@ -2698,53 +2706,60 @@ windowcontrols
 
 windowcontrols > button
 {
-    -gtk-icon-shadow: 0 1px @wm_title_shadow;
-    -gtk-icon-size: 15px;
+    -gtk-icon-shadow: 0 1px @windowcontrols_button_text_shadow;
+    -gtk-icon-size: 19px;
     border-radius: 50%;
     padding: 3px;
+    background-image: linear-gradient(to bottom, @windowcontrols_button_bg_normal_a, @windowcontrols_button_bg_normal_b);
+    color: @windowcontrols_button_fg_normal;
+    border-color: @windowcontrols_button_border;
+    box-shadow: 0 -1px @windowcontrols_button_bg_normal_b inset, 1px 0 @windowcontrols_button_bg_normal_b inset, 0 1px @windowcontrols_button_bg_normal_b inset, -1px 0 @windowcontrols_button_bg_normal_b inset;
 }
 
-windowcontrols > button:backdrop
+windowcontrols > button:backdrop,
+windowcontrols > button.close:backdrop
 {
-    -gtk-icon-shadow: 0 1px @button_textshadow_toolbar_backdrop;
+    background-image: linear-gradient(to bottom, @windowcontrols_button_bg_backdrop_a, @windowcontrols_button_bg_backdrop_b);
+    color: @windowcontrols_button_fg_normal;
+    -gtk-icon-shadow: none;
+    box-shadow: 0 -1px @windowcontrols_button_bg_backdrop_b inset, 1px 0 @windowcontrols_button_bg_backdrop_b inset, 0 1px @windowcontrols_button_bg_backdrop_b inset, -1px 0 @windowcontrols_button_bg_backdrop_b inset;
 }
 
 windowcontrols > button:hover
 {
-    background-image: image(@windowcontrols_button_bg_b);
+    background-image: linear-gradient(to bottom, @button_bg_checked_a, @windowcontrols_button_bg_hover_b);
+    color: @windowcontrols_button_fg_hover;
+    -gtk-icon-shadow: 0 1px @button_border_active_b;
+    box-shadow: 0 -1px @windowcontrols_button_bg_hover_b inset, 1px 0 @windowcontrols_button_bg_hover_b inset, 0 1px @windowcontrols_button_bg_hover_b inset, -1px 0 @windowcontrols_button_bg_hover_b inset;
 }
 
 windowcontrols > button:active
 {
-    background-image: linear-gradient(to bottom, @button_bg_toolbar_active_a, @wm_bg_a);
+    background-image: linear-gradient(to bottom, @windowcontrols_button_bg_active_a, @windowcontrols_button_bg_active_b);
+    color: @windowcontrols_button_fg_normal;
+    -gtk-icon-shadow: none;
+    box-shadow: 0 -1px @windowcontrols_button_bg_active_a inset, 1px 0 @windowcontrols_button_bg_active_a inset, 0 1px @windowcontrols_button_bg_active_a inset, -1px 0 @windowcontrols_button_bg_active_a inset;
 }
 
 windowcontrols > button.close
 {
     color: @popover_border;
     -gtk-icon-shadow: 0 1px @inset_light;
-    background-image: linear-gradient(to top, @windowcontrols_button_bg_close_a, @windowcontrols_button_bg_close_b 50%, @windowcontrols_button_bg_close_c);
-}
-
-windowcontrols > button.close:backdrop
-{
-    color: @fg_dark_insensitive;
-    -gtk-icon-shadow: 0 1px @button_textshadow_toolbar_backdrop;
-    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
+    background-image: linear-gradient(to bottom, @windowcontrols_button_bg_normal_close_a, @windowcontrols_button_bg_normal_close_b);
+    box-shadow: 0 -1px @windowcontrols_button_bg_normal_close_b inset, 1px 0 @windowcontrols_button_bg_normal_close_b inset, 0 1px @windowcontrols_button_bg_normal_close_b inset, -1px 0 @windowcontrols_button_bg_normal_close_b inset;
 }
 
 windowcontrols > button.close:hover
 {
-    color: @popover_border;
-    -gtk-icon-shadow: 0 1px @inset_light;
-    background-image: linear-gradient(to top, @windowcontrols_button_bg_close_hover_a, @windowcontrols_button_bg_close_hover_b 50%, @windowcontrols_button_bg_close_hover_c);
+    background-image: linear-gradient(to bottom, @windowcontrols_button_bg_close_hover_a, @windowcontrols_button_bg_close_hover_b);
+    box-shadow: 0 -1px @windowcontrols_button_bg_close_hover_b inset, 1px 0 @windowcontrols_button_bg_close_hover_b inset, 0 1px @windowcontrols_button_bg_close_hover_b inset, -1px 0 @windowcontrols_button_bg_close_hover_b inset;
 }
 
 windowcontrols > button.close:active
 {
-    color: @popover_border;
-    -gtk-icon-shadow: 0 1px @inset_light;
-    background-image: linear-gradient(to top, @windowcontrols_button_bg_close_active_a, @windowcontrols_button_bg_close_active_b);
+    background-image: linear-gradient(to bottom, @windowcontrols_button_bg_close_active_a, @windowcontrols_button_bg_close_active_b);
+    -gtk-icon-shadow: none;
+    box-shadow: 0 -1px @windowcontrols_button_bg_close_active_a inset, 1px 0 @windowcontrols_button_bg_close_active_a inset, 0 1px @windowcontrols_button_bg_close_active_a inset, -1px 0 @windowcontrols_button_bg_close_active_a inset;
 }
 
 windowcontrols > button > image
