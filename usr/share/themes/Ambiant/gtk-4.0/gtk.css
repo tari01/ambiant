@@ -1866,6 +1866,7 @@ popover check:checked:disabled
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @popover_border;
     filter: none;
+    -gtk-icon-source: -gtk-icontheme("check-disabled");
 }
 
 radio
