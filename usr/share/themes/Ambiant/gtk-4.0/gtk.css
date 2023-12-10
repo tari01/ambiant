@@ -526,6 +526,22 @@ label.subtitle
     font-size: smaller;
 }
 
+popover > contents > label
+{
+    margin: 6px;
+}
+
+popover modelbutton > label
+{
+    padding-left: 6px;
+}
+
+popover modelbutton:hover > label
+{
+    text-shadow: 0 -1px @list_cell_border;
+    color: @theme_selected_fg_color;
+}
+
 /* GtkText */
 
 text > placeholder
@@ -2830,11 +2846,6 @@ popover > contents:backdrop
     box-shadow: none;
 }
 
-popover > contents > label
-{
-    margin: 6px;
-}
-
 popover:not(.menu) > contents > box
 {
     margin: 6px;
@@ -2879,14 +2890,7 @@ popover modelbutton:hover,
 dropdown > popover listview > row:hover,
 dropdown > popover listview > row:selected
 {
-    text-shadow: 0 -1px @list_cell_border;
     background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
-    color: @theme_selected_fg_color;
-}
-
-popover modelbutton > label
-{
-    padding-left: 6px;
 }
 
 popover modelbutton arrow.right
@@ -2908,6 +2912,7 @@ popover modelbutton accelerator
 popover modelbutton:hover accelerator
 {
     color: @popover_modelbutton_hover_accelerator_fg;
+    text-shadow: 0 -1px @list_cell_border;
 }
 
 popover modelbutton:disabled > accelerator
