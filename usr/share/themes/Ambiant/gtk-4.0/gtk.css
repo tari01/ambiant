@@ -1962,7 +1962,8 @@ levelbar > trough
 
 popover scale.horizontal > trough,
 windowhandle scale.horizontal > trough,
-.osd scale.horizontal > trough
+.osd scale.horizontal > trough,
+.toolbar scale.horizontal > trough
 {
     background-image: image(@popover_entry_bg);
     border-color: @entry_border_toolbar_normal_a;
@@ -1978,7 +1979,8 @@ scale.horizontal > trough:disabled
 
 popover scale.horizontal > trough:disabled,
 windowhandle scale.horizontal > trough:disabled,
-.osd scale.horizontal > trough:disabled
+.osd scale.horizontal > trough:disabled,
+.toolbar scale.horizontal > trough:disabled
 {
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @entry_border_toolbar_normal_a;
@@ -1986,7 +1988,8 @@ windowhandle scale.horizontal > trough:disabled,
 
 popover scale.horizontal > trough:backdrop,
 windowhandle scale.horizontal > trough:backdrop,
-.osd scale.horizontal > trough:backdrop
+.osd scale.horizontal > trough:backdrop,
+.toolbar scale.horizontal > trough:backdrop
 {
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @entry_border_toolbar_normal_a;
@@ -2006,7 +2009,8 @@ progressbar.vertical > trough
 
 popover scale.vertical > trough,
 windowhandle scale.vertical > trough,
-.osd scale.vertical > trough
+.osd scale.vertical > trough,
+.toolbar scale.vertical > trough
 {
     background-image: image(@popover_entry_bg);
     border-color: @entry_border_toolbar_normal_a;
@@ -2022,7 +2026,8 @@ scale.vertical > trough:disabled
 
 popover scale.vertical > trough:disabled,
 windowhandle scale.vertical > trough:disabled,
-.osd scale.vertical > trough:disabled
+.osd scale.vertical > trough:disabled,
+.toolbar scale.vertical > trough:disabled
 {
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @entry_border_toolbar_normal_a;
@@ -2030,7 +2035,8 @@ windowhandle scale.vertical > trough:disabled,
 
 popover scale.vertical > trough:backdrop,
 windowhandle scale.vertical > trough:backdrop,
-.osd scale.vertical > trough:backdrop
+.osd scale.vertical > trough:backdrop,
+.toolbar scale.vertical > trough:backdrop
 {
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @entry_border_toolbar_normal_a;
@@ -2050,9 +2056,11 @@ progressbar.horizontal > trough > progress
 popover scale.horizontal > trough > highlight,
 windowhandle scale.horizontal > trough > highlight,
 .osd scale.horizontal > trough > highlight,
+.toolbar scale.horizontal > trough > highlight,
 popover scale.vertical > trough > highlight,
 windowhandle scale.vertical > trough > highlight,
 .osd scale.vertical > trough > highlight,
+.toolbar scale.vertical > trough > highlight,
 popover progressbar.horizontal > trough > progress,
 windowhandle progressbar.horizontal > trough > progress,
 .osd progressbar.horizontal > trough > progress,
