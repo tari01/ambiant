@@ -911,23 +911,31 @@ windowhandle scale slider,
 .app-notification scale slider,
 .osd scale slider,
 .toolbar scale slider,
-popover scale slider
+popover scale slider,
+windowhandle button.flat:hover,
+.app-notification button.flat:hover,
+.osd button.flat:hover,
+.toolbar button.flat:hover,
+popover button.flat:hover
 {
-    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
+    background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @wm_title;
     text-shadow: 0 -1px @wm_title_shadow;
-    border-color: @button_border_toolbar_normal;
+    border-color: @popover_border;
 }
 
 windowhandle button:active,
 .app-notification button:active,
 .osd button:active,
 .toolbar button:active,
-popover button:active
+popover button:active,
+windowhandle button.flat:active,
+.app-notification button.flat:active,
+.osd button.flat:active,
+.toolbar button.flat:active,
+popover button.flat:active
 {
-    border-color: @button_border_toolbar_active_a;
-    border-top-color: @button_border_toolbar_active_b;
-    border-bottom-color: @button_border_toolbar_active_c;
+    border-color: @popover_border;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_active_a, @wm_bg_a);
     text-shadow: 0 -1px @menubar_fg_shadow;
 }
@@ -936,10 +944,15 @@ windowhandle button:checked,
 .app-notification button:checked,
 .osd button:checked,
 .toolbar button:checked,
-popover button:checked
+popover button:checked,
+windowhandle button.flat:checked,
+.app-notification button.flat:checked,
+.osd button.flat:checked,
+.toolbar button.flat:checked,
+popover button.flat:checked
 {
     background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
-    border-color: @button_border_toolbar_checked;
+    border-color: @popover_border;
 }
 
 windowhandle button:disabled,
@@ -958,8 +971,8 @@ windowhandle radio:disabled,
 popover radio:disabled
 {
     text-shadow: none;
-    background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
-    border-color: @popover_border;
+    background-image: image(@wm_bg_a);
+    border-color: @wm_shadow;
 }
 
 windowhandle button:backdrop,
@@ -985,29 +998,21 @@ popover button:checked:disabled
 {
     text-shadow: none;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_checked_disabled_a, @button_bg_toolbar_checked_disabled_b);
-    border-color: @button_border_toolbar_normal;
+    border-color: @popover_border;
 }
 
 windowhandle button:active:backdrop,
 .app-notification button:active:backdrop,
 .osd button:active:backdrop,
 .toolbar button:active:backdrop,
-popover button:active:backdrop
-{
-    border-color: @button_border_toolbar_active_a;
-    border-top-color: @button_border_toolbar_active_b;
-    border-bottom-color: @button_border_toolbar_active_c;
-}
-
+popover button:active:backdrop,
 windowhandle button:checked:backdrop,
 .app-notification button:checked:backdrop,
 .osd button:checked:backdrop,
 .toolbar button:checked:backdrop,
 popover button:checked:backdrop
 {
-    border-color: @button_border_toolbar_active_a;
-    border-top-color: @button_border_toolbar_active_b;
-    border-bottom-color: @button_border_toolbar_active_c;
+    border-color: @popover_border;
 }
 
 windowhandle button:disabled:backdrop,
@@ -1022,7 +1027,7 @@ windowhandle scale slider:disabled:backdrop,
 popover scale slider:disabled:backdrop
 {
     background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
-    border-color: @button_border_toolbar_normal;
+    border-color: @popover_border;
 }
 
 windowhandle button.suggested-action,
@@ -1047,39 +1052,6 @@ popover button.flat
     border-color: transparent;
 }
 
-windowhandle button.flat:hover,
-.app-notification button.flat:hover,
-.osd button.flat:hover,
-.toolbar button.flat:hover,
-popover button.flat:hover
-{
-    background-image: linear-gradient(to bottom, @button_bg_toolbar_normal_a, @button_bg_toolbar_normal_b 50%, @button_bg_toolbar_normal_c);
-    border-color: @button_border_toolbar_normal;
-}
-
-windowhandle button.flat:active,
-.app-notification button.flat:active,
-.osd button.flat:active,
-.toolbar button.flat:active,
-popover button.flat:active
-{
-    border-color: @button_border_toolbar_active_a;
-    border-top-color: @button_border_toolbar_active_b;
-    border-bottom-color: @button_border_toolbar_active_c;
-    background-image: linear-gradient(to bottom, @button_bg_toolbar_active_a, @wm_bg_a);
-    text-shadow: 0 -1px @menubar_fg_shadow;
-}
-
-windowhandle button.flat:checked,
-.app-notification button.flat:checked,
-.osd button.flat:checked,
-.toolbar button.flat:checked,
-popover button.flat:checked
-{
-    background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
-    border-color: @button_border_toolbar_checked;
-}
-
 windowhandle button.flat:disabled,
 .app-notification button.flat:disabled,
 .osd button.flat:disabled,
@@ -1095,7 +1067,7 @@ windowhandle .linked > button,
 .toolbar .linked button,
 popover .linked > button
 {
-    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @button_textshadow_toolbar_backdrop;
+    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border;
 }
 
 windowhandle .linked > button:first-child,
@@ -1104,7 +1076,7 @@ windowhandle .linked > button:first-child,
 .toolbar .linked button:first-child,
 popover .linked > button:first-child
 {
-    box-shadow: inset -1px 0 @button_textshadow_toolbar_backdrop;
+    box-shadow: inset -1px 0 @popover_border;
 }
 
 windowhandle .linked > button:last-child,
@@ -1116,31 +1088,13 @@ popover .linked > button:last-child
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a;
 }
 
-windowhandle .linked > button:active,
-.app-notification .linked > button:active,
-.osd .linked > button:active,
-.toolbar .linked button:active,
-popover .linked button:active
+windowhandle .linked > button:last-child:checked,
+.app-notification .linked > button:last-child:checked,
+.osd .linked > button:last-child:checked,
+.toolbar .linked button:last-child:checked,
+popover .linked > button:last-child:checked
 {
-    box-shadow: none;
-}
-
-windowhandle .linked > button:disabled,
-.app-notification .linked > button:disabled,
-.osd .linked > button:disabled,
-.toolbar .linked button:disabled,
-popover .linked button:disabled
-{
-    box-shadow: none;
-}
-
-windowhandle .linked > button:only-child,
-.app-notification .linked > button:only-child,
-.osd .linked > button:only-child,
-.toolbar .linked button:only-child,
-popover .linked > button:only-child
-{
-    box-shadow: none;
+    box-shadow: inset 1px 0 @inset_dark;
 }
 
 infobar button,
@@ -2738,6 +2692,7 @@ windowcontrols > button:hover
 
 windowcontrols > button:active
 {
+    border-color: @windowcontrols_button_border;
     background-image: linear-gradient(to bottom, @windowcontrols_button_bg_active_a, @windowcontrols_button_bg_active_b);
     color: @windowcontrols_button_fg_normal;
     -gtk-icon-shadow: none;
