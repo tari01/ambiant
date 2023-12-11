@@ -387,6 +387,20 @@ popover *
     font-family: monospace;
 }
 
+/* transitions */
+
+button,
+check,
+radio,
+switch,
+tab,
+menubar > item,
+calendar label,
+.navigation-sidebar > row
+{
+    transition: all 300ms 0s ease-in-out;
+}
+
 /* green widgets */
 
 scale > trough > highlight:disabled,
@@ -1597,6 +1611,7 @@ notebook > header.top > tabs > tab:checked
 {
     background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
     border-width: 1px 1px 0 1px;
+    padding-bottom: 7px;
 }
 
 notebook > header.bottom > tabs > tab
@@ -1609,6 +1624,7 @@ notebook > header.bottom > tabs > tab:checked
 {
     background-image: linear-gradient(to top, @notebook_tab_bg_checked, @notebook_bg);
     border-width: 0 1px 1px 1px;
+    padding-top: 7px;
 }
 
 notebook > header.left > tabs > tab
@@ -1621,6 +1637,7 @@ notebook > header.left > tabs > tab:checked
 {
     background-image: linear-gradient(to right, @notebook_tab_bg_checked, @notebook_bg);
     border-width: 1px 0 1px 1px;
+    padding-right: 7px;
 }
 
 notebook > header.right > tabs > tab
@@ -1633,6 +1650,7 @@ notebook > header.right > tabs > tab:checked
 {
     background-image: linear-gradient(to left, @notebook_tab_bg_checked, @notebook_bg);
     border-width: 1px 1px 1px 0;
+    padding-left: 7px;
 }
 
 notebook > header > tabs > tab > box
@@ -3003,7 +3021,6 @@ window.csd
 {
     border-radius: 6px 6px 0 0;
     box-shadow: 0 3px 15px 1px @wm_shadow;
-    margin: 10px;
     border-style: solid;
 }
 
