@@ -1433,6 +1433,7 @@ headerbar
     background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @wm_title;
     box-shadow: inset 0 1px @wm_bg_c;
+    background-color: @wm_bg_b;
 }
 
 headerbar:backdrop
