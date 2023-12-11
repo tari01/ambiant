@@ -390,8 +390,8 @@ popover *
 /* transitions */
 
 button,
-check,
-radio,
+check:not(:indeterminate),
+radio:not(:indeterminate),
 switch,
 tab,
 menubar > item,
@@ -550,15 +550,17 @@ popover modelbutton > label
     padding-left: 6px;
 }
 
-popover modelbutton:hover > label
+popover modelbutton:hover > label,
+dropdown > popover listview > row:hover,
+dropdown > popover listview > row:selected
 {
     text-shadow: 0 -1px @list_cell_border;
     color: @theme_selected_fg_color;
 }
 
-/* GtkText */
+/* placeholder */
 
-text > placeholder
+placeholder
 {
     opacity: 0.55;
     text-shadow: none;
