@@ -1962,11 +1962,6 @@ progressbar
 
 /* trough */
 
-scale.horizontal > trough
-{
-    margin: 2px 0px;
-}
-
 scale.horizontal > trough,
 progressbar.horizontal > trough,
 levelbar > trough
