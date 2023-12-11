@@ -653,11 +653,11 @@ button:active:disabled
 
 button.needs-attention > label
 {
-    background-image: radial-gradient(farthest-side, @warning_bg 80%, transparent);
-    background-size: 10px 10px;
+    background-image: radial-gradient(farthest-side, @windowcontrols_button_bg_close_hover_b 80%, transparent);
+    background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: right center;
-    padding-right: 16px;
+    padding-right: 22px;
 }
 
 button.destructive-action
