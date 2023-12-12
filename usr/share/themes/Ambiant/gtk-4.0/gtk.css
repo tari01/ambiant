@@ -198,10 +198,12 @@
 @define-color rubberband_bg alpha(@theme_selected_bg_color, 0.35);
 @define-color scale_indicator_bg shade(@theme_bg_color, 0.8);
 @define-color scrollbar_bg shade(@scrollbar_trough, 1.08);
+@define-color scrollbar_bg_dark #45433D;
 @define-color scrollbar_slider_bg shade(@theme_selected_bg_color, 0.99);
 @define-color scrollbar_slider_bg_disabled shade(@scrollbar_slider_bg, 0.85);
 @define-color scrollbar_slider_bg_hover shade(@theme_selected_bg_color, 1.03);
 @define-color scrollbar_trough shade(@theme_bg_color, 0.98);
+@define-color scrollbar_trough_dark shade(@scrollbar_bg_dark, 0.96);
 @define-color scrolledwindow_border_a shade(@theme_bg_color, 0.84);
 @define-color scrolledwindow_border_b shade(@theme_bg_color, 0.76);
 @define-color scrolledwindow_border_c shade(@theme_bg_color, 0.86);
@@ -1737,6 +1739,12 @@ paned.view
 scrollbar
 {
     opacity: 0.8;
+    border: 1px solid @borders;
+}
+
+popover scrollbar
+{
+    border-color: @popover_border;
 }
 
 scrollbar.vertical
@@ -1749,30 +1757,40 @@ scrollbar.horizontal
     background-image: linear-gradient(to bottom, @scrollbar_trough, @scrollbar_bg);
 }
 
+popover scrollbar.vertical
+{
+    background-image: linear-gradient(to right, @scrollbar_trough_dark, @scrollbar_bg_dark);
+}
+
+popover scrollbar.horizontal
+{
+    background-image: linear-gradient(to bottom, @scrollbar_trough_dark, @scrollbar_bg_dark);
+}
+
 scrollbar.top
 {
-    border-bottom: 1px solid @borders;
+    border-width: 0 0 1px 0;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
 scrollbar.bottom
 {
-    border-top: 1px solid @borders;
+    border-width: 1px 0 0 0;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
 
 scrollbar.left
 {
-    border-right: 1px solid @borders;
+    border-width: 0 1px 0 0;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
 scrollbar.right
 {
-    border-left: 1px solid @borders;
+    border-width: 0 0 0 1px;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
@@ -2577,6 +2595,11 @@ scrolledwindow junction
     background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
     border-left: 1px solid @borders;
     border-bottom-right-radius: 5px;
+}
+
+popover scrolledwindow junction
+{
+    border-color: @popover_border;
 }
 
 scrolledwindow > overshoot.top
