@@ -421,7 +421,7 @@ spinbutton > text:focus:focus-visible,
 entry:focus-within,
 expander-widget:focus:focus-visible > box > title,
 link:focus:focus-visible,
-scale:focus:focus-visible > trough,
+scale:focus:focus-visible > trough > slider,
 switch:focus:focus-visible,
 checkbutton:focus:focus-visible
 {
@@ -1841,6 +1841,7 @@ scrollbar.vertical > range > trough > slider
 checkbutton
 {
     border-spacing: 6px;
+    border-radius: 2px;
 }
 
 check
