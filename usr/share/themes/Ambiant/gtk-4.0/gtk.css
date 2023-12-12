@@ -307,12 +307,6 @@ popover *
     -gtk-icon-filter: grayscale(1.0) opacity(0.5);
 }
 
-*:focus:focus-visible
-{
-    outline: @button_border_focus_a solid 2px;
-    outline-offset: -2px;
-}
-
 .large-title
 {
     font-weight: 300;
@@ -385,6 +379,35 @@ popover *
 .monospace
 {
     font-family: monospace;
+}
+
+/* focus */
+
+button:focus:focus-visible,
+notebook > header > tabs > arrow:focus:focus-visible,
+notebook:focus:focus-visible > header > tabs > tab:checked,
+colorswatch#add-color-button > overlay:focus:focus-visible,
+colorswatch:focus:focus-visible,
+calendar label:not(:selected):focus,
+columnview:focus:focus-visible,
+treeview:focus:focus-visible, /* DEPRECATED */
+iconview:focus:focus-visible, /* DEPRECATED */
+spinbutton > text:focus:focus-visible,
+entry:focus-within,
+expander-widget:focus:focus-visible > box > title,
+link:focus:focus-visible,
+scale:focus:focus-visible > trough,
+switch:focus:focus-visible,
+checkbutton:focus:focus-visible
+{
+    outline: @button_border_focus_a solid 2px;
+    outline-offset: -2px;
+    transition: none;
+}
+
+checkbutton:focus:focus-visible
+{
+    outline-offset: 2px;
 }
 
 /* transitions */
@@ -550,7 +573,8 @@ popover modelbutton > label
     padding-left: 6px;
 }
 
-popover modelbutton:hover > label,
+popover modelbutton:selected > label,
+popover modelbutton:selected > cellview,
 dropdown > popover listview > row:hover,
 dropdown > popover listview > row:selected
 {
@@ -568,7 +592,12 @@ placeholder
 
 /* selection */
 
-selection,
+selection
+{
+    color: transparent;
+}
+
+selection:focus-within,
 treeview:selected, /* DEPRECATED */
 columnview:selected,
 list > row:selected,
@@ -1397,7 +1426,7 @@ headerbar:backdrop
     box-shadow: inset 0 1px @wm_bg_b;
 }
 
-/* GtkSpinButton */
+/* spinbutton */
 
 spinbutton > text
 {
@@ -2866,7 +2895,7 @@ popover modelbutton
     min-height: 25px;
 }
 
-popover modelbutton:hover,
+popover modelbutton:selected,
 dropdown > popover listview > row:hover,
 dropdown > popover listview > row:selected
 {
@@ -2889,7 +2918,7 @@ popover modelbutton accelerator
     margin-left: 18px;
 }
 
-popover modelbutton:hover accelerator
+popover modelbutton:selected accelerator
 {
     color: @popover_modelbutton_hover_accelerator_fg;
     text-shadow: 0 -1px @list_cell_border;
@@ -2944,7 +2973,8 @@ popover modelbutton:disabled > accelerator
     border-radius: 4px;
 }
 
-.emoji-picker emoji:hover
+.emoji-picker emoji:hover,
+.emoji-picker emoji:focus
 {
     background-image: image(@list_cell_bg_normal);
 }
