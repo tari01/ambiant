@@ -290,15 +290,40 @@
 
 *
 {
+    -gtk-dpi: unset;
+    -gtk-icon-filter: unset;
+    -gtk-icon-palette: unset;
+    -gtk-icon-shadow: unset;
+    -gtk-icon-size: unset;
+    -gtk-icon-source: unset;
     -gtk-icon-style: regular;
+    -gtk-icon-transform: unset;
+    -gtk-secondary-caret-color: unset;
+    animation: unset;
+    background: unset;
     background-origin: padding-box;
     background-clip: padding-box;
-    caret-color: @theme_text_color;
-}
-
-popover *
-{
-    caret-color: @wm_title;
+    border: unset;
+    border-radius: unset;
+    border-spacing: unset;
+    box-shadow: unset;
+    caret-color: unset;
+    color: unset;
+    filter: unset;
+    font: unset;
+    letter-spacing: unset;
+    line-height: unset;
+    margin: unset;
+    min-height: unset;
+    min-width: unset;
+    opacity: unset;
+    outline: unset;
+    padding: unset;
+    text-shadow: unset;
+    text-decoration: unset;
+    text-transform: unset;
+    transform: unset;
+    transition: unset;
 }
 
 *:disabled
@@ -1210,6 +1235,7 @@ popover radio
     border-top-color: @entry_border_toolbar_normal_b;
     border-bottom-color: @entry_border_toolbar_normal_c;
     background-image: image(@popover_entry_bg);
+    caret-color: @wm_title;
     color: @wm_title;
 }
 
@@ -2171,6 +2197,7 @@ popover listview
 {
     background-image: image(@popover_entry_bg);
     color: @wm_title;
+    caret-color: @wm_title;
 }
 
 gridview:disabled,
@@ -2690,7 +2717,7 @@ windowcontrols
     border-spacing: 3px;
 }
 
-windowcontrols > button
+windowhandle windowcontrols > button
 {
     -gtk-icon-shadow: 0 1px @windowcontrols_button_text_shadow;
     -gtk-icon-size: 19px;
