@@ -1900,8 +1900,10 @@ check:checked
     border-color: @trough_highlight_border_b;
     border-right-color: @trough_highlight_border_a;
     border-bottom-color: @trough_highlight_border_a;
-    -gtk-icon-source: -gtk-icontheme("check-enabled");
+    -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
     -gtk-icon-shadow: 0 1px @wm_shadow;
+    color: @theme_base_color;
+    -gtk-icon-style: symbolic;
 }
 
 check:indeterminate
@@ -1935,7 +1937,7 @@ popover check:checked:disabled
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @popover_border;
     filter: none;
-    -gtk-icon-source: -gtk-icontheme("check-disabled");
+    color: @fg_disabled;
 }
 
 radio
