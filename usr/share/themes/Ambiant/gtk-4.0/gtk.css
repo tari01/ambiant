@@ -1094,6 +1094,25 @@ popover button.suggested-action
 {
     color: @theme_text_color;
     text-shadow: 0 1px @button_fg_shadow;
+    border-color: @popover_border;
+}
+
+windowhandle button.suggested-action:active,
+.app-notification button.suggested-action:active,
+.osd button.suggested-action:active,
+.toolbar button.suggested-action:active,
+popover button.suggested-action:active
+{
+    border-color: @popover_border;
+}
+
+windowhandle button.suggested-action:backdrop,
+.app-notification button.suggested-action:backdrop,
+.osd button.suggested-action:backdrop,
+.toolbar button.suggested-action:backdrop,
+popover button.suggested-action:backdrop
+{
+    color: @theme_unfocused_text_color;
 }
 
 windowhandle button.flat,
