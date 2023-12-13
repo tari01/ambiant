@@ -94,8 +94,8 @@
 @define-color entry_border_toolbar_normal_c rgb(47, 47, 43);
 @define-color entry_fg_disabled mix(@theme_text_color, @theme_base_color, 0.4);
 @define-color error_bg rgb(223, 56, 44);
-@define-color error_bg_a shade(@error_bg, 1.04);
-@define-color error_bg_b shade(@error_bg, 0.96);
+@define-color error_bg_a #d35757;
+@define-color error_bg_b shade(@error_bg_a, 0.4);
 @define-color error_bg_shadow_a shade(@error_bg, 1.08);
 @define-color error_bg_shadow_b shade(@error_bg, 1.1);
 @define-color error_border_a shade(@error_bg, 0.8);
@@ -607,6 +607,15 @@ dropdown > popover listview > row:selected
 {
     text-shadow: 0 -1px @list_cell_border;
     color: @theme_selected_fg_color;
+}
+
+label.info,
+label.question,
+label.warning,
+label.error
+{
+    border-radius: 5px;
+    padding: 6px;
 }
 
 /* placeholder */
@@ -2871,6 +2880,10 @@ infobar.info > revealer > box, /* DEPRECATED */
 {
     background-image: linear-gradient(to bottom, @info_bg_a, @info_bg_b);
     color: @info_fg;
+}
+
+infobar.info > revealer > box /* DEPRECATED */
+{
     border-bottom: 1px solid @info_border_b;
 }
 
@@ -2879,6 +2892,10 @@ infobar.warning > revealer > box, /* DEPRECATED */
 {
     background-image: linear-gradient(to bottom, @warning_bg_a, @warning_bg_b);
     color: @warning_fg;
+}
+
+infobar.warning > revealer > box /* DEPRECATED */
+{
     border-bottom: 1px solid @warning_border_b;
 }
 
@@ -2887,14 +2904,22 @@ infobar.question > revealer > box, /* DEPRECATED */
 {
     background-image: linear-gradient(to bottom, @question_bg_a, @question_bg_b);
     color: @question_fg;
+}
+
+infobar.question > revealer > box /* DEPRECATED */
+{
     border-bottom: 1px solid @question_border_b;
 }
 
 infobar.error > revealer > box, /* DEPRECATED */
 .error:not(infobar)
 {
-    background-image: linear-gradient(to bottom, @error_bg_a, @error_bg_b);
-    color: @tooltip_fg;
+    background-image: image(@error_bg_a);
+    color: @theme_base_color;
+}
+
+infobar.error > revealer > box /* DEPRECATED */
+{
     border-bottom: 1px solid @error_border_b;
 }
 
@@ -3309,32 +3334,4 @@ shortcut > .keycap
 .app-notification
 {
     border: 1px solid @popover_border;
-}
-
-/* info */
-
-.info:not(infobar)
-{
-    border: 1px solid @info_border;
-}
-
-/* warning */
-
-.warning:not(infobar)
-{
-    border: 1px solid @levelbar_block_border_low;
-}
-
-/* question */
-
-.question:not(infobar)
-{
-    border: 1px solid @question_border_a;
-}
-
-/* error */
-
-.error:not(infobar)
-{
-    border: 1px solid @error_border_a;
 }
