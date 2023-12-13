@@ -977,7 +977,7 @@ popover button.flat:hover
     background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @wm_title;
     text-shadow: 0 -1px @wm_title_shadow;
-    border-color: @popover_border;
+    border-color: @entry_border_toolbar_normal_a;
 }
 
 windowhandle button:active,
@@ -991,7 +991,7 @@ windowhandle button.flat:active,
 .toolbar button.flat:active,
 popover button.flat:active
 {
-    border-color: @popover_border;
+    border-color: @entry_border_toolbar_normal_a;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_active_a, @wm_bg_a);
     text-shadow: 0 -1px @menubar_fg_shadow;
 }
@@ -1008,7 +1008,7 @@ windowhandle button.flat:checked,
 popover button.flat:checked
 {
     background-image: linear-gradient(to bottom, @wm_bg_d, @wm_border);
-    border-color: @popover_border;
+    border-color: @entry_border_toolbar_normal_a;
 }
 
 windowhandle button:disabled,
@@ -1054,7 +1054,7 @@ popover button:checked:disabled
 {
     text-shadow: none;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_checked_disabled_a, @button_bg_toolbar_checked_disabled_b);
-    border-color: @popover_border;
+    border-color: @entry_border_toolbar_normal_a;
 }
 
 windowhandle button:active:backdrop,
@@ -1068,7 +1068,7 @@ windowhandle button:checked:backdrop,
 .toolbar button:checked:backdrop,
 popover button:checked:backdrop
 {
-    border-color: @popover_border;
+    border-color: @entry_border_toolbar_normal_a;
 }
 
 windowhandle button:disabled:backdrop,
@@ -1083,7 +1083,7 @@ windowhandle scale slider:disabled:backdrop,
 popover scale slider:disabled:backdrop
 {
     background-image: linear-gradient(to bottom, @button_bg_toolbar_disabled_a, @button_bg_toolbar_disabled_b);
-    border-color: @popover_border;
+    border-color: @entry_border_toolbar_normal_a;
 }
 
 windowhandle button.suggested-action,
@@ -2550,7 +2550,7 @@ menubar > item
 
 menubar > item:selected
 {
-    background-image: image(@wm_bg_a);
+    background-image: image(@popover_bg);
     box-shadow: inset 0 1px 1px 0 @tooltip_border;
     color: @menubar_item_fg_selected;
     text-shadow: 0 -1px @wm_title_shadow;
