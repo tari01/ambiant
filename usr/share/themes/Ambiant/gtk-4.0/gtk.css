@@ -1225,6 +1225,7 @@ entry:disabled:backdrop
 }
 
 searchbar entry,
+searchbar entry:backdrop,
 windowhandle entry,
 popover entry,
 popover entry:backdrop,
@@ -2829,13 +2830,6 @@ searchbar > revealer > box
     background-image: linear-gradient(to bottom, @button_boxshadow_toolbar_linked_a, @headerbar_bg_maximized);
     padding: 6px;
     border-top: 1px solid @searchbar_border;
-}
-
-searchbar > revealer > box:backdrop
-{
-    background-image: image(@wm_bg_a);
-    border-top-color: @wm_bg_a;
-    border-bottom-color: @button_textshadow_toolbar_backdrop;
 }
 
 /* infobar */
