@@ -634,8 +634,8 @@ list.navigation-sidebar > row:selected,
 window.assistant box.sidebar > label.highlight /* DEPRECATED */
 {
     color: @theme_selected_fg_color;
-    background-image: image(@theme_selected_bg_color);
     background-color: @theme_selected_bg_color;
+    background-image: image(@theme_selected_bg_color);
 }
 
 selection:backdrop,
@@ -649,8 +649,8 @@ list.navigation-sidebar > row:selected:backdrop,
 list.navigation-sidebar > row:selected:backdrop:hover,
 window.assistant box.sidebar > label.highlight:backdrop /* DEPRECATED */
 {
-    background-image: image(@list_cell_bg_selected_insensitive);
     background-color: @list_cell_bg_selected_insensitive;
+    background-image: image(@list_cell_bg_selected_insensitive);
     color: @theme_fg_color;
     text-shadow: none;
 }
@@ -2199,8 +2199,20 @@ columnview,
 list,
 listview
 {
-    background-image: image(@theme_base_color);
+    background-color: @theme_base_color;
     color: @theme_text_color;
+}
+
+scrolledwindow.frame > gridview,
+scrolledwindow.frame > iconview, /* DEPRECATED*/
+scrolledwindow.frame > textview,
+scrolledwindow.frame > treeview, /* DEPRECATED*/
+scrolledwindow.frame > columnview,
+scrolledwindow.frame > list,
+scrolledwindow.frame > listview,
+scrolledwindow.frame > viewport
+{
+    border-radius: 4px;
 }
 
 gridview,
@@ -2214,7 +2226,7 @@ popover treeview, /* DEPRECATED */
 popover list,
 popover listview
 {
-    background-image: image(@popover_entry_bg);
+    background-color: @popover_entry_bg;
     color: @wm_title;
     caret-color: @wm_title;
 }
@@ -2227,6 +2239,7 @@ list > row:disabled,
 listview > row:disabled
 {
     color: @textview_fg_disabled;
+    background-color: @textview_bg_disabled;
     background-image: image(@textview_bg_disabled);
 }
 
@@ -2235,11 +2248,6 @@ columnview.dnd
 {
     border-radius: 2px;
     border: 1px solid @columnview_border_dnd;
-}
-
-scrolledwindow.frame > *:not(scrollbar)
-{
-    border-radius: 4px;
 }
 
 /* view header button */
@@ -2295,6 +2303,7 @@ list > row:hover:not(:selected),
 listview > row:hover:not(:selected)
 {
     background-image: image(@list_cell_bg_normal);
+    background-color: @list_cell_bg_normal;
     color: @list_cell_fg_hover;
 }
 
@@ -2302,6 +2311,7 @@ gridview > child:selected,
 iconview .cell:selected /* DEPRECATED*/
 {
     background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    background-color: @list_cell_bg_selected;
     color: @theme_selected_fg_color;
     text-shadow: 0 -1px @list_cell_border;
 }
@@ -2401,6 +2411,7 @@ video .osd
 calendar
 {
     color: @theme_text_color;
+    background-color: @theme_base_color;
 }
 
 calendar header
@@ -2434,7 +2445,7 @@ calendar button:active
 
 calendar grid
 {
-    background-image: image(@theme_base_color);
+    background-color: @theme_base_color;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 3px;
@@ -2594,7 +2605,11 @@ scrolledwindow junction
 {
     background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
     border-left: 1px solid @borders;
-    border-bottom-right-radius: 5px;
+}
+
+scrolledwindow.frame > junction
+{
+    border-bottom-right-radius: 4px;
 }
 
 popover scrolledwindow junction
@@ -2629,7 +2644,6 @@ calendar
     border: 1px solid @scrolledwindow_border_b;
     border-top-color: @scrolledwindow_border_a;
     border-bottom-color: @scrolledwindow_border_c;
-    background-image: image(@theme_base_color);
 }
 
 popover scrolledwindow.frame,
@@ -2638,7 +2652,7 @@ popover calendar
     border-color: @entry_border_toolbar_normal_a;
     border-top-color: @entry_border_toolbar_normal_b;
     border-bottom-color: @entry_border_toolbar_normal_c;
-    background-image: image(@popover_entry_bg);
+    background-color: @popover_entry_bg;
 }
 
 /* list */
@@ -2651,7 +2665,7 @@ list.separators > row:not(:first-child)
 list.navigation-sidebar,
 window.assistant box.sidebar /* DEPRECATED */
 {
-    background-image: image(@scrollbar_trough);
+    background-color: @scrollbar_trough;
     padding: 6px;
     border-right: 1px solid @selected_bg_insensitive;
 }
@@ -2671,8 +2685,9 @@ window.assistant box.sidebar > label /* DEPRECATED */
     min-height: 25px;
 }
 
-list.navigation-sidebar > row:hover
+list.navigation-sidebar > row:hover:not(:selected)
 {
+    background-color: transparent;
     background-image: none;
 }
 
@@ -2691,6 +2706,7 @@ list.navigation-sidebar > row > revealer > box
 dropdown > popover listview
 {
     background-image: none;
+    background-color: transparent;
 }
 
 listview > row
@@ -2709,6 +2725,7 @@ dropdown > popover listview > row
     padding: 6px;
     min-height: 25px;
     background-image: none;
+    background-color: transparent;
 }
 
 listview > row > cell
@@ -2951,6 +2968,7 @@ dropdown > popover listview > row:hover,
 dropdown > popover listview > row:selected
 {
     background-image: linear-gradient(to bottom, @popover_list_row_bg_hover, @list_cell_bg_selected);
+    background-color: @list_cell_bg_selected;
 }
 
 popover modelbutton arrow.right
