@@ -1278,7 +1278,12 @@ windowhandle button.suggested-action:active,
 .app-notification button.suggested-action:active,
 .osd button.suggested-action:active,
 .toolbar button.suggested-action:active,
-popover button.suggested-action:active
+popover button.suggested-action:active,
+windowhandle button.suggested-action:disabled,
+.app-notification button.suggested-action:disabled,
+.osd button.suggested-action:disabled,
+.toolbar button.suggested-action:disabled,
+popover button.suggested-action:disabled
 {
     border-color: @popover_border;
 }
@@ -2475,7 +2480,8 @@ iconview /* DEPRECATED*/
 popover textview,
 popover treeview, /* DEPRECATED */
 popover list,
-popover listview
+popover listview,
+popover .view
 {
     background-color: @popover_entry_bg;
     color: @wm_title;
@@ -3269,6 +3275,7 @@ popover modelbutton accelerator
 {
     color: @popover_modelbutton_accelerator_fg;
     margin: 0 0 0 18px;
+    text-shadow: none;
 }
 
 popover modelbutton accelerator:dir(rtl)
