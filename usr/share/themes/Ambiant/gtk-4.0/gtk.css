@@ -3087,9 +3087,15 @@ windowcontrols > button > image
 
 searchbar > revealer > box
 {
-    background-image: linear-gradient(to bottom, @button_boxshadow_toolbar_linked_a, @headerbar_bg_maximized);
+    background-image: linear-gradient(to bottom, @wm_bg_a, @button_boxshadow_toolbar_linked_a);
+    border-top: 1px solid @toolbar_border_a;
     padding: 6px;
-    border-top: 1px solid @searchbar_border;
+}
+
+.toolbar ~ searchbar > revealer > box
+{
+    background-image: linear-gradient(to bottom, @button_boxshadow_toolbar_linked_a, @headerbar_bg_maximized);
+    border-top-color: @searchbar_border;
 }
 
 /* infobar */
