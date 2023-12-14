@@ -2445,7 +2445,8 @@ textview,
 treeview, /* DEPRECATED*/
 columnview,
 list,
-listview
+listview,
+.view
 {
     background-color: @theme_base_color;
     color: @theme_text_color;
