@@ -213,9 +213,11 @@
 @define-color separator_border_normal alpha(shade(@theme_bg_color, 1.26), 0.6);
 @define-color separator_border_toolbar_a alpha(@button_bg_toolbar_checked_disabled_a, 0.35);
 @define-color separator_border_toolbar_b alpha(@popover_separator_border, 0.5);
-@define-color shortcut_keycap_bg rgb(34, 34, 34);
-@define-color shortcut_keycap_bg_shadow rgb(51, 51, 51);
-@define-color shortcut_keycap_fg rgb(170, 170, 170);
+@define-color shortcut_keycap_bg_a #6a6a72;
+@define-color shortcut_keycap_bg_b #414149;
+@define-color shortcut_keycap_bg_c #303038;
+@define-color shortcut_keycap_border #1f1e24;
+@define-color shortcut_keycap_fg #d4d1da;
 @define-color success rgb(78, 154, 6);
 @define-color switch_bg_toolbar_disabled_a alpha(@switch_bg_toolbar_normal_a, 0.9);
 @define-color switch_bg_toolbar_disabled_b alpha(@switch_bg_toolbar_normal_b, 0.9);
@@ -3566,18 +3568,13 @@ shortcut
 
 shortcut > .keycap
 {
-    min-width: 26px;
-    min-height: 30px;
-    margin-top: 2px;
-    padding: 0 6px 3px 6px;
+    min-width: 34px;
+    min-height: 34px;
+    border: 2px solid #1f1e24;
     color: @shortcut_keycap_fg;
-    background-image: image(@shortcut_keycap_bg);
+    background-image: linear-gradient(to bottom, @shortcut_keycap_bg_a 0%, @shortcut_keycap_bg_a 3%, @shortcut_keycap_bg_b 3%, @shortcut_keycap_bg_b 3%, @shortcut_keycap_bg_b 97%, @shortcut_keycap_bg_c 97%, @shortcut_keycap_bg_c 100%);
     border-radius: 4px;
-    font-weight: 500;
-    font-size: 9pt;
-    border-top: 1px solid @shortcut_keycap_bg;
-    box-shadow: inset 0 0 25px @shortcut_keycap_bg_shadow, 0 1px 0 @popover_border, 0 2px 0 @shortcut_keycap_bg, 0 2px 3px @shortcut_keycap_bg_shadow;
-    text-shadow: 0px -1px 0px @popover_border;
+    font-size: 13px;
 }
 
 /* toolbar */
