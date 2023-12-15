@@ -2082,7 +2082,7 @@ scrollbar > range > trough > slider
     border-radius: 7px;
 }
 
-scrollbar > range > trough > slider:hover
+scrollbar.overlay-indicator > range > trough > slider:hover
 {
     background-image: image(@scrollbar_slider_bg_hover);
 }
