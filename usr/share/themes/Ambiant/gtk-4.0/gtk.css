@@ -3117,6 +3117,11 @@ spinner:checked:backdrop
 
 /* scrolledwindow */
 
+scrolledwindow.sidebar
+{
+    border-right: 1px solid @selected_bg_insensitive;
+}
+
 scrolledwindow junction
 {
     background-image: linear-gradient(to right, @scrollbar_trough, @scrollbar_bg);
