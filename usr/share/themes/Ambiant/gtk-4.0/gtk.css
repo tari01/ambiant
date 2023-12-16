@@ -410,6 +410,26 @@
     font-family: monospace;
 }
 
+/* spacing */
+
+shortcut,
+window.filechooser actionbar > revealer > box > box.end,
+stackswitcher.circular,
+list.navigation-sidebar > row > revealer > box,
+expander-widget > box > title,
+listview > row treeexpander,
+gridview > child box:not(.linked),
+listview > row box:not(.linked),
+gridview,
+iconview, /* DEPRECATED*/
+notebook > header > tabs > tab > box,
+fontbutton > button > box > box,
+entry,
+button > box
+{
+    border-spacing: 6px;
+}
+
 /* focus */
 
 button:focus:focus-visible,
@@ -447,8 +467,7 @@ radio:not(:indeterminate),
 switch,
 tab,
 menubar > item,
-calendar label,
-.navigation-sidebar > row
+calendar label
 {
     transition: all 300ms 0s ease-in-out;
 }
@@ -843,11 +862,6 @@ button.circular,
 menubutton.circular > button
 {
     border-radius: 50%;
-}
-
-button > box
-{
-    border-spacing: 6px;
 }
 
 button > colorswatch
@@ -1666,24 +1680,12 @@ entry > image.left
     padding-right: 6px;
 }
 
-entry
-{
-    border-spacing: 6px;
-}
-
 entry > progress > trough > progress
 {
     border-radius: 2px;
     border-width: 0 0 2px;
     border-color: @theme_selected_bg_color;
     border-style: solid;
-}
-
-/* GtkFontButton - DEPRECATED */
-
-fontbutton > button > box > box
-{
-    border-spacing: 6px;
 }
 
 /* GtkLinkButton */
@@ -2168,11 +2170,6 @@ notebook > header.right > tabs > tab:checked:dir(rtl)
     background-image: linear-gradient(to left, @notebook_bg, @notebook_tab_bg_checked);
     border-right-width: 0;
     padding-right: 7px;
-}
-
-notebook > header > tabs > tab > box
-{
-    border-spacing: 6px;
 }
 
 notebook > header > tabs > tab label
@@ -2722,12 +2719,6 @@ scrolledwindow.frame > viewport
     border-radius: 4px;
 }
 
-gridview,
-iconview /* DEPRECATED*/
-{
-    border-spacing: 6px;
-}
-
 popover textview,
 popover treeview, /* DEPRECATED */
 popover list,
@@ -2788,12 +2779,6 @@ columnview > header > button sort-indicator.descending
 }
 
 /* view child */
-
-gridview > child box:not(.linked),
-listview > row box:not(.linked)
-{
-    border-spacing: 6px;
-}
 
 gridview > child,
 list > row
@@ -2996,12 +2981,6 @@ calendar label:selected
 }
 
 /* expander */
-
-expander-widget > box > title,
-listview > row treeexpander
-{
-    border-spacing: 6px;
-}
 
 popover expander-widget > box > title
 {
@@ -3222,11 +3201,6 @@ list.navigation-sidebar > row:hover:not(:selected)
 list.navigation-sidebar:backdrop > row:hover
 {
     color: @list_sidebar_fg_inactive;
-}
-
-list.navigation-sidebar > row > revealer > box
-{
-    border-spacing: 6px;
 }
 
 /* listview */
@@ -3602,13 +3576,6 @@ popover modelbutton:disabled > accelerator
     background-image: image(@list_cell_bg_normal);
 }
 
-/* stackswitcher */
-
-stackswitcher.circular
-{
-    border-spacing: 6px;
-}
-
 /* window */
 
 window
@@ -3750,11 +3717,6 @@ window.filechooser actionbar > revealer > box > box.start:dir(rtl)
     margin: 0 6px 0 0;
 }
 
-window.filechooser actionbar > revealer > box > box.end
-{
-    border-spacing: 6px;
-}
-
 window.filechooser .dialog-action-box
 {
     margin: -6px -6px -6px 0;
@@ -3823,11 +3785,6 @@ shortcuts-section
 {
     margin: 10px;
     border-spacing: 24px;
-}
-
-shortcut
-{
-    border-spacing: 6px;
 }
 
 shortcut > .keycap
