@@ -1746,8 +1746,6 @@ overlay > frame
 notebook
 {
     background-image: image(@notebook_bg);
-    border-radius: 5px;
-    border: none;
 }
 
 notebook.frame,
@@ -1755,6 +1753,7 @@ window.dialog.print notebook,
 paned.horizontal > notebook
 {
     border: 1px solid @borders;
+    border-radius: 5px;
 }
 
 notebook > header
@@ -1765,54 +1764,94 @@ notebook > header
 
 notebook > header.top
 {
-    margin: -1px -1px 0 0;
-    border-radius: 5px 5px 0 0;
     box-shadow: inset 0 -1px @notebook_header_bg_shadow;
 }
 
-notebook > header.top:dir(rtl)
+notebook.frame > header.top,
+window.dialog.print notebook > header.top,
+paned.horizontal > notebook > header.top
+{
+    margin: -1px -1px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+notebook.frame > header.top:dir(rtl),
+window.dialog.print notebook > header.top:dir(rtl),
+paned.horizontal > notebook > header.top:dir(rtl)
 {
     margin: -1px 0 0 -1px;
 }
 
 notebook > header.bottom
 {
-    margin: 0 -1px -1px 0;
-    border-radius: 0 0 5px 5px;
     box-shadow: inset 0 1px @notebook_header_bg_shadow;
 }
 
-notebook > header.bottom:dir(rtl)
+notebook.frame > header.bottom,
+window.dialog.print notebook > header.bottom,
+paned.horizontal > notebook > header.bottom
+{
+    margin: 0 -1px -1px 0;
+    border-radius: 0 0 5px 5px;
+}
+
+notebook.frame > header.bottom:dir(rtl),
+window.dialog.print notebook > header.bottom:dir(rtl),
+paned.horizontal > notebook > header.bottom:dir(rtl)
 {
     margin: 0 0 -1px -1px;
 }
 
 notebook > header.left
 {
-    margin: 0 0 -1px -1px;
-    border-radius: 5px 0 0 5px;
     box-shadow: inset -1px 0 @notebook_header_bg_shadow;
 }
 
 notebook > header.left:dir(rtl)
 {
+    box-shadow: inset 1px 0 @notebook_header_bg_shadow;
+}
+
+notebook.frame > header.left,
+window.dialog.print notebook > header.left,
+paned.horizontal > notebook > header.left
+{
+    margin: 0 0 -1px -1px;
+    border-radius: 5px 0 0 5px;
+}
+
+notebook.frame > header.left:dir(rtl),
+window.dialog.print notebook > header.left:dir(rtl),
+paned.horizontal > notebook > header.left:dir(rtl)
+{
     border-radius: 0 5px 5px 0;
     margin: 0 -1px -1px 0;
-    box-shadow: inset 1px 0 @notebook_header_bg_shadow;
 }
 
 notebook > header.right
 {
-    margin: 0 -1px -1px 0;
-    border-radius: 0 5px 5px 0;
     box-shadow: inset 1px 0 @notebook_header_bg_shadow;
 }
 
 notebook > header.right:dir(rtl)
 {
+    box-shadow: inset -1px 0 @notebook_header_bg_shadow;
+}
+
+notebook.frame > header.right,
+window.dialog.print notebook > header.right,
+paned.horizontal > notebook > header.right
+{
+    margin: 0 -1px -1px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+notebook.frame > header.right:dir(rtl),
+window.dialog.print notebook > header.right:dir(rtl),
+paned.horizontal > notebook > header.right:dir(rtl)
+{
     border-radius: 5px 0 0 5px;
     margin: 0 0 -1px -1px;
-    box-shadow: inset -1px 0 @notebook_header_bg_shadow;
 }
 
 paned.horizontal > notebook:first-child > header
@@ -1831,8 +1870,8 @@ notebook > header > tabs > tab
 
 notebook > header.top > tabs > tab
 {
-    border-radius: 5px 5px 0 0;
     margin: 0 0 0 -1px;
+    border-top-width: 0;
 }
 
 notebook > header.top > tabs > tab:dir(rtl)
@@ -1840,17 +1879,40 @@ notebook > header.top > tabs > tab:dir(rtl)
     margin: 0 -1px 0 0;
 }
 
+notebook > header.top > tabs > arrow.down + tab:dir(ltr)
+{
+    border-left-width: 0;
+}
+
+notebook > header.top > tabs > arrow.down + tab:dir(rtl)
+{
+    border-right-width: 0;
+}
+
+notebook.frame > header.top > tabs > tab,
+window.dialog.print notebook > header.top > tabs > tab,
+paned.horizontal > notebook > header.top > tabs > tab,
+notebook.frame > header.top > tabs > arrow.down + tab,
+window.dialog.print notebook > header.top > tabs > arrow.down + tab,
+paned.horizontal > notebook > header.top > tabs > arrow.down + tab
+{
+    border-radius: 5px 5px 0 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+}
+
 notebook > header.top > tabs > tab:checked
 {
     background-image: linear-gradient(to bottom, @notebook_tab_bg_checked, @notebook_bg);
-    border-width: 1px 1px 0 1px;
+    border-bottom-width: 0;
     padding-bottom: 7px;
 }
 
 notebook > header.bottom > tabs > tab
 {
-    border-radius: 0 0 5px 5px;
     margin: 0 0 0 -1px;
+    border-bottom-width: 0;
 }
 
 notebook > header.bottom > tabs > tab:dir(rtl)
@@ -1858,61 +1920,148 @@ notebook > header.bottom > tabs > tab:dir(rtl)
     margin: 0 -1px 0 0;
 }
 
+notebook > header.bottom > tabs > arrow.down + tab:dir(ltr)
+{
+    border-left-width: 0;
+}
+
+notebook > header.bottom > tabs > arrow.down + tab:dir(rtl)
+{
+    border-right-width: 0;
+}
+
+notebook.frame > header.bottom > tabs > tab,
+window.dialog.print notebook > header.bottom > tabs > tab,
+paned.horizontal > notebook > header.bottom > tabs > tab,
+notebook.frame > header.bottom > tabs > arrow.down + tab,
+window.dialog.print notebook > header.bottom > tabs > arrow.down + tab,
+paned.horizontal > notebook > header.bottom > tabs > arrow.down + tab
+{
+    border-radius: 0 0 5px 5px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+}
+
 notebook > header.bottom > tabs > tab:checked
 {
     background-image: linear-gradient(to top, @notebook_tab_bg_checked, @notebook_bg);
-    border-width: 0 1px 1px 1px;
+    border-top-width: 0;
     padding-top: 7px;
 }
 
-notebook > header.left > tabs > tab
+notebook > header.left > tabs > tab:dir(ltr)
 {
-    border-radius: 5px 0 0 5px;
     margin: -1px 0 0 0;
+    border-left-width: 0;
 }
 
 notebook > header.left > tabs > tab:dir(rtl)
 {
+    margin: -1px 0 0 0;
+    border-right-width: 0;
+}
+
+notebook > header.left > tabs > arrow.down + tab:dir(ltr)
+{
+    border-top-width: 0;
+}
+
+notebook > header.left > tabs > arrow.down + tab:dir(rtl)
+{
+    border-bottom-width: 0;
+}
+
+notebook.frame > header.left > tabs > tab,
+window.dialog.print notebook > header.left > tabs > tab,
+paned.horizontal > notebook > header.left > tabs > tab,
+notebook.frame > header.left > tabs > arrow.down + tab,
+window.dialog.print notebook > header.left > tabs > arrow.down + tab,
+paned.horizontal > notebook > header.left > tabs > arrow.down + tab
+{
+    border-radius: 5px 0 0 5px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+notebook.frame > header.left > tabs > tab:dir(rtl),
+window.dialog.print notebook > header.left > tabs > tab:dir(rtl),
+paned.horizontal > notebook > header.left > tabs > tab:dir(rtl)
+{
     border-radius: 0 5px 5px 0;
 }
 
-notebook > header.left > tabs > tab:checked
+notebook > header.left > tabs > tab:checked:dir(ltr)
 {
     background-image: linear-gradient(to right, @notebook_tab_bg_checked, @notebook_bg);
-    border-width: 1px 0 1px 1px;
-    padding-left: 7px;
+    border-right-width: 0;
+    padding-right: 7px;
 }
 
 notebook > header.left > tabs > tab:checked:dir(rtl)
 {
     background-image: linear-gradient(to right, @notebook_bg, @notebook_tab_bg_checked);
-    border-width: 1px 1px 1px 0;
-    padding: 6px 6px 6px 7px;
+    border-left-width: 0;
+    padding-left: 7px;
 }
 
-notebook > header.right > tabs > tab
+notebook > header.right > tabs > tab:dir(ltr)
 {
-    border-radius: 0 5px 5px 0;
     margin: -1px 0 0 0;
+    border-right-width: 0;
 }
 
 notebook > header.right > tabs > tab:dir(rtl)
 {
+    margin: -1px 0 0 0;
+    border-left-width: 0;
+}
+
+notebook > header.right > tabs > arrow.down + tab:dir(ltr)
+{
+    border-bottom-width: 0;
+}
+
+notebook > header.right > tabs > arrow.down + tab:dir(rtl)
+{
+    border-top-width: 0;
+}
+
+notebook.frame > header.right > tabs > tab,
+window.dialog.print notebook > header.right > tabs > tab,
+paned.horizontal > notebook > header.right > tabs > tab,
+notebook.frame > header.right > tabs > arrow.down + tab,
+window.dialog.print notebook > header.right > tabs > arrow.down + tab,
+paned.horizontal > notebook > header.right > tabs > arrow.down + tab
+{
+    border-radius: 0 5px 5px 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+notebook.frame > header.right > tabs > tab:dir(rtl),
+window.dialog.print notebook > header.right > tabs > tab:dir(rtl),
+paned.horizontal > notebook > header.right > tabs > tab:dir(rtl)
+{
     border-radius: 5px 0 0 5px;
 }
 
-notebook > header.right > tabs > tab:checked
+notebook > header.right > tabs > tab:checked:dir(ltr)
 {
     background-image: linear-gradient(to left, @notebook_tab_bg_checked, @notebook_bg);
-    border-width: 1px 1px 1px 0;
+    border-left-width: 0;
     padding-left: 7px;
 }
 
 notebook > header.right > tabs > tab:checked:dir(rtl)
 {
     background-image: linear-gradient(to left, @notebook_bg, @notebook_tab_bg_checked);
-    border-width: 1px 0 1px 1px;
-    padding: 6px 7px 6px 6px;
+    border-right-width: 0;
+    padding-right: 7px;
 }
 
 notebook > header > tabs > tab > box
@@ -1930,11 +2079,7 @@ notebook > header > tabs > tab:checked label
     color: @theme_fg_color;
 }
 
-notebook > header > tabs arrow
-{
-    color: @theme_fg_color;
-}
-
+notebook > header > tabs arrow,
 notebook > header > tabs arrow:active
 {
     color: @theme_fg_color;
