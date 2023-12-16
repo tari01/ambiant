@@ -3076,7 +3076,7 @@ popover calendar
 list.separators > row:not(:first-child),
 list.boxed-list > row:not(:first-child)
 {
-    border-top: 1px solid @selected_bg_insensitive;
+    border-top: 1px solid @theme_bg_color;
 }
 
 list.navigation-sidebar,
