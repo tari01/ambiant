@@ -1857,6 +1857,12 @@ notebook > header
 notebook > header.top
 {
     box-shadow: inset 0 -1px @notebook_header_bg_shadow;
+    margin: 0 0 0 1px;
+}
+
+notebook > header.top:dir(rtl)
+{
+    margin: 0 1px 0 0;
 }
 
 notebook.frame > header.top,
@@ -1877,6 +1883,12 @@ paned.horizontal > notebook > header.top:dir(rtl)
 notebook > header.bottom
 {
     box-shadow: inset 0 1px @notebook_header_bg_shadow;
+    margin: 0 0 0 1px;
+}
+
+notebook > header.bottom:dir(rtl)
+{
+    margin: 0 1px 0 0;
 }
 
 notebook.frame > header.bottom,
@@ -1897,6 +1909,7 @@ paned.horizontal > notebook > header.bottom:dir(rtl)
 notebook > header.left
 {
     box-shadow: inset -1px 0 @notebook_header_bg_shadow;
+    margin: 1px 0 0 0;
 }
 
 notebook > header.left:dir(rtl)
@@ -1923,6 +1936,7 @@ paned.horizontal > notebook > header.left:dir(rtl)
 notebook > header.right
 {
     box-shadow: inset 1px 0 @notebook_header_bg_shadow;
+    margin: 1px 0 0 0;
 }
 
 notebook > header.right:dir(rtl)
