@@ -3175,9 +3175,8 @@ list.navigation-sidebar:backdrop > row:hover
 
 /* listview */
 
-dropdown > popover listview
+dropdown > popover listview.view
 {
-    background-image: none;
     background-color: transparent;
 }
 
@@ -3531,6 +3530,11 @@ popover modelbutton:disabled > accelerator
 .emoji-picker viewport
 {
     margin: -3px -3px 3px -3px;
+}
+
+.emoji-picker scrolledwindow
+{
+    background-color: transparent;
 }
 
 .emoji-picker emoji
