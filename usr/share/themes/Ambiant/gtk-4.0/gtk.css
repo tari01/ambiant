@@ -3665,6 +3665,7 @@ window.filechooser placessidebar > scrolledwindow > *:not(scrollbar)
 window.filechooser #pathbarbox
 {
     margin: -6px -6px 0 0;
+    background-color: transparent;
 }
 
 window.filechooser #pathbarbox:dir(rtl)
@@ -3695,6 +3696,11 @@ window.filechooser .dialog-action-box
 window.filechooser .dialog-action-box:dir(rtl)
 {
     margin: -6px 0 -6px -6px;
+}
+
+window.filechooser paned > box > box > stack
+{
+    background-color: transparent;
 }
 
 window.filechooser paned > box > box > stack > box > scrolledwindow,
