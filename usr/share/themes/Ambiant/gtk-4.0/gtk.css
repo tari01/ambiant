@@ -431,8 +431,8 @@ checkbutton:focus:focus-visible
 /* transitions */
 
 button,
-check:not(:indeterminate),
-radio:not(:indeterminate),
+check,
+radio,
 switch,
 tab,
 menubar > item,
@@ -2327,7 +2327,8 @@ checkbutton
     border-radius: 2px;
 }
 
-check
+check,
+radio
 {
     min-height: 17px;
     min-width: 17px;
@@ -2339,112 +2340,46 @@ check
     border-radius: 3px;
 }
 
-check:checked
+radio
+{
+    border-radius: 50%;
+}
+
+check:checked,
+radio:checked,
+check:indeterminate,
+radio:indeterminate
 {
     background-image: linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
     border-color: @trough_highlight_border_b;
     border-right-color: @trough_highlight_border_a;
     border-bottom-color: @trough_highlight_border_a;
-    -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+    -gtk-icon-source: -gtk-icontheme("check-symbolic");
     -gtk-icon-shadow: 0 1px @wm_shadow;
     color: @theme_base_color;
     -gtk-icon-style: symbolic;
 }
 
-check:indeterminate
+radio:checked
 {
-    background-image: image(@theme_base_color), image(@wm_shadow), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
-    background-position: 50% 50%, 50% 57%, 100% 100%;
-    background-size: 62.5% 12.5%, 62.5% 12.5%, 100% 100%;
-    border-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_a;
-    border-bottom-color: @trough_highlight_border_a;
-    -gtk-icon-source: none;
+    -gtk-icon-source: -gtk-icontheme("bullet-symbolic");
 }
 
-check:indeterminate:disabled
+check:indeterminate,
+radio:indeterminate
 {
-    background-image: image(@theme_base_color), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
-    background-position: 50% 50%, 100% 100%;
-    background-size: 62.5% 12.5%, 100% 100%;
+    -gtk-icon-source: -gtk-icontheme("dash-symbolic");
 }
 
-check:indeterminate:backdrop
-{
-    background-image: image(@theme_base_color), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
-    background-position: 50% 50%, 100% 100%;
-    background-size: 62.5% 12.5%, 100% 100%;
-}
-
-windowhandle check:checked:disabled,
-popover check:checked:disabled
+windowhandle check:disabled,
+popover check:disabled,
+windowhandle radio:disabled,
+popover radio:disabled
 {
     background-image: image(@button_bg_toolbar_disabled_a);
     border-color: @popover_border;
     filter: none;
     color: @fg_disabled;
-}
-
-radio
-{
-    min-height: 17px;
-    min-width: 17px;
-    background-image: linear-gradient(to bottom, @entry_bg_normal,  @theme_base_color);
-    background-repeat: no-repeat;
-    border: 1px solid @entry_border_normal_a;
-    border-top-color: @entry_border_normal_b;
-    border-bottom-color: @entry_border_normal_c;
-    border-radius: 50%;
-}
-
-radio:checked
-{
-    background-image: radial-gradient(closest-side at center, @theme_base_color 45%, transparent 70%), radial-gradient(closest-side at center, @wm_shadow 50%, transparent 60%), linear-gradient(to bottom, @progressbar_fill_b,  @progressbar_fill_a);
-    border-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_a;
-    border-bottom-color: @trough_highlight_border_a;
-}
-
-radio:indeterminate
-{
-    background-image: image(@theme_base_color), image(@wm_shadow), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
-    background-position: 50% 50%, 50% 57%, 100% 100%;
-    background-size: 62.5% 12.5%, 62.5% 12.5%, 100% 100%;
-    border-color: @trough_highlight_border_b;
-    border-right-color: @trough_highlight_border_a;
-    border-bottom-color: @trough_highlight_border_a;
-}
-
-radio:checked:disabled
-{
-    background-image: radial-gradient(closest-side at center, @theme_base_color 45%, transparent 70%), linear-gradient(to bottom, @progressbar_fill_b,  @progressbar_fill_a);
-}
-
-radio:indeterminate:disabled
-{
-    background-image: image(@theme_base_color), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
-    background-position: 50% 50%, 100% 100%;
-    background-size: 62.5% 12.5%, 100% 100%;
-}
-
-radio:checked:backdrop
-{
-    background-image: radial-gradient(closest-side at center, @theme_base_color 45%, transparent 70%), linear-gradient(to bottom, @progressbar_fill_b,  @progressbar_fill_a);
-}
-
-radio:indeterminate:backdrop
-{
-    background-image: image(@theme_base_color), linear-gradient(to bottom, @progressbar_fill_b, @progressbar_fill_a);
-    background-position: 50% 50%, 100% 100%;
-    background-size: 62.5% 12.5%, 100% 100%;
-}
-
-windowhandle radio:checked:disabled,
-popover radio:checked:disabled
-{
-    background-image: radial-gradient(closest-side at center, @entry_border_insensitive_a 45%, transparent 70%), image(@button_bg_toolbar_disabled_a);
-    border-color: @popover_border;
-    filter: none;
 }
 
 /* progressbar */
