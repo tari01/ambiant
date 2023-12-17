@@ -3113,7 +3113,8 @@ scrolledwindow > overshoot.right
 
 scrolledwindow.frame,
 calendar,
-list.boxed-list
+list.boxed-list,
+label.frame
 {
     border-radius: 5px;
     border: 1px solid @scrolledwindow_border_b;
