@@ -294,40 +294,9 @@
 
 *
 {
-    -gtk-dpi: unset;
-    -gtk-icon-filter: unset;
-    -gtk-icon-palette: unset;
-    -gtk-icon-shadow: unset;
-    -gtk-icon-size: unset;
-    -gtk-icon-source: unset;
     -gtk-icon-style: regular;
-    -gtk-icon-transform: unset;
-    -gtk-secondary-caret-color: unset;
-    animation: unset;
-    background: unset;
     background-origin: padding-box;
     background-clip: padding-box;
-    border: unset;
-    border-radius: unset;
-    border-spacing: unset;
-    box-shadow: unset;
-    caret-color: unset;
-    color: unset;
-    filter: unset;
-    font: unset;
-    letter-spacing: unset;
-    line-height: unset;
-    margin: unset;
-    min-height: unset;
-    min-width: unset;
-    opacity: unset;
-    outline: unset;
-    padding: unset;
-    text-shadow: unset;
-    text-decoration: unset;
-    text-transform: unset;
-    transform: unset;
-    transition: unset;
 }
 
 *:disabled
