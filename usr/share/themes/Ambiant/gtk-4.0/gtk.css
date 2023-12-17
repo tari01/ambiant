@@ -1153,7 +1153,7 @@ popover button.flat:checked
 {
     background-image: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     border-color: @entry_border_toolbar_normal_a;
-    box-shadow: inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle button:active,
@@ -1170,7 +1170,7 @@ popover button.flat:active
     border-color: @entry_border_toolbar_normal_a;
     background-image: linear-gradient(to bottom, @button_bg_toolbar_active_a, @wm_bg_a);
     text-shadow: 0 -1px @menubar_fg_shadow;
-    box-shadow: inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 windowhandle button:disabled,
@@ -1318,7 +1318,7 @@ windowhandle .linked > button:checked:dir(ltr),
 .toolbar .linked button:checked:dir(ltr),
 popover .linked > button:checked:dir(ltr)
 {
-    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle .linked > button:active:dir(ltr),
@@ -1327,7 +1327,7 @@ windowhandle .linked > button:active:dir(ltr),
 .toolbar .linked button:active:dir(ltr),
 popover .linked > button:active:dir(ltr)
 {
-    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 windowhandle .linked > button:dir(rtl),
@@ -1345,7 +1345,7 @@ windowhandle .linked > button:checked:dir(rtl),
 .toolbar .linked button:checked:dir(rtl),
 popover .linked > button:checked:dir(rtl)
 {
-    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle .linked > button:active:dir(rtl),
@@ -1354,7 +1354,7 @@ windowhandle .linked > button:active:dir(rtl),
 .toolbar .linked button:active:dir(rtl),
 popover .linked > button:active:dir(rtl)
 {
-    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 windowhandle .linked > button:first-child:dir(ltr),
@@ -1372,7 +1372,7 @@ windowhandle .linked > button:first-child:checked:dir(ltr),
 .toolbar .linked button:first-child:checked:dir(ltr),
 popover .linked > button:first-child:checked:dir(ltr)
 {
-    box-shadow: inset -1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle .linked > button:first-child:active:dir(ltr),
@@ -1381,7 +1381,7 @@ windowhandle .linked > button:first-child:active:dir(ltr),
 .toolbar .linked button:first-child:active:dir(ltr),
 popover .linked > button:first-child:active:dir(ltr)
 {
-    box-shadow: inset -1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 windowhandle .linked > button:first-child:dir(rtl),
@@ -1399,7 +1399,7 @@ windowhandle .linked > button:first-child:checked:dir(rtl),
 .toolbar .linked button:first-child:checked:dir(rtl),
 popover .linked > button:first-child:checked:dir(rtl)
 {
-    box-shadow: inset 1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle .linked > button:first-child:active:dir(rtl),
@@ -1408,7 +1408,7 @@ windowhandle .linked > button:first-child:active:dir(rtl),
 .toolbar .linked button:first-child:active:dir(rtl),
 popover .linked > button:first-child:active:dir(rtl)
 {
-    box-shadow: inset 1px 0 @popover_border, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 windowhandle .linked > button:last-child:dir(rtl),
@@ -1426,7 +1426,7 @@ windowhandle .linked > button:last-child:checked:dir(rtl),
 .toolbar .linked button:last-child:checked:dir(rtl),
 popover .linked > button:last-child:checked:dir(rtl)
 {
-    box-shadow: inset -1px 0 @inset_dark, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset -1px 0 @inset_dark, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle .linked > button:last-child:active:dir(rtl),
@@ -1435,7 +1435,7 @@ windowhandle .linked > button:last-child:active:dir(rtl),
 .toolbar .linked button:last-child:active:dir(rtl),
 popover .linked > button:last-child:active:dir(rtl)
 {
-    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 windowhandle .linked > button:last-child:dir(ltr),
@@ -1453,7 +1453,7 @@ windowhandle .linked > button:last-child:checked:dir(ltr),
 .toolbar .linked button:last-child:checked:dir(ltr),
 popover .linked > button:last-child:checked:dir(ltr)
 {
-    box-shadow: inset 1px 0 @inset_dark, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+    box-shadow: inset 1px 0 @inset_dark, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
 }
 
 windowhandle .linked > button:last-child:active:dir(ltr),
@@ -1462,7 +1462,7 @@ windowhandle .linked > button:last-child:active:dir(ltr),
 .toolbar .linked button:last-child:active:dir(ltr),
 popover .linked > button:last-child:active:dir(ltr)
 {
-    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
 infobar button,
