@@ -2566,7 +2566,15 @@ levelbar > trough
 popover scale.horizontal > trough,
 windowhandle scale.horizontal > trough,
 .osd scale.horizontal > trough,
-.toolbar scale.horizontal > trough
+.toolbar scale.horizontal > trough,
+popover progressbar.horizontal > trough,
+windowhandle progressbar.horizontal > trough,
+.osd progressbar.horizontal > trough,
+.toolbar progressbar.horizontal > trough,
+popover levelbar > trough,
+windowhandle levelbar > trough,
+.osd levelbar > trough,
+.toolbar levelbar > trough
 {
     background: @entry_background_toolbar;
     border-color: @entry_border_toolbar_normal_a;
@@ -2574,7 +2582,9 @@ windowhandle scale.horizontal > trough,
     border-bottom-color: @entry_border_toolbar_normal_c;
 }
 
-scale.horizontal > trough:disabled
+scale.horizontal > trough:disabled,
+progressbar.horizontal > trough:disabled,
+levelbar > trough:disabled
 {
     background: linear-gradient(to bottom, @trough_background_disabled_a, @trough_background_disabled_b);
     border-color: @button_border_disabled;
@@ -2583,16 +2593,15 @@ scale.horizontal > trough:disabled
 popover scale.horizontal > trough:disabled,
 windowhandle scale.horizontal > trough:disabled,
 .osd scale.horizontal > trough:disabled,
-.toolbar scale.horizontal > trough:disabled
-{
-    background: @button_background_toolbar_disabled_a;
-    border-color: @entry_border_toolbar_normal_a;
-}
-
-popover scale.horizontal > trough:backdrop,
-windowhandle scale.horizontal > trough:backdrop,
-.osd scale.horizontal > trough:backdrop,
-.toolbar scale.horizontal > trough:backdrop
+.toolbar scale.horizontal > trough:disabled,
+popover progressbar.horizontal > trough:disabled,
+windowhandle progressbar.horizontal > trough:disabled,
+.osd progressbar.horizontal > trough:disabled,
+.toolbar progressbar.horizontal > trough:disabled,
+popover levelbar > trough:disabled,
+windowhandle levelbar > trough:disabled,
+.osd levelbar > trough:disabled,
+.toolbar levelbar > trough:disabled
 {
     background: @button_background_toolbar_disabled_a;
     border-color: @entry_border_toolbar_normal_a;
@@ -2979,6 +2988,32 @@ levelbar block.filled.full
 {
     background: linear-gradient(to bottom, @levelbar_block_high_background_a, @levelbar_block_high_background_c 75%, @levelbar_block_high_background_b);
     box-shadow: 0 -1px @levelbar_block_high_background_b, 1px 0 @levelbar_block_high_background_b, 0 1px @levelbar_block_high_background_b, -1px 0 @levelbar_block_high_background_b;
+}
+
+levelbar block.empty:not(:last-child)
+{
+    box-shadow: 1px 0 @trough_border_normal_a;
+}
+
+popover levelbar block.empty:not(:last-child),
+windowhandle levelbar block.empty:not(:last-child),
+.osd levelbar block.empty:not(:last-child),
+.toolbar levelbar block.empty:not(:last-child)
+{
+    box-shadow: 1px 0 @entry_border_toolbar_normal_a;
+}
+
+levelbar block.empty:not(:last-child):disabled
+{
+    box-shadow: 1px 0 @button_border_disabled;
+}
+
+popover block.empty:not(:last-child):disabled,
+windowhandle block.empty:not(:last-child):disabled,
+.osd block.empty:not(:last-child):disabled,
+.toolbar block.empty:not(:last-child):disabled
+{
+    box-shadow: 1px 0 @entry_border_toolbar_normal_a;
 }
 
 /* video */
