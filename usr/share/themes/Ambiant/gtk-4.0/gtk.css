@@ -1703,6 +1703,11 @@ entry > image.left
     margin-right: 6px;
 }
 
+entry.search > image:last-child
+{
+    -gtk-icon-style: symbolic;
+}
+
 entry > progress
 {
     margin: 0;
