@@ -858,6 +858,11 @@ button.text-button:not(.circular)
     padding: 6px 18px 6px 18px;
 }
 
+button.suggested-action:disabled > label
+{
+    color: @trough_highlight_border_b;
+}
+
 button > colorswatch
 {
     border-radius: 4px;
