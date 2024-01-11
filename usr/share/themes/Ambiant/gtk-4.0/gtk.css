@@ -12,7 +12,8 @@
 @define-color button_background_destructive_checked_b rgb(227, 144, 138);
 @define-color button_background_destructive_disabled rgb(231, 147, 141);
 @define-color button_background_disabled rgb(239, 238, 237);
-@define-color button_background_normal rgb(228, 227, 225);
+@define-color button_background_normal_a @theme_base_color;
+@define-color button_background_normal_b rgb(228, 227, 225);
 @define-color button_background_suggested_a rgb(205, 217, 183);
 @define-color button_background_suggested_b rgb(191, 205, 166);
 @define-color button_background_suggested_c rgb(180, 196, 153);
@@ -20,6 +21,7 @@
 @define-color button_background_suggested_active_b rgb(189, 204, 164);
 @define-color button_background_suggested_checked rgb(171, 185, 146);
 @define-color button_background_suggested_disabled rgb(187, 201, 162);
+@define-color button_background_suggested_normal @trough_highlight_border_b;
 @define-color button_background_toolbar_active rgb(57, 56, 52);
 @define-color button_background_toolbar_checked_disabled rgb(56, 55, 52);
 @define-color button_background_toolbar_disabled_a rgb(61, 60, 56);
@@ -30,6 +32,7 @@
 @define-color button_border_active rgb(162, 162, 162);
 @define-color button_border_checked_a rgb(156, 156, 156);
 @define-color button_border_checked_b rgb(141, 141, 141);
+@define-color button_border_checked_c @button_border_normal_a;
 @define-color button_border_destructive_active_a rgb(193, 109, 103);
 @define-color button_border_destructive_active_b rgb(183, 99, 93);
 @define-color button_border_destructive_checked_a rgb(189, 106, 100);
@@ -50,23 +53,31 @@
 @define-color button_border_toolbar_normal rgb(52, 52, 48);
 @define-color button_boxshadow_toolbar_linked_a rgb(85, 83, 76);
 @define-color button_boxshadow_toolbar_linked_b rgba(0, 0, 0, 0.07);
+@define-color button_color_dark @theme_text_color;
 @define-color button_separator_border rgb(219, 217, 214);
 @define-color button_separator_border_disabled rgb(233, 231, 230);
 @define-color button_textshadow rgba(255, 255, 255, 0.4);
+@define-color button_textshadow_dark @button_textshadow;
 @define-color button_textshadow_toolbar rgba(255, 255, 255, 0.45);
 @define-color button_textshadow_toolbar_backdrop rgb(54, 53, 50);
 @define-color calendar_header_background rgb(217, 214, 212);
+@define-color calendar_header_border @button_border_disabled;
+@define-color calendar_header_boxshadow @button_border_disabled;
+@define-color colorswatch_border @scrolledwindow_overshoot_background;
 @define-color columnview_border_dnd rgb(150, 181, 100);
 @define-color columnview_header_button_background rgb(251, 251, 250);
 @define-color entry_background_backdrop_a rgb(243, 243, 242);
 @define-color entry_background_backdrop_b rgb(249, 248, 247);
+@define-color entry_background_disabled @entry_background_normal;
 @define-color entry_background_normal rgb(245, 245, 245);
 @define-color entry_background_toolbar rgb(79, 77, 71);
 @define-color entry_border_backdrop_a rgb(170, 170, 170);
 @define-color entry_border_backdrop_b rgb(190, 190, 190);
+@define-color entry_border_backdrop_c @button_border_normal_a;
 @define-color entry_border_disabled_backdrop rgb(210, 210, 210);
 @define-color entry_border_normal_a rgb(160, 160, 160);
 @define-color entry_border_normal_b rgb(146, 146, 146);
+@define-color entry_border_normal_c @button_border_normal_a;
 @define-color entry_border_toolbar_normal_a rgb(44, 44, 41);
 @define-color entry_border_toolbar_normal_b rgb(41, 41, 39);
 @define-color entry_border_toolbar_normal_c rgb(47, 47, 43);
@@ -102,6 +113,7 @@
 @define-color notebook_header_boxshadow rgba(201, 198, 194, 0.9);
 @define-color notebook_tab_background_a rgb(230, 229, 228);
 @define-color notebook_tab_background_b rgb(214, 212, 210);
+@define-color notebook_tab_background_checked @theme_base_color;
 @define-color osd_background rgba(60, 59, 55, 0.9);
 @define-color popover_background rgb(65, 64, 59);
 @define-color popover_boxshadow_a rgb(71, 70, 64);
@@ -135,6 +147,7 @@
 @define-color shortcut_keycap_background_c rgb(48, 48, 56);
 @define-color shortcut_keycap_color rgb(212, 209, 218);
 @define-color sidebar_color_backdrop rgb(107, 107, 106);
+@define-color sidebar_color_hover @list_cell_color_hover;
 @define-color switch_background_toolbar_disabled_a rgba(78, 76, 70, 0.9);
 @define-color switch_background_toolbar_disabled_b rgba(91, 90, 86, 0.9);
 @define-color switch_background_toolbar_normal_a rgb(78, 76, 70);
@@ -167,6 +180,7 @@
 @define-color window_color_disabled rgb(149, 145, 140);
 @define-color windowcontrols_button_background_backdrop_a rgb(103, 102, 97);
 @define-color windowcontrols_button_background_backdrop_b rgb(86, 85, 79);
+@define-color windowcontrols_button_background_hover_a @button_background_checked_a;
 @define-color windowcontrols_button_background_hover_b rgb(148, 148, 148);
 @define-color windowcontrols_button_background_active_a rgb(105, 104, 97);
 @define-color windowcontrols_button_background_active_b rgb(129, 129, 123);
@@ -180,6 +194,7 @@
 @define-color windowcontrols_button_color_hover rgb(81, 80, 75);
 @define-color windowcontrols_button_color_normal rgb(61, 60, 55);
 @define-color windowcontrols_button_textshadow rgb(117, 116, 111);
+@define-color windowcontrols_button_textshadow_hover @button_border_normal_a;
 
 @define-color borders rgb(201, 198, 194);
 @define-color insensitive_base_color @theme_base_color;
@@ -647,7 +662,7 @@ flowboxchild:selected:backdrop,
 .navigation-sidebar > row:selected:backdrop:hover,
 .sidebar > label.highlight:backdrop
 {
-    background: @button_background_normal;
+    background: @button_background_normal_a;
     color: @theme_fg_color;
 }
 
@@ -666,7 +681,7 @@ editablelabel.editing:focus-within
     background: linear-gradient(to bottom, @entry_background_normal, @theme_base_color);
     border-color: @entry_border_normal_a;
     border-top-color: @entry_border_normal_b;
-    border-bottom-color: @button_border_normal_a;
+    border-bottom-color: @entry_border_normal_c;
 }
 
 row:selected editablelabel.editing:focus-within
@@ -688,7 +703,7 @@ colorswatch#add-color-button > overlay
     padding: 6px;
     min-height: 23px;
     min-width: 23px;
-    background: linear-gradient(to bottom, @theme_base_color, @theme_bg_color 50%, @button_background_normal);
+    background: linear-gradient(to bottom, @button_background_normal_a, @theme_bg_color 50%, @button_background_normal_b);
     text-shadow: 0 1px @button_textshadow;
     border: 1px solid @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
@@ -712,7 +727,7 @@ button:active
     background: linear-gradient(to bottom, @button_background_checked_a, @button_background_checked_b);
     border-color: @button_border_checked_a;
     border-top-color: @button_border_checked_b;
-    border-bottom-color: @button_border_normal_a;
+    border-bottom-color: @button_border_checked_c;
 }
 
 button:disabled,
@@ -742,6 +757,8 @@ button.destructive-action
     background: linear-gradient(to bottom, @button_background_destructive_a, @button_background_destructive_b 50%, @button_background_destructive_c);
     border-color: @button_border_destructive_normal_a;
     border-bottom-color: @button_border_destructive_normal_b;
+    color: @button_color_dark;
+    text-shadow: 0 1px @button_textshadow_dark;
 }
 
 button.destructive-action:checked
@@ -777,6 +794,8 @@ button.suggested-action
     background: linear-gradient(to bottom, @button_background_suggested_a, @button_background_suggested_b 50%, @button_background_suggested_c);
     border-color: @button_border_suggested_normal_a;
     border-bottom-color: @button_border_suggested_normal_b;
+    color: @button_color_dark;
+    text-shadow: 0 1px @button_textshadow_dark;
 }
 
 button.suggested-action:checked
@@ -816,7 +835,7 @@ calendar > header > button
 
 button.flat:hover
 {
-    background: linear-gradient(to bottom, @theme_base_color, @theme_bg_color 50%, @button_background_normal);
+    background: linear-gradient(to bottom, @button_background_normal_a, @theme_bg_color 50%, @button_background_normal_b);
     border-color: @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
 }
@@ -834,7 +853,7 @@ button.flat:active
     background: linear-gradient(to bottom, @button_background_checked_a, @button_background_checked_b);
     border-color: @button_border_checked_a;
     border-top-color: @button_border_checked_b;
-    border-bottom-color: @button_border_normal_a;
+    border-bottom-color: @button_border_checked_c;
 }
 
 button.flat:disabled
@@ -860,7 +879,7 @@ button.text-button:not(.circular)
 
 button.suggested-action:disabled > label
 {
-    color: @trough_highlight_border_b;
+    color: @button_background_suggested_normal;
 }
 
 button > colorswatch
@@ -872,10 +891,6 @@ button > colorswatch
 button > box > arrow
 {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-    /*outline: unset;
-    padding: unset;
-    min-width: unset;
-    min-height: unset;*/
 }
 
 /* menubutton */
@@ -905,7 +920,7 @@ spinbutton > text
     border-style: solid;
     border-color: @entry_border_normal_a;
     border-top-color: @entry_border_normal_b;
-    border-bottom-color: @button_border_normal_a;
+    border-bottom-color: @entry_border_normal_c;
     background: linear-gradient(to bottom, @entry_background_normal, @theme_base_color);
     padding: 6px;
     color: @theme_text_color;
@@ -919,14 +934,14 @@ spinbutton > text
 spinbutton > text:disabled
 {
     border-color: @button_border_disabled;
-    background: @entry_background_normal;
+    background: @entry_background_disabled;
     color: @entry_color_disabled;
 }
 
 spinbutton > text:backdrop
 {
     border-color: @entry_border_backdrop_a;
-    border-top-color: @button_border_normal_a;
+    border-top-color: @entry_border_backdrop_c;
     border-bottom-color: @entry_border_backdrop_b;
     background: linear-gradient(to bottom, @entry_background_backdrop_a, @entry_background_backdrop_b);
     color: @theme_unfocused_text_color;
@@ -961,7 +976,7 @@ spinbutton.horizontal > text:dir(rtl)
 {
     border-width: 0 0 0 1px;
     border-radius: 0;
-    box-shadow: inset 0 -1px @scrolledwindow_border_a;
+    box-shadow: inset 0 -1px @entry_border_normal_c;
 }
 
 .linked.vertical > spinbutton.horizontal > text:dir(rtl)
@@ -1007,7 +1022,7 @@ spinbutton.vertical > button.up
 {
     border-radius: 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 @scrolledwindow_border_a;
+    box-shadow: inset -1px 0 @button_border_normal_a;
 }
 
 .linked > button:dir(rtl),
@@ -1016,7 +1031,7 @@ spinbutton.vertical > button.up
 {
     border-radius: 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset 1px 0 @scrolledwindow_border_a;
+    box-shadow: inset 1px 0 @button_border_normal_a;
 }
 
 .linked > button:checked:dir(ltr),
@@ -1127,7 +1142,7 @@ spinbutton.vertical > button.up
 .linked > menubutton:only-child > button:checked:dir(rtl),
 .linked > combobox:only-child > .linked > button:only-child:checked:dir(rtl) /* DEPRECATED */
 {
-    box-shadow: inset 0 1px 1px @scrolledwindow_overshoot_background;
+    box-shadow: none;
 }
 
 .linked.vertical > button,
@@ -1137,7 +1152,7 @@ spinbutton.vertical > button.up
 {
     border-radius: 0;
     border-width: 0 1px 0 1px;
-    box-shadow: inset 0 -1px @scrolledwindow_border_a;
+    box-shadow: inset 0 -1px @button_border_normal_b;
 }
 
 .linked.vertical > button:checked,
@@ -1197,6 +1212,18 @@ popover button.flat:hover
     border-color: @entry_border_toolbar_normal_a;
 }
 
+windowhandle button.suggested-action,
+.app-notification button.suggested-action,
+.osd button.suggested-action,
+.toolbar button.suggested-action,
+popover button.suggested-action
+{
+    background: linear-gradient(to bottom, @button_background_suggested_a, @button_background_suggested_b 50%, @button_background_suggested_c);
+    border-color: @popover_border;
+    color: @button_color_dark;
+    text-shadow: 0 1px @button_textshadow_dark;
+}
+
 windowhandle button:checked,
 .app-notification button:checked,
 .osd button:checked,
@@ -1211,6 +1238,17 @@ popover button.flat:checked
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     border-color: @entry_border_toolbar_normal_a;
     box-shadow: inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
+}
+
+windowhandle button.suggested-action:checked,
+.app-notification button.suggested-action:checked,
+.osd button.suggested-action:checked,
+.toolbar button.suggested-action:checked,
+popover button.suggested-action:checked
+{
+    background: linear-gradient(to bottom, @button_background_suggested_checked, @button_background_suggested_checked);
+    border-color: @popover_border;
+    box-shadow: none;
 }
 
 windowhandle button:active,
@@ -1228,6 +1266,19 @@ popover button.flat:active
     background: linear-gradient(to bottom, @button_background_toolbar_active, @wm_bg_a);
     text-shadow: 0 -1px @toolbar_textshadow;
     box-shadow: inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
+}
+
+windowhandle button.suggested-action:active,
+.app-notification button.suggested-action:active,
+.osd button.suggested-action:active,
+.toolbar button.suggested-action:active,
+popover button.suggested-action:active
+{
+    background: linear-gradient(to bottom, @button_background_suggested_active_a, @button_background_suggested_active_b);
+    border-color: @popover_border;
+    color: @button_color_dark;
+    text-shadow: 0 1px @button_textshadow_dark;
+    box-shadow: none;
 }
 
 windowhandle button:disabled,
@@ -1249,6 +1300,16 @@ popover radio:disabled
     border-color: @wm_shadow;
 }
 
+windowhandle button.suggested-action:disabled,
+.app-notification button.suggested-action:disabled,
+.osd button.suggested-action:disabled,
+.toolbar button.suggested-action:disabled,
+popover button.suggested-action:disabled
+{
+    background: @button_background_suggested_disabled;
+    border-color: @popover_border;
+}
+
 windowhandle button:backdrop,
 .app-notification button:backdrop,
 .osd button:backdrop,
@@ -1261,6 +1322,15 @@ windowhandle scale slider:backdrop,
 popover scale slider:backdrop
 {
     color: @toolbar_color_backdrop;
+}
+
+windowhandle button.suggested-action:backdrop,
+.app-notification button.suggested-action:backdrop,
+.osd button.suggested-action:backdrop,
+.toolbar button.suggested-action:backdrop,
+popover button.suggested-action:backdrop
+{
+    color: @button_color_dark;
 }
 
 windowhandle button:checked:disabled,
@@ -1302,38 +1372,14 @@ popover scale slider:disabled:backdrop
     border-color: @entry_border_toolbar_normal_a;
 }
 
-windowhandle button.suggested-action,
-.app-notification button.suggested-action,
-.osd button.suggested-action,
-.toolbar button.suggested-action,
-popover button.suggested-action
+windowhandle button.suggested-action:disabled:backdrop,
+.app-notification button.suggested-action:disabled:backdrop,
+.osd button.suggested-action:disabled:backdrop,
+.toolbar button.suggested-action:disabled:backdrop,
+popover button.suggested-action:disabled:backdrop
 {
-    color: @theme_text_color;
-    text-shadow: 0 1px @button_textshadow;
+    background: @button_background_disabled;
     border-color: @popover_border;
-}
-
-windowhandle button.suggested-action:active,
-.app-notification button.suggested-action:active,
-.osd button.suggested-action:active,
-.toolbar button.suggested-action:active,
-popover button.suggested-action:active,
-windowhandle button.suggested-action:disabled,
-.app-notification button.suggested-action:disabled,
-.osd button.suggested-action:disabled,
-.toolbar button.suggested-action:disabled,
-popover button.suggested-action:disabled
-{
-    border-color: @popover_border;
-}
-
-windowhandle button.suggested-action:backdrop,
-.app-notification button.suggested-action:backdrop,
-.osd button.suggested-action:backdrop,
-.toolbar button.suggested-action:backdrop,
-popover button.suggested-action:backdrop
-{
-    color: @theme_unfocused_text_color;
 }
 
 windowhandle button.flat,
@@ -1522,7 +1568,7 @@ popover .linked > button:last-child:active:dir(ltr)
 infobar button,
 tag button.flat:hover
 {
-    background: linear-gradient(to bottom, alpha(@theme_base_color, 0.4), alpha(@theme_bg_color, 0.4) 50%, alpha(@button_background_normal, 0.4));
+    background: linear-gradient(to bottom, alpha(@button_background_normal_a, 0.4), alpha(@theme_bg_color, 0.4) 50%, alpha(@button_background_normal_b, 0.4));
     border-color: alpha(@button_border_normal_a, 0.4);
     border-bottom-color: alpha(@button_border_normal_b, 0.4);
 }
@@ -1542,7 +1588,7 @@ tag button.flat:active
     background: linear-gradient(to bottom, alpha(@button_background_active_a, 0.4), alpha(@button_background_active_b, 0.4));
     border-color: alpha(@button_border_active, 0.4);
     border-top-color: alpha(@button_border_normal_a, 0.4);
-    border-bottom-color: alpha(@button_border_checked_b, 0.4);
+    border-bottom-color: alpha(@button_border_checked_c, 0.4);
 }
 
 list > row button
@@ -1559,7 +1605,7 @@ entry
     border-radius: 5px;
     border: 1px solid @entry_border_normal_a;
     border-top-color: @entry_border_normal_b;
-    border-bottom-color: @button_border_normal_a;
+    border-bottom-color: @entry_border_normal_c;
     background: linear-gradient(to bottom, @entry_background_normal, @theme_base_color);
     padding: 6px;
     color: @theme_text_color;
@@ -1570,14 +1616,14 @@ check:disabled,
 radio:disabled
 {
     border-color: @button_border_disabled;
-    background: image(@entry_background_normal);
+    background: image(@entry_background_disabled);
     color: @entry_color_disabled;
 }
 
 entry:backdrop
 {
     border-color: @entry_border_backdrop_a;
-    border-top-color: @button_border_normal_a;
+    border-top-color: @entry_border_backdrop_c;
     border-bottom-color: @entry_border_backdrop_b;
     background: linear-gradient(to bottom, @entry_background_backdrop_a, @entry_background_backdrop_b);
     color: @theme_unfocused_text_color;
@@ -1612,14 +1658,14 @@ popover radio
 {
     border-radius: 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset -1px 0 @scrolledwindow_border_a;
+    box-shadow: inset -1px 0 @entry_border_normal_a;
 }
 
 .linked > entry:dir(rtl)
 {
     border-radius: 0;
     border-width: 1px 0 1px 0;
-    box-shadow: inset 1px 0 @scrolledwindow_border_a;
+    box-shadow: inset 1px 0 @entry_border_normal_a;
 }
 
 .linked > entry:first-child:dir(ltr)
@@ -1659,7 +1705,7 @@ popover radio
 {
     border-radius: 0;
     border-width: 0 1px 0 1px;
-    box-shadow: inset 0 -1px @scrolledwindow_border_a;
+    box-shadow: inset 0 -1px @entry_border_normal_c;
 }
 
 .linked.vertical > entry:first-child
@@ -1731,11 +1777,12 @@ entry > progress > trough > progress
 button.link
 {
     color: @theme_selected_bg_color;
+    text-shadow: none;
 }
 
 button.link > label
 {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* GtkSwitch */
@@ -1807,7 +1854,7 @@ switch > slider
     min-width: 47px;
     min-height: 31px;
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, @theme_base_color, @theme_bg_color 50%, @button_background_normal);
+    background-image: linear-gradient(to bottom, @button_background_normal_a, @theme_bg_color 50%, @button_background_normal_b);
     border: 1px solid @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
     box-shadow: none;
@@ -1879,7 +1926,7 @@ headerbar
 headerbar:backdrop
 {
     background-image: linear-gradient(to bottom, @wm_bg_f, @wm_bg_a);
-    color: @theme_unfocused_fg_color;
+    color: @wm_unfocused_title;
     box-shadow: inset 0 1px @wm_bg_b;
 }
 
@@ -2105,7 +2152,7 @@ paned.horizontal > notebook > header.top > tabs > arrow.down + tab
 
 notebook > header.top > tabs > tab:checked
 {
-    background: linear-gradient(to bottom, @theme_base_color, @notebook_background);
+    background: linear-gradient(to bottom, @notebook_tab_background_checked, @notebook_background);
     border-bottom-width: 0;
     padding-bottom: 7px;
 }
@@ -2151,7 +2198,7 @@ paned.horizontal > notebook > header.bottom > tabs > arrow.down + tab
 
 notebook > header.bottom > tabs > tab:checked
 {
-    background: linear-gradient(to top, @theme_base_color, @notebook_background);
+    background: linear-gradient(to top, @notebook_tab_background_checked, @notebook_background);
     border-top-width: 0;
     padding-top: 7px;
 }
@@ -2207,14 +2254,14 @@ paned.horizontal > notebook > header.left > tabs > tab:dir(rtl)
 
 notebook > header.left > tabs > tab:checked:dir(ltr)
 {
-    background: linear-gradient(to right, @theme_base_color, @notebook_background);
+    background: linear-gradient(to right, @notebook_tab_background_checked, @notebook_background);
     border-right-width: 0;
     padding-right: 7px;
 }
 
 notebook > header.left > tabs > tab:checked:dir(rtl)
 {
-    background: linear-gradient(to right, @notebook_background, @theme_base_color);
+    background: linear-gradient(to right, @notebook_tab_background_checked, @theme_base_color);
     border-left-width: 0;
     padding-left: 7px;
 }
@@ -2270,14 +2317,14 @@ paned.horizontal > notebook > header.right > tabs > tab:dir(rtl)
 
 notebook > header.right > tabs > tab:checked:dir(ltr)
 {
-    background: linear-gradient(to left, @theme_base_color, @notebook_background);
+    background: linear-gradient(to left, @notebook_tab_background_checked, @notebook_background);
     border-left-width: 0;
     padding-left: 7px;
 }
 
 notebook > header.right > tabs > tab:checked:dir(rtl)
 {
-    background: linear-gradient(to left, @notebook_background, @theme_base_color);
+    background: linear-gradient(to left, @notebook_tab_background_checked, @theme_base_color);
     border-right-width: 0;
     padding-right: 7px;
 }
@@ -2490,7 +2537,7 @@ radio
     background-repeat: no-repeat;
     border: 1px solid @entry_border_normal_a;
     border-top-color: @entry_border_normal_b;
-    border-bottom-color: @button_border_normal_a;
+    border-bottom-color: @entry_border_normal_c;
     border-radius: 3px;
     box-shadow: none;
     -gtk-icon-size: 17px;
@@ -2516,7 +2563,7 @@ radio:indeterminate
     border-bottom-color: @trough_highlight_border_a;
     -gtk-icon-source: -gtk-icontheme("check-symbolic");
     -gtk-icon-shadow: 0 1px @wm_shadow;
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
     -gtk-icon-style: symbolic;
 }
 
@@ -3102,8 +3149,8 @@ calendar label.day-name
     border-radius: 0;
     background-image: image(@calendar_header_background);
     border: 1px solid @separator_border_a;
-    box-shadow: 0 -1px @button_border_disabled;
-    border-bottom-color: @button_border_disabled;
+    box-shadow: 0 -1px @calendar_header_boxshadow;
+    border-bottom-color: @calendar_header_border;
     border-width: 1px 0 1px 0;
     margin: -3px -3px 3px -3px;
 }
@@ -3383,6 +3430,7 @@ list.boxed-list > row:last-child
 {
     background-color: transparent;
     background-image: none;
+    color: @sidebar_color_hover;
 }
 
 .navigation-sidebar:backdrop > row:hover
@@ -3535,9 +3583,9 @@ windowcontrols > button.close:backdrop
 
 windowcontrols > button:hover
 {
-    background: linear-gradient(to bottom, @button_background_checked_a, @windowcontrols_button_background_hover_b);
+    background: linear-gradient(to bottom, @windowcontrols_button_background_hover_a, @windowcontrols_button_background_hover_b);
     color: @windowcontrols_button_color_hover;
-    -gtk-icon-shadow: 0 1px @button_border_normal_a;
+    -gtk-icon-shadow: 0 1px @windowcontrols_button_textshadow_hover;
     box-shadow: 0 -1px @windowcontrols_button_background_hover_b inset, 1px 0 @windowcontrols_button_background_hover_b inset, 0 1px @windowcontrols_button_background_hover_b inset, -1px 0 @windowcontrols_button_background_hover_b inset;
 }
 
@@ -3560,7 +3608,7 @@ windowcontrols > button.close
 
 windowcontrols > button.close:hover
 {
-    background: linear-gradient(to bottom, @theme_base_color, @windowcontrols_button_background_close_hover);
+    background: linear-gradient(to bottom, @theme_selected_fg_color, @windowcontrols_button_background_close_hover);
     box-shadow: 0 -1px @windowcontrols_button_background_close_hover inset, 1px 0 @windowcontrols_button_background_close_hover inset, 0 1px @windowcontrols_button_background_close_hover inset, -1px 0 @windowcontrols_button_background_close_hover inset;
 }
 
@@ -3647,7 +3695,7 @@ infobar.error > revealer > box, /* DEPRECATED */
 .error:not(infobar)
 {
     background-image: image(@error_background);
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 infobar.error > revealer > box /* DEPRECATED */
@@ -3674,7 +3722,7 @@ flowboxchild:selected
 
 flowboxchild:selected:backdrop
 {
-    outline-color: @button_background_normal;
+    outline-color: @button_background_normal_b;
 }
 
 /* popover */
@@ -3940,7 +3988,7 @@ window.dialog fontchooser
 
 window.print drawing paper
 {
-    background-image: image(@theme_base_color);
+    background-image: image(@theme_selected_fg_color);
     border: 1px solid @borders;
 }
 
@@ -4059,7 +4107,7 @@ colorswatch.activatable
 
 colorswatch.dark > overlay
 {
-    color: @theme_base_color;
+    color: @theme_selected_fg_color;
 }
 
 colorswatch.light > overlay
@@ -4075,7 +4123,7 @@ colorswatch > overlay
 colorswatch:not(#add-color-button) > overlay
 {
     border-radius: 5px;
-    border: 1px solid @scrolledwindow_overshoot_background;
+    border: 1px solid @colorswatch_border;
 }
 
 colorswatch#add-color-button > overlay

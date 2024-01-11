@@ -1,0 +1,136 @@
+@import url("gtk.css");
+
+@define-color button_background_active_a @theme_bg_color;
+@define-color button_background_active_b rgb(91, 90, 86);
+@define-color button_background_active_disabled rgb(67, 67, 67);
+@define-color button_background_checked_a rgb(70, 68, 63);
+@define-color button_background_checked_b rgb(82, 81, 78);
+@define-color button_background_disabled rgb(70, 69, 64);
+@define-color button_background_normal_a rgb(86, 84, 77);
+@define-color button_background_normal_b rgb(75, 73, 67);
+@define-color button_border_active rgb(39, 39, 37);
+@define-color button_border_checked_a rgb(44, 44, 41);
+@define-color button_border_checked_b rgb(41, 41, 39);
+@define-color button_border_checked_c @entry_border_backdrop_b;
+@define-color button_border_destructive_active_a @theme_bg_color;
+@define-color button_border_destructive_active_b @theme_bg_color;
+@define-color button_border_destructive_checked_a @button_background_checked_a;
+@define-color button_border_destructive_checked_b @button_background_checked_b;
+@define-color button_border_destructive_disabled @button_border_disabled;
+@define-color button_border_destructive_normal_a @button_border_normal_a;
+@define-color button_border_destructive_normal_b @button_border_normal_b;
+@define-color button_border_disabled rgb(52, 52, 48);
+@define-color button_border_focus rgb(168, 199, 118);
+@define-color button_border_normal_a rgb(52, 52, 48);
+@define-color button_border_normal_b rgb(52, 51, 48);
+@define-color button_border_suggested_active @theme_bg_color;
+@define-color button_border_suggested_checked_a @button_background_checked_a;
+@define-color button_border_suggested_checked_b @button_background_checked_b;
+@define-color button_border_suggested_disabled @button_border_disabled;
+@define-color button_border_suggested_normal_a @button_border_normal_a;
+@define-color button_border_suggested_normal_b @button_border_normal_b;
+@define-color button_background_suggested_normal rgb(108, 127, 76);
+@define-color button_color_dark rgb(60, 60, 60);
+@define-color button_separator_border rgb(71, 70, 65);
+@define-color button_separator_border_disabled rgb(75, 73, 68);
+@define-color button_textshadow @button_border_checked_b;
+@define-color button_textshadow_dark rgba(255, 255, 255, 0.4);
+@define-color calendar_header_background rgb(95, 94, 88);
+@define-color calendar_header_border @button_border_checked_b;
+@define-color calendar_header_boxshadow rgb(96, 96, 84);
+@define-color colorswatch_border rgba(0, 0, 0, 0.2);
+@define-color columnview_header_button_background rgb(92, 90, 84);
+@define-color entry_background_backdrop_a rgb(72, 70, 64);
+@define-color entry_background_backdrop_b rgb(74, 72, 66);
+@define-color entry_background_disabled rgb(84, 82, 78);
+@define-color entry_background_normal @trough_background_normal;
+@define-color entry_border_backdrop_a @button_border_checked_a;
+@define-color entry_border_backdrop_b rgb(47, 47, 43);
+@define-color entry_border_backdrop_c @button_border_checked_b;
+@define-color entry_border_disabled_backdrop @button_border_checked_a;
+@define-color entry_border_normal_a @button_border_checked_a;
+@define-color entry_border_normal_b @button_border_checked_b;
+@define-color entry_border_normal_c @entry_border_backdrop_b;
+@define-color entry_color_disabled @theme_unfocused_text_color;
+@define-color notebook_background rgb(65, 64, 60);
+@define-color notebook_header_boxshadow @borders;
+@define-color notebook_tab_background_a rgb(65, 63, 59);
+@define-color notebook_tab_background_b rgb(60, 58, 55);
+@define-color notebook_tab_background_checked @theme_bg_color;
+@define-color scale_indicator_background rgb(56, 54, 52);
+@define-color scrollbar_trough_background rgb(76, 74, 69);
+@define-color scrolledwindow_border_a rgb(65, 64, 59);
+@define-color scrolledwindow_border_b rgb(59, 57, 54);
+@define-color scrolledwindow_border_c rgb(67, 65, 61);
+@define-color scrolledwindow_overshoot_background rgba(255, 255, 255, 0.2);
+@define-color separator_border_a @button_separator_border;
+@define-color separator_border_b rgba(100, 96, 87, 0.6);
+@define-color separator_border_disabled rgba(100, 96, 87, 0.3);
+@define-color sidebar_color_backdrop rgb(203, 202, 201);
+@define-color sidebar_color_hover @theme_text_color;
+@define-color switch_border_checked_a @button_border_normal_a;
+@define-color switch_border_checked_b @button_border_normal_a;
+@define-color switch_border_checked_c @button_border_normal_b;
+@define-color textview_background_disabled @entry_background_normal;
+@define-color trough_background_disabled_a rgb(71, 69, 64);
+@define-color trough_background_disabled_b @trough_background_disabled_a;
+@define-color trough_background_normal rgb(66, 64, 59);
+@define-color trough_border_normal_a @button_border_checked_a;
+@define-color trough_border_normal_b @button_border_checked_b;
+@define-color trough_border_normal_c @entry_border_backdrop_b;
+@define-color trough_highlight_border_a rgb(49, 53, 42);
+@define-color trough_highlight_border_b rgb(52, 57, 44);
+@define-color window_color_disabled rgb(164, 164, 164);
+@define-color windowcontrols_button_background_hover_a rgb(206, 206, 206);
+@define-color windowcontrols_button_textshadow_hover rgb(180, 180, 180);
+
+@define-color borders rgb(49, 48, 45);
+@define-color theme_base_color rgb(69, 67, 61);
+@define-color theme_bg_color rgb(78, 76, 70);
+@define-color theme_fg_color @theme_text_color;
+@define-color theme_selected_bg_color rgb(135, 165, 86);
+@define-color theme_selected_fg_color rgb(255, 255, 255);
+@define-color theme_text_color rgb(235, 235, 235);
+@define-color theme_unfocused_fg_color rgb(204, 203, 202);
+@define-color theme_unfocused_text_color rgb(169, 168, 165);
+
+scale > trough > highlight:backdrop,
+progressbar:backdrop > trough > progress,
+radio:indeterminate:backdrop,
+radio:checked:backdrop,
+check:indeterminate:backdrop,
+check:checked:backdrop,
+levelbar block.filled:backdrop
+{
+    filter: grayscale(0.3) brightness(90%);
+}
+
+scale > trough > highlight:disabled,
+progressbar:disabled > trough > progress,
+radio:indeterminate:disabled,
+radio:checked:disabled,
+check:indeterminate:disabled,
+check:checked:disabled,
+levelbar block.filled:disabled,
+check:checked:disabled:backdrop,
+check:indeterminate:disabled:backdrop,
+radio:checked:disabled:backdrop,
+radio:indeterminate:disabled:backdrop,
+scale > trough > highlight:disabled:backdrop,
+progressbar:disabled:backdrop > trough > progress,
+levelbar block.filled:backdrop:disabled
+{
+    filter: grayscale(1.0) brightness(70%);
+}
+
+windowhandle radio:indeterminate:disabled,
+windowhandle radio:checked:disabled,
+windowhandle check:indeterminate:disabled,
+windowhandle check:checked:disabled,
+popover radio:indeterminate:disabled,
+popover radio:checked:disabled,
+popover check:indeterminate:disabled,
+popover check:checked:disabled
+{
+    filter: none;
+}
