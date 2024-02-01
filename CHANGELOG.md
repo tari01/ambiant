@@ -1,3 +1,10 @@
+# 24.2.1
+
+ - Add Gtk4 dark theme (543a307)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Update disabled suggested action button label colour (9abc2c0)
+ - Replace edit-clear action icons (ae17a55)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Style empty leverbar block (5c3ab72)
+
 # 24.1.1
 
  - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Clean up css variables (b723bc8)
