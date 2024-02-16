@@ -3290,16 +3290,23 @@ tooltip
     }
 }
 
+spinner:not(checked)
+{
+    -gtk-icon-source: none;
+}
+
 spinner:checked
 {
     -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
     animation: spin 1s linear infinite;
     color: @theme_selected_bg_color;
+    min-width: 17px;
+    min-height: 17px;
 }
 
-spinner:checked:backdrop
+spinner:checked:disabled
 {
-    color: @theme_unfocused_fg_color;
+    color: @window_color_disabled;
 }
 
 /* sidebar */
