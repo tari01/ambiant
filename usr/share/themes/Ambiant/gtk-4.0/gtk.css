@@ -662,7 +662,7 @@ flowboxchild:selected:backdrop,
 .navigation-sidebar > row:selected:backdrop:hover,
 .sidebar > label.highlight:backdrop
 {
-    background: @button_background_normal_a;
+    background: @button_background_normal_b;
     color: @theme_fg_color;
 }
 
