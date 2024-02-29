@@ -115,7 +115,6 @@
 @define-color notebook_tab_background_b rgb(214, 212, 210);
 @define-color notebook_tab_background_checked @theme_base_color;
 @define-color osd_background rgba(60, 59, 55, 0.9);
-@define-color popover_background rgb(65, 64, 59);
 @define-color popover_boxshadow_a rgb(71, 70, 64);
 @define-color popover_boxshadow_b rgb(70, 69, 63);
 @define-color popover_border rgb(0, 0, 0);
@@ -197,6 +196,8 @@
 @define-color windowcontrols_button_textshadow_hover @button_border_normal_a;
 
 @define-color borders rgb(201, 198, 194);
+@define-color dark_bg_color rgb(65, 64, 59);
+@define-color dark_fg_color rgb(223, 219, 210);
 @define-color insensitive_base_color @theme_base_color;
 @define-color insensitive_bg_color @theme_bg_color;
 @define-color insensitive_fg_color @window_color_disabled;
@@ -223,7 +224,6 @@
 @define-color wm_bg_f @button_boxshadow_toolbar_linked_a;
 @define-color wm_border rgb(66, 65, 60);
 @define-color wm_shadow rgba(0, 0, 0, 0.5);
-@define-color wm_title rgb(223, 219, 210);
 @define-color wm_title_shadow @entry_border_toolbar_normal_b;
 @define-color wm_unfocused_title rgb(109, 109, 109);
 
@@ -1207,7 +1207,7 @@ windowhandle button.flat:hover,
 popover button.flat:hover
 {
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
-    color: @wm_title;
+    color: @dark_fg_color;
     text-shadow: 0 -1px @wm_title_shadow;
     border-color: @entry_border_toolbar_normal_a;
 }
@@ -1389,7 +1389,7 @@ windowhandle button.flat,
 popover button.flat
 {
     background: none;
-    color: @wm_title;
+    color: @dark_fg_color;
     text-shadow: 0 -1px @wm_title_shadow;
     border-color: transparent;
 }
@@ -1650,8 +1650,8 @@ popover radio
     border-top-color: @entry_border_toolbar_normal_b;
     border-bottom-color: @entry_border_toolbar_normal_c;
     background: image(@entry_background_toolbar);
-    caret-color: @wm_title;
-    color: @wm_title;
+    caret-color: @dark_fg_color;
+    color: @dark_fg_color;
 }
 
 .linked > entry:dir(ltr)
@@ -1820,7 +1820,7 @@ switch:disabled
 windowhandle switch
 {
     background: linear-gradient(to bottom, @switch_background_toolbar_normal_a, @switch_background_toolbar_normal_b);
-    color: @wm_title;
+    color: @dark_fg_color;
     border-color: @entry_border_toolbar_normal_a;
     border-top-color: @entry_border_toolbar_normal_b;
     border-bottom-color: @entry_border_toolbar_normal_c;
@@ -1841,7 +1841,7 @@ switch > image
 
 windowhandle switch > image
 {
-    color: @wm_title;
+    color: @dark_fg_color;
 }
 
 switch:checked > image
@@ -1914,7 +1914,7 @@ headerbar
     padding: 6px;
     text-shadow: 0 -1px @wm_title_shadow;
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
-    color: @wm_title;
+    color: @dark_fg_color;
     box-shadow: inset 0 1px @wm_bg_c;
     background-color: @wm_bg_b;
     border: none;
@@ -2863,8 +2863,8 @@ popover listview,
 popover .view
 {
     background-color: @entry_background_toolbar;
-    color: @wm_title;
-    caret-color: @wm_title;
+    color: @dark_fg_color;
+    caret-color: @dark_fg_color;
 }
 
 popover.entry-completion treeview /* DEPRECATED*/
@@ -3110,7 +3110,7 @@ calendar header
 popover calendar header
 {
     background-image: image(@wm_bg_a);
-    color: @wm_title;
+    color: @dark_fg_color;
 }
 
 calendar button
@@ -3182,7 +3182,7 @@ expander-widget
 
 popover expander-widget > box > title
 {
-    color: @wm_title;
+    color: @dark_fg_color;
 }
 
 popover expander-widget > box > title > label
@@ -3226,7 +3226,7 @@ listview > row treeexpander > expander:checked
 menubar
 {
     background-image: image(@wm_bg_a);
-    color: @wm_title;
+    color: @dark_fg_color;
     text-shadow: 0 -1px @toolbar_textshadow;
     padding-top: 2px;
     border-bottom: 1px solid @toolbar_border_c;
@@ -3246,7 +3246,7 @@ menubar > item
 
 menubar > item:selected
 {
-    background-image: image(@popover_background);
+    background-image: image(@dark_bg_color);
     box-shadow: inset 0 1px 1px 0 @tooltip_border;
     color: @menubar_item_color_selected;
     text-shadow: 0 -1px @wm_title_shadow;
@@ -3746,9 +3746,9 @@ popover
 popover > contents
 {
     border-radius: 5px;
-    background: @popover_background;
+    background: @dark_bg_color;
     border: 1px solid @popover_border;
-    color: @wm_title;
+    color: @dark_fg_color;
     box-shadow: 0 2px 3px @wm_shadow, inset 0 1px @popover_boxshadow_a, inset 0 -1px @popover_boxshadow_a, inset -1px 0 @popover_boxshadow_b, inset 1px 0 @popover_boxshadow_a;
     padding: 2px;
 }
@@ -3766,7 +3766,7 @@ popover:not(.menu) > contents > box
 
 popover > arrow
 {
-    background: @popover_background;
+    background: @dark_bg_color;
     border: 1px solid @popover_border;
     padding: 0;
     min-height: 16px;
@@ -4203,7 +4203,7 @@ shortcut
 .app-notification
 {
     background: @osd_background;
-    color: @wm_title;
+    color: @dark_fg_color;
     text-shadow: 0 -1px @toolbar_textshadow;
     border-radius: 7px;
     padding: 10px;

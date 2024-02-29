@@ -12,7 +12,7 @@
     <constant name="TITLEBAR_C" value="gtk:custom(wm_bg_c,#3c3b37)" />
     <constant name="TITLEBAR_D" value="gtk:custom(wm_bg_d,#3c3b37)" />
     <constant name="TITLEBAR_E" value="gtk:custom(wm_bg_e,#474642)" />
-    <constant name="TITLE_FOCUSED" value="gtk:custom(wm_title,#dfdbd2)" />
+    <constant name="TITLE_FOCUSED" value="gtk:custom(dark_fg_color,#dfdbd2)" />
     <constant name="TITLE_UNFOCUSED" value="gtk:custom(wm_unfocused_title,#807d78)" />
     <constant name="TITLE_SHADOW" value="gtk:custom(wm_title_shadow,#333)" />
     <constant name="FRAME" value="gtk:custom(wm_border,#3c3b37)" />
