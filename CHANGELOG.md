@@ -1,3 +1,12 @@
+# 24.3.1
+
+ - Use standard variable names for dark colours (fe8a11c)
+ - Add insert-image icons (2edb85b)
+ - Add appointment-soon icons (4b2f018)
+ - Add document-send icon (1528cae)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix backdropped selection background colour (ee695b2)
+ - Update spinner animation (7cd0d35)
+
 # 24.2.1
 
  - Add Gtk4 dark theme (543a307)
