@@ -1,3 +1,7 @@
+# 24.4.1
+
+ - Fix some panel icons (b1f0de2)
+
 # 24.3.1
 
  - Use standard variable names for dark colours (fe8a11c)
