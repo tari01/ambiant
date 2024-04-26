@@ -509,7 +509,8 @@ paned > separator.wide
     margin: 0 6px 0 6px;
 }
 
-.toolbar separator,
+menubar ~ .toolbar separator,
+window > box > .toolbar separator,
 windowhandle separator,
 popover separator
 {
@@ -530,7 +531,8 @@ separator.horizontal
 }
 
 separator.vertical,
-.toolbar separator
+menubar ~ .toolbar separator,
+window > box > .toolbar separator
 {
     border-width: 0 1px 0 1px;
 }
@@ -1193,17 +1195,20 @@ spinbutton.vertical > button.up
 windowhandle button,
 .app-notification button,
 .osd button,
-.toolbar button,
+menubar ~ .toolbar button,
+window > box > .toolbar button,
 popover button,
 windowhandle scale slider,
 .app-notification scale slider,
 .osd scale slider,
-.toolbar scale slider,
+menubar ~ .toolbar scale slider,
+window > box > .toolbar scale slider,
 popover scale slider,
 windowhandle button.flat:hover,
 .app-notification button.flat:hover,
 .osd button.flat:hover,
-.toolbar button.flat:hover,
+menubar ~ .toolbar button.flat:hover,
+window > box > .toolbar button.flat:hover,
 popover button.flat:hover
 {
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
@@ -1215,7 +1220,8 @@ popover button.flat:hover
 windowhandle button.suggested-action,
 .app-notification button.suggested-action,
 .osd button.suggested-action,
-.toolbar button.suggested-action,
+menubar ~ .toolbar button.suggested-action,
+window > box > .toolbar button.suggested-action,
 popover button.suggested-action
 {
     background: linear-gradient(to bottom, @button_background_suggested_a, @button_background_suggested_b 50%, @button_background_suggested_c);
@@ -1227,12 +1233,14 @@ popover button.suggested-action
 windowhandle button:checked,
 .app-notification button:checked,
 .osd button:checked,
-.toolbar button:checked,
+menubar ~ .toolbar button:checked,
+window > box > .toolbar button:checked,
 popover button:checked,
 windowhandle button.flat:checked,
 .app-notification button.flat:checked,
 .osd button.flat:checked,
-.toolbar button.flat:checked,
+menubar ~ .toolbar button.flat:checked,
+window > box > .toolbar button.flat:checked,
 popover button.flat:checked
 {
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
@@ -1243,7 +1251,8 @@ popover button.flat:checked
 windowhandle button.suggested-action:checked,
 .app-notification button.suggested-action:checked,
 .osd button.suggested-action:checked,
-.toolbar button.suggested-action:checked,
+menubar ~ .toolbar button.suggested-action:checked,
+window > box > .toolbar button.suggested-action:checked,
 popover button.suggested-action:checked
 {
     background: linear-gradient(to bottom, @button_background_suggested_checked, @button_background_suggested_checked);
@@ -1254,12 +1263,14 @@ popover button.suggested-action:checked
 windowhandle button:active,
 .app-notification button:active,
 .osd button:active,
-.toolbar button:active,
+menubar ~ .toolbar button:active,
+window > box > .toolbar button:active,
 popover button:active,
 windowhandle button.flat:active,
 .app-notification button.flat:active,
 .osd button.flat:active,
-.toolbar button.flat:active,
+menubar ~ .toolbar button.flat:active,
+window > box > .toolbar button.flat:active,
 popover button.flat:active
 {
     border-color: @entry_border_toolbar_normal_a;
@@ -1271,7 +1282,8 @@ popover button.flat:active
 windowhandle button.suggested-action:active,
 .app-notification button.suggested-action:active,
 .osd button.suggested-action:active,
-.toolbar button.suggested-action:active,
+menubar ~ .toolbar button.suggested-action:active,
+window > box > .toolbar button.suggested-action:active,
 popover button.suggested-action:active
 {
     background: linear-gradient(to bottom, @button_background_suggested_active_a, @button_background_suggested_active_b);
@@ -1284,12 +1296,14 @@ popover button.suggested-action:active
 windowhandle button:disabled,
 .app-notification button:disabled,
 .osd button:disabled,
-.toolbar button:disabled,
+menubar ~ .toolbar button:disabled,
+window > box > .toolbar button:disabled,
 popover button:disabled,
 windowhandle scale slider:disabled,
 .app-notification scale slider:disabled,
 .osd scale slider:disabled,
-.toolbar scale slider:disabled,
+menubar ~ .toolbar scale slider:disabled,
+window > box > .toolbar scale slider:disabled,
 popover scale slider:disabled,
 windowhandle check:disabled,
 popover check:disabled,
@@ -1303,7 +1317,8 @@ popover radio:disabled
 windowhandle button.suggested-action:disabled,
 .app-notification button.suggested-action:disabled,
 .osd button.suggested-action:disabled,
-.toolbar button.suggested-action:disabled,
+menubar ~ .toolbar button.suggested-action:disabled,
+window > box > .toolbar button.suggested-action:disabled,
 popover button.suggested-action:disabled
 {
     background: @button_background_suggested_disabled;
@@ -1313,12 +1328,14 @@ popover button.suggested-action:disabled
 windowhandle button:backdrop,
 .app-notification button:backdrop,
 .osd button:backdrop,
-.toolbar button:backdrop,
+menubar ~ .toolbar button:backdrop,
+window > box > .toolbar button:backdrop,
 popover button:backdrop,
 windowhandle scale slider:backdrop,
 .app-notification scale slider:backdrop,
 .osd scale slider:backdrop,
-.toolbar scale slider:backdrop,
+menubar ~ .toolbar scale slider:backdrop,
+window > box > .toolbar scale slider:backdrop,
 popover scale slider:backdrop
 {
     color: @toolbar_color_backdrop;
@@ -1327,7 +1344,8 @@ popover scale slider:backdrop
 windowhandle button.suggested-action:backdrop,
 .app-notification button.suggested-action:backdrop,
 .osd button.suggested-action:backdrop,
-.toolbar button.suggested-action:backdrop,
+menubar ~ .toolbar button.suggested-action:backdrop,
+window > box > .toolbar button.suggested-action:backdrop,
 popover button.suggested-action:backdrop
 {
     color: @button_color_dark;
@@ -1336,7 +1354,8 @@ popover button.suggested-action:backdrop
 windowhandle button:checked:disabled,
 .app-notification button:checked:disabled,
 .osd button:checked:disabled,
-.toolbar button:checked:disabled,
+menubar ~ .toolbar button:checked:disabled,
+window > box > .toolbar button:checked:disabled,
 popover button:checked:disabled
 {
     background: linear-gradient(to bottom, @button_background_toolbar_checked_disabled, @button_background_toolbar_disabled_a);
@@ -1346,12 +1365,14 @@ popover button:checked:disabled
 windowhandle button:active:backdrop,
 .app-notification button:active:backdrop,
 .osd button:active:backdrop,
-.toolbar button:active:backdrop,
+menubar ~ .toolbar button:active:backdrop,
+window > box > .toolbar button:active:backdrop,
 popover button:active:backdrop,
 windowhandle button:checked:backdrop,
 .app-notification button:checked:backdrop,
 .osd button:checked:backdrop,
-.toolbar button:checked:backdrop,
+menubar ~ .toolbar button:checked:backdrop,
+window > box > .toolbar button:checked:backdrop,
 popover button:checked:backdrop
 {
     border-color: @entry_border_toolbar_normal_a;
@@ -1360,12 +1381,14 @@ popover button:checked:backdrop
 windowhandle button:disabled:backdrop,
 .app-notification button:disabled:backdrop,
 .osd button:disabled:backdrop,
-.toolbar button:disabled:backdrop,
+menubar ~ .toolbar button:disabled:backdrop,
+window > box > .toolbar button:disabled:backdrop,
 popover button:disabled:backdrop,
 windowhandle scale slider:disabled:backdrop,
 .app-notification scale slider:disabled:backdrop,
 .osd scale slider:disabled:backdrop,
-.toolbar scale slider:disabled:backdrop,
+menubar ~ .toolbar scale slider:disabled:backdrop,
+window > box > .toolbar scale slider:disabled:backdrop,
 popover scale slider:disabled:backdrop
 {
     background: linear-gradient(to bottom, @button_background_toolbar_disabled_a, @button_background_toolbar_disabled_b);
@@ -1375,7 +1398,8 @@ popover scale slider:disabled:backdrop
 windowhandle button.suggested-action:disabled:backdrop,
 .app-notification button.suggested-action:disabled:backdrop,
 .osd button.suggested-action:disabled:backdrop,
-.toolbar button.suggested-action:disabled:backdrop,
+menubar ~ .toolbar button.suggested-action:disabled:backdrop,
+window > box > .toolbar button.suggested-action:disabled:backdrop,
 popover button.suggested-action:disabled:backdrop
 {
     background: @button_background_disabled;
@@ -1385,7 +1409,8 @@ popover button.suggested-action:disabled:backdrop
 windowhandle button.flat,
 .app-notification button.flat,
 .osd button.flat,
-.toolbar button.flat,
+menubar ~ .toolbar button.flat,
+window > box > .toolbar button.flat,
 popover button.flat
 {
     background: none;
@@ -1397,7 +1422,8 @@ popover button.flat
 windowhandle button.flat:disabled,
 .app-notification button.flat:disabled,
 .osd button.flat:disabled,
-.toolbar button.flat:disabled,
+menubar ~ .toolbar button.flat:disabled,
+window > box > .toolbar button.flat:disabled,
 popover button.flat:disabled
 {
     background: none;
@@ -1406,7 +1432,8 @@ popover button.flat:disabled
 windowhandle .linked > button:dir(ltr),
 .app-notification .linked > button:dir(ltr),
 .osd .linked > button:dir(ltr),
-.toolbar .linked button:dir(ltr),
+menubar ~ .toolbar .linked button:dir(ltr),
+window > box > .toolbar .linked button:dir(ltr),
 popover .linked > button:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border;
@@ -1415,7 +1442,8 @@ popover .linked > button:dir(ltr)
 windowhandle .linked > button:checked:dir(ltr),
 .app-notification .linked > button:checked:dir(ltr),
 .osd .linked > button:checked:dir(ltr),
-.toolbar .linked button:checked:dir(ltr),
+menubar ~ .toolbar .linked button:checked:dir(ltr),
+window > box > .toolbar .linked button:checked:dir(ltr),
 popover .linked > button:checked:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
@@ -1424,7 +1452,8 @@ popover .linked > button:checked:dir(ltr)
 windowhandle .linked > button:active:dir(ltr),
 .app-notification .linked > button:active:dir(ltr),
 .osd .linked > button:active:dir(ltr),
-.toolbar .linked button:active:dir(ltr),
+menubar ~ .toolbar .linked button:active:dir(ltr),
+window > box > .toolbar .linked button:active:dir(ltr),
 popover .linked > button:active:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
@@ -1433,7 +1462,8 @@ popover .linked > button:active:dir(ltr)
 windowhandle .linked > button:dir(rtl),
 .app-notification .linked > button:dir(rtl),
 .osd .linked > button:dir(rtl),
-.toolbar .linked button:dir(rtl),
+menubar ~ .toolbar .linked button:dir(rtl),
+window > box > .toolbar .linked button:dir(rtl),
 popover .linked > button:dir(rtl)
 {
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border;
@@ -1442,7 +1472,8 @@ popover .linked > button:dir(rtl)
 windowhandle .linked > button:checked:dir(rtl),
 .app-notification .linked > button:checked:dir(rtl),
 .osd .linked > button:checked:dir(rtl),
-.toolbar .linked button:checked:dir(rtl),
+menubar ~ .toolbar .linked button:checked:dir(rtl),
+window > box > .toolbar .linked button:checked:dir(rtl),
 popover .linked > button:checked:dir(rtl)
 {
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
@@ -1451,7 +1482,8 @@ popover .linked > button:checked:dir(rtl)
 windowhandle .linked > button:active:dir(rtl),
 .app-notification .linked > button:active:dir(rtl),
 .osd .linked > button:active:dir(rtl),
-.toolbar .linked button:active:dir(rtl),
+menubar ~ .toolbar .linked button:active:dir(rtl),
+window > box > .toolbar .linked button:active:dir(rtl),
 popover .linked > button:active:dir(rtl)
 {
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
@@ -1460,7 +1492,8 @@ popover .linked > button:active:dir(rtl)
 windowhandle .linked > button:first-child:dir(ltr),
 .app-notification .linked > button:first-child:dir(ltr),
 .osd .linked > button:first-child:dir(ltr),
-.toolbar .linked button:first-child:dir(ltr),
+menubar ~ .toolbar .linked button:first-child:dir(ltr),
+window > box > .toolbar .linked button:first-child:dir(ltr),
 popover .linked > button:first-child:dir(ltr)
 {
     box-shadow: inset -1px 0 @popover_border;
@@ -1469,7 +1502,8 @@ popover .linked > button:first-child:dir(ltr)
 windowhandle .linked > button:first-child:checked:dir(ltr),
 .app-notification .linked > button:first-child:checked:dir(ltr),
 .osd .linked > button:first-child:checked:dir(ltr),
-.toolbar .linked button:first-child:checked:dir(ltr),
+menubar ~ .toolbar .linked button:first-child:checked:dir(ltr),
+window > box > .toolbar .linked button:first-child:checked:dir(ltr),
 popover .linked > button:first-child:checked:dir(ltr)
 {
     box-shadow: inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
@@ -1478,7 +1512,8 @@ popover .linked > button:first-child:checked:dir(ltr)
 windowhandle .linked > button:first-child:active:dir(ltr),
 .app-notification .linked > button:first-child:active:dir(ltr),
 .osd .linked > button:first-child:active:dir(ltr),
-.toolbar .linked button:first-child:active:dir(ltr),
+menubar ~ .toolbar .linked button:first-child:active:dir(ltr),
+window > box > .toolbar .linked button:first-child:active:dir(ltr),
 popover .linked > button:first-child:active:dir(ltr)
 {
     box-shadow: inset -1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
@@ -1487,7 +1522,8 @@ popover .linked > button:first-child:active:dir(ltr)
 windowhandle .linked > button:first-child:dir(rtl),
 .app-notification .linked > button:first-child:dir(rtl),
 .osd .linked > button:first-child:dir(rtl),
-.toolbar .linked button:first-child:dir(rtl),
+menubar ~ .toolbar .linked button:first-child:dir(rtl),
+window > box > .toolbar .linked button:first-child:dir(rtl),
 popover .linked > button:first-child:dir(rtl)
 {
     box-shadow: inset 1px 0 @popover_border;
@@ -1496,7 +1532,8 @@ popover .linked > button:first-child:dir(rtl)
 windowhandle .linked > button:first-child:checked:dir(rtl),
 .app-notification .linked > button:first-child:checked:dir(rtl),
 .osd .linked > button:first-child:checked:dir(rtl),
-.toolbar .linked button:first-child:checked:dir(rtl),
+menubar ~ .toolbar .linked button:first-child:checked:dir(rtl),
+window > box > .toolbar .linked button:first-child:checked:dir(rtl),
 popover .linked > button:first-child:checked:dir(rtl)
 {
     box-shadow: inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
@@ -1505,7 +1542,8 @@ popover .linked > button:first-child:checked:dir(rtl)
 windowhandle .linked > button:first-child:active:dir(rtl),
 .app-notification .linked > button:first-child:active:dir(rtl),
 .osd .linked > button:first-child:active:dir(rtl),
-.toolbar .linked button:first-child:active:dir(rtl),
+menubar ~ .toolbar .linked button:first-child:active:dir(rtl),
+window > box > .toolbar .linked button:first-child:active:dir(rtl),
 popover .linked > button:first-child:active:dir(rtl)
 {
     box-shadow: inset 1px 0 @popover_border, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
@@ -1514,7 +1552,8 @@ popover .linked > button:first-child:active:dir(rtl)
 windowhandle .linked > button:last-child:dir(rtl),
 .app-notification .linked > button:last-child:dir(rtl),
 .osd .linked > button:last-child:dir(rtl),
-.toolbar .linked button:last-child:dir(rtl),
+menubar ~ .toolbar .linked button:last-child:dir(rtl),
+window > box > .toolbar .linked button:last-child:dir(rtl),
 popover .linked > button:last-child:dir(rtl)
 {
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a;
@@ -1523,7 +1562,8 @@ popover .linked > button:last-child:dir(rtl)
 windowhandle .linked > button:last-child:checked:dir(rtl),
 .app-notification .linked > button:last-child:checked:dir(rtl),
 .osd .linked > button:last-child:checked:dir(rtl),
-.toolbar .linked button:last-child:checked:dir(rtl),
+menubar ~ .toolbar .linked button:last-child:checked:dir(rtl),
+window > box > .toolbar .linked button:last-child:checked:dir(rtl),
 popover .linked > button:last-child:checked:dir(rtl)
 {
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_b, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
@@ -1532,7 +1572,8 @@ popover .linked > button:last-child:checked:dir(rtl)
 windowhandle .linked > button:last-child:active:dir(rtl),
 .app-notification .linked > button:last-child:active:dir(rtl),
 .osd .linked > button:last-child:active:dir(rtl),
-.toolbar .linked button:last-child:active:dir(rtl),
+menubar ~ .toolbar .linked button:last-child:active:dir(rtl),
+window > box > .toolbar .linked button:last-child:active:dir(rtl),
 popover .linked > button:last-child:active:dir(rtl)
 {
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
@@ -1541,7 +1582,8 @@ popover .linked > button:last-child:active:dir(rtl)
 windowhandle .linked > button:last-child:dir(ltr),
 .app-notification .linked > button:last-child:dir(ltr),
 .osd .linked > button:last-child:dir(ltr),
-.toolbar .linked button:last-child:dir(ltr),
+menubar ~ .toolbar .linked button:last-child:dir(ltr),
+window > box > .toolbar .linked button:last-child:dir(ltr),
 popover .linked > button:last-child:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a;
@@ -1550,7 +1592,8 @@ popover .linked > button:last-child:dir(ltr)
 windowhandle .linked > button:last-child:checked:dir(ltr),
 .app-notification .linked > button:last-child:checked:dir(ltr),
 .osd .linked > button:last-child:checked:dir(ltr),
-.toolbar .linked button:last-child:checked:dir(ltr),
+menubar ~ .toolbar .linked button:last-child:checked:dir(ltr),
+window > box > .toolbar .linked button:last-child:checked:dir(ltr),
 popover .linked > button:last-child:checked:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_b, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_c;
@@ -1559,7 +1602,8 @@ popover .linked > button:last-child:checked:dir(ltr)
 windowhandle .linked > button:last-child:active:dir(ltr),
 .app-notification .linked > button:last-child:active:dir(ltr),
 .osd .linked > button:last-child:active:dir(ltr),
-.toolbar .linked button:last-child:active:dir(ltr),
+menubar ~ .toolbar .linked button:last-child:active:dir(ltr),
+window > box > .toolbar .linked button:last-child:active:dir(ltr),
 popover .linked > button:last-child:active:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
@@ -2623,15 +2667,18 @@ levelbar > trough
 popover scale.horizontal > trough,
 windowhandle scale.horizontal > trough,
 .osd scale.horizontal > trough,
-.toolbar scale.horizontal > trough,
+menubar ~ .toolbar scale.horizontal > trough,
+window > box > .toolbar scale.horizontal > trough,
 popover progressbar.horizontal > trough,
 windowhandle progressbar.horizontal > trough,
 .osd progressbar.horizontal > trough,
-.toolbar progressbar.horizontal > trough,
+menubar ~ .toolbar progressbar.horizontal > trough,
+window > box > .toolbar progressbar.horizontal > trough,
 popover levelbar > trough,
 windowhandle levelbar > trough,
 .osd levelbar > trough,
-.toolbar levelbar > trough
+menubar ~ .toolbar levelbar > trough,
+window > box > .toolbar levelbar > trough
 {
     background: @entry_background_toolbar;
     border-color: @entry_border_toolbar_normal_a;
@@ -2650,15 +2697,18 @@ levelbar > trough:disabled
 popover scale.horizontal > trough:disabled,
 windowhandle scale.horizontal > trough:disabled,
 .osd scale.horizontal > trough:disabled,
-.toolbar scale.horizontal > trough:disabled,
+menubar ~ .toolbar scale.horizontal > trough:disabled,
+window > box > .toolbar scale.horizontal > trough:disabled,
 popover progressbar.horizontal > trough:disabled,
 windowhandle progressbar.horizontal > trough:disabled,
 .osd progressbar.horizontal > trough:disabled,
-.toolbar progressbar.horizontal > trough:disabled,
+menubar ~ .toolbar progressbar.horizontal > trough:disabled,
+window > box > .toolbar progressbar.horizontal > trough:disabled,
 popover levelbar > trough:disabled,
 windowhandle levelbar > trough:disabled,
 .osd levelbar > trough:disabled,
-.toolbar levelbar > trough:disabled
+menubar ~ .toolbar levelbar > trough:disabled,
+window > box > .toolbar levelbar > trough:disabled
 {
     background: @button_background_toolbar_disabled_a;
     border-color: @entry_border_toolbar_normal_a;
@@ -2681,7 +2731,8 @@ progressbar.vertical > trough
 popover scale.vertical > trough,
 windowhandle scale.vertical > trough,
 .osd scale.vertical > trough,
-.toolbar scale.vertical > trough
+menubar ~ .toolbar scale.vertical > trough,
+window > box > .toolbar scale.vertical > trough
 {
     background: @entry_background_toolbar;
     border-color: @entry_border_toolbar_normal_a;
@@ -2698,7 +2749,8 @@ scale.vertical > trough:disabled
 popover scale.vertical > trough:disabled,
 windowhandle scale.vertical > trough:disabled,
 .osd scale.vertical > trough:disabled,
-.toolbar scale.vertical > trough:disabled
+menubar ~ .toolbar scale.vertical > trough:disabled,
+window > box > .toolbar scale.vertical > trough:disabled
 {
     background: @button_background_toolbar_disabled_a;
     border-color: @entry_border_toolbar_normal_a;
@@ -2707,7 +2759,8 @@ windowhandle scale.vertical > trough:disabled,
 popover scale.vertical > trough:backdrop,
 windowhandle scale.vertical > trough:backdrop,
 .osd scale.vertical > trough:backdrop,
-.toolbar scale.vertical > trough:backdrop
+menubar ~ .toolbar scale.vertical > trough:backdrop,
+window > box > .toolbar scale.vertical > trough:backdrop
 {
     background: @button_background_toolbar_disabled_a;
     border-color: @entry_border_toolbar_normal_a;
@@ -2740,11 +2793,13 @@ progressbar.vertical > trough > progress
 popover scale.horizontal > trough > highlight,
 windowhandle scale.horizontal > trough > highlight,
 .osd scale.horizontal > trough > highlight,
-.toolbar scale.horizontal > trough > highlight,
+menubar ~ .toolbar scale.horizontal > trough > highlight,
+window > box > .toolbar scale.horizontal > trough > highlight,
 popover scale.vertical > trough > highlight,
 windowhandle scale.vertical > trough > highlight,
 .osd scale.vertical > trough > highlight,
-.toolbar scale.vertical > trough > highlight,
+menubar ~ .toolbar scale.vertical > trough > highlight,
+window > box > .toolbar scale.vertical > trough > highlight,
 popover progressbar.horizontal > trough > progress,
 windowhandle progressbar.horizontal > trough > progress,
 .osd progressbar.horizontal > trough > progress,
@@ -3055,7 +3110,8 @@ levelbar block.empty:not(:last-child)
 popover levelbar block.empty:not(:last-child),
 windowhandle levelbar block.empty:not(:last-child),
 .osd levelbar block.empty:not(:last-child),
-.toolbar levelbar block.empty:not(:last-child)
+menubar ~ .toolbar levelbar block.empty:not(:last-child),
+window > box > .toolbar levelbar block.empty:not(:last-child)
 {
     box-shadow: 1px 0 @entry_border_toolbar_normal_a;
 }
@@ -3068,7 +3124,8 @@ levelbar block.empty:not(:last-child):disabled
 popover block.empty:not(:last-child):disabled,
 windowhandle block.empty:not(:last-child):disabled,
 .osd block.empty:not(:last-child):disabled,
-.toolbar block.empty:not(:last-child):disabled
+menubar ~ .toolbar block.empty:not(:last-child):disabled,
+window > box > .toolbar block.empty:not(:last-child):disabled
 {
     box-shadow: 1px 0 @entry_border_toolbar_normal_a;
 }
@@ -4190,11 +4247,16 @@ shortcut
 
 .toolbar
 {
+    border-spacing: 6px;
+    padding: 6px;
+}
+
+menubar ~ .toolbar,
+window > box > .toolbar
+{
     background-image: linear-gradient(to bottom, @wm_bg_a, @button_boxshadow_toolbar_linked_a);
     border-top: 1px solid @toolbar_border_a;
     border-bottom: 1px solid @toolbar_border_b;
-    border-spacing: 6px;
-    padding: 6px;
 }
 
 /* osd */
