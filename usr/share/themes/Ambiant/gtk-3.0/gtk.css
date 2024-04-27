@@ -4829,3 +4829,8 @@ PanelToplevel menubar > menuitem > window.popup > menu:dir(rtl),
     margin-left: -4px;
 }
 
+.caja-pathbar > .slider-button
+{
+    min-width: 35px;
+}
+
