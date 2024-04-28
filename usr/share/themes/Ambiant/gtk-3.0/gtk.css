@@ -4834,3 +4834,78 @@ PanelToplevel menubar > menuitem > window.popup > menu:dir(rtl),
     min-width: 35px;
 }
 
+.caja-pathbar > button:dir(ltr)
+{
+    border-radius: 0;
+    border-width: 1px 0 1px 0;
+    box-shadow: inset -1px 0 @button_border_normal_a;
+    margin-left: -3px;
+}
+
+.caja-pathbar > button:dir(rtl)
+{
+    border-radius: 0;
+    border-width: 1px 0 1px 0;
+    box-shadow: inset 1px 0 @button_border_normal_a;
+    margin-right: -3px;
+}
+
+.caja-pathbar > button:checked:dir(ltr)
+{
+    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_b;
+}
+
+.caja-pathbar > button:checked:dir(rtl)
+{
+    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_b;
+}
+
+.caja-pathbar > button:disabled:dir(ltr)
+{
+    box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_b;
+}
+
+.caja-pathbar > button:disabled:dir(rtl)
+{
+    box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_b;
+}
+
+.caja-pathbar > button.slider-button:first-child:dir(ltr)
+{
+    border-width: 1px 0 1px 1px;
+    border-radius: 5px 0 0 5px;
+    margin-left: 0;
+}
+
+.caja-pathbar > button.slider-button:first-child:dir(rtl)
+{
+    border-radius: 0 5px 5px 0;
+    border-width: 1px 1px 1px 0;
+    margin-right: 0;
+}
+
+.caja-pathbar > button.slider-button:first-child:disabled:dir(rtl)
+{
+    box-shadow: none;
+}
+
+.caja-pathbar > button.slider-button:not(:first-child):dir(ltr)
+{
+    border-radius: 0 5px 5px 0;
+    border-width: 1px 1px 1px 0;
+    box-shadow: none;
+}
+
+.caja-pathbar > button.slider-button:not(:first-child):dir(rtl)
+{
+    border-width: 1px 0 1px 1px;
+    border-radius: 5px 0 0 5px;
+    box-shadow: none;
+}
+
+.caja-pathbar > button.slider-button:not(:first-child):checked:dir(ltr),
+.caja-pathbar > button.slider-button:not(:first-child):checked:dir(rtl),
+.caja-pathbar > button.slider-button:not(:first-child):disabled:dir(ltr)
+{
+    box-shadow: none;
+}
