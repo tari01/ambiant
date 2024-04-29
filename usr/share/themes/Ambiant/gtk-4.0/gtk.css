@@ -607,6 +607,7 @@ menubutton > popover list > row:selected,
 menubutton > popover list > row:hover:not(:selected)
 {
     text-shadow: 0 -1px @list_cell_border;
+    -gtk-icon-shadow: 0 -1px @list_cell_border;
     color: @theme_selected_fg_color;
 }
 
@@ -630,6 +631,7 @@ placeholder
 {
     opacity: 0.55;
     text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
 /* selection */
@@ -707,6 +709,7 @@ colorswatch#add-color-button > overlay
     min-width: 23px;
     background: linear-gradient(to bottom, @button_background_normal_a, @theme_bg_color 50%, @button_background_normal_b);
     text-shadow: 0 1px @button_textshadow;
+    -gtk-icon-shadow: 0 1px @button_textshadow;
     border: 1px solid @button_border_normal_a;
     border-bottom-color: @button_border_normal_b;
     border-radius: 5px;
@@ -761,6 +764,7 @@ button.destructive-action
     border-bottom-color: @button_border_destructive_normal_b;
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
 }
 
 button.destructive-action:checked
@@ -798,6 +802,7 @@ button.suggested-action
     border-bottom-color: @button_border_suggested_normal_b;
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
 }
 
 button.suggested-action:checked
@@ -1214,6 +1219,7 @@ popover button.flat:hover
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @dark_fg_color;
     text-shadow: 0 -1px @wm_title_shadow;
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
     border-color: @entry_border_toolbar_normal_a;
 }
 
@@ -1228,6 +1234,7 @@ popover button.suggested-action
     border-color: @popover_border;
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
 }
 
 windowhandle button:checked,
@@ -1276,6 +1283,7 @@ popover button.flat:active
     border-color: @entry_border_toolbar_normal_a;
     background: linear-gradient(to bottom, @button_background_toolbar_active, @wm_bg_a);
     text-shadow: 0 -1px @toolbar_textshadow;
+    -gtk-icon-shadow: 0 -1px @toolbar_textshadow;
     box-shadow: inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
@@ -1290,6 +1298,7 @@ popover button.suggested-action:active
     border-color: @popover_border;
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
     box-shadow: none;
 }
 
@@ -1416,6 +1425,7 @@ popover button.flat
     background: none;
     color: @dark_fg_color;
     text-shadow: 0 -1px @wm_title_shadow;
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
     border-color: transparent;
 }
 
@@ -1957,6 +1967,7 @@ headerbar
     min-height: 30px;
     padding: 6px;
     text-shadow: 0 -1px @wm_title_shadow;
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
     background: linear-gradient(to bottom, @wm_bg_b, @wm_bg_a);
     color: @dark_fg_color;
     box-shadow: inset 0 1px @wm_bg_c;
@@ -3014,6 +3025,7 @@ iconview .cell:not(entry):selected /* DEPRECATED*/
     background-color: @list_cell_background_selected;
     color: @theme_selected_fg_color;
     text-shadow: 0 -1px @list_cell_border;
+    -gtk-icon-shadow: 0 -1px @list_cell_border;
 }
 
 /* textview */
@@ -3285,6 +3297,7 @@ menubar
     background-image: image(@wm_bg_a);
     color: @dark_fg_color;
     text-shadow: 0 -1px @toolbar_textshadow;
+    -gtk-icon-shadow: 0 -1px @toolbar_textshadow;
     padding-top: 2px;
     border-bottom: 1px solid @toolbar_border_c;
     box-shadow: none;
@@ -3307,6 +3320,7 @@ menubar > item:selected
     box-shadow: inset 0 1px 1px 0 @tooltip_border;
     color: @menubar_item_color_selected;
     text-shadow: 0 -1px @wm_title_shadow;
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
     border: 1px solid @popover_border;
     border-bottom-width: 0;
     border-radius: 4px 4px 0 0;
@@ -3334,6 +3348,7 @@ tooltip
     color: @tooltip_color;
     padding: 6px;
     text-shadow: 1px 1px @tooltip_textshadow;
+    -gtk-icon-shadow: 1px 1px @tooltip_textshadow;
     margin: 2px;
 }
 
@@ -4267,6 +4282,7 @@ window > box > .toolbar
     background: @osd_background;
     color: @dark_fg_color;
     text-shadow: 0 -1px @toolbar_textshadow;
+    -gtk-icon-shadow: 0 -1px @toolbar_textshadow;
     border-radius: 7px;
     padding: 10px;
 }

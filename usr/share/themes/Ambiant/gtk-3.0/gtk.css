@@ -637,6 +637,22 @@ popover > list > row:hover:not(:selected)
     color: @theme_selected_fg_color;
 }
 
+menuitem:hover image:not(:disabled):not(:backdrop),
+menuitem:hover > image:not(:disabled):not(:backdrop),
+menuitem:hover > box image:not(:disabled):not(:backdrop),
+menuitem:hover > grid image:not(:disabled):not(:backdrop),
+menuitem:hover > cellview image:not(:disabled):not(:backdrop),
+/*menuitem:selected > image:not(:disabled):not(:backdrop),*/
+popover modelbutton:hover image:not(:disabled):not(:backdrop),
+popover modelbutton:selected image:not(:disabled):not(:backdrop),
+menubutton > popover list > row:hover image:not(:disabled):not(:backdrop),
+menubutton > popover list > row:selected image:not(:disabled):not(:backdrop),
+menubutton > popover list > row:hover:not(:selected) image:not(:disabled):not(:backdrop),
+popover > list > row:hover:not(:selected) image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @list_cell_border;
+}
+
 label.info,
 label.question,
 label.warning,
@@ -652,6 +668,11 @@ placeholder
 {
     opacity: 0.55;
     text-shadow: none;
+}
+
+placeholder image
+{
+    -gtk-icon-shadow: none;
 }
 
 /* selection */
@@ -730,6 +751,13 @@ colorswatch#add-color-button > overlay
     margin: 0;
 }
 
+button image:not(:disabled):not(:backdrop),
+scale slider image:not(:disabled):not(:backdrop),
+colorswatch#add-color-button > overlay image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @button_textshadow;
+}
+
 button:checked
 {
     background: linear-gradient(to bottom, @button_background_active_a, @button_background_active_b);
@@ -790,6 +818,11 @@ button.destructive-action
     text-shadow: 0 1px @button_textshadow_dark;
 }
 
+button.destructive-action image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
+}
+
 button.destructive-action:checked
 {
     background: linear-gradient(to bottom, @button_background_destructive_checked_a, @button_background_destructive_checked_b);
@@ -825,6 +858,11 @@ button.suggested-action
     border-bottom-color: @button_border_suggested_normal_b;
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
+}
+
+button.suggested-action image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
 }
 
 button.suggested-action:checked
@@ -1353,6 +1391,28 @@ menu button.flat:hover
     border-color: @entry_border_toolbar_normal_a;
 }
 
+headerbar button image:not(:disabled):not(:backdrop),
+.app-notification button image:not(:disabled):not(:backdrop),
+.osd button image:not(:disabled):not(:backdrop),
+.primary-toolbar button image:not(:disabled):not(:backdrop),
+popover button image:not(:disabled):not(:backdrop),
+menu button image:not(:disabled):not(:backdrop),
+headerbar scale slider image:not(:disabled):not(:backdrop),
+.app-notification scale slider image:not(:disabled):not(:backdrop),
+.osd scale slider image:not(:disabled):not(:backdrop),
+.primary-toolbar scale slider image:not(:disabled):not(:backdrop),
+popover scale slider image:not(:disabled):not(:backdrop),
+menu scale slider image:not(:disabled):not(:backdrop),
+headerbar button.flat:hover image:not(:disabled):not(:backdrop),
+.app-notification button.flat:hover image:not(:disabled):not(:backdrop),
+.osd button.flat:hover image:not(:disabled):not(:backdrop),
+.primary-toolbar button.flat:hover image:not(:disabled):not(:backdrop),
+popover button.flat:hover image:not(:disabled):not(:backdrop),
+menu button.flat:hover image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
+}
+
 headerbar button.suggested-action,
 .app-notification button.suggested-action,
 .osd button.suggested-action,
@@ -1364,6 +1424,16 @@ menu button.suggested-action
     border-color: @popover_border;
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
+}
+
+headerbar button.suggested-action image:not(:disabled):not(:backdrop),
+.app-notification button.suggested-action image:not(:disabled):not(:backdrop),
+.osd button.suggested-action image:not(:disabled):not(:backdrop),
+.primary-toolbar button.suggested-action image:not(:disabled):not(:backdrop),
+popover button.suggested-action image:not(:disabled):not(:backdrop),
+menu button.suggested-action image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
 }
 
 headerbar button:checked,
@@ -1417,6 +1487,23 @@ menu button.flat:active
     box-shadow: inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
 }
 
+headerbar button:active image:not(:disabled):not(:backdrop),
+.app-notification button:active image:not(:disabled):not(:backdrop),
+.osd button:active image:not(:disabled):not(:backdrop),
+.primary-toolbar button:active image:not(:disabled):not(:backdrop),
+popover button:active image:not(:disabled):not(:backdrop),
+menu button:active image:not(:disabled):not(:backdrop),
+headerbar button.flat:active image:not(:disabled):not(:backdrop),
+.app-notification button.flat:active image:not(:disabled):not(:backdrop),
+.osd button.flat:active image:not(:disabled):not(:backdrop),
+toolbar.primary-toolbar > button.flat:active image:not(:disabled):not(:backdrop),
+.primary-toolbar toolbar > button.flat:active image:not(:disabled):not(:backdrop),
+popover button.flat:active image:not(:disabled):not(:backdrop),
+menu button.flat:active image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @toolbar_textshadow;
+}
+
 headerbar button.suggested-action:active,
 .app-notification button.suggested-action:active,
 .osd button.suggested-action:active,
@@ -1429,6 +1516,16 @@ menu button.suggested-action:active
     color: @button_color_dark;
     text-shadow: 0 1px @button_textshadow_dark;
     box-shadow: none;
+}
+
+headerbar button.suggested-action:active image:not(:disabled):not(:backdrop),
+.app-notification button.suggested-action:active image:not(:disabled):not(:backdrop),
+.osd button.suggested-action:active image:not(:disabled):not(:backdrop),
+.primary-toolbar button.suggested-action:active image:not(:disabled):not(:backdrop),
+popover button.suggested-action:active image:not(:disabled):not(:backdrop),
+menu button.suggested-action:active image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @button_textshadow_dark;
 }
 
 headerbar button:disabled,
@@ -1559,6 +1656,17 @@ menu button.flat
     color: @dark_fg_color;
     text-shadow: 0 -1px @wm_title_shadow;
     border-color: transparent;
+}
+
+headerbar button.flat image:not(:disabled):not(:backdrop),
+.app-notification button.flat image:not(:disabled):not(:backdrop),
+.osd button.flat image:not(:disabled):not(:backdrop),
+toolbar.primary-toolbar > button.flat image:not(:disabled):not(:backdrop),
+.primary-toolbar toolbar > button.flat image:not(:disabled):not(:backdrop),
+popover button.flat image:not(:disabled):not(:backdrop),
+menu button.flat image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
 }
 
 headerbar button.flat:disabled,
@@ -2176,6 +2284,11 @@ headerbar
     border-bottom: 1px solid @toolbar_border_c;
     transition: none;
     border-radius: 6px 6px 0 0;
+}
+
+headerbar image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
 }
 
 window.maximized > headerbar,
@@ -3424,6 +3537,7 @@ iconview .cell:not(entry):selected
     background-color: @list_cell_background_selected;
     color: @theme_selected_fg_color;
     text-shadow: 0 -1px @list_cell_border;
+    -gtk-icon-shadow: 0 -1px @list_cell_border;
 }
 
 /* textview */
@@ -3640,7 +3754,12 @@ popover calendar
 {
     color: @dark_fg_color;
     text-shadow: none;
+}
 
+menu calendar image,
+popover calendar image
+{
+    -gtk-icon-shadow: none;
 }
 
 calendar.header
@@ -3762,6 +3881,12 @@ tooltip,
     background: @tooltip_background;
     color: @tooltip_color;
     text-shadow: 1px 1px @tooltip_textshadow;
+}
+
+tooltip image:not(:disabled):not(:backdrop),
+.tooltip image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 1px 1px @tooltip_textshadow;
 }
 
 tooltip label,
@@ -3947,7 +4072,6 @@ headerbar box.right:dir(rtl) > *:not(:first-child):not(:only-child)
 
 button.titlebutton
 {
-    -gtk-icon-shadow: 0 1px @windowcontrols_button_textshadow;
     border-radius: 50%;
     min-height: 23px;
     min-width: 23px;
@@ -3970,7 +4094,6 @@ button.titlebutton:hover
 {
     background: linear-gradient(to bottom, @windowcontrols_button_background_hover_a, @windowcontrols_button_background_hover_b);
     color: @windowcontrols_button_color_hover;
-    -gtk-icon-shadow: 0 1px @windowcontrols_button_textshadow_hover;
     box-shadow: 0 -1px @windowcontrols_button_background_hover_b inset, 1px 0 @windowcontrols_button_background_hover_b inset, 0 1px @windowcontrols_button_background_hover_b inset, -1px 0 @windowcontrols_button_background_hover_b inset;
 }
 
@@ -3979,14 +4102,12 @@ button.titlebutton:active
     border-color: @windowcontrols_button_border;
     background: linear-gradient(to bottom, @windowcontrols_button_background_active_a, @windowcontrols_button_background_active_b);
     color: @windowcontrols_button_color_normal;
-    -gtk-icon-shadow: none;
     box-shadow: 0 -1px @windowcontrols_button_background_active_a inset, 1px 0 @windowcontrols_button_background_active_a inset, 0 1px @windowcontrols_button_background_active_a inset, -1px 0 @windowcontrols_button_background_active_a inset;
 }
 
 button.titlebutton.close
 {
     color: @popover_border;
-    -gtk-icon-shadow: 0 1px @button_textshadow_toolbar;
     background: linear-gradient(to bottom, @windowcontrols_button_background_normal_close_a, @windowcontrols_button_background_normal_close_b);
     box-shadow: 0 -1px @windowcontrols_button_background_normal_close_b inset, 1px 0 @windowcontrols_button_background_normal_close_b inset, 0 1px @windowcontrols_button_background_normal_close_b inset, -1px 0 @windowcontrols_button_background_normal_close_b inset;
 }
@@ -4000,14 +4121,44 @@ button.titlebutton.close:hover
 button.titlebutton.close:active
 {
     background: linear-gradient(to bottom, @windowcontrols_button_background_close_active_a, @windowcontrols_button_background_close_active_b);
-    -gtk-icon-shadow: none;
     box-shadow: 0 -1px @windowcontrols_button_background_close_active_a inset, 1px 0 @windowcontrols_button_background_close_active_a inset, 0 1px @windowcontrols_button_background_close_active_a inset, -1px 0 @windowcontrols_button_background_close_active_a inset;
 }
 
-button.titlebutton > image
+button.titlebutton image
 {
     -gtk-icon-style: symbolic;
     -gtk-icon-transform: scale(1.2);
+}
+
+button.titlebutton image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @windowcontrols_button_textshadow;
+}
+
+button.titlebutton image:backdrop,
+button.titlebutton.close image:backdrop
+{
+    -gtk-icon-shadow: none;
+}
+
+button.titlebutton image:hover:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @windowcontrols_button_textshadow_hover;
+}
+
+button.titlebutton image:active:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: none;
+}
+
+button.titlebutton.close image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 1px @button_textshadow_toolbar;
+}
+
+button.titlebutton.close image:active:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: none;
 }
 
 /* searchbar */
@@ -4674,6 +4825,12 @@ toolbar.vertical > toolbutton:not(:first-child):not(:only-child) > button:only-c
     padding: 10px;
 }
 
+.osd image:not(:disabled):not(:backdrop),
+.app-notification image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @toolbar_textshadow;
+}
+
 /* app-notification */
 
 .app-notification
@@ -4707,6 +4864,11 @@ menubar
     box-shadow: none;
 }
 
+menubar image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @toolbar_textshadow;
+}
+
 menubar:backdrop
 {
     color: @toolbar_color_backdrop;
@@ -4734,6 +4896,12 @@ menubar > menuitem:hover > box > label
 {
     color: @menubar_item_color_selected;
     text-shadow: 0 -1px @wm_title_shadow;
+}
+
+menubar > menuitem:hover > image:not(:disabled):not(:backdrop),
+menubar > menuitem:hover > box > image:not(:disabled):not(:backdrop)
+{
+    -gtk-icon-shadow: 0 -1px @wm_title_shadow;
 }
 
 menubar > menuitem > window.popup:dir(ltr),
