@@ -1987,8 +1987,12 @@ entry:disabled:backdrop
     color: @entry_color_disabled;
 }
 
-searchbar entry,
-searchbar entry:backdrop,
+toolbar.primary-toolbar ~ searchbar entry,
+.primary-toolbar toolbar ~ searchbar entry,
+headerbar ~ box > searchbar entry,
+toolbar.primary-toolbar ~ searchbar entry:backdrop,
+.primary-toolbar toolbar ~ searchbar entry:backdrop,
+headerbar ~ box > searchbar entry:backdrop,
 headerbar entry,
 popover entry,
 menu entry,
@@ -4165,11 +4169,18 @@ button.titlebutton.close image:active:not(:disabled):not(:backdrop)
 
 searchbar > revealer > box
 {
-    background: linear-gradient(to bottom, @wm_bg_a, @button_boxshadow_toolbar_linked_a);
     border: none;
-    border-top: 1px solid @toolbar_border_a;
+    border-top: 1px solid @separator_border_a;
+    box-shadow: inset 0 1px @separator_border_b;
     padding: 6px;
     margin: -6px;
+}
+
+headerbar ~ box > searchbar > revealer > box
+{
+    background: linear-gradient(to bottom, @wm_bg_a, @button_boxshadow_toolbar_linked_a);
+    border-top-color: @toolbar_border_a;
+    box-shadow: none;
 }
 
 toolbar.primary-toolbar ~ searchbar > revealer > box,
@@ -4177,6 +4188,7 @@ toolbar.primary-toolbar ~ searchbar > revealer > box,
 {
     background: linear-gradient(to bottom, @button_boxshadow_toolbar_linked_a, @toolbar_background);
     border-top-color: @searchbar_border;
+    box-shadow: none;
 }
 
 /* infobar */
