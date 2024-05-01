@@ -1,3 +1,13 @@
+# 24.5.1
+
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Separate dark/light searchbars (88df021)
+ - Match icon shadows to text shadows (850f615)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Link Caja pathbar buttons (c048a2f)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Fix Caja pathbar arrow button width (d2fa039)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Change toolbar selectors (2f8d434)
+ - Add printer-warning icons (1cdd292)
+ - Backport Gtk4 styles to Gtk3 theme (546c01a)
+
 # 24.4.1
 
  - Fix some panel icons (b1f0de2)
