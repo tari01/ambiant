@@ -900,6 +900,16 @@ button > box > arrow
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
+entry.combo + button.combo > box > arrow:dir(ltr)
+{
+    padding-left: 4px;
+}
+
+entry.combo + button.combo > box > arrow:dir(rtl)
+{
+    padding-right: 4px;
+}
+
 /* menubutton */
 
 menubutton
@@ -1948,16 +1958,6 @@ windowhandle switch:disabled > slider
 {
     background-image: linear-gradient(to bottom, @button_background_toolbar_disabled_a, @button_background_toolbar_disabled_b);
     border-color: @button_border_toolbar_normal;
-}
-
-combobox arrow:dir(ltr) /* DEPRECATED */
-{
-    padding-left: 4px;
-}
-
-combobox arrow:dir(rtl) /* DEPRECATED */
-{
-    padding-right: 4px;
 }
 
 /* headerbar */
