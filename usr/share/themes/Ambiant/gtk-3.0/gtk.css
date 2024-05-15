@@ -690,6 +690,7 @@ iconview:selected
     color: @theme_selected_fg_color;
     background-image: image(@theme_selected_bg_color);
     background-color: @theme_selected_bg_color;
+    text-shadow: none;
 }
 
 selection:backdrop,
