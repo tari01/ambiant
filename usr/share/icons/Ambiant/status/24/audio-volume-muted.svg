@@ -3,8 +3,8 @@
 
 <svg
    version="1.0"
-   width="22"
-   height="22"
+   width="24"
+   height="24"
    id="svg2"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
@@ -54,26 +54,6 @@
       <stop
          id="stop3643"
          style="stop-color:#555753;stop-opacity:1"
-         offset="1" />
-    </linearGradient>
-    <linearGradient
-       x1="8"
-       y1="7"
-       x2="8"
-       y2="10"
-       id="linearGradient3598-8"
-       xlink:href="#linearGradient3592-7"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(6,3)" />
-    <linearGradient
-       id="linearGradient3592-7">
-      <stop
-         id="stop3594-1"
-         style="stop-color:#3b7caf;stop-opacity:1"
-         offset="0" />
-      <stop
-         id="stop3596-7"
-         style="stop-color:#194c70;stop-opacity:1"
          offset="1" />
     </linearGradient>
     <radialGradient
@@ -200,14 +180,6 @@
          offset="1" />
     </linearGradient>
     <linearGradient
-       x1="17"
-       y1="7"
-       x2="17"
-       y2="16"
-       id="linearGradient3712"
-       xlink:href="#linearGradient3592-7"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
        x1="309.98151"
        y1="193"
        x2="309.98151"
@@ -233,35 +205,8 @@
        gradientUnits="userSpaceOnUse" />
   </defs>
   <g
-     transform="translate(-2.5225627e-7,-0.45791653)"
+     transform="translate(0.99999975,0.54208347)"
      id="g2855">
-    <rect
-       width="2"
-       height="15"
-       rx="0"
-       ry="0"
-       x="19"
-       y="4"
-       id="rect2384-5-2"
-       style="display:inline;overflow:visible;visibility:visible;opacity:0.4;fill:#606060;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:accumulate" />
-    <rect
-       width="2"
-       height="9"
-       rx="0"
-       ry="0"
-       x="16"
-       y="7"
-       id="rect3158-0-6"
-       style="display:inline;overflow:visible;visibility:visible;fill:url(#linearGradient3712);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:accumulate" />
-    <rect
-       width="2"
-       height="3"
-       rx="0"
-       ry="0"
-       x="13"
-       y="10"
-       id="rect3162-9-1"
-       style="display:inline;overflow:visible;visibility:visible;fill:url(#linearGradient3598-8);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:accumulate" />
     <g
        transform="matrix(1.0000114,0,0,1,-303.98507,-177)"
        id="g4019"
@@ -316,5 +261,32 @@
          id="path5619"
          style="display:inline;opacity:0.6;fill:#ffffff;fill-opacity:1;stroke:none;enable-background:new" />
     </g>
+    <rect
+       width="2.0000002"
+       height="1"
+       rx="0"
+       ry="0"
+       x="13"
+       y="10.999524"
+       id="rect3162-9"
+       style="display:inline;overflow:visible;visibility:visible;opacity:0.4;fill:#606060;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:accumulate" />
+    <rect
+       width="2.0000002"
+       height="1"
+       rx="0"
+       ry="0"
+       x="19"
+       y="10.999524"
+       id="rect3600"
+       style="display:inline;overflow:visible;visibility:visible;opacity:0.4;fill:#606060;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:accumulate" />
+    <rect
+       width="2.0000002"
+       height="1"
+       rx="0"
+       ry="0"
+       x="16"
+       y="10.999524"
+       id="rect3602"
+       style="display:inline;overflow:visible;visibility:visible;opacity:0.4;fill:#606060;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;enable-background:accumulate" />
   </g>
 </svg>

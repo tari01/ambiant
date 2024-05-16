@@ -3,8 +3,8 @@
 
 <svg
    version="1.0"
-   width="22"
-   height="22"
+   width="24"
+   height="24"
    id="svg2"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +233,7 @@
        gradientUnits="userSpaceOnUse" />
   </defs>
   <g
-     transform="translate(-2.5225627e-7,-0.45791653)"
+     transform="translate(0.99999975,0.54208347)"
      id="g2855">
     <rect
        width="2"
