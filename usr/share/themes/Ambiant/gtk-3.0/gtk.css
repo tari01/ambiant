@@ -2291,6 +2291,11 @@ headerbar
     border-radius: 6px 6px 0 0;
 }
 
+leaflet headerbar
+{
+    min-height: 37px;
+}
+
 headerbar image:not(:disabled):not(:backdrop)
 {
     -gtk-icon-shadow: 0 -1px @wm_title_shadow;
