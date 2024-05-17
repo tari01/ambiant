@@ -555,6 +555,11 @@ placessidebar list > separator
     margin: 3px 0 3px 0;
 }
 
+.inline-toolbar > separator
+{
+    margin: 0 -1px 0 -1px;
+}
+
 /* label */
 
 label
@@ -1121,6 +1126,7 @@ spinbutton.vertical > button.up
     border-radius: 5px 5px 0 0;
 }
 
+.inline-toolbar > button:not(.flat):dir(ltr),
 .linked > button:dir(ltr),
 toolbutton > box > button:not(.flat):dir(ltr),
 toolitem > box > button:not(.flat):dir(ltr),
@@ -1134,6 +1140,7 @@ toolitem > box > button:not(.flat):dir(ltr),
     box-shadow: inset -1px 0 @button_border_normal_a;
 }
 
+.inline-toolbar > button:not(.flat):dir(rtl),
 .linked > button:dir(rtl),
 toolbutton > box > button:not(.flat):dir(rtl),
 toolitem > box > button:not(.flat):dir(rtl),
@@ -1147,6 +1154,7 @@ toolitem > box > button:not(.flat):dir(rtl),
     box-shadow: inset 1px 0 @button_border_normal_a;
 }
 
+.inline-toolbar > button:not(.flat):checked:dir(ltr),
 .linked > button:checked:dir(ltr),
 toolbutton > box > button:not(.flat):checked:dir(ltr),
 toolitem > box > button:not(.flat):checked:dir(ltr),
@@ -1158,6 +1166,7 @@ toolitem > box > button:not(.flat):checked:dir(ltr),
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_b;
 }
 
+.inline-toolbar > button:not(.flat):checked:dir(rtl),
 .linked > button:checked:dir(rtl),
 toolbutton > box > button:not(.flat):checked:dir(rtl),
 toolitem > box > button:not(.flat):checked:dir(rtl),
@@ -1169,6 +1178,7 @@ toolitem > box > button:not(.flat):checked:dir(rtl),
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_b;
 }
 
+.inline-toolbar > button:not(.flat):disabled:dir(ltr),
 .linked > button:disabled:dir(ltr),
 toolbutton > box > button:not(.flat):disabled:dir(ltr),
 toolitem > box > button:not(.flat):disabled:dir(ltr),
@@ -1180,6 +1190,7 @@ toolitem > box > button:not(.flat):disabled:dir(ltr),
     box-shadow: inset -1px 0 @button_boxshadow_toolbar_linked_b;
 }
 
+.inline-toolbar > button:not(.flat):disabled:dir(rtl),
 .linked > button:disabled:dir(rtl),
 toolbutton > box > button:not(.flat):disabled:dir(rtl),
 toolitem > box > button:not(.flat):disabled:dir(rtl),
@@ -1191,6 +1202,7 @@ toolitem > box > button:not(.flat):disabled:dir(rtl),
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_b;
 }
 
+.inline-toolbar > button:not(.flat):first-child:dir(ltr),
 .linked > button:first-child:dir(ltr),
 toolbutton > box > button:not(.flat):first-child:dir(ltr),
 toolitem > box > button:not(.flat):first-child:dir(ltr),
@@ -1203,6 +1215,7 @@ toolitem > box > button:not(.flat):first-child:dir(ltr),
     border-radius: 5px 0 0 5px;
 }
 
+.inline-toolbar > button:not(.flat):first-child:dir(rtl),
 .linked > button:first-child:dir(rtl),
 toolbutton > box > button:not(.flat):first-child:dir(rtl),
 toolitem > box > button:not(.flat):first-child:dir(rtl),
@@ -1215,6 +1228,7 @@ toolitem > box > button:not(.flat):first-child:dir(rtl),
     border-width: 1px 1px 1px 0;
 }
 
+.inline-toolbar > button:not(.flat):first-child:disabled:dir(rtl),
 .linked > button:first-child:disabled:dir(rtl),
 toolbutton > box > button:not(.flat):first-child:disabled:dir(rtl),
 toolitem > box > button:not(.flat):first-child:disabled:dir(rtl),
@@ -1226,6 +1240,7 @@ toolitem > box > button:not(.flat):first-child:disabled:dir(rtl),
     box-shadow: none;
 }
 
+.inline-toolbar > button:not(.flat):last-child:dir(ltr),
 .linked > button:last-child:dir(ltr),
 toolbutton > box > button:not(.flat):last-child:dir(ltr),
 toolitem > box > button:not(.flat):last-child:dir(ltr),
@@ -1239,6 +1254,12 @@ toolitem > box > button:not(.flat):last-child:dir(ltr),
     box-shadow: none;
 }
 
+.inline-toolbar > separator + button:not(.flat):last-child:dir(ltr)
+{
+    border-width: 1px 1px 1px 1px;
+}
+
+.inline-toolbar > button:not(.flat):last-child:dir(rtl),
 .linked > button:last-child:dir(rtl),
 toolbutton > box > button:not(.flat):last-child:dir(rtl),
 toolitem > box > button:not(.flat):last-child:dir(rtl),
@@ -1252,6 +1273,12 @@ toolitem > box > button:not(.flat):last-child:dir(rtl),
     box-shadow: none;
 }
 
+.inline-toolbar > separator + button:not(.flat):last-child:dir(rtl)
+{
+    border-width: 1px 1px 1px 1px;
+}
+
+.inline-toolbar > button:not(.flat):last-child:checked:dir(ltr),
 .linked > button:last-child:checked:dir(ltr),
 toolbutton > box > button:not(.flat):last-child:checked:dir(ltr),
 toolitem > box > button:not(.flat):last-child:checked:dir(ltr),
@@ -1263,6 +1290,7 @@ toolitem > box > button:not(.flat):last-child:checked:dir(ltr),
     box-shadow: none;
 }
 
+.inline-toolbar > button:not(.flat):last-child:checked:dir(rtl),
 .linked > button:last-child:checked:dir(rtl),
 toolbutton > box > button:not(.flat):last-child:checked:dir(rtl),
 toolitem > box > button:not(.flat):last-child:checked:dir(rtl),
@@ -1274,6 +1302,7 @@ toolitem > box > button:not(.flat):last-child:checked:dir(rtl),
     box-shadow: none;
 }
 
+.inline-toolbar > button:not(.flat):last-child:disabled:dir(ltr),
 .linked > button:last-child:disabled:dir(ltr),
 toolbutton > box > button:not(.flat):last-child:disabled:dir(ltr),
 toolitem > box > button:not(.flat):last-child:disabled:dir(ltr),
@@ -1285,6 +1314,7 @@ toolitem > box > button:not(.flat):last-child:disabled:dir(ltr),
     box-shadow: none;
 }
 
+.inline-toolbar > button:not(.flat):only-child:dir(ltr),
 .linked > button:only-child:dir(ltr),
 toolbutton > box > button:not(.flat):only-child:dir(ltr),
 toolitem > box > button:not(.flat):only-child:dir(ltr),
@@ -1304,6 +1334,7 @@ toolitem > box > button:not(.flat):only-child:dir(rtl),
     border-width: 1px;
 }
 
+.inline-toolbar > button:not(.flat):only-child:checked:dir(ltr),
 .linked > button:only-child:checked:dir(ltr),
 toolbutton > box > button:not(.flat):only-child:checked:dir(ltr),
 toolitem > box > button:not(.flat):only-child:checked:dir(ltr),
@@ -4799,7 +4830,7 @@ toolbar.primary-toolbar,
     border-bottom: 1px solid @toolbar_border_b;
 }
 
-toolbar.inline-toolbar
+.inline-toolbar
 {
     background-color: @scrollbar_trough_background;
     border: 1px solid @borders;
