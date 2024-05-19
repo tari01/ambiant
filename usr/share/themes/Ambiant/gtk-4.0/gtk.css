@@ -4030,6 +4030,7 @@ window.fullscreen
 
 window.tiled
 {
+    border-radius: 0;
     box-shadow: none;
 }
 

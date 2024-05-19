@@ -2334,8 +2334,10 @@ headerbar image:not(:disabled):not(:backdrop)
 
 window.maximized > headerbar,
 window.fullscreen > headerbar,
+window.tiled > headerbar,
 dialog.maximized > headerbar,
-dialog.fullscreen > headerbar
+dialog.fullscreen > headerbar,
+dialog.tiled > headerbar
 {
     border-radius: 0;
 }
@@ -4541,7 +4543,7 @@ window.popup
     background-color: transparent;
 }
 
-window.unified:not(.maximixed):not(.fullscreen)
+window.unified:not(.maximixed):not(.fullscreen):not(.tiled)
 {
     border-radius: 6px 6px 0 0;
 }
@@ -4676,12 +4678,16 @@ GvcMixerDialog.csd decoration
 
 window.maximized decoration,
 window.fullscreen decoration,
+window.tiled decoration,
 dialog.maximized decoration,
 dialog.fullscreen decoration,
+dialog.tiled decoration,
 assistant.maximized decoration,
 assistant.fullscreen decoration,
+assistant.tiled decoration,
 GvcMixerDialog.maximized decoration,
-GvcMixerDialog.fullscreen decoration
+GvcMixerDialog.fullscreen decoration,
+GvcMixerDialog.tiled decoration
 {
     border-radius: 0;
     box-shadow: none;
