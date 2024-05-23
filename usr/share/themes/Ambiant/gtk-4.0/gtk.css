@@ -3188,15 +3188,10 @@ calendar button
     border: none;
 }
 
-calendar button:hover
-{
-    color: @theme_selected_bg_color;
-}
-
 calendar button:active
 {
     background: none;
-    color: @notebook_arrow_color_active;
+    color: @theme_selected_bg_color;
 }
 
 calendar grid
