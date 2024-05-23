@@ -4031,7 +4031,7 @@ window.tiled
 
 window.dialog:not(.csd)
 {
-    padding: 8px;
+    padding: 10px;
 }
 
 window.dialog .dialog-action-area
@@ -4053,7 +4053,7 @@ window.dialog colorchooser box > box
 
 window.dialog colorchooser overlay > grid
 {
-    margin: 0 -30px 0 -28px;
+    margin: 2px -29px 0 -29px;
 }
 
 window.dialog fontchooser
