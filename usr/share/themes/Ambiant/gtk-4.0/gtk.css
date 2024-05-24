@@ -3307,6 +3307,8 @@ menubar > item
 {
     padding: 6px;
     border: 1px solid transparent;
+    border-bottom-width: 0;
+    min-height: 24px;
 }
 
 menubar > item:selected
