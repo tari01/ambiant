@@ -1,3 +1,22 @@
+# 24.7.1
+
+ - README.md: Update description (6d613c4)
+ - Fix broken icon links (3464e3f)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix menubar items height (3228a6c)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Set dialog padding to 10px (b1d5c38)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Make calendar arrow consistent with Gtk3 scrollbar arrow (241240f)
+ - Add caffeine status icons (356ce7a)
+ - Add GitHub document icon (e57b8f5)
+ - Remove rounded edges from tiled windows (b621b49)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Fix inline toolbar buttons (fc0231b)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Fix leaflet headerbar height (49a4538)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Add border radius to unified windows (6fd11c5)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Fix Caja search bar entry margin (61f2acf)
+ - Add 'find' icons (98495fc)
+ - Fix audio-volume icons (120d7e4)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Only pad arrows of combo boxes which have an entry (8edc9ba)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Remove shadow from selected text (0863995)
+
 # 24.5.1
 
  - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Separate dark/light searchbars (88df021)
