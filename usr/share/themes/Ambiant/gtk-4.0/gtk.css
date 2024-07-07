@@ -496,9 +496,9 @@ treeview.separator /* DEPRECATED */
 
 paned > separator
 {
-    min-width: 1px;
-    min-height: 1px;
-    background: @borders;
+    min-width: 6px;
+    min-height: 6px;
+    background: @theme_bg_color;
     -gtk-icon-source: none;
     margin: 0;
     padding: 0;
@@ -507,6 +507,11 @@ paned > separator
 paned > separator.wide
 {
     margin: 0 6px 0 6px;
+}
+
+paned.view > separator
+{
+    background: @borders;
 }
 
 menubar ~ .toolbar separator,
