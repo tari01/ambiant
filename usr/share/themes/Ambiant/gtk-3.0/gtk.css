@@ -4430,6 +4430,11 @@ popover modelbutton accelerator
     margin: 0 0 0 18px;
 }
 
+menu > menuitem .accelerator
+{
+    color: @modelbutton_accelerator_color;
+}
+
 menuitem > label > accelerator:dir(rtl),
 popover modelbutton accelerator:dir(rtl)
 {
@@ -4437,6 +4442,7 @@ popover modelbutton accelerator:dir(rtl)
 }
 
 menuitem:hover > label > accelerator,
+menu > menuitem:hover .accelerator,
 popover modelbutton:hover accelerator,
 popover modelbutton:selected accelerator
 {
@@ -4445,6 +4451,7 @@ popover modelbutton:selected accelerator
 }
 
 menuitem:disabled > label > accelerator,
+menu > menuitem:disabled .accelerator,
 popover modelbutton:disabled > accelerator
 {
     color: @modelbutton_accelerator_color_disabled;
