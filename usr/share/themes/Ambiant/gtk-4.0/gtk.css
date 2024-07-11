@@ -753,6 +753,21 @@ button:active:disabled
     border-color: @button_border_disabled;
 }
 
+button.small-button
+{
+    padding: 0px;
+    min-height: 17px;
+    min-width: 17px;
+    border-radius: 3px;
+}
+
+button.small-button image
+{
+    min-height: 17px;
+    min-width: 17px;
+    -gtk-icon-size: 14px;
+}
+
 button.needs-attention > label
 {
     background-image: radial-gradient(farthest-side, @windowcontrols_button_background_close_hover 80%, transparent);
