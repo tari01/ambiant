@@ -84,10 +84,9 @@
 @define-color entry_color_disabled rgb(138, 138, 138);
 @define-color error_background rgb(211, 87, 87);
 @define-color error_border rgb(155, 52, 45);
-@define-color info_background_a rgb(254, 254, 205);
-@define-color info_background_b rgb(250, 250, 174);
-@define-color info_border rgb(227, 227, 104);
-@define-color info_color rgb(181, 171, 156);
+@define-color info_background rgb(222, 240, 216);
+@define-color info_border rgb(138, 180, 136);
+@define-color info_color rgb(55, 121, 57);
 @define-color levelbar_block_filled_background rgb(143, 175, 83);
 @define-color levelbar_block_high_background_a rgb(93, 192, 0);
 @define-color levelbar_block_high_background_b rgb(74, 143, 9);
@@ -144,10 +143,9 @@
 @define-color progressbar_fill_background_disabled_a rgb(194, 194, 194);
 @define-color progressbar_fill_background_disabled_b rgb(158, 158, 158);
 @define-color progressbar_fill_background_disabled_backdrop rgb(172, 172, 172);
-@define-color question_background_a rgb(147, 180, 217);
-@define-color question_background_b rgb(129, 166, 207);
-@define-color question_border rgb(88, 129, 174);
-@define-color question_color rgb(97, 122, 214);
+@define-color question_background rgb(204, 229, 255);
+@define-color question_border rgb(153, 172, 192);
+@define-color question_color rgb(102, 115, 128);
 @define-color rubberband_background rgba(135, 165, 86, 0.35);
 @define-color scale_indicator_background rgb(196, 193, 189);
 @define-color scrollbar_background_toolbar rgb(69, 67, 61);
@@ -199,9 +197,9 @@
 @define-color trough_highlight_border_backdrop_a rgb(127, 138, 110);
 @define-color trough_highlight_border_backdrop_b rgb(137, 148, 118);
 @define-color trough_highlight_border_backdrop_disabled_a rgb(144, 144, 144);
-@define-color warning_background_a rgb(254, 179, 70);
-@define-color warning_background_b rgb(246, 167, 53);
-@define-color warning_color rgb(173, 120, 41);
+@define-color warning_background rgb(254, 179, 70);
+@define-color warning_border rgb(191, 135, 53);
+@define-color warning_color rgb(127, 90, 35);
 @define-color window_color_disabled rgb(149, 145, 140);
 @define-color windowcontrols_button_background_backdrop_a rgb(103, 102, 97);
 @define-color windowcontrols_button_background_backdrop_b rgb(86, 85, 79);
@@ -4255,7 +4253,7 @@ infobar > revealer > box > box:nth-child(2)
 infobar.info > revealer > box,
 .info:not(infobar)
 {
-    background-image: linear-gradient(to bottom, @info_background_a, @info_background_b);
+    background-image: image(@info_background);
     color: @info_color;
 }
 
@@ -4267,19 +4265,19 @@ infobar.info > revealer > box
 infobar.warning > revealer > box,
 .warning:not(infobar)
 {
-    background-image: linear-gradient(to bottom, @warning_background_a, @warning_background_b);
+    background-image: image(@warning_background);
     color: @warning_color;
 }
 
 infobar.warning > revealer > box
 {
-    border-bottom: 1px solid @warning_border_b;
+    border-bottom: 1px solid @warning_border;
 }
 
 infobar.question > revealer > box,
 .question:not(infobar)
 {
-    background-image: linear-gradient(to bottom, @question_background_a, @question_background_b);
+    background-image: image(@question_background);
     color: @question_color;
 }
 
