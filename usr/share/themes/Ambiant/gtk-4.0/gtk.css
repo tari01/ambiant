@@ -717,7 +717,7 @@ colorswatch#add-color-button > overlay
     border-bottom-color: @button_border_normal_b;
     border-radius: 5px;
     box-shadow: none;
-    color: inherit;
+    color: @theme_fg_color;
     -gtk-icon-filter: none;
     margin: 0;
 }
@@ -1645,32 +1645,6 @@ window > box > .toolbar .linked button:last-child:active:dir(ltr),
 popover .linked > button:last-child:active:dir(ltr)
 {
     box-shadow: inset 1px 0 @button_boxshadow_toolbar_linked_a, inset 0 1px @popover_border, inset 0 -1px 1px @wm_bg_d;
-}
-
-infobar button,
-tag button.flat:hover
-{
-    background: linear-gradient(to bottom, alpha(@button_background_normal_a, 0.4), alpha(@theme_bg_color, 0.4) 50%, alpha(@button_background_normal_b, 0.4));
-    border-color: alpha(@button_border_normal_a, 0.4);
-    border-bottom-color: alpha(@button_border_normal_b, 0.4);
-}
-
-infobar button:checked,
-tag button.flat:checked
-{
-    background: linear-gradient(to bottom, alpha(@button_background_checked_a, 0.4), alpha(@button_background_checked_b, 0.4));
-    border-color: alpha(@button_border_checked_a, 0.4);
-    border-top-color: alpha(@button_border_checked_b, 0.4);
-    border-bottom-color: alpha(@button_border_normal_a, 0.4);
-}
-
-infobar button:active,
-tag button.flat:active
-{
-    background: linear-gradient(to bottom, alpha(@button_background_active_a, 0.4), alpha(@button_background_active_b, 0.4));
-    border-color: alpha(@button_border_active, 0.4);
-    border-top-color: alpha(@button_border_normal_a, 0.4);
-    border-bottom-color: alpha(@button_border_checked_c, 0.4);
 }
 
 list > row button
@@ -3797,6 +3771,8 @@ infobar.error > revealer > box /* DEPRECATED */
     border-bottom: 1px solid @error_border;
 }
 
+/* statusbar */
+
 statusbar /* DEPRECATED */
 {
     padding: 6px;
@@ -4017,7 +3993,8 @@ window
     transition: none;
 }
 
-window:backdrop
+window:backdrop,
+button:backdrop
 {
     color: @theme_unfocused_fg_color;
 }
