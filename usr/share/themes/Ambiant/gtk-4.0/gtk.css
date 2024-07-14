@@ -4072,7 +4072,6 @@ window.print .dialog-action-box
 window.filechooser .sidebar
 {
     border: none;
-    margin-right: 6px;
 }
 
 window.filechooser .sidebar > scrolledwindow
@@ -4104,12 +4103,13 @@ window.filechooser #pathbarbox
 
 window.filechooser actionbar
 {
-    margin-top: 6px;
+    margin-top: 10px;
     background: none;
 }
 
 window.filechooser actionbar > revealer > box
 {
+    padding-top: 10px;
     padding-right: 0;
     padding-left: 0;
 }
@@ -4149,10 +4149,9 @@ window.filechooser placesview > stack > scrolledwindow > *:not(scrollbar)
 
 window.filechooser paned > separator
 {
-    min-width: 0;
+    min-width: 6px;
     background-image: none;
-    border-width: 1px;
-    margin: 0 6px 0 0;
+    border-width: 0;
     padding: 0;
 }
 
