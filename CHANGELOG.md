@@ -1,3 +1,15 @@
+# 24.8.1
+
+ - Drop .icon files (fbb90d1)
+ - Drop exotic icons (66212ff)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Sync filechooser separators with Gtk3 (a83d15c)
+ - Unset infobar button colours (c3404dc)
+ - Update infobar colours (5f71293)
+ - Update appointment-soon icons (9703cd0)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Add small-button class (a0b36ca)
+ - usr/share/themes/Ambiant/gtk-3.0/gtk.css: Add accelerator class in menu items (bbe35f2)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Update paned separator (1c5fdbe)
+
 # 24.7.1
 
  - README.md: Update description (6d613c4)
