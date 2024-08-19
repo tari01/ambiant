@@ -2381,7 +2381,7 @@ notebook > header > tabs > tab label
     color: @theme_unfocused_text_color;
 }
 
-notebook > header > tabs > tab:checked label
+notebook > header > tabs > tab:checked label:not(:disabled)
 {
     color: @theme_fg_color;
 }
