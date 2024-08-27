@@ -614,15 +614,6 @@ menubutton > popover list > row:hover:not(:selected)
     color: @theme_selected_fg_color;
 }
 
-.info:not(infobar),
-.question:not(infobar),
-.warning:not(infobar),
-.error:not(infobar)
-{
-    border-radius: 5px;
-    padding: 6px;
-}
-
 fontbutton > button > box > box > label
 {
     font-weight: normal;
@@ -3710,6 +3701,23 @@ searchbar > revealer > box
 }
 
 /* infobar */
+
+.info:not(infobar),
+.question:not(infobar),
+.warning:not(infobar),
+.error:not(infobar)
+{
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.info:not(infobar) > image,
+.question:not(infobar) > image,
+.warning:not(infobar) > image,
+.error:not(infobar) > image
+{
+    -gtk-icon-style: symbolic;
+}
 
 infobar > revealer > box /* DEPRECATED */
 {
