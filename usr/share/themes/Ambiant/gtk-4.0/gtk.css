@@ -614,10 +614,10 @@ menubutton > popover list > row:hover:not(:selected)
     color: @theme_selected_fg_color;
 }
 
-label.info,
-label.question,
-label.warning,
-label.error
+.info:not(infobar),
+.question:not(infobar),
+.warning:not(infobar),
+.error:not(infobar)
 {
     border-radius: 5px;
     padding: 6px;
@@ -3733,6 +3733,11 @@ infobar.info > revealer > box, /* DEPRECATED */
 infobar.info > revealer > box /* DEPRECATED */
 {
     border-bottom: 1px solid @info_border;
+}
+
+.info:not(infobar)
+{
+    border: 1px solid @info_border;
 }
 
 infobar.warning > revealer > box, /* DEPRECATED */
