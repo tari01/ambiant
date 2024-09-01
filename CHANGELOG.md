@@ -1,3 +1,13 @@
+# 24.9.1
+
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Use symbolic info/warning/error/question icons (d5bed56)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix info padding and borders (b0db16b)
+ - usr/share/icons/Ambiant/status/scalable/dialog-information-symbolic.svg Add icon (b322164)
+ - Add multimedia-volume-control icons (455dbbf)
+ - usr/share/themes/Ambiant/gtk-4.0/settings.ini: Add file (66b1be5)
+ - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Fix disabled notebook tab label colour (ff1282e)
+ - Add value-decrease and value-increase icons (ec8645d)
+
 # 24.8.1
 
  - Drop .icon files (fbb90d1)
