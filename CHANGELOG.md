@@ -1,3 +1,7 @@
+# 25.5.1
+
+ - Fix Telegram icons (3a01a54)
+
 # 24.9.1
 
  - usr/share/themes/Ambiant/gtk-4.0/gtk.css: Use symbolic info/warning/error/question icons (d5bed56)
