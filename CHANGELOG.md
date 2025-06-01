@@ -1,3 +1,7 @@
+# 25.6.1
+
+ - usr/share/icons/Ambiant/status/scalable/display-panel.svg: Rename to video-display-panel (7f9e017)
+
 # 25.5.1
 
  - Fix Telegram icons (3a01a54)
